@@ -6,11 +6,12 @@ Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUB
 
 ## Grupo {}
 
-* **Nicolas Bravo** - [integrante1](https://github.com/Nicolas-Bravo)
-* **Valentin Thourte** - [integrante2](https://github.com/valentinthourte)
-* **Francisco Monopoli** - [integrante3](https://github.com/franmonopoli)
-* **Nahuel Lescano** - [integrante4](https://github.com/NahuelLescano)
-* **Franco Cuppari** - [integrante4](https://github.com/francupp9-12)
+* **Nicolas Bravo** - [Nicolas-Bravo](https://github.com/Nicolas-Bravo)
+* **Valentin Thourte** - [valentinthourte](https://github.com/valentinthourte)
+* **Francisco Monopoli** - [franmonopoli](https://github.com/franmonopoli)
+* **Nahuel Lescano** - [NahuelLescano](https://github.com/NahuelLescano)
+* **Franco Cuppari** - [francupp9-12](https://github.com/francupp9-12)
+
 Corrector: **{Corrector}**
 
 ## Aplicación
