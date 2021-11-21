@@ -10,7 +10,7 @@ Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUB
 * **Valentin Thourte** - [integrante2](https://github.com/valentinthourte)
 * **Francisco Monopoli** - [integrante3](https://github.com/franmonopoli)
 * **Nahuel Lescano** - [integrante4](https://github.com/NahuelLescano)
-
+* **Franco Cuppari** - [integrante4](https://github.com/francupp9-12)
 Corrector: **{Corrector}**
 
 ## Aplicación
