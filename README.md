@@ -9,7 +9,7 @@ Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUB
 * **Nicolas Bravo** - [integrante1](https://github.com/Nicolas-Bravo)
 * **Valentin Thourte** - [integrante2](https://github.com/valentinthourte)
 * **Francisco Monopoli** - [integrante3](https://github.com/franmonopoli)
-* **Integrante 4** - [integrante4](https://github.com/integrante4)
+* **Nahuel Lescano** - [integrante4](https://github.com/NahuelLescano)
 
 Corrector: **{Corrector}**
 
