@@ -1,70 +1,44 @@
 @startuml
 
 abstract Edificio{
-    - buscador : BuscadorPistas
     - pista : Pista
     - controlador : ControladorEntradas
-    # buscarPista(ladron : Ladron) : Pista
-    # mostrarPista() : void
-    # demoraTemporal() : Tiempo
     + entrar() : Tiempo
 }
 
 class Bolsa{
-    - buscador : BuscadorPistasEconomica
     - pista : Pista
     - controlador : ControladorEntradas
-    # buscarPista(ladron : Ladron) : Pista
-    # mostrarPista() : void
-    # demoraTemporal() : Tiempo
     + entrar() : Tiempo
 }
 
 class Banco{
-    - buscador : BuscadorPistasEconomica
     - pista : Pista
     - controlador : ControladorEntradas
-    # buscarPista(ladron : Ladron) : Pista
-    # mostrarPista() : void
-    # demoraTemporal() : Tiempo
     + entrar() : Tiempo
 }
 
 class Biblioteca{
-    - buscador : BuscadorPistasBiblioteca
     - pista : Pista
     - controlador : ControladorEntradas
-    # buscarPista(ladron : Ladron) : Pista
-    # mostrarPista() : void
-    # demoraTemporal() : Tiempo
     + entrar() : Tiempo
 }
 
 class Puerto{
-    - buscador : BuscadorPistasPuerto
     - pista : Pista
     - controlador : ControladorEntradas
-    # buscarPista(ladron : Ladron) : Pista
-    # mostrarPista() : void
-    # demoraTemporal() : Tiempo
     + entrar() : Tiempo
 }
 
 class Aeropuerto{
-    - buscador : BuscadorPistasPuerto
     - pista : Pista
     - controlador : ControladorEntradas
-    # buscarPista(ladron : Ladron) : Pista
-    # mostrarPista() : void
-    # demoraTemporal() : Tiempo
     + entrar() : Tiempo
 }
 
 note left of Edificio::entrar
     this.pista.mostrarPista()
-    demora = this.controlador.demoraTemporal()
-    this.controlador.aumentarEntradas()
-    return demora
+    return controlador.demoraTemporal()
 end note
 
 Bolsa --|> Edificio

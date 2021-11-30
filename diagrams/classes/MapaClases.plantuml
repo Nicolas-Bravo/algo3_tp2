@@ -21,17 +21,14 @@ class Mapa{
 }
 
 class Destino{
+    - buscarPista(ladron : Ladron) : Pista
     + mostrarEdificios() : void
     + entrarAEdificio(edificio : Edificio) : Tiempo
 }
 
 abstract Edificio{
-    - buscador : BuscadorPistas
     - pista : Pista
     - controlador : ControladorEntradas
-    # buscarPista(ladron : Ladron) : Pista
-    # mostrarPista() : void
-    # demoraTemporal() : Tiempo
     + entrar() : Tiempo
 }
 

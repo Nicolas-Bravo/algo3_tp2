@@ -26,12 +26,6 @@ activate ":ControladorEntradas"
 ":ControladorEntradas" --> "e :Edificio" : horasGastadas
 deactivate ":ControladorEntradas"
 
-"e :Edificio" -> ":ControladorEntradas" : aumentarEntradas()
-activate ":ControladorEntradas"
-
-":ControladorEntradas" --> "e :Edificio"
-deactivate ":ControladorEntradas"
-
 "e :Edificio" --> "actual :Destino" : horasGastadas
 deactivate "e :Edificio"
 
