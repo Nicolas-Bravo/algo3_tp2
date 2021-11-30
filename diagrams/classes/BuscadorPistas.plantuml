@@ -1,0 +1,71 @@
+@startuml
+
+abstract BuscadorPistas{
+    + {abstract} buscarPista(ladron : Ladron) : Pista
+}
+
+abstract BuscadorPistasEconomica{
+    + {abstract} buscarPista(ladron : Ladron) : Pista
+}
+
+class BuscadorPistasEconomicaFacil{
+    + buscarPista(ladron : Ladron) : Pista
+}
+
+class BuscadorPistasEconomicaMedia{
+    + buscarPista(ladron : Ladron) : Pista
+}
+
+class BuscadorPistasEconomicaDificil{
+    + buscarPista(ladron : Ladron) : Pista
+}
+
+BuscadorPistas <|-- BuscadorPistasEconomica
+BuscadorPistasEconomica <|-- BuscadorPistasEconomicaFacil
+BuscadorPistasEconomica <|-- BuscadorPistasEconomicaMedia
+BuscadorPistasEconomica <|-- BuscadorPistasEconomicaDificil
+
+abstract BuscadorPistasBiblioteca{
+    + {abstract} buscarPista(ladron : Ladron) : Pista
+}
+
+class BuscadorPistasBibliotecaFacil{
+    + buscarPista(ladron : Ladron) : Pista
+}
+
+class BuscadorPistasBibliotecaMedia{
+    + buscarPista(ladron : Ladron) : Pista
+}
+
+class BuscadorPistasBibliotecaDificil{
+    + buscarPista(ladron : Ladron) : Pista
+}
+
+BuscadorPistas <|-- BuscadorPistasBiblioteca
+BuscadorPistasBiblioteca <|-- BuscadorPistasBibliotecaFacil
+BuscadorPistasBiblioteca <|-- BuscadorPistasBibliotecaMedia
+BuscadorPistasBiblioteca <|-- BuscadorPistasBibliotecaDificil
+
+abstract BuscadorPistasPuerto{
+    + {abstract} buscarPista(ladron : Ladron) : Pista
+}
+
+class BuscadorPistasPuertoFacil{
+    + buscarPista(ladron : Ladron) : Pista
+}
+
+class BuscadorPistasPuertoMedia{
+    + buscarPista(ladron : Ladron) : Pista
+}
+
+class BuscadorPistasPuertoDificil{
+    + buscarPista(ladron : Ladron) : Pista
+}
+
+BuscadorPistasPuerto --|> BuscadorPistas
+BuscadorPistasPuertoFacil --|> BuscadorPistasPuerto
+BuscadorPistasPuertoMedia --|> BuscadorPistasPuerto
+BuscadorPistasPuertoDificil --|> BuscadorPistasPuerto
+
+
+@enduml

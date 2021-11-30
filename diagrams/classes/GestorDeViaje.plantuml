@@ -1,0 +1,35 @@
+@startuml
+
+abstract GestorDeViaje{
+    # calcularDistancia(coodenadas) : int
+    - {abstract} CalcularTiempo(distancia : int): Tiempo
+    + demoraTemporal(coordenadas) : Tiempo
+}
+
+class GestorDeViajeNovato{
+    - CalcularTiempo(distancia : int): Tiempo
+}
+
+class GestorDeViajeDetective{
+    - CalcularTiempo(distancia : int): Tiempo
+}
+
+class GestorDeViajeInvestigador{
+    - CalcularTiempo(distancia : int): Tiempo
+}
+
+class GestorDeViajeSargento{
+    - CalcularTiempo(distancia : int): Tiempo
+}
+
+note right of GestorDeViaje::demoraTemporal
+    distnacia = this.calcularDistancia(coordenadas)
+    return this.calcularTiempo(distancia)
+end note
+
+GestorDeViajeNovato --|> GestorDeViaje
+GestorDeViajeDetective --|> GestorDeViaje
+GestorDeViaje <|-- GestorDeViajeInvestigador
+GestorDeViaje <|-- GestorDeViajeSargento
+
+@enduml

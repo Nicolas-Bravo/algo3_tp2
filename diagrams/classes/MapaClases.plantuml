@@ -1,0 +1,64 @@
+@startuml
+
+class Policia{
+    - nombre : str
+    - rango : str
+    - reloj : Reloj
+    - aumentarHoras(tiempo : Tiempo) : void
+    + mostrarEdificios() : void
+    + entrarAEdificio(edificio : Edificio) : Tiempo
+    + mostrarDestinos() : void
+    + viajarADestino(destino : Destino) : Tiempo
+}
+
+class Mapa{
+    - actual : Destino
+    - actualizarActual(destino : Destino)
+    + mostrarEdificios() : void
+    + entrarAEdificio(edificio : Edificio) : Tiempo
+    + mostrarDestinos() : void
+    + viajarADestino(destino : Destino) : Tiempo
+}
+
+class Destino{
+    + mostrarEdificios() : void
+    + entrarAEdificio(edificio : Edificio) : Tiempo
+}
+
+abstract Edificio{
+    - buscador : BuscadorPistas
+    - pista : Pista
+    - controlador : ControladorEntradas
+    # buscarPista(ladron : Ladron) : Pista
+    # mostrarPista() : void
+    # demoraTemporal() : Tiempo
+    + entrar() : Tiempo
+}
+
+abstract GestorDeViaje{
+    # calcularDistancia(coodenadas) : int
+    - {abstract} CalcularTiempo(distancia : int): Tiempo
+    + demoraTemporal(coordenadas) : Tiempo
+}
+
+note right of Mapa::viajarADestino
+    return this.gestor.demoraTemporal(coordenadas)
+end note
+
+note left of Mapa::entrarAEdificio
+    return this.actual.entrarAEdificio(edificio)
+end note
+
+note right of Destino::entrarAEdificio
+    return this.edificio.entrar()
+end note
+
+Policia o-- Mapa
+Mapa "1" o-- "4..5..7" Destino
+Destino "1" o-- "3" Edificio
+
+Mapa o-- GestorDeViaje
+
+
+@enduml
+

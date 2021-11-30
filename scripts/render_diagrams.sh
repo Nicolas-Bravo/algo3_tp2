@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 diagramsPath="diagrams"
 
@@ -13,5 +13,5 @@ read -t 3 -n 1 -p "Desea continuar (y/N)? " answer
 
 if [ "$answer" == "y" ]
 then
-    find $diagramsPath -name '*.plantuml' -exec plantuml -v {} \;
+    find $diagramsPath -name "*.plantuml" -exec java -jar plantuml.jar {} \;
 fi

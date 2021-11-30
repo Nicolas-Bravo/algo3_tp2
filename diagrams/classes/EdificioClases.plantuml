@@ -1,0 +1,64 @@
+@startuml
+
+abstract BuscadorPistas{
+    + {abstract} buscarPista(ladron : Ladron) : Pista
+}
+
+interface Pista{
+    + {abstract} mostrarPista()
+}
+
+class PistaEscrita{
+    - pista : str
+    + mostrarPista();
+}
+
+
+abstract Edificio{
+    # buscarPista(ladron : Ladron) : Pista
+    # mostrarPista() : void
+    # demoraTemporal() : Tiempo
+    + entrar() : Tiempo
+}
+
+class ControladorEntradas{
+    - contadorEntradas : int
+    + demoraTemporal() : Tiempo
+    + aumentarEntradas() : void
+}
+
+interface DemoradorPorEntradas{
+    + {abstract} demoraTemporal() : Tiempo
+}
+
+class PrimerEntrada{
+    + demoraTemporal() : Tiempo
+}
+
+class SegundaEntrada{
+    + demoraTemporal() : Tiempo
+}
+
+class TercerEntrada{
+    + demoraTemporal() : Tiempo
+}
+
+note right of Edificio::buscarPista
+    Metodo utilizado en la creacion de una instacia.
+    Una instancia de Edificio no es valida sin
+    una pista asignada.
+end note
+
+DemoradorPorEntradas <|.. PrimerEntrada
+DemoradorPorEntradas <|.. SegundaEntrada
+DemoradorPorEntradas <|.. TercerEntrada
+
+ControladorEntradas o-- DemoradorPorEntradas
+
+PistaEscrita ..|> Pista
+
+Pista --o Edificio
+BuscadorPistas --o Edificio
+Edificio o-- ControladorEntradas
+
+@enduml
