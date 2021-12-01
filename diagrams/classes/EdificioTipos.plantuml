@@ -7,31 +7,31 @@ abstract Edificio{
 }
 
 class Bolsa{
-    - pista : Pista
+    - pistaEconomica : Pista
     - controlador : ControladorEntradas
     + entrar() : Tiempo
 }
 
 class Banco{
-    - pista : Pista
+    - pistaEconomica : Pista
     - controlador : ControladorEntradas
     + entrar() : Tiempo
 }
 
 class Biblioteca{
-    - pista : Pista
+    - pistaBiblioteca : Pista
     - controlador : ControladorEntradas
     + entrar() : Tiempo
 }
 
 class Puerto{
-    - pista : Pista
+    - pistaPuerto : Pista
     - controlador : ControladorEntradas
     + entrar() : Tiempo
 }
 
 class Aeropuerto{
-    - pista : Pista
+    - pistaPuerto : Pista
     - controlador : ControladorEntradas
     + entrar() : Tiempo
 }

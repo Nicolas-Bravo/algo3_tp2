@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.demorador;
 
 public class TercerEntrada implements DemoradorPorEntradas {
     public int demoraTemporal(){

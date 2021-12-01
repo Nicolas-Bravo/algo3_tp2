@@ -1,5 +1,8 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.demorador.DemoradorPorEntradas;
+import edu.fiuba.algo3.modelo.demorador.PrimerEntrada;
+
 public class ControladorEntradas {
 
     private DemoradorPorEntradas demorador;
