@@ -12,9 +12,8 @@ public class casosDeUsoTest{
         Caso caso1 = new Caso("tesoro Nacional de Montereal", "femenino" , "Montereal" , new Detective("elNovato"));
 
         assertFalse(caso1.bancoMostroPista());
-
         caso1.entrarBanco();
-
+        assertTrue(caso1.esHora(8));
         assertTrue(caso1.bancoMostroPista());
 
     }
@@ -30,12 +29,13 @@ public class casosDeUsoTest{
         caso2.entrarBanco();
 
         assertTrue(caso2.bancoMostroPista());
-
+        assertTrue(caso2.esHora(8));
         assertFalse(caso2.bibliotecaMostroPista());
 
-        caso2.entrarBiblioteca();
 
+        caso2.entrarBiblioteca();
         assertTrue(caso2.bibliotecaMostroPista());
+        assertTrue(caso2.esHora(9));
     }
 
     @Test
@@ -45,6 +45,7 @@ public class casosDeUsoTest{
                 "Mexico", new Detective("Francisco Monopoli") );
         caso3.viajarAMexico();
         assertEquals("Mexico", caso3.nombreDestinoActual());
+        assertTrue(caso3.esHora(12));
 
     }
 
@@ -60,12 +61,15 @@ public class casosDeUsoTest{
             "Montreal", new Detective("Francisco Monopoli") );
     caso4.entrarAeropuerto();
     assertTrue(caso4.aeropuertoMostroPista());
+        assertTrue(caso4.esHora(8));
 
     caso4.entrarAeropuerto();
     assertTrue(caso4.aeropuertoMostroPista());
+    assertTrue(caso4.esHora(10));
 
     caso4.entrarAeropuerto();
     assertTrue(caso4.aeropuertoMostroPista());
+    assertTrue(caso4.esHora(13));
 
     assertThrows(TiempoAgotadoException.class,() -> {
             for(int i = 0; i<54 ; i++) {
@@ -82,8 +86,11 @@ public class casosDeUsoTest{
     //Caso de uso 5
         //Detective sufre una herida de cuchillo.
         //Detective duerme.
+    Caso caso = new Caso("tesoro Nacional de Montreal","masculino",
+            "Montreal", new Detective("Francisco Monopoli") );
 
-
+    caso.recibirCuchillada();
+    assertTrue(caso.esHora(9));
     }
 
 }

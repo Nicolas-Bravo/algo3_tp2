@@ -1,15 +1,17 @@
 package edu.fiuba.algo3.modelo;
 
 public class Banco {
-
+    private final ControladorEntradas controlador;
     private boolean entro;
 
     public Banco(){
         this.entro = false;
+        this.controlador = new ControladorEntradas();
     }
 
-    public void entrar() {
+    public int entrar() {
         this.entro = true;
+        return this.controlador.demoraTemporal();
     }
 
     public boolean mostroPista() {

@@ -7,10 +7,8 @@ public class Detective {
     public Detective(String nombreParametro){
         this.nombre = nombreParametro;
     }
-    /*
-    public void aumentarHoras(int horas_aumentadas){
-        this reloj.aumentarHoras(horas_aumentadas);
-    }
-    */
 
+    public int recibirCuchillada() {
+        return 2;
+    }
 }

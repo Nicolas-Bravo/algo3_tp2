@@ -18,29 +18,29 @@ public class Destino {
         this.puerto = new Puerto();
     }
 
-    public void entrarBanco(){
-        this.banco.entrar();
+    public int entrarBanco(){
+        return this.banco.entrar();
     }
     public boolean bancoMostroPista() {
         return this.banco.mostroPista();
     }
 
-    public void entrarBiblioteca() {
-        this.biblioteca.entrar();
+    public int entrarBiblioteca() {
+        return this.biblioteca.entrar();
     }
     public boolean bibliotecaMostroPista() {
         return this.biblioteca.mostroPista();
     }
 
-    public void entrarAeropuerto() {
-        this.aeropuerto.entrar();
+    public int entrarAeropuerto() {
+        return this.aeropuerto.entrar();
     }
     public boolean aeropuertoMostroPista() {
         return this.aeropuerto.mostroPista();
     }
 
-    public void entrarPuerto() {
-        this.puerto.entrar();
+    public int entrarPuerto() {
+        return this.puerto.entrar();
     }
     public boolean puertoMostroPista() {
         return this.puerto.mostroPista();

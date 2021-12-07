@@ -18,36 +18,50 @@ public class Caso {
 
 
     public void entrarBanco() {
-        this.destinoActual.entrarBanco();
+        this.reloj.aumentarHoras(this.destinoActual.entrarBanco());
     }
     public boolean bancoMostroPista() {
         return this.destinoActual.bancoMostroPista();
     }
 
     public void entrarAeropuerto(){
-        this.destinoActual.entrarAeropuerto();
+
+        this.reloj.aumentarHoras(this.destinoActual.entrarAeropuerto());
     }
     public boolean aeropuertoMostroPista() {
         return this.destinoActual.aeropuertoMostroPista();
     }
 
     public void entrarBiblioteca() {
-        this.destinoActual.entrarBiblioteca();
+
+        this.reloj.aumentarHoras(this.destinoActual.entrarBiblioteca());
     }
     public boolean bibliotecaMostroPista(){
         return this.destinoActual.bibliotecaMostroPista();
     }
 
     public void entrarPuerto(){
-        this.destinoActual.entrarPuerto();
+
+        this.reloj.aumentarHoras(this.destinoActual.entrarPuerto());
     }
     public boolean puertoMostroPista(){
         return this.destinoActual.puertoMostroPista();
     }
+
     public void viajarAMexico() {
+
         this.destinoActual = new Destino("Mexico");
+        this.reloj.aumentarHoras(5);
     }
     public String nombreDestinoActual(){
         return this.destinoActual.getNombre();
+    }
+
+    public boolean esHora(int hora){
+       return this.reloj.esHora(hora);
+    }
+
+    public void recibirCuchillada() {
+        this.reloj.aumentarHoras(this.detective.recibirCuchillada());
     }
 }
