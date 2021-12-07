@@ -2,11 +2,11 @@ package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.exceptions.TiempoAgotadoException;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class RelojTest {
 
-    /*@Test
+    @Test
     public void aumentarUnaHoraAunRelojNuevoLoDejaEnLunesALasOcho(){
 
         Reloj reloj = new Reloj();
@@ -40,7 +40,7 @@ public class RelojTest {
         assertTrue( reloj.esDia("Viernes") );
         assertTrue( reloj.esHora(11) );
 
-    }*/
+    }
 
     @Test
     public void aumentarCientoSesentaHorasAUnRelojNuevoGeneraTiempoAgotadoException(){

@@ -15,7 +15,7 @@ public class Reloj {
                 "Jueves",
                 "Viernes",
                 "Sabado",
-                "DOmingo"};
+                "Domingo"};
         this.index_dia = 0;
         this.hora = 7;
     }
