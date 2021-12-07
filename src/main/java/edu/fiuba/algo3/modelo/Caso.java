@@ -1,60 +1,58 @@
 package edu.fiuba.algo3.modelo;
 
+
 public class Caso {
 
-    Detective detective;
-    String botin;
-    String generoLadron;
-    Destino destinoActual;
-    Reloj reloj;
+    private Detective detective;
+    private Reloj reloj;
+    private Mapa mapa;
 
-    public Caso(String botinParametro, String generoLadronParametro, String destinoInicial, Detective detectiveParametro){
+
+    public Caso(String archivo, Detective detectiveParametro){
         this.detective = detectiveParametro;
-        this.botin = botinParametro;
-        this.generoLadron = generoLadronParametro;
-        this.destinoActual = new Destino(destinoInicial);
         this.reloj = new Reloj();
+        this.mapa = new Mapa(archivo);
+
+
     }
 
 
     public void entrarBanco() {
-        this.reloj.aumentarHoras(this.destinoActual.entrarBanco());
+        this.reloj.aumentarHoras(this.mapa.entrarBanco());
     }
     public boolean bancoMostroPista() {
-        return this.destinoActual.bancoMostroPista();
+        return this.mapa.bancoMostroPista();
     }
 
     public void entrarAeropuerto(){
 
-        this.reloj.aumentarHoras(this.destinoActual.entrarAeropuerto());
+        this.reloj.aumentarHoras(this.mapa.entrarAeropuerto());
     }
     public boolean aeropuertoMostroPista() {
-        return this.destinoActual.aeropuertoMostroPista();
+        return this.mapa.aeropuertoMostroPista();
     }
 
     public void entrarBiblioteca() {
 
-        this.reloj.aumentarHoras(this.destinoActual.entrarBiblioteca());
+        this.reloj.aumentarHoras(this.mapa.entrarBiblioteca());
     }
     public boolean bibliotecaMostroPista(){
-        return this.destinoActual.bibliotecaMostroPista();
+        return this.mapa.bibliotecaMostroPista();
     }
 
     public void entrarPuerto(){
 
-        this.reloj.aumentarHoras(this.destinoActual.entrarPuerto());
+        this.reloj.aumentarHoras(this.mapa.entrarPuerto());
     }
     public boolean puertoMostroPista(){
-        return this.destinoActual.puertoMostroPista();
+        return this.mapa.puertoMostroPista();
     }
 
     public void viajarAMexico() {
-
-        this.destinoActual = new Destino("Mexico");
-        this.reloj.aumentarHoras(5);
+        this.reloj.aumentarHoras(this.mapa.viajarMexico());
     }
     public String nombreDestinoActual(){
-        return this.destinoActual.getNombre();
+        return this.mapa.getNombre();
     }
 
     public boolean esHora(int hora){
