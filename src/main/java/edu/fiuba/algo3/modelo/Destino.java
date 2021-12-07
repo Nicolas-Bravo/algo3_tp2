@@ -1,22 +1,32 @@
 package edu.fiuba.algo3.modelo;
 
-import java.util.ArrayList;
 
 public class Destino {
 
     private String nombre;
-    private ArrayList<Edificio> edificios;
+    private Banco banco;
+    private Biblioteca biblioteca;
 
-    public Destino( String nombre_destino, Edificio edificio1, Edificio edificio2, Edificio edificio3){
+
+    public Destino( String nombre_destino){
         this.nombre = nombre_destino;
-        this.edificios = new ArrayList<Edificio>();
-        edificios.add(edificio1);
-        edificios.add(edificio2);
-        edificios.add(edificio3);
+        this.banco = new Banco();
+        this.biblioteca = new Biblioteca();
     }
 
-    public int entrarAEdificio(int index){
-        return edificios.get(index-1).entrar();
+    public void entrarBanco() {
+        this.banco.entrar();
     }
 
+    public boolean bancoMostroPista() {
+        return this.banco.mostroPista();
+    }
+
+    public void entrarBiblioteca() {
+        this.biblioteca.entrar();
+    }
+
+    public boolean bibliotecaMostroPista() {
+        return this.biblioteca.mostroPista();
+    }
 }

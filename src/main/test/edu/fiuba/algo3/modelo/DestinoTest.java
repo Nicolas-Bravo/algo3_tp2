@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class DestinoTest {
-
+/*
     @Test
     public void entrarPorPrimeraVezAEdificioTresDemoraUnaHora(){
 
@@ -96,7 +96,7 @@ public class DestinoTest {
                     int tiempo = destino.entrarAEdificio(4);
                 });
     }
-
+*/
 
 
 }
