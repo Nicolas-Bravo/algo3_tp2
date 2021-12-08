@@ -11,4 +11,6 @@ public class PistaEscrita implements Pista {
     public void mostrarPista(){
         System.out.println(this.pista);
     }
+
+
 }

@@ -1,19 +1,21 @@
 package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.pista.Pista;
+import edu.fiuba.algo3.modelo.pista.PistaEscrita;
 
-public class Edificio {
+public  abstract class Edificio {
 
-    private final Pista pista;
+    protected final PistaEscrita pista;
     private final ControladorEntradas controlador;
 
-    public Edificio( Pista entrada){
+    public Edificio(PistaEscrita entrada){
         this.pista = entrada;
         this.controlador = new ControladorEntradas();
     }
 
-    public int entrar() {
-        this.pista.mostrarPista();
-        return this.controlador.demoraTemporal();
+    public PistaEscrita entrar(Reloj watch) {
+        watch.aumentarHoras(controlador.demoraTemporal());
+        return this.pista;
     }
+
 }

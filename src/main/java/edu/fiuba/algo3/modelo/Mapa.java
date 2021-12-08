@@ -12,7 +12,7 @@ public class Mapa {
     private Destino destinoActual;
 
 
-    public Mapa(String archivo) {
+/*    public Mapa(String archivo) {
 
         this.destinos = new ArrayList<Destino>();
 
@@ -33,45 +33,18 @@ public class Mapa {
 
         this.destinoActual = destinos.get(0);
     }
-
-    public int entrarBanco() {
-        return this.destinoActual.entrarBanco();
+*/
+    public Mapa(ArrayList<Destino> destinos_parametros){
+        this.destinos = destinos_parametros;
+        this.destinoActual = destinos_parametros.get(0);
     }
 
-    public boolean bancoMostroPista() {
-        return this.destinoActual.bancoMostroPista();
+    public void viajar(Destino destino) {
+        int index = this.destinos.indexOf(destino);
+        this.destinoActual = destinos.get(index);
     }
 
-    public int entrarAeropuerto() {
-        return this.destinoActual.entrarAeropuerto();
-    }
-
-    public boolean aeropuertoMostroPista() {
-        return this.destinoActual.aeropuertoMostroPista();
-    }
-
-    public int entrarBiblioteca() {
-        return this.destinoActual.entrarBiblioteca();
-    }
-
-    public boolean bibliotecaMostroPista() {
-        return this.destinoActual.bibliotecaMostroPista();
-    }
-
-    public int entrarPuerto() {
-        return this.destinoActual.entrarPuerto();
-    }
-
-    public boolean puertoMostroPista() {
-        return this.destinoActual.puertoMostroPista();
-    }
-
-    public String getNombre() {
-        return this.destinoActual.getNombre();
-    }
-
-    public int viajarMexico() {
-        this.destinoActual = this.destinos.get(1);
-        return 5;
+    public Destino destinoActual() {
+        return this.destinoActual;
     }
 }

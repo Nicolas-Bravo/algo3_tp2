@@ -1,21 +1,11 @@
 package edu.fiuba.algo3.modelo;
 
-public class Puerto {
-    private final ControladorEntradas controlador;
-    private boolean entro;
+import edu.fiuba.algo3.modelo.pista.PistaEscrita;
 
-    public Puerto(){
-        this.entro = false;
-        this.controlador = new ControladorEntradas();
-    }
+public class Puerto extends Edificio{
 
-    public int entrar() {
-        this.entro = true;
-        return this.controlador.demoraTemporal();
-    }
-
-    public boolean mostroPista() {
-        return this.entro;
+    public Puerto(PistaEscrita entrada) {
+        super(entrada);
     }
 }
 

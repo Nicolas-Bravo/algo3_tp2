@@ -1,20 +1,9 @@
 package edu.fiuba.algo3.modelo;
 
-public class Biblioteca {
-    private final ControladorEntradas controlador;
-    private boolean entro;
+import edu.fiuba.algo3.modelo.pista.PistaEscrita;
 
-    public Biblioteca(){
-        this.entro = false;
-        this.controlador = new ControladorEntradas();
-    }
-
-    public int entrar() {
-        this.entro = true;
-        return this.controlador.demoraTemporal();
-    }
-
-    public boolean mostroPista() {
-        return this.entro;
+public class Biblioteca extends Edificio {
+    public Biblioteca(PistaEscrita entrada) {
+        super(entrada);
     }
 }

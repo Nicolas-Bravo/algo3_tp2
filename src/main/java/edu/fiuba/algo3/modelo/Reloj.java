@@ -43,4 +43,8 @@ public class Reloj {
     public boolean esHora(int hora_entrada){
         return (this.hora == hora_entrada);
     }
+
+    public String fechaActual(){
+        return ("El dia de hoy es "+this.dias[this.index_dia]+" y la hora actual es 0"+this.hora+":00");
+    }
 }
