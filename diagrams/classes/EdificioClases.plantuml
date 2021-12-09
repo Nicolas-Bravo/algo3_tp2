@@ -1,14 +1,9 @@
 @startuml
 
-interface Pista{
-    + {abstract} mostrarPista() : void
-}
-
-class PistaEscrita{
+class Pista{
     - pista : str
     + mostrarPista() : void
 }
-
 
 abstract Edificio{
     + entrar() : Tiempo
@@ -49,8 +44,6 @@ DemoradorPorEntradas <|.. SegundaEntrada
 DemoradorPorEntradas <|.. TercerEntrada
 
 ControladorEntradas o-- DemoradorPorEntradas
-
-PistaEscrita ..|> Pista
 
 Pista --o Edificio
 Edificio o-- ControladorEntradas

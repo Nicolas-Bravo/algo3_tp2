@@ -13,8 +13,7 @@ public class RelojTest {
 
         reloj.aumentarHoras(1);
 
-        assertTrue( reloj.esDia("Lunes") );
-        assertTrue( reloj.esHora(8) );
+        assertEquals("Lunes , 8:00", reloj.fechaActual());
 
     }
 
@@ -25,8 +24,7 @@ public class RelojTest {
 
         reloj.aumentarHoras(18);
 
-        assertTrue( reloj.esDia("Martes") );
-        assertTrue( reloj.esHora(1) );
+        assertEquals("Martes , 1:00", reloj.fechaActual());
 
     }
 
@@ -37,8 +35,7 @@ public class RelojTest {
 
         reloj.aumentarHoras(100);
 
-        assertTrue( reloj.esDia("Viernes") );
-        assertTrue( reloj.esHora(11) );
+        assertEquals("Viernes , 11:00", reloj.fechaActual());
 
     }
 

@@ -1,11 +1,9 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.pista.PistaEscrita;
-
 public class Detective {
-    public final String nombre;
-    private PistaEscrita pista;
-    private Reloj reloj;
+    private final String nombre;
+    private Pista pista;
+    private final Reloj reloj;
     private Mapa mapa;
     private int heridas;
 
@@ -15,23 +13,19 @@ public class Detective {
         this.heridas = 0;
     }
 
-    public Detective(String nombreParametro, Mapa mapita){
+    public Detective(String nombreParametro, Mapa mapa_parametro){
         this.nombre = nombreParametro;
-        this.mapa = mapita;
+        this.mapa = mapa_parametro;
         this.reloj = new Reloj();
         this.heridas = 0;
     }
 
     public void entrar(Edificio edificio) {
-        this.pista=edificio.entrar(reloj);
+        this.pista = edificio.entrar(reloj);
     }
 
-    public PistaEscrita mostrarPista() {
+    public Pista mostrarPista() {
         return this.pista;
-    }
-
-    public String fechaActual() {
-        return this.reloj.fechaActual();
     }
 
     public Destino destinoActual(){
@@ -39,7 +33,7 @@ public class Detective {
     }
 
     public void viajar(Destino destino) {
-        this.mapa.viajar(destino);
+        this.reloj.aumentarHoras(this.mapa.viajar(destino)/900);
     }
 
     public void recibirCuchillada() {
@@ -51,4 +45,14 @@ public class Detective {
             this.reloj.aumentarHoras(1);
         }
     }
+
+
+    public void recibirBalazo() {
+        this.reloj.aumentarHoras(4);
+    }
+
+    public String fechaActual() {
+        return this.reloj.fechaActual();
+    }
+
 }

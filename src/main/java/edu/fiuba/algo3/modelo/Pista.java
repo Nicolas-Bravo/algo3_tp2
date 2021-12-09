@@ -1,16 +1,15 @@
-package edu.fiuba.algo3.modelo.pista;
+package edu.fiuba.algo3.modelo;
 
-public class PistaEscrita implements Pista {
+public class Pista {
 
     private final String pista;
 
-    public PistaEscrita(String entrada){
+    public Pista(String entrada){
         this.pista = entrada;
     }
 
     public void mostrarPista(){
         System.out.println(this.pista);
     }
-
 
 }

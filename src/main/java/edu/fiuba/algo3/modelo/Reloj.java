@@ -4,7 +4,7 @@ import edu.fiuba.algo3.modelo.exceptions.TiempoAgotadoException;
 
 public class Reloj {
 
-    private String[] dias;
+    private final String[] dias;
     private int index_dia;
     private int hora;
 
@@ -45,6 +45,6 @@ public class Reloj {
     }
 
     public String fechaActual(){
-        return ("El dia de hoy es "+this.dias[this.index_dia]+" y la hora actual es 0"+this.hora+":00");
+        return (this.dias[this.index_dia]+" , "+this.hora+":00");
     }
 }
