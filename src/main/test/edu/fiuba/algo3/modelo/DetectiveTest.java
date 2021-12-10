@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.modelo;
 
-import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
 import edu.fiuba.algo3.modelo.exceptions.TiempoAgotadoException;
@@ -39,11 +38,8 @@ public class DetectiveTest {
     public void detectiveNovatoViajaDeMontrealAMexicoYSuDestinoActualEsMexico(){
         Destino montreal = new Destino("Montreal");
         Destino mexico = new Destino("Mexico");
-        ArrayList<Destino> destinos = new ArrayList<>();
-        destinos.add(montreal);
-        destinos.add(mexico);
 
-        Mapa mapa = new Mapa(destinos);
+        Mapa mapa = new Mapa(montreal, mexico);
         Detective detective = new Detective("Jesus", mapa);
 
         detective.viajar(mexico);
@@ -55,11 +51,8 @@ public class DetectiveTest {
     public void detectiveNovatoViajaDeMontrealAMexicoYDemora5Horas(){
         Destino montreal = new Destino("Montreal");
         Destino mexico = new Destino("Mexico");
-        ArrayList<Destino> destinos = new ArrayList<>();
-        destinos.add(montreal);
-        destinos.add(mexico);
 
-        Mapa mapa = new Mapa(destinos);
+        Mapa mapa = new Mapa(montreal, mexico);
         Detective detective = new Detective("Jesus", mapa);
 
         detective.viajar(mexico);

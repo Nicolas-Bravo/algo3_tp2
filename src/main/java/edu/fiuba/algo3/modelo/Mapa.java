@@ -8,9 +8,14 @@ public class Mapa {
     private Destino destinoActual;
     private CalculadorDistancias calculadorDistancias;
 
-    public Mapa(ArrayList<Destino> destinos_parametros){
-        this.destinos = destinos_parametros;
-        this.destinoActual = destinos_parametros.get(0);
+    public Mapa(Destino... destinos_p) {
+        this.destinos = new ArrayList<>();
+
+        for (int i=0; i<destinos_p.length; i++){
+            this.destinos.add(destinos_p[i]);
+        }
+
+        this.destinoActual = this.destinos.get(0);
         this.calculadorDistancias = new CalculadorDistancias();
     }
 

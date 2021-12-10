@@ -18,24 +18,68 @@ public class RelojTest {
     }
 
     @Test
-    public void aumentarDieciochoHorasAunRelojNuevoLoDejaEnMartesALaUna(){
+    public void aumentarDiecisieteHorasAunRelojNuevoLoDejaEnMartesALasOcho(){
 
         Reloj reloj = new Reloj();
 
-        reloj.aumentarHoras(18);
+        reloj.aumentarHoras(17);
 
-        assertEquals("Martes , 1:00", reloj.fechaActual());
+        assertEquals("Martes , 8:00", reloj.fechaActual());
 
     }
 
     @Test
-    public void aumentarCienHorasAUnRelojNuevoLoDejaEnViernesALasOnce(){
+    public void aumentarTreintaYTresHorasAUnRelojNuevoLoDejaEnMiercolesALasOcho(){
 
         Reloj reloj = new Reloj();
 
-        reloj.aumentarHoras(100);
+        reloj.aumentarHoras(33);
 
-        assertEquals("Viernes , 11:00", reloj.fechaActual());
+        assertEquals("Miercoles , 8:00", reloj.fechaActual());
+
+    }
+
+    @Test
+    public void aumentarCuarentaYNueveHorasAUnRelojNuevoLoDejaEnJuevesALasOcho(){
+
+        Reloj reloj = new Reloj();
+
+        reloj.aumentarHoras(49);
+
+        assertEquals("Jueves , 8:00", reloj.fechaActual());
+
+    }
+
+    @Test
+    public void aumentarSecentaYNueveHorasAUnRelojNuevoLoDejaEnViernesALasOcho(){
+
+        Reloj reloj = new Reloj();
+
+        reloj.aumentarHoras(65);
+
+        assertEquals("Viernes , 8:00", reloj.fechaActual());
+
+    }
+
+    @Test
+    public void aumentarOchentaYUnaHorasAUnRelojNuevoLoDejaEnSabadoALasOcho(){
+
+        Reloj reloj = new Reloj();
+
+        reloj.aumentarHoras(81);
+
+        assertEquals("Sabado , 8:00", reloj.fechaActual());
+
+    }
+
+    @Test
+    public void aumentarNoventaYSieteHorasAUnRelojNuevoLoDejaEnDomingoALasOcho(){
+
+        Reloj reloj = new Reloj();
+
+        reloj.aumentarHoras(97);
+
+        assertEquals("Domingo , 8:00", reloj.fechaActual());
 
     }
 
