@@ -60,9 +60,11 @@ public class Detective {
     public void buscarEnComputadora(String... parametros) {
         ArrayList<String> sospechosos;
         sospechosos = Interpol.buscarSospechosos(parametros);
-
-        for(String sospechoso:sospechosos){
+        if(sospechosos.size() != 0){
+            for(String sospechoso:sospechosos){
             System.out.println(sospechoso);
+            }
         }
+        else System.out.println("No hay sospechosos que coindican con los datos");
     }
 }

@@ -15,14 +15,22 @@ public class Interpol {
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
+                Sospechoso sospechoso =new Sospechoso(data);
+                sospechoso.contiene(datos, lista_nombres);
+            /*
                 boolean contienetodos;
                 for(String dato:datos){
-                    contienetodos =data.contains(dato);
-                    if(contienetodos){
-                        lista_nombres.add(data.split(",")[0]);
-                    }
+                    contienetodos=data.contains(dato);
+
                 }
-            }
+                if(contienetodos){
+                    lista_nombres.add(data.split(",")[0]);
+                }
+             */
+           }
+
+
+
             myReader.close();
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
