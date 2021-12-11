@@ -1,9 +1,8 @@
 package edu.fiuba.algo3.modelo;
 
-public class RangoSargento implements Rango{
+public class RangoSargento extends Rango{
 
-    @Override
-    public int calcularTiempoPorDistancia(int distancia) {
-        return Math.round(distancia / 1500);
+    public RangoSargento() {
+        this.velocidad = 1500;
     }
 }

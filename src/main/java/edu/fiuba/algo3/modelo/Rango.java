@@ -1,7 +1,8 @@
 package edu.fiuba.algo3.modelo;
 
-public interface Rango {
-
-    int calcularTiempoPorDistancia(int distancia);
-
+public abstract class Rango {
+    float velocidad;
+    public int calcularTiempoPorDistancia(float distancia) {
+        return Math.round(distancia / velocidad);
+    }
 }
