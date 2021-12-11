@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
+import java.util.ArrayList;
+
 public class Detective {
     private final String nombre;
     private Pista pista;
@@ -55,4 +57,12 @@ public class Detective {
         return this.reloj.fechaActual();
     }
 
+    public void buscarEnComputadora(String... parametros) {
+        ArrayList<String> sospechosos;
+        sospechosos = Interpol.buscarSospechosos(parametros);
+
+        for(String sospechoso:sospechosos){
+            System.out.println(sospechoso);
+        }
+    }
 }
