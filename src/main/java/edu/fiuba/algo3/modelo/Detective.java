@@ -9,11 +9,6 @@ public class Detective {
     private Mapa mapa;
     private int heridas;
 
-    public Detective(String nombreParametro){
-        this.nombre = nombreParametro;
-        this.reloj = new Reloj();
-        this.heridas = 0;
-    }
 
     public Detective(String nombreParametro, Mapa mapa_parametro){
         this.nombre = nombreParametro;
@@ -23,7 +18,7 @@ public class Detective {
     }
 
     public void entrar(Edificio edificio) {
-        this.pista = edificio.entrar(reloj);
+        this.pista = this.mapa.entrar(this.reloj, edificio);
     }
 
     public Pista mostrarPista() {

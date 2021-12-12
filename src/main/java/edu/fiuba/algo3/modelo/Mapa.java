@@ -28,4 +28,8 @@ public class Mapa {
     public Destino destinoActual() {
         return this.destinoActual;
     }
+
+    public Pista entrar(Reloj reloj, Edificio edificio) {
+        return this.destinoActual.entrar(reloj,edificio);
+    }
 }

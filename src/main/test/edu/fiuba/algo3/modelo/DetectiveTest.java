@@ -9,65 +9,99 @@ public class DetectiveTest {
 
     @Test
     public void detectiveEntraAlBancoYMuestraPista(){
-        Detective detective = new Detective("Alberto");
-        Pista aux = new Pista("La moneda es el peso mexicano"); //Por archivos
-        Banco banco = new Banco(aux);
+
+        Pista pista = new Pista("La moneda es el peso mexicano");
+
+        Banco banco = new Banco(pista);
+
+        Destino Montreal = new Destino("Montreal", banco);
+
+        Mapa mapa = new Mapa(Montreal);
+
+        Detective detective = new Detective("Alberto", mapa);
 
         detective.entrar(banco);
 
-        assertEquals(aux , detective.mostrarPista());
+        assertEquals(pista , detective.mostrarPista());
     }
 
     @Test
     public void detectiveEntraAlBancoYMuestraPistaYEntraBiblioYMuestraPista(){
-        Detective detective = new Detective("Tomas");
-        Pista aux = new Pista("La moneda es el peso mexicano"); //Por archivos
-        Pista aux_2 = new Pista("Son descendientes de los aztecas");
-        Banco banco = new Banco(aux);
-        Biblioteca biblioteca = new Biblioteca(aux_2);
+
+        Pista pista_banco = new Pista("La moneda es el peso mexicano"); //Por archivos
+        Pista pista_biblioteca = new Pista("Son descendientes de los aztecas");
+
+        Banco banco = new Banco(pista_banco);
+        Biblioteca biblioteca = new Biblioteca(pista_biblioteca);
+
+        Destino Montreal = new Destino("Montreal", banco, biblioteca);
+        Mapa mapa = new Mapa(Montreal);
+
+        Detective detective = new Detective("Tomas", mapa);
 
         detective.entrar(banco);
-        assertEquals(aux , detective.mostrarPista());
+        assertEquals(pista_banco , detective.mostrarPista());
 
         detective.entrar(biblioteca);
-        assertEquals(aux_2 , detective.mostrarPista());
+        assertEquals(pista_biblioteca , detective.mostrarPista());
 
     }
 
+
+
     @Test
     public void detectiveNovatoViajaDeMontrealAMexicoYSuDestinoActualEsMexico(){
-        Destino montreal = new Destino("Montreal");
-        Destino mexico = new Destino("Mexico");
 
-        Mapa mapa = new Mapa(montreal, mexico);
+        Pista pista = new Pista("Una pista auxiliar");
+
+        Banco edif_montreal = new Banco(pista);
+        Banco edif_mexico = new Banco(pista);
+
+        Destino Montreal = new Destino("Montreal", edif_montreal);
+        Destino Mexico = new Destino("Mexico", edif_mexico);
+
+        Mapa mapa = new Mapa(Montreal, Mexico);
         Detective detective = new Detective("Jesus", mapa);
 
-        detective.viajar(mexico);
+        detective.viajar(Mexico);
 
-        assertEquals(mexico,detective.destinoActual());
+        assertEquals(Mexico,detective.destinoActual());
     }
 
     @Test
     public void detectiveNovatoViajaDeMontrealAMexicoYDemora5Horas(){
-        Destino montreal = new Destino("Montreal");
-        Destino mexico = new Destino("Mexico");
 
-        Mapa mapa = new Mapa(montreal, mexico);
+        Pista pista = new Pista("Una pista auxiliar");
+
+        Banco edif_montreal = new Banco(pista);
+        Banco edif_mexico = new Banco(pista);
+
+        Destino Montreal = new Destino("Montreal", edif_montreal);
+        Destino Mexico = new Destino("Mexico", edif_mexico);
+
+        Mapa mapa = new Mapa(Montreal, Mexico);
         Detective detective = new Detective("Jesus", mapa);
 
-        detective.viajar(mexico);
+        detective.viajar(Mexico);
 
         assertEquals("Lunes , 12:00", detective.fechaActual());
     }
 
     @Test
     public void detectiveVisita3VecesPuertoYMuestraPistaYVisita55VecesAeropuerto(){
-        Detective detective = new Detective("Mabel");
+
+
         Pista pista_aeropuerto = new Pista("Esta a una distancia de 250 km");
         Pista pista_puerto = new Pista("Verde blanco y rojo");
 
         Puerto puerto = new Puerto(pista_puerto);
         Aeropuerto aeropuerto = new Aeropuerto(pista_aeropuerto);
+
+        Destino Montreal = new Destino("Montreal", puerto, aeropuerto);
+        Mapa mapa = new Mapa(Montreal);
+
+        Detective detective = new Detective("Tomas", mapa);
+
 
         detective.entrar(aeropuerto);
         assertEquals(pista_aeropuerto , detective.mostrarPista());
@@ -87,7 +121,16 @@ public class DetectiveTest {
 
     @Test
     public void detectiveRecibeCuchilladaYDuermeDosHoras(){
-        Detective detective = new Detective("Milanessi");
+
+        Pista pista = new Pista("Una pista aux");
+
+        Banco banco = new Banco(pista);
+
+        Destino Montreal = new Destino("Montreal", banco);
+
+        Mapa mapa = new Mapa(Montreal);
+
+        Detective detective = new Detective("Alberto", mapa);
 
         detective.recibirCuchillada();
         assertEquals("Lunes , 9:00", detective.fechaActual());
@@ -95,7 +138,16 @@ public class DetectiveTest {
 
     @Test
     public void detectiveRecibeSegundaCuchilladaYDuermeUnaHoras(){
-        Detective detective = new Detective("Milanessi");
+
+        Pista pista = new Pista("Una pista aux");
+
+        Banco banco = new Banco(pista);
+
+        Destino Montreal = new Destino("Montreal", banco);
+
+        Mapa mapa = new Mapa(Montreal);
+
+        Detective detective = new Detective("Alberto", mapa);
 
         detective.recibirCuchillada();
         detective.recibirCuchillada();
@@ -104,7 +156,16 @@ public class DetectiveTest {
 
     @Test
     public void detectiveRecibeHeridaPorArmaDeFuegoYDuermeCuatroHoras(){
-        Detective detective = new Detective("Milanessi");
+
+        Pista pista = new Pista("Una pista aux");
+
+        Banco banco = new Banco(pista);
+
+        Destino Montreal = new Destino("Montreal", banco);
+
+        Mapa mapa = new Mapa(Montreal);
+
+        Detective detective = new Detective("Alberto", mapa);
 
         detective.recibirBalazo();
         assertEquals("Lunes , 11:00", detective.fechaActual());
