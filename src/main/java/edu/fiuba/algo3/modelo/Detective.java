@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.reloj.Reloj;
+
 import java.util.ArrayList;
 
 public class Detective {
@@ -10,9 +12,9 @@ public class Detective {
     private int heridas;
 
 
-    public Detective(String nombreParametro, Mapa mapa_parametro){
-        this.nombre = nombreParametro;
-        this.mapa = mapa_parametro;
+    public Detective(String nombre_p, Mapa mapa_p){
+        this.nombre = nombre_p;
+        this.mapa = mapa_p;
         this.reloj = new Reloj();
         this.heridas = 0;
     }
@@ -52,14 +54,4 @@ public class Detective {
         return this.reloj.fechaActual();
     }
 
-    public void buscarEnComputadora(String... parametros) {
-        ArrayList<String> sospechosos;
-        sospechosos = Interpol.buscarSospechosos(parametros);
-        if(sospechosos.size() != 0){
-            for(String sospechoso:sospechosos){
-            System.out.println(sospechoso);
-            }
-        }
-        else System.out.println("No hay sospechosos que coindican con los datos");
-    }
 }

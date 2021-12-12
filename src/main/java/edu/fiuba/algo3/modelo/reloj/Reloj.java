@@ -1,6 +1,8 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.reloj;
 
 import edu.fiuba.algo3.modelo.exceptions.TiempoAgotadoException;
+import edu.fiuba.algo3.modelo.reloj.Dia;
+import edu.fiuba.algo3.modelo.reloj.Lunes;
 
 public class Reloj {
 

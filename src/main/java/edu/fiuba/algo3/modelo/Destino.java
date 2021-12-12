@@ -1,6 +1,9 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.reloj.Reloj;
+
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Destino {
     private String nombre;
@@ -11,9 +14,7 @@ public class Destino {
 
         this.edificios = new ArrayList<>();
 
-        for (int i=0; i<edificios_p.length; i++){
-            this.edificios.add(edificios_p[i]);
-        }
+        Collections.addAll(this.edificios, edificios_p);
     }
 
     public Pista entrar(Reloj reloj, Edificio edificio) {

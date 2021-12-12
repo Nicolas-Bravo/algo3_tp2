@@ -1,4 +1,7 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.reloj;
+
+import edu.fiuba.algo3.modelo.reloj.Dia;
+import edu.fiuba.algo3.modelo.reloj.Sabado;
 
 public class Viernes implements Dia {
     private int hora;

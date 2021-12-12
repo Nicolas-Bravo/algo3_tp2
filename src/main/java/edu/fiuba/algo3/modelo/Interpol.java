@@ -12,26 +12,13 @@ public class Interpol{
     public static ArrayList<String> buscarSospechosos(String... datos)throws DescripcionIngresadaErroneaError {
         ArrayList<String> lista_nombres = new ArrayList<>();
         try {
-            File myObj = new File("/home/fran/algo3_tp2/Archivos/ladrones.csv");
+            File myObj = new File("Archivos/ladrones.csv");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
                 Sospechoso sospechoso = new Sospechoso(data);
                 sospechoso.contiene(datos, lista_nombres);
-            /*
-                boolean contienetodos;
-                for(String dato:datos){
-                    contienetodos=data.contains(dato);
-
-                }
-                if(contienetodos){
-                    lista_nombres.add(data.split(",")[0]);
-                }
-             */
            }
-
-
-
             myReader.close();
         }
         catch (FileNotFoundException e) {

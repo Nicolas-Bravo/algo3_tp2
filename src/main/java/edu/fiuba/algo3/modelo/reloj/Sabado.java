@@ -1,17 +1,19 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.reloj;
 
-public class Lunes implements Dia {
+import edu.fiuba.algo3.modelo.reloj.Dia;
+import edu.fiuba.algo3.modelo.reloj.Domingo;
 
+public class Sabado implements Dia {
     private int hora;
 
-    public Lunes(int hora_p) {
+    public Sabado(int hora_p) {
         this.hora = hora_p;
     }
 
     @Override
     public Dia aumentarHoras(int horas_p) {
         if (this.hora + horas_p > 23){
-            Dia aux = new Martes(8);
+            Dia aux = new Domingo(8);
             return aux.aumentarHoras(horas_p-(24-this.hora));
         }
         this.hora += horas_p;
@@ -20,6 +22,6 @@ public class Lunes implements Dia {
 
     @Override
     public String fechaActual() {
-        return ("Lunes , "+this.hora+":00");
+        return ("Sabado , "+this.hora+":00");
     }
 }

@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.reloj.Reloj;
+
 public abstract class Edificio {
 
     protected final Pista pista;

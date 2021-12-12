@@ -1,6 +1,7 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.reloj;
 
 import edu.fiuba.algo3.modelo.exceptions.TiempoAgotadoException;
+import edu.fiuba.algo3.modelo.reloj.Dia;
 
 public class Domingo implements Dia {
     private int hora;
