@@ -10,7 +10,7 @@ public class CasosDeUsoTest {
     public void detectiveCargaDatosEnComputadorYBuscaSospechosos(){
         Detective detective = new Detective("Alberto");
 
-        detective.buscarEnComputadora("Blanco", "Convertible");
+        detective.buscarEnComputadora("Limusina");
 
 }
 }

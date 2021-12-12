@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.exceptions.DescripcionIngresadaErroneaError;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -22,6 +24,5 @@ public class Sospechoso {
         }
 
     }
-
-    }
+}
 
