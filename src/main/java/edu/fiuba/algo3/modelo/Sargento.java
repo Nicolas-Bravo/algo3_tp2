@@ -1,9 +1,8 @@
 package edu.fiuba.algo3.modelo;
 
-public class Detective implements Rango {
-
+public class Sargento implements Rango {
     @Override
     public int calcularDemoraPorDistancia(int distancia) {
-        return distancia/1100;
+        return distancia/1500;
     }
 }

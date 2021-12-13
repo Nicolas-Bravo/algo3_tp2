@@ -1,6 +1,9 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.reloj.Reloj;
+
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Mapa {
 
@@ -8,9 +11,12 @@ public class Mapa {
     private Destino destinoActual;
     private CalculadorDistancias calculadorDistancias;
 
-    public Mapa(ArrayList<Destino> destinos_parametros){
-        this.destinos = destinos_parametros;
-        this.destinoActual = destinos_parametros.get(0);
+    public Mapa(Destino... destinos_p) {
+        this.destinos = new ArrayList<>();
+
+        Collections.addAll(this.destinos, destinos_p);
+
+        this.destinoActual = this.destinos.get(0);
         this.calculadorDistancias = new CalculadorDistancias();
     }
 
@@ -22,5 +28,9 @@ public class Mapa {
 
     public Destino destinoActual() {
         return this.destinoActual;
+    }
+
+    public Pista entrar(Reloj reloj, Edificio edificio) {
+        return this.destinoActual.entrar(reloj,edificio);
     }
 }
