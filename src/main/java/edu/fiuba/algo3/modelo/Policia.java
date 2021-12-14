@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.exceptions.IntentoDeArrestoExecption;
 import edu.fiuba.algo3.modelo.reloj.Reloj;
 
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ public class Policia {
     private Rango rango;
     private int heridas;
     private ArrayList<String> sospechososActuales;
+    private Caso casoActual;
 
 
     public Policia(String nombre_p, Rango rango_p, Mapa mapa_p){
@@ -21,10 +23,17 @@ public class Policia {
         this.mapa = mapa_p;
         this.rango = rango_p;
         this.heridas = 0;
+
     }
 
     public void entrar(Edificio edificio) {
-        this.pista = this.mapa.entrar(this.reloj, edificio);
+        try{
+            this.pista = this.mapa.entrar(this.reloj, edificio);
+        }catch (IntentoDeArrestoExecption e) {
+            if(this.casoActual.arrestar()){
+                this.rango.sumarArresto();
+            }
+        }
     }
 
     public Pista mostrarPista() {
@@ -57,14 +66,20 @@ public class Policia {
     public String fechaActual() {
         return this.reloj.fechaActual();
     }
-    public void actualizarSospechosos(String... datos){ this.sospechososActuales  = Interpol.buscarSospechosos(datos);}
+    public void actualizarSospechosos(String... datos){ this.sospechososActuales  = BaseDeDatosLadron.buscarSospechosos(datos);}
 
     public void emitirOrdenDeArresto(String... datos){
         actualizarSospechosos(datos);
         if(sospechososActuales.size()==1){
-
+            this.casoActual.emitirOrden(sospechososActuales.get(0));
         }
+        else System.out.println("Hay mas de uno");
 
+
+    }
+
+    public void asignarCaso(Caso caso){
+        this.casoActual = caso;
 
     }
 

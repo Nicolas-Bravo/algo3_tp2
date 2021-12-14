@@ -14,4 +14,7 @@ public class Detective implements Rango {
     }
     @Override
     public int cantidadDeArrestos(){return arrestos;}
+    @Override
+    public void sumarArresto()
+    {arrestos++;}
 }

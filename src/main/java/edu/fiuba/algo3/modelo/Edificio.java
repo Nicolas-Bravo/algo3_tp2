@@ -11,10 +11,7 @@ public class Edificio {
         this.pista = entrada;
         this.controlador = new ControladorEntradas();
     }
-    protected Edificio(){
-        this.controlador = new ControladorEntradas();
-        this.pista = new Pista("");
-    }
+
     public Pista entrar(Reloj reloj) {
         reloj.aumentarHoras(controlador.demoraTemporal());
         return this.pista;

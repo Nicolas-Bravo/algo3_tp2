@@ -7,7 +7,7 @@ import java.io.FileNotFoundException;  // Import this class to handle errors
 import java.util.ArrayList;
 import java.util.Scanner; // Import the Scanner class to read text files
 
-public class Interpol{
+public class BaseDeDatosLadron{
 
     public static ArrayList<String> buscarSospechosos(String... datos)throws DescripcionIngresadaErroneaError {
         ArrayList<String> lista_nombres = new ArrayList<>();
@@ -32,4 +32,5 @@ public class Interpol{
         else return lista_nombres;
 
     }
+
 }
