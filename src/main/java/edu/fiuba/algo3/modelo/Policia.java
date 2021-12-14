@@ -2,6 +2,8 @@ package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.reloj.Reloj;
 
+import java.util.ArrayList;
+
 
 public class Policia {
     private final String nombre;
@@ -10,6 +12,7 @@ public class Policia {
     private Mapa mapa;
     private Rango rango;
     private int heridas;
+    private ArrayList<String> sospechososActuales;
 
 
     public Policia(String nombre_p, Rango rango_p, Mapa mapa_p){
@@ -54,5 +57,18 @@ public class Policia {
     public String fechaActual() {
         return this.reloj.fechaActual();
     }
+    public void actualizarSospechosos(String... datos){ this.sospechososActuales  = Interpol.buscarSospechosos(datos);}
 
+    public void emitirOrdenDeArresto(String... datos){
+        actualizarSospechosos(datos);
+        if(sospechososActuales.size()==1){
+
+        }
+
+
+    }
+
+    public int cantidadDeArrestos() {
+        return rango.cantidadDeArrestos();
+    }
 }

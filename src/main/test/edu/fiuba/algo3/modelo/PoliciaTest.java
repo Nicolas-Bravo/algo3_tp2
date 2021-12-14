@@ -229,6 +229,76 @@ public class PoliciaTest {
         assertEquals("Lunes , 11:00", policia.fechaActual());
 
     }
+/*
+    @Test
+    public void detectiveViajaDeMontrealAMexicoYDemoraCuatroHoras(){
 
+        Pista pista = new Pista("Una pista auxiliar");
 
+        Banco edif_montreal = new Banco(pista);
+        Banco edif_mexico = new Banco(pista);
+
+        Destino Montreal = new Destino("Montreal", edif_montreal);
+        Destino Mexico = new Destino("Mexico", edif_mexico);
+
+        Mapa mapa = new Mapa(Montreal, Mexico);
+        Policia policia = new Policia("Jesus", new Detective(), mapa);
+
+        policia.viajar(Mexico);
+
+        assertEquals("Lunes , 11:00", policia.fechaActual());
+    }
+
+    @Test
+    public void investigadorViajaDeMontrealAMexicoYDemoraTresHoras(){
+
+        Pista pista = new Pista("Una pista auxiliar");
+
+        Banco edif_montreal = new Banco(pista);
+        Banco edif_mexico = new Banco(pista);
+
+        Destino Montreal = new Destino("Montreal", edif_montreal);
+        Destino Mexico = new Destino("Mexico", edif_mexico);
+
+        Mapa mapa = new Mapa(Montreal, Mexico);
+        Policia policia = new Policia("Jesus", new Investigador(), mapa);
+
+        policia.viajar(Mexico);
+
+        assertEquals("Lunes , 10:00", policia.fechaActual());
+    }
+
+    @Test
+    public void sargentoViajaDeMontrealAMexicoYDemoraTresHoras(){
+
+        Pista pista = new Pista("Una pista auxiliar");
+
+        Banco edif_montreal = new Banco(pista);
+        Banco edif_mexico = new Banco(pista);
+
+        Destino Montreal = new Destino("Montreal", edif_montreal);
+        Destino Mexico = new Destino("Mexico", edif_mexico);
+
+        Mapa mapa = new Mapa(Montreal, Mexico);
+        Policia policia = new Policia("Jesus", new Sargento(), mapa);
+
+        policia.viajar(Mexico);
+
+        assertEquals("Lunes , 10:00", policia.fechaActual());
+    }
+  
+    @Test
+    public void intentoDeArrestoDeSospechosoSinOrdenNoSumaArresto(){
+        EdificioFinal edificio = new EdificioFinal(new Pista("Sospechoso visto recientemente"));
+        DestinoFinal destino = new DestinoFinal("Moscu", edificio);
+        Mapa mapa = new Mapa(destino);
+        Policia novato = new Policia("Esteban", new Novato(), mapa);
+
+        assertEquals(0,novato.cantidadDeArrestos());
+
+        novato.entrar(edificio);
+        assertEquals(0, novato.cantidadDeArrestos());
+    }
+
+*/
 }
