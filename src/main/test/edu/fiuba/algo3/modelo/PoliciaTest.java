@@ -13,7 +13,7 @@ public class PoliciaTest {
 
         Banco banco = new Banco(pista);
 
-        Destino Montreal = new Destino("Montreal", banco);
+        Destino Montreal = new Destino("Montreal", 45.50884, 73.58781, banco);
 
         Mapa mapa = new Mapa(Montreal);
 
@@ -33,7 +33,7 @@ public class PoliciaTest {
         Banco banco = new Banco(pista_banco);
         Biblioteca biblioteca = new Biblioteca(pista_biblioteca);
 
-        Destino Montreal = new Destino("Montreal", banco, biblioteca);
+        Destino Montreal = new Destino("Montreal", 45.50884, 73.58781, banco, biblioteca);
         Mapa mapa = new Mapa(Montreal);
 
         Policia policia = new Policia("Tomas", new Novato(), mapa);
@@ -56,8 +56,8 @@ public class PoliciaTest {
         Banco edif_montreal = new Banco(pista);
         Banco edif_mexico = new Banco(pista);
 
-        Destino Montreal = new Destino("Montreal", edif_montreal);
-        Destino Mexico = new Destino("Mexico", edif_mexico);
+        Destino Montreal = new Destino("Montreal", 45.50884, 73.58781, edif_montreal);
+        Destino Mexico = new Destino("Mexico", 19.42847, 99.12766 , edif_mexico);
 
         Mapa mapa = new Mapa(Montreal, Mexico);
         Policia policia = new Policia("Jesus", new Novato(), mapa);
@@ -68,23 +68,82 @@ public class PoliciaTest {
     }
 
     @Test
-    public void novatoViajaDeMontrealAMexicoYDemoraCincoHoras(){
+    public void novatoViajaDeMontrealAMexicoYDemoraCuatroHoras(){
 
         Pista pista = new Pista("Una pista auxiliar");
 
         Banco edif_montreal = new Banco(pista);
         Banco edif_mexico = new Banco(pista);
 
-        Destino Montreal = new Destino("Montreal", edif_montreal);
-        Destino Mexico = new Destino("Mexico", edif_mexico);
+        Destino Montreal = new Destino("Montreal", 45.50884, 73.58781, edif_montreal);
+        Destino Mexico = new Destino("Mexico", 19.42847, 99.12766 , edif_mexico);
 
         Mapa mapa = new Mapa(Montreal, Mexico);
         Policia policia = new Policia("Jesus", new Novato(), mapa);
 
         policia.viajar(Mexico);
 
-        assertEquals("Lunes , 12:00", policia.fechaActual());
+        assertEquals("Lunes , 11:00", policia.fechaActual());
     }
+
+
+    @Test
+    public void detectiveViajaDeMontrealAMexicoYDemoraTresHoras(){
+
+        Pista pista = new Pista("Una pista auxiliar");
+
+        Banco edif_montreal = new Banco(pista);
+        Banco edif_mexico = new Banco(pista);
+
+        Destino Montreal = new Destino("Montreal", 45.50884, 73.58781, edif_montreal);
+        Destino Mexico = new Destino("Mexico", 19.42847, 99.12766 , edif_mexico);
+
+        Mapa mapa = new Mapa(Montreal, Mexico);
+        Policia policia = new Policia("Jesus", new Detective(), mapa);
+
+        policia.viajar(Mexico);
+
+        assertEquals("Lunes , 10:00", policia.fechaActual());
+    }
+
+    @Test
+    public void investigadorViajaDeMontrealAMexicoYDemoraTresHoras(){
+
+        Pista pista = new Pista("Una pista auxiliar");
+
+        Banco edif_montreal = new Banco(pista);
+        Banco edif_mexico = new Banco(pista);
+
+        Destino Montreal = new Destino("Montreal", 45.50884, 73.58781, edif_montreal);
+        Destino Mexico = new Destino("Mexico", 19.42847, 99.12766 , edif_mexico);
+
+        Mapa mapa = new Mapa(Montreal, Mexico);
+        Policia policia = new Policia("Jesus", new Investigador(), mapa);
+
+        policia.viajar(Mexico);
+
+        assertEquals("Lunes , 10:00", policia.fechaActual());
+    }
+
+    @Test
+    public void sargentoViajaDeMontrealAMexicoYDemoraDosHoras(){
+
+        Pista pista = new Pista("Una pista auxiliar");
+
+        Banco edif_montreal = new Banco(pista);
+        Banco edif_mexico = new Banco(pista);
+
+        Destino Montreal = new Destino("Montreal", 45.50884, 73.58781, edif_montreal);
+        Destino Mexico = new Destino("Mexico", 19.42847, 99.12766 , edif_mexico);
+
+        Mapa mapa = new Mapa(Montreal, Mexico);
+        Policia policia = new Policia("Jesus", new Sargento(), mapa);
+
+        policia.viajar(Mexico);
+
+        assertEquals("Lunes , 9:00", policia.fechaActual());
+    }
+
 
     @Test
     public void novatoVisita3VecesPuertoYMuestraPistaYVisita55VecesAeropuerto(){
@@ -96,7 +155,7 @@ public class PoliciaTest {
         Puerto puerto = new Puerto(pista_puerto);
         Aeropuerto aeropuerto = new Aeropuerto(pista_aeropuerto);
 
-        Destino Montreal = new Destino("Montreal", puerto, aeropuerto);
+        Destino Montreal = new Destino("Montreal", 45.50884, 73.58781, puerto, aeropuerto);
         Mapa mapa = new Mapa(Montreal);
 
         Policia policia = new Policia("Tomas", new Novato(), mapa);
@@ -125,7 +184,7 @@ public class PoliciaTest {
 
         Banco banco = new Banco(pista);
 
-        Destino Montreal = new Destino("Montreal", banco);
+        Destino Montreal = new Destino("Montreal", 45.50884, 73.58781, banco);
 
         Mapa mapa = new Mapa(Montreal);
 
@@ -142,7 +201,7 @@ public class PoliciaTest {
 
         Banco banco = new Banco(pista);
 
-        Destino Montreal = new Destino("Montreal", banco);
+        Destino Montreal = new Destino("Montreal", 45.50884, 73.58781, banco);
 
         Mapa mapa = new Mapa(Montreal);
 
@@ -160,7 +219,7 @@ public class PoliciaTest {
 
         Banco banco = new Banco(pista);
 
-        Destino Montreal = new Destino("Montreal", banco);
+        Destino Montreal = new Destino("Montreal", 45.50884, 73.58781, banco);
 
         Mapa mapa = new Mapa(Montreal);
 
@@ -169,63 +228,6 @@ public class PoliciaTest {
         policia.recibirBalazo();
         assertEquals("Lunes , 11:00", policia.fechaActual());
 
-    }
-
-    @Test
-    public void detectiveViajaDeMontrealAMexicoYDemoraCuatroHoras(){
-
-        Pista pista = new Pista("Una pista auxiliar");
-
-        Banco edif_montreal = new Banco(pista);
-        Banco edif_mexico = new Banco(pista);
-
-        Destino Montreal = new Destino("Montreal", edif_montreal);
-        Destino Mexico = new Destino("Mexico", edif_mexico);
-
-        Mapa mapa = new Mapa(Montreal, Mexico);
-        Policia policia = new Policia("Jesus", new Detective(), mapa);
-
-        policia.viajar(Mexico);
-
-        assertEquals("Lunes , 11:00", policia.fechaActual());
-    }
-
-    @Test
-    public void investigadorViajaDeMontrealAMexicoYDemoraTresHoras(){
-
-        Pista pista = new Pista("Una pista auxiliar");
-
-        Banco edif_montreal = new Banco(pista);
-        Banco edif_mexico = new Banco(pista);
-
-        Destino Montreal = new Destino("Montreal", edif_montreal);
-        Destino Mexico = new Destino("Mexico", edif_mexico);
-
-        Mapa mapa = new Mapa(Montreal, Mexico);
-        Policia policia = new Policia("Jesus", new Investigador(), mapa);
-
-        policia.viajar(Mexico);
-
-        assertEquals("Lunes , 10:00", policia.fechaActual());
-    }
-
-    @Test
-    public void sargentoViajaDeMontrealAMexicoYDemoraTresHoras(){
-
-        Pista pista = new Pista("Una pista auxiliar");
-
-        Banco edif_montreal = new Banco(pista);
-        Banco edif_mexico = new Banco(pista);
-
-        Destino Montreal = new Destino("Montreal", edif_montreal);
-        Destino Mexico = new Destino("Mexico", edif_mexico);
-
-        Mapa mapa = new Mapa(Montreal, Mexico);
-        Policia policia = new Policia("Jesus", new Sargento(), mapa);
-
-        policia.viajar(Mexico);
-
-        assertEquals("Lunes , 10:00", policia.fechaActual());
     }
 
 
