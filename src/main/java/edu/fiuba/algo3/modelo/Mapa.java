@@ -20,10 +20,11 @@ public class Mapa {
         this.calculadorDistancias = new CalculadorDistancias();
     }
 
-    public int viajar(Destino destino) {
+    public double viajar(Destino destino) {
         int index = this.destinos.indexOf(destino);
+        double distancia = this.calculadorDistancias.distancia(this.destinoActual.latitud(), this.destinoActual.longitud(), destino.latitud(), destino.longitud(), "K");
         this.destinoActual = destinos.get(index);
-        return this.calculadorDistancias.distancia(this.destinoActual, destino);
+        return distancia;
     }
 
     public Destino destinoActual() {

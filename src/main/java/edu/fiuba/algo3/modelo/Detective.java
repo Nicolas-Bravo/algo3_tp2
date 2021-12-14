@@ -9,8 +9,8 @@ public class Detective implements Rango {
     }
 
     @Override
-    public int calcularDemoraPorDistancia(int distancia) {
-        return distancia/1100;
+    public int calcularDemoraPorDistancia(double distancia) {
+        return (int)Math.round(distancia/1100.00);
     }
     @Override
     public int cantidadDeArrestos(){return arrestos;}
