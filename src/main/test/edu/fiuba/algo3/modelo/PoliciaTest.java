@@ -227,6 +227,17 @@ public class PoliciaTest {
 
         assertEquals("Lunes , 10:00", policia.fechaActual());
     }
+    @Test
+    public void intentoDeArrestoDeSospechosoSinOrdenNoSumaArresto(){
+        EdificioFinal edificio = new EdificioFinal(new Pista("Sospechoso visto recientemente"));
+        DestinoFinal destino = new DestinoFinal("Moscu", edificio);
+        Mapa mapa = new Mapa(destino);
+        Policia novato = new Policia("Esteban", new Novato(), mapa);
 
+        assertEquals(0,novato.cantidadDeArrestos());
+
+        novato.entrar(edificio);
+        assertEquals(0, novato.cantidadDeArrestos());
+    }
 
 }
