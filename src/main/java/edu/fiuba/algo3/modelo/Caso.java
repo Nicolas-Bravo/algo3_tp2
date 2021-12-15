@@ -11,14 +11,14 @@ public class Caso {
     }
 
     public void emitirOrden(String nombre){
-            if(this.nombreLadron.equals(nombre)){
-                this.orden = true;
+        if(this.nombreLadron.equals(nombre)){
+            this.orden = true;
         }
-
     }
 
-    public boolean arrestar(){
-        return orden;
-
+    public void arresteSospechoso(Policia policia) {
+        if (orden) {
+            policia.sumarArresto();
+        }
     }
 }

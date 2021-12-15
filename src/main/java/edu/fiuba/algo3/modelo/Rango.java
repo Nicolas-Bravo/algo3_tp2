@@ -6,5 +6,5 @@ public interface Rango {
 
     int calcularDemoraPorDistancia(double distancia);
 
-    void sumarArresto();
+    Rango sumarArresto();
 }
