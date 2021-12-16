@@ -5,7 +5,7 @@ Actor User
 User -> ":Policia" : emitirOrdenDeArresto("Masculino","Croquet","Convertible", "Negro", "Joyeria")
 Activate ":Policia"
 
-"Policia" -> ":baseDeDatosLadron" : buscarSospechosos("Masculino","Croquet","Convertible", "Negro", "Joyeria")
+":Policia" -> ":baseDeDatosLadron" : buscarSospechosos("Masculino","Croquet","Convertible", "Negro", "Joyeria")
 activate ":baseDeDatosLadron"
 
 ":baseDeDatosLadron" --> ":Policia" : "Fast Eddie B."
@@ -20,6 +20,6 @@ group case [cantidadSospechosos = 1]
 end
 
 ":Policia" --> User
-deactivate "Policia"
+deactivate ":Policia"
 
 @enduml
