@@ -1,0 +1,22 @@
+@startuml
+
+Actor User
+
+User -> ":Policia" : emitirOrdenDeArresto("Masculino","Escalar")
+Activate ":Policia"
+
+":Policia" -> ":baseDeDatosLadron" : buscarSospechosos("Masculino","Escalar")
+activate ":baseDeDatosLadron"
+
+":baseDeDatosLadron" --> ":Policia" : "Nick Brunch", "Len Bulk"
+deactivate ":baseDeDatosLadron"
+
+group case [cantidadSospechosos != 1]
+
+    ":Policia" --> User
+    note right:si la base de datos devuelve mas de un sospechoso, entonces no se emite orden
+    deactivate ":Policia"
+
+end
+
+@enduml

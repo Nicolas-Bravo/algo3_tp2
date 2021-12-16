@@ -2,10 +2,10 @@
 
 Actor User
 
-User -> "p :Policia" : viajar(d :Destino)
-Activate "p :Policia"
+User -> ":Policia" : viajar(d :Destino)
+Activate ":Policia"
 
-"p :Policia" -> ":Mapa" : viajar(d :Destino)
+":Policia" -> ":Mapa" : viajar(d :Destino)
 activate ":Mapa"
 
 ":Mapa" -> ":CalculadorDistancias" : distancia(coordenadas)
@@ -16,22 +16,22 @@ deactivate ":CalculadorDistancias"
 
 ":Mapa" -> ":Mapa" : actualizarActual(d :Destino)
 
-":Mapa" --> "p :Policia" : distancia
+":Mapa" --> ":Policia" : distancia
 deactivate ":Mapa"
 
-"p :Policia" -> ":Rango" : demoraPorDistancia( distancia )
+":Policia" -> ":Rango" : demoraPorDistancia( distancia )
 activate ":Rango"
 
-":Rango" --> "p :Policia" : horasGastadas
+":Rango" --> ":Policia" : horasGastadas
 deactivate ":Rango"
 
-"p :Policia" -> ":Reloj" : aumentarHoras( horasGastadas )
+":Policia" -> ":Reloj" : aumentarHoras( horasGastadas )
 activate ":Reloj"
 
-":Reloj" --> "p :Policia"
+":Reloj" --> ":Policia"
 deactivate ":Reloj"
 
-"p :Policia" --> User
-deactivate "p :Policia"
+":Policia" --> User
+deactivate ":Policia"
 
 @enduml

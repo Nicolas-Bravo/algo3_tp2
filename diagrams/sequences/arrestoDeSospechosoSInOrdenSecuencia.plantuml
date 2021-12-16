@@ -27,9 +27,10 @@ group catch [IntentoDeArrestoExecption()]
 
     ":Policia" -> "actual : Caso" : arresteSospechoso(":Policia")
 
-    group case [ordenCorrespondeALadronFinal]
+    group case [ordenNoCorrespondeALadronFinal]
 
-        "actual : Caso" --> ":Policia" : sumarArresto()
+        "actual : Caso" --> ":Policia"
+        note left: No hay orden emitida, no se suma arresto
 
     end
 

@@ -11,7 +11,7 @@ activate ":baseDeDatosLadron"
 ":baseDeDatosLadron" --> ":Policia" : "Fast Eddie B."
 deactivate ":baseDeDatosLadron"
 
-group if [cantidadSospechosos = 1]
+group case [cantidadSospechosos = 1]
 
     ":Policia" -> "actual :Caso" : emitirOrden("Fast Eddie B.")
 
