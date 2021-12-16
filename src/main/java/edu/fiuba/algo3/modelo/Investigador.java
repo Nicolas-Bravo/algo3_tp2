@@ -2,10 +2,11 @@ package edu.fiuba.algo3.modelo;
 
 public class Investigador implements Rango {
 
-    private int arrestos;
+    private int arrestos, arrestosMaximos;
 
     public Investigador(){
         this.arrestos = 10;
+        this.arrestosMaximos = 19;
     }
 
     @Override
@@ -15,6 +16,11 @@ public class Investigador implements Rango {
     @Override
     public int cantidadDeArrestos(){return arrestos;}
     @Override
-    public void sumarArresto()
-    {arrestos++;}
+    public Rango sumarArresto() {
+        arrestos++;
+        if (arrestos > arrestosMaximos) {
+            return new Sargento();
+        }
+        return this;
+    }
 }

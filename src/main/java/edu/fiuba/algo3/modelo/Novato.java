@@ -2,9 +2,11 @@ package edu.fiuba.algo3.modelo;
 
 public class Novato implements Rango {
     private int arrestos;
+    private int arrestosMaximos;
 
     public Novato(){
         this.arrestos = 0;
+        this.arrestosMaximos = 4;
     }
 
     @Override
@@ -14,6 +16,11 @@ public class Novato implements Rango {
     @Override
     public int cantidadDeArrestos(){return arrestos;}
     @Override
-    public void sumarArresto()
-    {arrestos++;}
+    public Rango sumarArresto() {
+        arrestos++;
+        if (arrestos > arrestosMaximos) {
+            return new Detective();
+        }
+        return this;
+    }
 }

@@ -30,9 +30,7 @@ public class Policia {
         try{
             this.pista = this.mapa.entrar(this.reloj, edificio);
         }catch (IntentoDeArrestoExecption e) {
-            if(this.casoActual.arrestar()){
-                this.rango.sumarArresto();
-            }
+            this.casoActual.arresteSospechoso(this);
         }
     }
 
@@ -74,16 +72,17 @@ public class Policia {
             this.casoActual.emitirOrden(sospechososActuales.get(0));
         }
         else System.out.println("Hay mas de uno");
-
-
     }
 
     public void asignarCaso(Caso caso){
         this.casoActual = caso;
-
     }
 
     public int cantidadDeArrestos() {
         return rango.cantidadDeArrestos();
+    }
+
+    public void sumarArresto() {
+        this.rango = this.rango.sumarArresto();
     }
 }
