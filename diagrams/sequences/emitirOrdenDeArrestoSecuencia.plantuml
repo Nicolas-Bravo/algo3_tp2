@@ -1,0 +1,25 @@
+@startuml
+
+Actor User
+
+User -> ":Policia" : emitirOrdenDeArresto("Masculino","Croquet","Convertible", "Negro", "Joyeria")
+Activate ":Policia"
+
+"Policia" -> ":baseDeDatosLadron" : buscarSospechosos("Masculino","Croquet","Convertible", "Negro", "Joyeria")
+activate ":baseDeDatosLadron"
+
+":baseDeDatosLadron" --> ":Policia" : "Fast Eddie B."
+deactivate ":baseDeDatosLadron"
+
+group if [cantidadSospechosos = 1]
+
+    ":Policia" -> "actual :Caso" : emitirOrden("Fast Eddie B.")
+
+    "actual :Caso" --> ":Policia"
+
+end
+
+":Policia" --> User
+deactivate "Policia"
+
+@enduml

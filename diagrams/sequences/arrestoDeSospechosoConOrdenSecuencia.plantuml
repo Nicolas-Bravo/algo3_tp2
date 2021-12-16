@@ -1,0 +1,41 @@
+@startuml
+
+Actor User
+
+User -> ":Policia" : entrarEdificio(:EdificioFinal)
+Activate ":Policia"
+
+":Policia" -> ":Mapa" : entrarEdificio(:Reloj , :EdificioFinal)
+activate ":Mapa"
+
+":Mapa" -> "actual :DestinoFinal" : entrarEdificio(:Reloj , :EdificioFinal)
+activate "actual :DestinoFinal"
+
+"actual :DestinoFinal" -> ":EdificioFinal" : entrar(:Reloj)
+activate ":EdificioFinal"
+
+":EdificioFinal" --> "actual :DestinoFinal" : IntentoDeArrestoExecption()
+deactivate ":EdificioFinal"
+
+"actual :DestinoFinal" --> ":Mapa" : IntentoDeArrestoExecption()
+deactivate "actual :DestinoFinal"
+
+":Mapa" --> ":Policia" : IntentoDeArrestoExecption()
+deactivate ":Mapa"
+
+group catch [IntentoDeArrestoExecption()]
+
+    ":Policia" -> "actual : Caso" : arresteSospechoso(":Policia")
+
+    group if [ordenCorrespondeALadronFinal]
+
+        "actual : Caso" --> ":Policia" : sumarArresto()
+
+    end
+
+end
+
+":Policia" --> User
+deactivate ":Policia"
+
+@enduml

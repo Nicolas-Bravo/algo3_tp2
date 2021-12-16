@@ -4,7 +4,7 @@
 
 Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUBA
 
-## Grupo {}
+## Grupo {18}
 
 * **Nicolas Bravo** - [Nicolas-Bravo](https://github.com/Nicolas-Bravo)
 * **Valentin Thourte** - [valentinthourte](https://github.com/valentinthourte)
@@ -12,7 +12,7 @@ Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUB
 * **Nahuel Lescano** - [NahuelLescano](https://github.com/NahuelLescano)
 * **Franco Cuppari** - [francupp9-12](https://github.com/francupp9-12)
 
-Corrector: **{Corrector}**
+Corrector: **{Maia Naftali}**
 
 ## Aplicación
 
