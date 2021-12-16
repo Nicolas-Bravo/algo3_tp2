@@ -8,7 +8,7 @@ public class Novato implements Rango {
     }
 
     @Override
-    public int calcularDemoraPorDistancia(double distancia) {
+    public int demoraPorDistancia(double distancia) {
         return (int)Math.round(distancia/900.00);
     }
     @Override

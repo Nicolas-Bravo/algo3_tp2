@@ -1,0 +1,43 @@
+@startuml
+
+Actor User
+
+User -> "p :Policia" : entrarEdificio(e :Edificio)
+Activate "p :Policia"
+
+"p :Policia" -> ":Mapa" : entrarEdificio(:Reloj , e :Edificio)
+activate ":Mapa"
+
+":Mapa" -> "actual :Destino" : entrarEdificio(:Reloj , e :Edificio)
+activate "actual :Destino"
+
+"actual :Destino" -> "e :Edificio" : entrar(:Reloj)
+activate "e :Edificio"
+
+"e :Edificio" -> ":ControladorEntradas" : demoraTemporal()
+activate ":ControladorEntradas"
+
+":ControladorEntradas" --> "e :Edificio" : horasGastadas
+deactivate ":ControladorEntradas"
+
+"e :Edificio" -> ":Reloj" : aumentarHoras( horasGastadas )
+activate ":Reloj"
+
+":Reloj" --> "e :Edificio"
+deactivate ":Reloj"
+
+"e :Edificio" --> "actual :Destino" : pista_e
+deactivate "e :Edificio"
+
+"actual :Destino" --> ":Mapa" : pista_e
+deactivate "actual :Destino"
+
+":Mapa" --> "p :Policia" : pista_e
+deactivate ":Mapa"
+
+"p :Policia" -> "p :Policia": p.pista = pista_e
+
+"p :Policia" --> User
+deactivate "p :Policia"
+
+@enduml

@@ -4,7 +4,7 @@ public interface Rango {
 
     int cantidadDeArrestos();
 
-    int calcularDemoraPorDistancia(double distancia);
+    int demoraPorDistancia(double distancia);
 
     void sumarArresto();
 }

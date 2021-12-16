@@ -7,7 +7,7 @@ public class Sargento implements Rango {
         this.arrestos = 20;
     }
     @Override
-    public int calcularDemoraPorDistancia(double distancia) {
+    public int demoraPorDistancia(double distancia) {
         return (int)Math.round(distancia/1500.00);
     }
     @Override

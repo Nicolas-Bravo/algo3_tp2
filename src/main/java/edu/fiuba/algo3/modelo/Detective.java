@@ -9,7 +9,7 @@ public class Detective implements Rango {
     }
 
     @Override
-    public int calcularDemoraPorDistancia(double distancia) {
+    public int demoraPorDistancia(double distancia) {
         return (int)Math.round(distancia/1100.00);
     }
     @Override

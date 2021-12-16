@@ -1,0 +1,37 @@
+@startuml
+
+Actor User
+
+User -> "p :Policia" : viajar(d :Destino)
+Activate "p :Policia"
+
+"p :Policia" -> ":Mapa" : viajar(d :Destino)
+activate ":Mapa"
+
+":Mapa" -> ":CalculadorDistancias" : distancia(coordenadas)
+activate ":CalculadorDistancias"
+
+":CalculadorDistancias" --> ":Mapa" : distancia
+deactivate ":CalculadorDistancias"
+
+":Mapa" -> ":Mapa" : actualizarActual(d :Destino)
+
+":Mapa" --> "p :Policia" : distancia
+deactivate ":Mapa"
+
+"p :Policia" -> ":Rango" : demoraPorDistancia( distancia )
+activate ":Rango"
+
+":Rango" --> "p :Policia" : horasGastadas
+deactivate ":Rango"
+
+"p :Policia" -> ":Reloj" : aumentarHoras( horasGastadas )
+activate ":Reloj"
+
+":Reloj" --> "p :Policia"
+deactivate ":Reloj"
+
+"p :Policia" --> User
+deactivate "p :Policia"
+
+@enduml
