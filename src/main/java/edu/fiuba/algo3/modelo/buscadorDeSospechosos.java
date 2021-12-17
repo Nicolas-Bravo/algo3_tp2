@@ -7,30 +7,38 @@ import java.io.FileNotFoundException;  // Import this class to handle errors
 import java.util.ArrayList;
 import java.util.Scanner; // Import the Scanner class to read text files
 
-public class BaseDeDatosLadron{
-
-    public static ArrayList<String> buscarSospechosos(String... datos)throws DescripcionIngresadaErroneaError {
-        ArrayList<String> lista_nombres = new ArrayList<>();
+public class BuscadorDeSospechosos {
+    ArrayList<Sospechoso> listaSospechosos;
+    public BuscadorDeSospechosos() {
+        listaSospechosos = new ArrayList<>();
         try {
             File myObj = new File("Archivos/ladrones.csv");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
-                Sospechoso sospechoso = new Sospechoso(data);
-                sospechoso.contiene(datos, lista_nombres);
-           }
+                listaSospechosos.add(new Sospechoso(data));
+            }
             myReader.close();
         }
         catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
+            System.out.println("An error with files occurred.");
             e.printStackTrace();
         }
-
-        if (lista_nombres.isEmpty()){
-            throw new DescripcionIngresadaErroneaError();
-        }
-        else return lista_nombres;
-
     }
 
+
+
+    public ArrayList<Sospechoso> buscarSospechosos(String... pistas)throws DescripcionIngresadaErroneaError {
+        ArrayList<Sospechoso> sospechososPosibles = new ArrayList<>();
+
+        for (Sospechoso sospe: this.listaSospechosos) {
+            if (sospe.coincideCon(pistas)) {
+                sospechososPosibles.add(sospe);
+            }
+        }
+        if (sospechososPosibles.isEmpty()){
+            throw new DescripcionIngresadaErroneaError();
+        }
+        return sospechososPosibles;
+    }
 }
