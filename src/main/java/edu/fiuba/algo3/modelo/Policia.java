@@ -43,7 +43,7 @@ public class Policia {
     }
 
     public void viajar(Destino destino) {
-        this.reloj.aumentarHoras(this.rango.demoraPorDistancia(this.mapa.viajar(destino)));
+        this.rango.demoraPorDistancia(this.mapa.viajar(destino), reloj);
     }
 
     public void recibirCuchillada() {

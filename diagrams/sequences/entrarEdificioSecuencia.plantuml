@@ -14,17 +14,19 @@ activate "actual :Destino"
 "actual :Destino" -> "e :Edificio" : entrar(:Reloj)
 activate "e :Edificio"
 
-"e :Edificio" -> ":ControladorEntradas" : demoraTemporal()
-activate ":ControladorEntradas"
+"e :Edificio" -> ":PrimerEntrada" : demoraTemporal(:Reloj)
+activate ":PrimerEntrada"
 
-":ControladorEntradas" --> "e :Edificio" : horasGastadas
-deactivate ":ControladorEntradas"
-
-"e :Edificio" -> ":Reloj" : aumentarHoras( horasGastadas )
+":PrimerEntrada" -> ":Reloj" : aumentarHoras(1)
 activate ":Reloj"
 
-":Reloj" --> "e :Edificio"
+":Reloj" --> ":PrimerEntrada"
 deactivate ":Reloj"
+
+":PrimerEntrada" --> "e :Edificio" : :SegundaEntrada
+deactivate ":PrimerEntrada"
+
+"e :Edificio" -> "e :Edificio" : actualizarDemorador(:SegundaEntrada)
 
 "e :Edificio" --> "actual :Destino" : pista_e
 deactivate "e :Edificio"

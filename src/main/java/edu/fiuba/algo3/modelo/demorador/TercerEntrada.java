@@ -1,11 +1,10 @@
 package edu.fiuba.algo3.modelo.demorador;
 
-public class TercerEntrada implements DemoradorPorEntradas {
-    public int demoraTemporal(){
-        return 3;
-    }
+import edu.fiuba.algo3.modelo.reloj.Reloj;
 
-    public DemoradorPorEntradas aumentar(){
+public class TercerEntrada implements DemoradorPorEntradas {
+    public DemoradorPorEntradas demoraTemporal(Reloj reloj){
+        reloj.aumentarHoras(3);
         return this;
     }
 }

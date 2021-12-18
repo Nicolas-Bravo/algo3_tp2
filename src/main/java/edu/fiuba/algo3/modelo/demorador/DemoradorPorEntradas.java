@@ -1,8 +1,9 @@
 package edu.fiuba.algo3.modelo.demorador;
 
+import edu.fiuba.algo3.modelo.reloj.Reloj;
+
 public interface DemoradorPorEntradas {
 
-    int demoraTemporal();
+    DemoradorPorEntradas demoraTemporal(Reloj reloj);
 
-    DemoradorPorEntradas aumentar();
 }

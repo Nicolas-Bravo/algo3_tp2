@@ -1,10 +1,12 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.reloj.Reloj;
+
 public interface Rango {
 
     int cantidadDeArrestos();
 
-    int demoraPorDistancia(double distancia);
+    void demoraPorDistancia(double distancia, Reloj reloj);
 
     Rango sumarArresto();
 }

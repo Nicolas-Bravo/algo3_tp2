@@ -19,17 +19,17 @@ deactivate ":CalculadorDistancias"
 ":Mapa" --> ":Policia" : distancia
 deactivate ":Mapa"
 
-":Policia" -> ":Rango" : demoraPorDistancia( distancia )
+":Policia" -> ":Rango" : demoraPorDistancia( distancia , :Reloj )
 activate ":Rango"
 
-":Rango" --> ":Policia" : horasGastadas
-deactivate ":Rango"
-
-":Policia" -> ":Reloj" : aumentarHoras( horasGastadas )
+":Rango" --> ":Reloj" : aumentarHoras(horasGastadas)
 activate ":Reloj"
 
-":Reloj" --> ":Policia"
+":Reloj" --> ":Rango"
 deactivate ":Reloj"
+
+":Rango" --> ":Policia"
+deactivate ":Rango"
 
 ":Policia" --> User
 deactivate ":Policia"
