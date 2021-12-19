@@ -254,7 +254,12 @@ public class PoliciaTest {
             novato.asignarCaso(caso);
 
         for(int i =0; i<6; i++){
-            novato.emitirOrdenDeArresto("Masculino","Croquet","Convertible", "Negro", "Joyeria");
+            novato.emitirOrdenDeArresto(
+                    new Pista("Masculino"),
+                    new Pista("Croquet"),
+                    new Pista("Convertible"),
+                    new Pista("Negro"),
+                    new Pista("Joyeria") );
             novato.entrar(edificio);
         }
         assertEquals(6, novato.cantidadDeArrestos());

@@ -1,22 +1,28 @@
 package edu.fiuba.algo3.modelo;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class Sospechoso {
 
-    private final List<String>descripcion;
+    private final ArrayList<Pista>descripcion;
     private final String nombre;
 
 
-    public Sospechoso(String datos){
-        this.descripcion = Arrays.asList(datos.split(","));
-        this.nombre = this.descripcion.get(0);
+    public Sospechoso(Pista... pistas){
+
+        this.descripcion = new ArrayList<>();
+
+        Collections.addAll(this.descripcion, pistas);
+
+        this.nombre = this.descripcion.get(0).mostrarPista();
 
     }
 
-    public void coincideCon(String[] pistas, ArrayList<Sospechoso> sospechososPosibles) {
+    public void coincideCon(Pista[] pistas, ArrayList<Sospechoso> sospechososPosibles) {
         if(descripcion.containsAll(List.of(pistas))){
             sospechososPosibles.add(this);
         }

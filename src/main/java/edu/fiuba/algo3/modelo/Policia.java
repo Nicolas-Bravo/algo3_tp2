@@ -63,7 +63,7 @@ public class Policia {
         return this.reloj.fechaActual();
     }
 
-    public void emitirOrdenDeArresto(String... datos){
+    public void emitirOrdenDeArresto(Pista... datos){
         ArrayList<Sospechoso> sospechososPosibles = casoActual.buscarSospechosos(datos);
         if(sospechososPosibles.size()==1){
             this.casoActual.emitirOrden(sospechososPosibles.get(0));

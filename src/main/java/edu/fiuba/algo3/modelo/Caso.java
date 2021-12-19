@@ -27,7 +27,7 @@ public class Caso {
         }
     }
 
-    public ArrayList<Sospechoso> buscarSospechosos(String[] datos) {
+    public ArrayList<Sospechoso> buscarSospechosos(Pista[] datos) {
         return BuscadorDeSospechosos.buscarSospechosos(sospechososTotales, datos);
     }
 }

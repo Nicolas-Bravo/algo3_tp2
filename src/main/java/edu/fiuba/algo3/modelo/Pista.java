@@ -8,4 +8,13 @@ public class Pista {
         this.pista = entrada;
     }
 
+    public String mostrarPista(){
+        return this.pista;
+    }
+
+    @Override
+    public boolean equals(Object o){
+        return this.pista.equals(((Pista)o).mostrarPista());
+    }
+
 }

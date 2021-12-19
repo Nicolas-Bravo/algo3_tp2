@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 
 public class BuscadorDeSospechosos {
 
-    public static ArrayList<Sospechoso> buscarSospechosos( ArrayList<Sospechoso> listaSospechosos, String... pistas) throws DescripcionIngresadaErroneaError {
+    public static ArrayList<Sospechoso> buscarSospechosos( ArrayList<Sospechoso> listaSospechosos, Pista... pistas) throws DescripcionIngresadaErroneaError {
         ArrayList<Sospechoso> sospechososPosibles = new ArrayList<>();
 
         for (Sospechoso sospe: listaSospechosos) {

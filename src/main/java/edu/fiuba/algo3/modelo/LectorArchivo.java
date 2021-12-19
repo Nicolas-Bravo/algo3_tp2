@@ -6,6 +6,21 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class LectorArchivo {
+
+    private static Pista[] generarDescripcion(String data){
+        ArrayList<Pista> descripcion = new ArrayList<>();
+
+        String[] datos = data.split(";");
+
+        for(String dato:datos){
+            descripcion.add(new Pista(dato));
+        }
+
+        return descripcion.toArray(new Pista[0]);
+
+
+    }
+
     public static ArrayList<Sospechoso> generarListaSospechososTotales() {
         ArrayList<Sospechoso> listaSospechosos = new ArrayList<>();
         try {
@@ -14,7 +29,7 @@ public class LectorArchivo {
             myReader.nextLine();
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
-                listaSospechosos.add(new Sospechoso(data));
+                listaSospechosos.add(new Sospechoso(generarDescripcion(data)));
             }
             myReader.close();
         }
