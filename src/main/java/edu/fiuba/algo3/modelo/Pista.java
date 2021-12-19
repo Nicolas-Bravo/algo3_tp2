@@ -8,8 +8,4 @@ public class Pista {
         this.pista = entrada;
     }
 
-    public void mostrarPista(){
-        System.out.println(this.pista);
-    }
-
 }

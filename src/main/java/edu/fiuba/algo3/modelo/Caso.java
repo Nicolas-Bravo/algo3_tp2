@@ -1,17 +1,22 @@
 package edu.fiuba.algo3.modelo;
 
+import java.util.ArrayList;
+
 public class Caso {
 
-   private final String nombreLadron;
+    private final Sospechoso ladronReal;
     private boolean orden;
+    private ArrayList<Sospechoso> sospechososTotales;
+
 
     public Caso(String nombre){
-        this.nombreLadron = nombre;
+        this.sospechososTotales = BuscadorDeSospechosos.obtenerTodosLosSospechosos();
+        this.ladronReal = BuscadorDeSospechosos.obtenerSospechosoPorNombre(nombre, sospechososTotales);
         this.orden = false;
     }
 
-    public void emitirOrden(String nombre){
-        if(this.nombreLadron.equals(nombre)){
+    public void emitirOrden(Sospechoso sospechoso){
+        if(this.ladronReal.coincideCon(sospechoso)){
             this.orden = true;
         }
     }
@@ -20,5 +25,9 @@ public class Caso {
         if (orden) {
             policia.sumarArresto();
         }
+    }
+
+    public ArrayList<Sospechoso> buscarSospechosos(String[] datos) {
+        return BuscadorDeSospechosos.buscarSospechosos(sospechososTotales, datos);
     }
 }
