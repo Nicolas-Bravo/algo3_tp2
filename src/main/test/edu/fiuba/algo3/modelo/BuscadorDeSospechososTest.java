@@ -7,128 +7,118 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class buscadorDeSospechososTest {
+public class BuscadorDeSospechososTest {
 
+
+    ArrayList<Sospechoso> listaSospechosos = LectorArchivo.generarListaSospechososTotales();
     @Test
     public void interpoolRecibeDescripcionDeNickBrunchYLoEncuentra(){
         ArrayList<Sospechoso> sospechosos;
-        buscadorDeSospechosos buscadorDeSospechosos = new buscadorDeSospechosos();
 
-        sospechosos = buscadorDeSospechosos.buscarSospechosos("Masculino", "Escalar montañas", "Negro", "Aro", "Motocicleta");
+        sospechosos = BuscadorDeSospechosos.buscarSospechosos(listaSospechosos, "Masculino", "Escalar montañas", "Negro", "Aro", "Motocicleta");
 
-        assertEquals("Nick Brunch", sospechosos.get(0).nombre());
+        assertTrue(sospechosos.get(0).coincideCon("Nick Brunch"));
 
     }
 
     @Test
     public void interpoolRecibeDescripcionDeLenBulkYLoEncuentra(){
         ArrayList<Sospechoso> sospechosos;
-        buscadorDeSospechosos buscadorDeSospechosos = new buscadorDeSospechosos();
 
-        sospechosos = buscadorDeSospechosos.buscarSospechosos("Masculino", "Escalar montañas", "Rojo", "Tattoo", "Convertible");
+        sospechosos = BuscadorDeSospechosos.buscarSospechosos(listaSospechosos, "Masculino", "Escalar montañas", "Rojo", "Tattoo", "Convertible");
 
-        assertEquals("Len Bulk",sospechosos.get(0).nombre());
+        assertTrue(sospechosos.get(0).coincideCon("Len Bulk"));
 
     }
 
     @Test
-    public void interpoolRecibeDescripcionDeIhorIhorovitchYLoEncuentra(){
+    public void interpoolRecibeDescripcionDeIhorIhorovitchYLoEncuentra() {
         ArrayList<Sospechoso> sospechosos;
-        buscadorDeSospechosos buscadorDeSospechosos = new buscadorDeSospechosos();
 
-        sospechosos = buscadorDeSospechosos.buscarSospechosos("Masculino", "Croquet", "Rubio", "Tattoo", "Limusina");
+        sospechosos = BuscadorDeSospechosos.buscarSospechosos(listaSospechosos, "Masculino", "Croquet", "Rubio", "Tattoo", "Limusina");
 
-        assertEquals("Ihor Ihorovitch",sospechosos.get(0).nombre());
-
+        assertTrue(sospechosos.get(0).coincideCon("Ihor Ihorovitch"));
     }
 
-    @Test
     public void interpoolRecibeDescripcionDeFastEddieBYLoEncuentra(){
         ArrayList<Sospechoso> sospechosos;
-        buscadorDeSospechosos buscadorDeSospechosos = new buscadorDeSospechosos();
 
-        sospechosos = buscadorDeSospechosos.buscarSospechosos("Masculino", "Croquet", "Negro", "Joyeria", "Convertible");
+        sospechosos = BuscadorDeSospechosos.buscarSospechosos(listaSospechosos, "Masculino", "Croquet", "Negro", "Joyeria", "Convertible");
 
-        assertEquals("Fast Eddie B.",sospechosos.get(0).nombre());
+        assertTrue(sospechosos.get(0).coincideCon("Fast Eddie B."));
+
 
     }
 
     @Test
     public void interpoolRecibeDescripcionDeScarGraynoltYLoEncuentra(){
         ArrayList<Sospechoso> sospechosos;
-        buscadorDeSospechosos buscadorDeSospechosos = new buscadorDeSospechosos();
 
-        sospechosos = buscadorDeSospechosos.buscarSospechosos("Masculino", "Croquet", "Rojo", "Aro", "Limusina");
+        sospechosos = BuscadorDeSospechosos.buscarSospechosos(listaSospechosos, "Masculino", "Croquet", "Rojo", "Aro", "Limusina");
 
-        assertEquals("Scar Graynolt",sospechosos.get(0).nombre());
+        assertTrue(sospechosos.get(0).coincideCon("Scar Graynolt"));
 
     }
 
     @Test
     public void interpoolRecibeDescripcionDeMereyLarocYLaEncuentra(){
         ArrayList<Sospechoso> sospechosos;
-        buscadorDeSospechosos buscadorDeSospechosos = new buscadorDeSospechosos();
 
-        sospechosos = buscadorDeSospechosos.buscarSospechosos("Femenino", "Escalar montañas", "Castaño", "Joyeria", "Limusina");
+        sospechosos = BuscadorDeSospechosos.buscarSospechosos(listaSospechosos, "Femenino", "Escalar montañas", "Castaño", "Joyeria", "Limusina");
 
-        assertEquals("Merey Laroc",sospechosos.get(0).nombre());
+        assertTrue(sospechosos.get(0).coincideCon("Merey Laroc"));
 
     }
 
     @Test
     public void interpoolRecibeDescripcionDeLadyAgathaYLaEncuentra(){
         ArrayList<Sospechoso> sospechosos;
-        buscadorDeSospechosos buscadorDeSospechosos = new buscadorDeSospechosos();
 
-        sospechosos = buscadorDeSospechosos.buscarSospechosos("Femenino", "Tenis", "Rojo", "Aro", "Convertible");
+        sospechosos = BuscadorDeSospechosos.buscarSospechosos(listaSospechosos, "Femenino", "Tenis", "Rojo", "Aro", "Convertible");
 
-        assertEquals("Lady Agatha",sospechosos.get(0).nombre());
+        assertTrue(sospechosos.get(0).coincideCon("Lady Agatha"));
 
     }
 
     @Test
     public void interpoolRecibeDescripcionDeKatherineDribYLaEncuentra(){
         ArrayList<Sospechoso> sospechosos;
-        buscadorDeSospechosos buscadorDeSospechosos = new buscadorDeSospechosos();
 
-        sospechosos = buscadorDeSospechosos.buscarSospechosos("Femenino", "Escalar montañas", "Castaño", "Tattoo", "Motocicleta");
+        sospechosos = BuscadorDeSospechosos.buscarSospechosos(listaSospechosos, "Femenino", "Escalar montañas", "Castaño", "Tattoo", "Motocicleta");
 
-        assertEquals("Katherine Drib",sospechosos.get(0).nombre());
+        assertTrue(sospechosos.get(0).coincideCon("Katherine Drib"));
 
     }
 
     @Test
     public void interpoolRecibeDescripcionDeDazzleAnieYLaEncuentra(){
         ArrayList<Sospechoso> sospechosos;
-        buscadorDeSospechosos buscadorDeSospechosos = new buscadorDeSospechosos();
 
-        sospechosos = buscadorDeSospechosos.buscarSospechosos("Femenino", "Tenis", "Rubio", "Tattoo", "Limusina");
+        sospechosos = BuscadorDeSospechosos.buscarSospechosos(listaSospechosos, "Femenino", "Tenis", "Rubio", "Tattoo", "Limusina");
 
-        assertEquals("Dazzle Anie",sospechosos.get(0).nombre());
+        assertTrue(sospechosos.get(0).coincideCon("Dazzle Anie"));
 
     }
 
     @Test
     public void interpoolRecibeDescripcionDeCarmenSandiegoYLaEncuentra(){
         ArrayList<Sospechoso> sospechosos;
-        buscadorDeSospechosos buscadorDeSospechosos = new buscadorDeSospechosos();
 
-        sospechosos = buscadorDeSospechosos.buscarSospechosos("Femenino", "Tenis", "Castaño", "Joyeria", "Convertible");
+        sospechosos = BuscadorDeSospechosos.buscarSospechosos(listaSospechosos, "Femenino", "Tenis", "Castaño", "Joyeria", "Convertible");
 
-        assertEquals("Carmen Sandiego",sospechosos.get(0).nombre());
+        assertTrue(sospechosos.get(0).coincideCon("Carmen Sandiego"));
 
     }
 
     @Test
     public void interpolRecibeUnaDescripcionMasculinoRojoYEncuentraALenBUlkYScarGraynolt(){
         ArrayList<Sospechoso> sospechosos;
-        buscadorDeSospechosos buscadorDeSospechosos = new buscadorDeSospechosos();
 
-        sospechosos = buscadorDeSospechosos.buscarSospechosos("Masculino","Rojo");
+        sospechosos = BuscadorDeSospechosos.buscarSospechosos(listaSospechosos, "Masculino","Rojo");
 
         ArrayList<Sospechoso> esperado = new ArrayList<>();
-        esperado.add(new Sospechoso("Len Bulk"));
-        esperado.add(new Sospechoso("Scar Graynolt"));
+        esperado.add(BuscadorDeSospechosos.obtenerSospechosoPorNombre("Len Bulk", listaSospechosos));
+        esperado.add(BuscadorDeSospechosos.obtenerSospechosoPorNombre("Scar Graynolt", listaSospechosos));
 
 
         assertEquals(esperado, sospechosos);
@@ -137,16 +127,15 @@ public class buscadorDeSospechososTest {
     @Test
     public void interpolRecibeUnaDescripcionMasculinoYEncuentraLosCincoMasculinos(){
         ArrayList<Sospechoso> sospechosos;
-        buscadorDeSospechosos buscadorDeSospechosos = new buscadorDeSospechosos();
 
-        sospechosos = buscadorDeSospechosos.buscarSospechosos("Masculino");
+        sospechosos = BuscadorDeSospechosos.buscarSospechosos(listaSospechosos, "Masculino");
 
-        ArrayList<String> esperado = new ArrayList<>();
-        esperado.add("Nick Brunch");
-        esperado.add("Len Bulk");
-        esperado.add("Ihor Ihorovitch");
-        esperado.add("Fast Eddie B.");
-        esperado.add("Scar Graynolt");
+        ArrayList<Sospechoso> esperado = new ArrayList<>();
+        esperado.add(BuscadorDeSospechosos.obtenerSospechosoPorNombre("Nick Brunch", listaSospechosos));
+        esperado.add(BuscadorDeSospechosos.obtenerSospechosoPorNombre("Len Bulk", listaSospechosos));
+        esperado.add(BuscadorDeSospechosos.obtenerSospechosoPorNombre("Ihor Ihorovitch", listaSospechosos));
+        esperado.add(BuscadorDeSospechosos.obtenerSospechosoPorNombre("Fast Eddie B.", listaSospechosos));
+        esperado.add(BuscadorDeSospechosos.obtenerSospechosoPorNombre("Scar Graynolt", listaSospechosos));
 
         assertEquals(esperado, sospechosos);
         assertEquals(5,sospechosos.size());
@@ -155,10 +144,8 @@ public class buscadorDeSospechososTest {
 
     @Test
     public void interpolRecibeUnaDescrpcionGrisYGeneraDescripcionINgresadaErroneaError(){
-        buscadorDeSospechosos buscadorDeSospechosos = new buscadorDeSospechosos();
-
         assertThrows(DescripcionIngresadaErroneaError.class,() -> {
-            buscadorDeSospechosos.buscarSospechosos("Gris");
+            BuscadorDeSospechosos.buscarSospechosos(listaSospechosos, "Gris");
         });
 
     }

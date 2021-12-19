@@ -13,7 +13,6 @@ public class Policia {
     private Mapa mapa;
     private Rango rango;
     private int heridas;
-    private ArrayList<String> sospechososActuales;
     private Caso casoActual;
 
 
@@ -23,7 +22,6 @@ public class Policia {
         this.mapa = mapa_p;
         this.rango = rango_p;
         this.heridas = 0;
-
     }
 
     public void entrar(Edificio edificio) {
@@ -64,14 +62,12 @@ public class Policia {
     public String fechaActual() {
         return this.reloj.fechaActual();
     }
-    public void actualizarSospechosos(String... datos){ this.sospechososActuales  = BaseDeDatosLadron.buscarSospechosos(datos);}
 
     public void emitirOrdenDeArresto(String... datos){
-        actualizarSospechosos(datos);
-        if(sospechososActuales.size()==1){
-            this.casoActual.emitirOrden(sospechososActuales.get(0));
+        ArrayList<Sospechoso> sospechososPosibles = casoActual.buscarSospechosos(datos);
+        if(sospechososPosibles.size()==1){
+            this.casoActual.emitirOrden(sospechososPosibles.get(0));
         }
-        else System.out.println("Hay mas de uno");
     }
 
     public void asignarCaso(Caso caso){

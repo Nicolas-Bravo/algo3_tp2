@@ -258,6 +258,5 @@ public class PoliciaTest {
             novato.entrar(edificio);
         }
         assertEquals(6, novato.cantidadDeArrestos());
-
     }
 }

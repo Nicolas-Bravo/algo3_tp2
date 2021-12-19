@@ -6,23 +6,15 @@ import java.io.File;  // Import the File class
 import java.io.FileNotFoundException;  // Import this class to handle errors
 import java.util.ArrayList;
 import java.util.Scanner; // Import the Scanner class to read text files
+import java.util.stream.Stream;
 
 public class BuscadorDeSospechosos {
-    ArrayList<Sospechoso> listaSospechosos;
 
-    public BuscadorDeSospechosos() {
-        listaSospechosos = LectorArchivo.generarListaSospechososTotales();
-    }
-
-
-
-    public ArrayList<Sospechoso> buscarSospechosos(String... pistas)throws DescripcionIngresadaErroneaError {
+    public static ArrayList<Sospechoso> buscarSospechosos( ArrayList<Sospechoso> listaSospechosos, String... pistas) throws DescripcionIngresadaErroneaError {
         ArrayList<Sospechoso> sospechososPosibles = new ArrayList<>();
 
-        for (Sospechoso sospe: this.listaSospechosos) {
-            if (sospe.coincideCon(pistas)) {
-                sospechososPosibles.add(sospe);
-            }
+        for (Sospechoso sospe: listaSospechosos) {
+            sospe.coincideCon(pistas, sospechososPosibles);
         }
         if (sospechososPosibles.isEmpty()){
             throw new DescripcionIngresadaErroneaError();
@@ -30,21 +22,12 @@ public class BuscadorDeSospechosos {
         return sospechososPosibles;
     }
 
-    public Sospechoso obtenerSospechosoPorNombre(String nombre) {
-        Sospechoso sospechosoDevolver = listaSospechosos.;
+    public static Sospechoso obtenerSospechosoPorNombre(String nombre, ArrayList<Sospechoso> listaSospechosos) {
+        Stream<Sospechoso> streamSospechoso =  listaSospechosos.stream().filter(sospechoso -> sospechoso.coincideCon(nombre));
+        return streamSospechoso.findFirst().get();
+    }
 
-
-        int i = 0;
-        boolean seguirBuscando = true;
-        Sospechoso sospechosoDevolver;
-        this.listaSospechosos.
-        while (i < this.listaSospechosos.size() && seguirBuscando) {
-            Sospechoso sospechosoActual = listaSospechosos.get(i);
-            if (sospechosoActual.nombre() == nombre) {
-                seguirBuscando = false;
-                sospechosoDevolver = sospechosoActual;
-            }
-        }
-        return sospechosoDevolver;
+    public static ArrayList<Sospechoso> obtenerTodosLosSospechosos() {
+        return LectorArchivo.generarListaSospechososTotales();
     }
 }

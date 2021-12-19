@@ -11,6 +11,7 @@ public class LectorArchivo {
         try {
             File myObj = new File("Archivos/ladrones.csv");
             Scanner myReader = new Scanner(myObj);
+            myReader.nextLine();
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
                 listaSospechosos.add(new Sospechoso(data));
@@ -23,7 +24,5 @@ public class LectorArchivo {
         }
         return listaSospechosos;
     }
-
-    public static
 
 }
