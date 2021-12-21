@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Caso {
 
+    private final RutaDeEscape rutaDeEscape;
     private int entradasfinales;
     private ArrayList<Sospechoso> sospechososTotales;
     private final Sospechoso ladronReal;
@@ -13,7 +14,7 @@ public class Caso {
     public Caso(String nombre, RutaDeEscape ruta){
         this.sospechososTotales = BuscadorDeSospechosos.obtenerTodosLosSospechosos();
         this.ladronReal = BuscadorDeSospechosos.obtenerSospechosoPorNombre(nombre, this.sospechososTotales);
-        this.ladronReal.asignarRuta(ruta);
+        this.rutaDeEscape = ruta;
         this.orden = false;
         this.entradasfinales = 0;
     }
@@ -35,17 +36,11 @@ public class Caso {
     }
 
     public void controlArresto(Destino destinoActual, Pista pista, Policia policia) {
-        if (this.ladronReal.controlArresto(destinoActual) ) {
-            pista.sobreescribir("Sospechoso visto recientemente");
-            if (this.entradasfinales == 1) {
-                arresteSospechoso(policia);
-            }
-            this.entradasfinales++;
-        }
+        this.rutaDeEscape.controlArresto(destinoActual, pista, policia, this);
     }
 
     public Mapa obtenerMapa() {
-        return this.ladronReal.obtenerMapa();
+        return this.rutaDeEscape.obtenerMapa();
     }
 
     //

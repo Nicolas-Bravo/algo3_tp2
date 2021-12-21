@@ -1,8 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -10,8 +8,6 @@ public class Sospechoso {
 
     private final ArrayList<Pista>descripcion;
     private final String nombre;
-    private RutaDeEscape rutaDeEscape;
-
 
     public Sospechoso(Pista... pistas){
 
@@ -41,16 +37,5 @@ public class Sospechoso {
         return this.coincideCon((Sospechoso)sospechoso);
     }
 
-    public void asignarRuta(RutaDeEscape ruta) {
-        this.rutaDeEscape = ruta;
-    }
-
-    public boolean controlArresto(Destino destinoActual) {
-        return this.rutaDeEscape.controlArresto(destinoActual);
-    }
-
-    public Mapa obtenerMapa() {
-        return this.rutaDeEscape.obtenerMapa();
-    }
 }
 

@@ -1,40 +1,48 @@
 @startuml
 
 Actor User
-
-User -> ":Policia" : entrarEdificio(:EdificioFinal)
+User -> ":Policia" : entrarEdificio(e :Edificio)
 Activate ":Policia"
 
-":Policia" -> ":Mapa" : entrarEdificio(:Reloj , :EdificioFinal)
+":Policia" -> ":Mapa" : entrarEdificio(:Reloj , e :Edificio)
 activate ":Mapa"
 
-":Mapa" -> "actual :DestinoFinal" : entrarEdificio(:Reloj , :EdificioFinal)
-activate "actual :DestinoFinal"
-
-"actual :DestinoFinal" -> ":EdificioFinal" : entrar(:Reloj)
-activate ":EdificioFinal"
-
-":EdificioFinal" --> "actual :DestinoFinal" : IntentoDeArrestoExecption()
-deactivate ":EdificioFinal"
-
-"actual :DestinoFinal" --> ":Mapa" : IntentoDeArrestoExecption()
-deactivate "actual :DestinoFinal"
-
-":Mapa" --> ":Policia" : IntentoDeArrestoExecption()
+":Mapa" --> ":Policia" : pista_e
 deactivate ":Mapa"
 
-group catch [IntentoDeArrestoExecption()]
+":Policia" -> ":Policia": p.pista = pista_e
 
-    ":Policia" -> "actual : Caso" : arresteSospechoso(":Policia")
+":Policia" -> ":Caso" : controlArresto(actual :Destino, pista_e :Pista, :Policia)
+activate ":Caso"
 
-    group case [ordenNoCorrespondeALadronFinal]
+":Caso" -> ":RutaDeEscape" : controlArresto(actual :Destino, pista_e :Pista, :Policia, :Caso)
+activate ":RutaDeEscape"
 
-        "actual : Caso" --> ":Policia"
-        note left: No hay orden emitida, no se suma arresto
+group case [actual == rutaDeEscape.ultima]
+
+    ":RutaDeEscape" -> "pista_e :Pista": sobreescribir("Sospechoso visto recientemente")
+    activate "pista_e :Pista"
+
+    "pista_e :Pista" --> ":RutaDeEscape"
+    deactivate "pista_e :Pista"
+
+    group case [segunda entrada a ultimo destino]
+
+        ":RutaDeEscape" -> ":Caso" : arresteSospechoso(:Policia)
+
+
+        ":Caso" --> ":RutaDeEscape"
+        note left: No hay orden de arresto
 
     end
 
 end
+
+":RutaDeEscape" --> ":Caso"
+deactivate ":RutaDeEscape"
+
+":Caso" --> ":Policia"
+deactivate ":Caso"
 
 ":Policia" --> User
 deactivate ":Policia"

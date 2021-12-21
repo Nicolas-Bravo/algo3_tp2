@@ -330,13 +330,10 @@ public class PoliciaTest {
         Edificio edificioFinal = new Aeropuerto(new Pista("Otra pista aux"));
         Destino destinoFinal = new Destino("Mexico", 19.42847, 99.12766 , edificioFinal);
 
-
-        RutaDeEscape ruta = new RutaDeEscape(destinoInicial, destinoFinal);
-
         Policia novato = new Policia("Esteban", new Novato());
 
         for(int i =0; i<6; i++){
-            novato.asignarCaso(new Caso("Fast Eddie B.", ruta));
+            novato.asignarCaso(new Caso("Fast Eddie B.", new RutaDeEscape(destinoInicial, destinoFinal)));
             novato.viajar(destinoFinal);
             novato.emitirOrdenDeArresto(
                     new Pista("Masculino"),
