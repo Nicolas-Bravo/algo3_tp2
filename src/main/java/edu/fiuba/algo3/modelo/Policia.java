@@ -16,20 +16,16 @@ public class Policia {
     private Caso casoActual;
 
 
-    public Policia(String nombre_p, Rango rango_p, Mapa mapa_p){
+    public Policia(String nombre_p, Rango rango_p){
         this.nombre = nombre_p;
         this.reloj = new Reloj();
-        this.mapa = mapa_p;
         this.rango = rango_p;
         this.heridas = 0;
     }
 
     public void entrar(Edificio edificio) {
-        try{
-            this.pista = this.mapa.entrar(this.reloj, edificio);
-        }catch (IntentoDeArrestoExecption e) {
-            this.casoActual.arresteSospechoso(this);
-        }
+        this.pista = this.mapa.entrar(this.reloj, edificio);
+        this.casoActual.controlArresto(destinoActual(), this.pista, this);
     }
 
     public Pista mostrarPista() {
@@ -72,6 +68,7 @@ public class Policia {
 
     public void asignarCaso(Caso caso){
         this.casoActual = caso;
+        this.mapa = casoActual.obtenerMapa();
     }
 
     public int cantidadDeArrestos() {
