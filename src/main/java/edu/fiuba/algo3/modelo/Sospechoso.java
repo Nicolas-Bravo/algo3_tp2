@@ -1,8 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -10,7 +8,6 @@ public class Sospechoso {
 
     private final ArrayList<Pista>descripcion;
     private final String nombre;
-
 
     public Sospechoso(Pista... pistas){
 
@@ -27,7 +24,7 @@ public class Sospechoso {
             sospechososPosibles.add(this);
         }
     }
-    public boolean coincideCon (String nombre) {
+    public boolean coincideCon(String nombre) {
         return nombre.equals(this.nombre);
     }
 
@@ -39,5 +36,6 @@ public class Sospechoso {
     public boolean equals(Object sospechoso) {
         return this.coincideCon((Sospechoso)sospechoso);
     }
+
 }
 
