@@ -2,21 +2,32 @@
 
 Actor User
 
-User -> ":Policia" : emitirOrdenDeArresto("Masculino","Escalar")
+User -> ":Policia" : emitirOrdenDeArresto(p1 :Pista, p2 :Pista, p3 :Pista, p4 :Pista, p5 :Pista)
 Activate ":Policia"
 
-":Policia" -> ":baseDeDatosLadron" : buscarSospechosos("Masculino","Escalar")
-activate ":baseDeDatosLadron"
+":Policia" -> ":Caso" : buscarSospechosos(p1 :Pista, p2 :Pista, p3 :Pista, p4 :Pista, p5 :Pista)
+activate ":Caso"
 
-":baseDeDatosLadron" --> ":Policia" : "Nick Brunch", "Len Bulk"
-deactivate ":baseDeDatosLadron"
+":Caso" --> ":Policia" : sospechoso :Sospechoso
+deactivate ":Caso"
 
-group case [cantidadSospechosos != 1]
+group case [cantidadSospechosos = 1]
 
-    ":Policia" --> User
-    note right:si la base de datos devuelve mas de un sospechoso, entonces no se emite orden
-    deactivate ":Policia"
+    ":Policia" -> ":Caso" : emitirOrden(sospechoso :Sospechoso)
+    activate ":Caso"
+
+    ":Caso" -> "ladronReal :Sospechoso" : coincideCon(sospechoso :Sospechoso)
+    activate "ladronReal :Sospechoso"
+
+    "ladronReal :Sospechoso" --> ":Caso" : :False
+    deactivate "ladronReal :Sospechoso"
+
+    ":Caso" --> ":Policia"
+    deactivate ":Caso"
 
 end
+
+":Policia" --> User
+deactivate ":Policia"
 
 @enduml

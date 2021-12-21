@@ -2,20 +2,30 @@
 
 Actor User
 
-User -> ":Policia" : emitirOrdenDeArresto("Masculino","Croquet","Convertible", "Negro", "Joyeria")
+User -> ":Policia" : emitirOrdenDeArresto(p1 :Pista, p2 :Pista, p3 :Pista, p4 :Pista, p5 :Pista)
 Activate ":Policia"
 
-":Policia" -> ":baseDeDatosLadron" : buscarSospechosos("Masculino","Croquet","Convertible", "Negro", "Joyeria")
-activate ":baseDeDatosLadron"
+":Policia" -> ":Caso" : buscarSospechosos(p1 :Pista, p2 :Pista, p3 :Pista, p4 :Pista, p5 :Pista)
+activate ":Caso"
 
-":baseDeDatosLadron" --> ":Policia" : "Fast Eddie B."
-deactivate ":baseDeDatosLadron"
+":Caso" --> ":Policia" : sospechoso :Sospechoso
+deactivate ":Caso"
 
 group case [cantidadSospechosos = 1]
 
-    ":Policia" -> "actual :Caso" : emitirOrden("Fast Eddie B.")
+    ":Policia" -> ":Caso" : emitirOrden(sospechoso :Sospechoso)
+    activate ":Caso"
 
-    "actual :Caso" --> ":Policia"
+    ":Caso" -> "ladronReal :Sospechoso" : coincideCon(sospechoso :Sospechoso)
+    activate "ladronReal :Sospechoso"
+
+    "ladronReal :Sospechoso" --> ":Caso" : :True
+    deactivate "ladronReal :Sospechoso"
+
+    ":Caso" -> ":Caso" : emitirOrden()
+
+    ":Caso" --> ":Policia"
+    deactivate ":Caso"
 
 end
 

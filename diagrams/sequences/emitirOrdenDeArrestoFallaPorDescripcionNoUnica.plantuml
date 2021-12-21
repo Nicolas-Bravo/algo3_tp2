@@ -1,0 +1,21 @@
+@startuml
+
+Actor User
+
+User -> ":Policia" : emitirOrdenDeArresto(p1 :Pista, p2 :Pista)
+Activate ":Policia"
+
+":Policia" -> ":Caso" : buscarSospechosos(p1 :Pista, p2 :Pista)
+activate ":Caso"
+
+":Caso" --> ":Policia" : s1 :Sospechoso, s1 :Sospechoso
+deactivate ":Caso"
+
+group case [cantidadSospechosos != 1]
+
+    ":Policia" --> User
+    deactivate ":Policia"
+
+end
+
+@enduml
