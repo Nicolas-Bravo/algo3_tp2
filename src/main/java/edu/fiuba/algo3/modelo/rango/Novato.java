@@ -1,10 +1,10 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.rango;
 
 import edu.fiuba.algo3.modelo.reloj.Reloj;
 
 public class Novato implements Rango {
     private int arrestos;
-    private int arrestosMaximos;
+    private final int arrestosMaximos;
 
     public Novato(){
         this.arrestos = 0;

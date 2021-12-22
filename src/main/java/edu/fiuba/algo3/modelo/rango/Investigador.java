@@ -1,19 +1,20 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.rango;
 
 import edu.fiuba.algo3.modelo.reloj.Reloj;
 
-public class Detective implements Rango {
+public class Investigador implements Rango {
 
-    private int arrestos, arrestosMaximos;
+    private int arrestos;
+    private final int arrestosMaximos;
 
-    public Detective(){
-        this.arrestos = 5;
-        this.arrestosMaximos = 9;
+    public Investigador(){
+        this.arrestos = 10;
+        this.arrestosMaximos = 19;
     }
 
     @Override
     public void demoraPorDistancia(double distancia, Reloj reloj) {
-        reloj.aumentarHoras( (int)Math.round(distancia/1100.00) );
+        reloj.aumentarHoras( (int)Math.round(distancia/1300.00) );
     }
     @Override
     public int cantidadDeArrestos(){return arrestos;}
@@ -21,7 +22,7 @@ public class Detective implements Rango {
     public Rango sumarArresto() {
         arrestos++;
         if (arrestos > arrestosMaximos) {
-            return new Investigador();
+            return new Sargento();
         }
         return this;
     }

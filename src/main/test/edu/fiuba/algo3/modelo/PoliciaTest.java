@@ -1,5 +1,9 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.rango.Detective;
+import edu.fiuba.algo3.modelo.rango.Investigador;
+import edu.fiuba.algo3.modelo.rango.Novato;
+import edu.fiuba.algo3.modelo.rango.Sargento;
 import org.junit.jupiter.api.Test;
 import edu.fiuba.algo3.modelo.exceptions.TiempoAgotadoException;
 import static org.junit.jupiter.api.Assertions.*;

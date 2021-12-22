@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.archivos.LectorArchivo;
 import edu.fiuba.algo3.modelo.exceptions.DescripcionIngresadaErroneaError;
 import org.junit.jupiter.api.Test;
 
@@ -55,6 +56,7 @@ public class BuscadorDeSospechososTest {
         assertTrue(sospechosos.get(0).coincideCon("Ihor Ihorovitch"));
     }
 
+    @Test
     public void interpoolRecibeDescripcionDeFastEddieBYLoEncuentra(){
         ArrayList<Sospechoso> sospechosos;
 
@@ -66,7 +68,6 @@ public class BuscadorDeSospechososTest {
                 new Pista("Convertible") );
 
         assertTrue(sospechosos.get(0).coincideCon("Fast Eddie B."));
-
 
     }
 

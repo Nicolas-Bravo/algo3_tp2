@@ -1,11 +1,9 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.archivos.LectorArchivo;
 import edu.fiuba.algo3.modelo.exceptions.DescripcionIngresadaErroneaError;
 
-import java.io.File;  // Import the File class
-import java.io.FileNotFoundException;  // Import this class to handle errors
 import java.util.ArrayList;
-import java.util.Scanner; // Import the Scanner class to read text files
 import java.util.stream.Stream;
 
 public class BuscadorDeSospechosos {
