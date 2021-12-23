@@ -20,12 +20,10 @@ public class Juego {
     private boolean estado;
     private Policia policia;
 
-    public Juego(Stage stage){
+    public Juego(){
         this.estado = true;
-        this.stageActual = stage;
-        jugar();
+        //jugar();
     }
-
 
     public void jugar() {
         this.stageActual.setScene(generarImagenDeInicio());
@@ -82,7 +80,7 @@ public class Juego {
     }
 
     public Scene generarImagenDeInicio(){
-        StackPane raiz = new StackPane();
+        VBox raiz = new VBox();
         Image img = new Image("https://www.enter.co/wp-content/uploads/2019/01/Carmen-Sandiego-Still-001.jpg");
         BackgroundImage backgimg = new BackgroundImage(img,  BackgroundRepeat.NO_REPEAT,
                 BackgroundRepeat.NO_REPEAT,
@@ -92,13 +90,14 @@ public class Juego {
 
         Button BotonJugar = new Button("Jugar");
 
-        BotonJugarEventHandler HandleBotonJugar = new BotonJugarEventHandler(this.stageActual,this,raiz);
-        BotonJugar.setOnAction(HandleBotonJugar);
+
 
         raiz.setBackground(back);
         raiz.getChildren().add(BotonJugar);
 
         Scene scene = new Scene(raiz, 600, 400);
+        BotonJugarEventHandler HandleBotonJugar = new BotonJugarEventHandler(this.stageActual,scene);
+        BotonJugar.setOnAction(HandleBotonJugar);
         return scene;
 
     }

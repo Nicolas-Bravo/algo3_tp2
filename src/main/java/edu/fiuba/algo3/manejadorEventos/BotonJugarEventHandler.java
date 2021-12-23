@@ -18,7 +18,6 @@ public class BotonJugarEventHandler implements EventHandler<ActionEvent> {
     public BotonJugarEventHandler(Stage stage, Scene proximaEscena) {
         this.proximaEscena = proximaEscena;
         this.stage = stage;
-
     }
 
 
@@ -28,7 +27,6 @@ public class BotonJugarEventHandler implements EventHandler<ActionEvent> {
         stage.setScene(proximaEscena);
         stage.setFullScreenExitHint("");
         stage.setFullScreen(true);
-
     }
 
 

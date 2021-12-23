@@ -33,36 +33,37 @@ public class Controlador {
 
         Button BotonJugar = new Button("Jugar");
 
-        BotonJugarEventHandler HandleBotonJugar = new BotonJugarEventHandler(this.stage,this.juego,raiz);
-        BotonJugar.setOnAction(HandleBotonJugar);
+
 
         raiz.setBackground(back);
         raiz.getChildren().add(BotonJugar);
 
         Scene scene = new Scene(raiz, 600, 400);
+        BotonJugarEventHandler HandleBotonJugar = new BotonJugarEventHandler(this.stage,scene);
+        BotonJugar.setOnAction(HandleBotonJugar);
         this.stage.setScene(scene);
         this.stage.show();
 
     }
 
-        public void generarImagenDeBievenida(){
-            StackPane raiz = (StackPane) this.stage.getScene().getRoot();
-            Image img = new Image("https://tse1.mm.bing.net/th?id=OIP.eEbCv5U2iIMApDbQLPfOiAHaEK&pid=Api&P=0&w=327&h=185");
-            BackgroundImage backgimg = new BackgroundImage(img,  BackgroundRepeat.NO_REPEAT,
-                    BackgroundRepeat.NO_REPEAT,
-                    BackgroundPosition.DEFAULT,
-                    BackgroundSize.DEFAULT);
-            Background back = new Background(backgimg);
-            TextField ingreseNombrePolicia = new TextField();
-            Button enviar = new Button("Enviar");
-            BotonEnviarEventHandler botonEnviar = new BotonEnviarEventHandler(this.stage,this.juego, ingreseNombrePolicia);
-            enviar.setOnAction(botonEnviar);
+    public void generarImagenDeBievenida(){
+        StackPane raiz = (StackPane) this.stage.getScene().getRoot();
+        Image img = new Image("https://tse1.mm.bing.net/th?id=OIP.eEbCv5U2iIMApDbQLPfOiAHaEK&pid=Api&P=0&w=327&h=185");
+        BackgroundImage backgimg = new BackgroundImage(img,  BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.DEFAULT,
+                BackgroundSize.DEFAULT);
+        Background back = new Background(backgimg);
+        TextField ingreseNombrePolicia = new TextField();
+        Button enviar = new Button("Enviar");
+        BotonEnviarEventHandler botonEnviar = new BotonEnviarEventHandler(this.stage,this.juego, ingreseNombrePolicia);
+        enviar.setOnAction(botonEnviar);
 
 
-            raiz.setBackground(back);
-            raiz.getChildren().add(ingreseNombrePolicia);
-            raiz.getChildren().add(enviar);
+        raiz.setBackground(back);
+        raiz.getChildren().add(ingreseNombrePolicia);
+        raiz.getChildren().add(enviar);
 
-            Scene escenaAMostrar = new Scene(raiz);
-        }
+        Scene escenaAMostrar = new Scene(raiz);
+    }
 }

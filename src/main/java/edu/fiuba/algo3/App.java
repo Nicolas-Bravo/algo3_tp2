@@ -28,24 +28,20 @@ public class App extends Application {
 
          */
         stage.setTitle("Carmen Sandiego");
-        Juego juego = crearModelo(stage);
 
+        Juego juego = crearModelo();
         ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(stage, juego);
         Scene escenaJuego = new Scene(contenedorPrincipal,640,480);
 
         ContenedorBienvenidos contenedorBienvenidos = new ContenedorBienvenidos(stage,escenaJuego);
         Scene escenaBienvenida = new Scene(contenedorBienvenidos,640,480);
         stage.setScene(escenaBienvenida);
-
-
-
-
-
-
+        stage.show();
     }
 
-    private Juego crearModelo(Stage stage) {
-        return new Juego(stage);
+    private Juego crearModelo() {
+
+        return new Juego();
     }
 
     public static void main(String[] args) {
