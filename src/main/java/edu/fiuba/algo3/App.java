@@ -2,11 +2,9 @@ package edu.fiuba.algo3;
 
 import edu.fiuba.algo3.controladores.ContenedorBienvenidos;
 import edu.fiuba.algo3.controladores.ContenedorPrincipal;
-import edu.fiuba.algo3.modelo.Juego;
+import edu.fiuba.algo3.controladores.Juego;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
@@ -29,7 +27,7 @@ public class App extends Application {
          */
         stage.setTitle("Carmen Sandiego");
 
-        Juego juego = crearModelo();
+        Juego juego = crearModelo(stage);
         ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(stage, juego);
         Scene escenaJuego = new Scene(contenedorPrincipal,640,480);
 
@@ -39,9 +37,9 @@ public class App extends Application {
         stage.show();
     }
 
-    private Juego crearModelo() {
+    private Juego crearModelo(Stage stage) {
 
-        return new Juego();
+        return new Juego(stage);
     }
 
     public static void main(String[] args) {

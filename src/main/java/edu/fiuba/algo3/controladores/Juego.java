@@ -1,6 +1,7 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.controladores;
 
 import edu.fiuba.algo3.manejadorEventos.BotonJugarEventHandler;
+import edu.fiuba.algo3.modelo.*;
 import edu.fiuba.algo3.modelo.rango.Novato;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -14,34 +15,34 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+import java.util.List;
+
 public class Juego {
 
-    private Stage stageActual;
-    private boolean estado;
     private Policia policia;
+    private Caso casoActual;
+    private List<Sospechoso> listaSospechosos;
+    private List<Tesoro> listaBotines;
+    private List<Destino> listaDestinos;
+    private Stage stageActual;
 
-    public Juego(){
-        this.estado = true;
-        //jugar();
+    public Juego(Stage stage){
+        generarListasDeDatos();
+        this.stageActual = stage;
+    }
+
+    private void generarListasDeDatos() {
+        //ir a lector de archivo
     }
 
     public void jugar() {
-        this.stageActual.setScene(generarImagenDeInicio());
-        this.stageActual.show();
-        /*
-        while (this.estado) {
-            generarBienvenida();
+        generarCaso();
+    }
 
-            this.buscarPolicia();
+    private void generarCaso() {
+        this.casoActual = new Caso("Fast Eddie B.", new RutaDeEscape(), new Tesoro("Buda de oro"));
 
-            Caso casoActual = new Caso();
-            while (casoActual.noTerminado()) {
-                this.policia.asignarCaso(casoActual);
-                stageActual.setScene(tomarDecisiones());
-            }
-
-        }
-        */
+        //this.casoActual = new Caso(policia);
     }
 
     public void generarBienvenida() {
@@ -105,6 +106,19 @@ public class Juego {
 
     public void crearPolicia(String text) {
         this.policia = new Policia(text, new Novato());
+        this.jugar();
+    }
+
+    public String nombreDestinoActual() {
+        return policia.destinoActual().toString();
+    }
+
+    public String obtenerFechaActual() {
+        return policia.fechaActual();
+    }
+
+    public String imagenCapitalActual() {
+        return policia.enlaceCapitalActual();
     }
 }
 

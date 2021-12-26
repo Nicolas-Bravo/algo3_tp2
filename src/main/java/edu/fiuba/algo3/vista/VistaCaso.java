@@ -6,16 +6,16 @@ import javafx.scene.Node;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
-public class VistaJuego implements MisVistas {
+public class VistaCaso implements MisVistas {
     private Juego juego;
     //private Canvas canvas;
     private HBox hboxPrincipal;
-    public VistaJuego(Juego juego) {
+    public VistaCaso(Juego juego) {
         //33:31
         this.juego = juego;
-        ContenedorHorario contenedorHorario = new ContenedorHorario();
+        ContenedorHorario contenedorHorario = new ContenedorHorario(juego);
 
-        ContenedorTipeadora contenedorTipeadora = new ContenedorTipeadora(juego);
+        ContenedorImagen contenedorTipeadora = new ContenedorImagen(juego);
 
         VBox vboxLateralIzquierda = new VBox(contenedorHorario, contenedorTipeadora);
         vboxLateralIzquierda.setAlignment(Pos.TOP_LEFT);
@@ -32,7 +32,5 @@ public class VistaJuego implements MisVistas {
 
     public Node componentePrincipal() {
         return this.hboxPrincipal;
-    }
-    public void actualizarVista() {
     }
 }

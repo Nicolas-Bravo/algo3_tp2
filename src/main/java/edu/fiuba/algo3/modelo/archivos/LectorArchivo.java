@@ -2,6 +2,7 @@ package edu.fiuba.algo3.modelo.archivos;
 
 import edu.fiuba.algo3.modelo.Pista;
 import edu.fiuba.algo3.modelo.Sospechoso;
+import edu.fiuba.algo3.modelo.Tesoro;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -43,4 +44,7 @@ public class LectorArchivo {
         return listaSospechosos;
     }
 
+    public static ArrayList<Tesoro> obtenerTesoros() {
+        return new ArrayList<Tesoro>();
+    }
 }

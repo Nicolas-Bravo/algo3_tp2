@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.manejadorEventos;
 
 
-import edu.fiuba.algo3.modelo.Juego;
+import edu.fiuba.algo3.controladores.Juego;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -10,11 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
-import java.text.BreakIterator;
 
 public class BotonEnviarEventHandler implements EventHandler<ActionEvent> {
     private StackPane raiz;

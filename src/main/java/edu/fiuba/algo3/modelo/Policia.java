@@ -78,4 +78,9 @@ public class Policia {
     public void sumarArresto() {
         this.rango = this.rango.sumarArresto();
     }
+
+    public String enlaceCapitalActual() {
+
+        return mapa.enlaceCapitalActual();
+    }
 }

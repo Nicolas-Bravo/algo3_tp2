@@ -26,4 +26,5 @@ public class Detective implements Rango {
         }
         return this;
     }
+
 }

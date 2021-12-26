@@ -1,13 +1,8 @@
 package edu.fiuba.algo3.manejadorEventos;
 
-import edu.fiuba.algo3.modelo.Juego;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 public class BotonJugarEventHandler implements EventHandler<ActionEvent> {

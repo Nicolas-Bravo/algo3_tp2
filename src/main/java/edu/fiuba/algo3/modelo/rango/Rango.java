@@ -9,4 +9,5 @@ public interface Rango {
     void demoraPorDistancia(double distancia, Reloj reloj);
 
     Rango sumarArresto();
+
 }

@@ -33,4 +33,13 @@ public class Destino {
     public double longitud() {
         return longitud;
     }
+
+    @Override
+    public String toString() {
+        return this.nombre;
+    }
+
+    public String enlaceImagen() {
+        return "https://www.mtl.org/sites/default/files/styles/playlist_banner_big/public/2020-03/31919H.jpg?itok=TQ_3b8Bj";
+    }
 }

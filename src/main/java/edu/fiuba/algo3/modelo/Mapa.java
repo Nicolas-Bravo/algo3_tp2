@@ -34,4 +34,8 @@ public class Mapa {
     public Pista entrar(Reloj reloj, Edificio edificio) {
         return this.destinoActual.entrar(reloj,edificio);
     }
+
+    public String enlaceCapitalActual() {
+        return destinoActual.enlaceImagen();
+    }
 }
