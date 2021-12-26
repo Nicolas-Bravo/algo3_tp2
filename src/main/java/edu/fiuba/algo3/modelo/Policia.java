@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Policia {
     private final String nombre;
     private Pista pista;
-    private final Reloj reloj;
+    private Reloj reloj;
     private Mapa mapa;
     private Rango rango;
     private int heridas;
@@ -18,9 +18,9 @@ public class Policia {
 
     public Policia(String nombre_p, Rango rango_p){
         this.nombre = nombre_p;
-        this.reloj = new Reloj();
         this.rango = rango_p;
         this.heridas = 0;
+        this.reloj = new Reloj();
     }
 
     public void entrar(Edificio edificio) {
@@ -69,6 +69,7 @@ public class Policia {
     public void asignarCaso(Caso caso){
         this.casoActual = caso;
         this.mapa = casoActual.obtenerMapa();
+        this.reloj = new Reloj();
     }
 
     public int cantidadDeArrestos() {

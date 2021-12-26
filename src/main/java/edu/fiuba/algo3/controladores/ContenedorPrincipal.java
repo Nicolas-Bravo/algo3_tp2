@@ -1,12 +1,9 @@
 package edu.fiuba.algo3.controladores;
 
-import edu.fiuba.algo3.modelo.Juego;
 import edu.fiuba.algo3.vista.BarraDeMenu;
 import edu.fiuba.algo3.vista.VistaJuego;
-import javafx.geometry.Insets;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 

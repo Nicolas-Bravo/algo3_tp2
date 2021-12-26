@@ -1,6 +1,7 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.controladores;
 
 import edu.fiuba.algo3.manejadorEventos.BotonJugarEventHandler;
+import edu.fiuba.algo3.modelo.Policia;
 import edu.fiuba.algo3.modelo.rango.Novato;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;

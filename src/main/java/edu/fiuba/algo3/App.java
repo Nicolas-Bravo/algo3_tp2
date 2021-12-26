@@ -2,11 +2,9 @@ package edu.fiuba.algo3;
 
 import edu.fiuba.algo3.controladores.ContenedorBienvenidos;
 import edu.fiuba.algo3.controladores.ContenedorPrincipal;
-import edu.fiuba.algo3.modelo.Juego;
+import edu.fiuba.algo3.controladores.Juego;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
