@@ -2,7 +2,6 @@ package edu.fiuba.algo3.controladores;
 
 import edu.fiuba.algo3.manejadorEventos.BotonEnviarEventHandler;
 import edu.fiuba.algo3.manejadorEventos.BotonJugarEventHandler;
-import edu.fiuba.algo3.modelo.Juego;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;

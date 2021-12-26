@@ -9,14 +9,16 @@ public class Caso {
     private ArrayList<Sospechoso> sospechososTotales;
     private final Sospechoso ladronReal;
     private boolean orden;
+    private final Tesoro tesoro;
 
 
-    public Caso(String nombre, RutaDeEscape ruta){
+    public Caso(String nombre, Tesoro tesoro_p, RutaDeEscape ruta){
         this.sospechososTotales = BuscadorDeSospechosos.obtenerTodosLosSospechosos();
         this.ladronReal = BuscadorDeSospechosos.obtenerSospechosoPorNombre(nombre, this.sospechososTotales);
         this.rutaDeEscape = ruta;
         this.orden = false;
         this.entradasfinales = 0;
+        this.tesoro = tesoro_p;
     }
 
     public void emitirOrden(Sospechoso sospechoso){
@@ -40,7 +42,7 @@ public class Caso {
     }
 
     public Mapa obtenerMapa() {
-        return this.rutaDeEscape.obtenerMapa();
+        return this.rutaDeEscape.obtenerMapa(this.tesoro.obtenerInicio());
     }
 
     //

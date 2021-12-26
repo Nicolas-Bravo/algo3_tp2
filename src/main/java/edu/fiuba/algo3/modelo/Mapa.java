@@ -9,14 +9,15 @@ public class Mapa {
 
     private ArrayList<Destino> destinos;
     private Destino destinoActual;
-    private CalculadorDistancias calculadorDistancias;
+    private final CalculadorDistancias calculadorDistancias;
 
-    public Mapa(Destino... destinos_p) {
+    public Mapa(Destino inicio, Destino... destinos_p) {
         this.destinos = new ArrayList<>();
+        this.destinos.add(inicio);
 
         Collections.addAll(this.destinos, destinos_p);
 
-        this.destinoActual = this.destinos.get(0);
+        this.destinoActual = inicio;
         this.calculadorDistancias = new CalculadorDistancias();
     }
 

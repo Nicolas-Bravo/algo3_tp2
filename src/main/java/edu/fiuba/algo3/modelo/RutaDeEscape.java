@@ -26,7 +26,7 @@ public class RutaDeEscape {
         }
     }
 
-    public Mapa obtenerMapa() {
-        return new Mapa(this.destinos.toArray(new Destino[0]));
+    public Mapa obtenerMapa(Destino inicio) {
+        return new Mapa(inicio, this.destinos.toArray(new Destino[0]));
     }
 }
