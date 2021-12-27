@@ -6,6 +6,6 @@ public class SegundaEntrada implements DemoradorPorEntradas {
 
     public DemoradorPorEntradas demoraTemporal(Reloj reloj){
         reloj.aumentarHoras(2);
-        return new SegundaEntrada();
+        return new TercerEntrada();
     }
 }

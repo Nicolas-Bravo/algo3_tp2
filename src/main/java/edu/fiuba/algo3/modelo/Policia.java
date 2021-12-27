@@ -64,6 +64,7 @@ public class Policia {
         if(sospechososPosibles.size()==1){
             this.casoActual.emitirOrden(sospechososPosibles.get(0));
         }
+        this.reloj.aumentarHoras(3);
     }
 
     public void asignarCaso(Caso caso){

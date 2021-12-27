@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.modelo.archivos;
 
+import edu.fiuba.algo3.modelo.DestinoCandidato;
 import edu.fiuba.algo3.modelo.Pista;
 import edu.fiuba.algo3.modelo.Sospechoso;
 
@@ -41,6 +42,25 @@ public class LectorArchivo {
             e.printStackTrace();
         }
         return listaSospechosos;
+    }
+
+    public static ArrayList<DestinoCandidato> generarListaDestinosCandidatos() {
+        ArrayList<DestinoCandidato> listaDestinos= new ArrayList<>();
+        try {
+            File myObj = new File("Archivos/destinos.csv");
+            Scanner myReader = new Scanner(myObj);
+            myReader.nextLine();
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                listaDestinos.add(new DestinoCandidato(generarDescripcion(data)));
+            }
+            myReader.close();
+        }
+        catch (FileNotFoundException e) {
+            System.out.println("An error with files occurred.");
+            e.printStackTrace();
+        }
+        return listaDestinos;
     }
 
 }
