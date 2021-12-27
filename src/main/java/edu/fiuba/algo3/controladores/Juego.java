@@ -41,7 +41,8 @@ public class Juego {
 
     private void generarCaso() {
         Edificio edificioInicial = new Banco(new Pista("Una pista aux"));
-        Destino destinoInicial = new Destino("Montreal", 45.50884, 73.5878, edificioInicial);
+        Edificio puertoInicial = new Puerto(new Pista("Pista aux"));
+        Destino destinoInicial = new Destino("Montreal", 45.50884, 73.5878, edificioInicial, puertoInicial);
 
         this.casoActual = new Caso("Fast Eddie B.", new RutaDeEscape(destinoInicial), new Tesoro("Buda de oro"));
         this.policia.asignarCaso(casoActual);

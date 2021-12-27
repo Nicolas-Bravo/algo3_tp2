@@ -6,7 +6,7 @@ public class Puerto extends Edificio{
     private Image imagen;
     public Puerto(Pista entrada) {
         super(entrada);
-        this.imagen = new Image("https://pngimg.com/uploads/bank/bank_PNG23.png");
+        this.imagen = new Image("https://cdn-icons-png.flaticon.com/32/995/995249.png");
 
     }
     @Override

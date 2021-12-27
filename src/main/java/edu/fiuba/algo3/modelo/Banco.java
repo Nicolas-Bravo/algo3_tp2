@@ -6,7 +6,7 @@ public class Banco extends Edificio {
     private Image imagen;
     public Banco(Pista entrada) {
                 super(entrada);
-                this.imagen = new Image("https://pngimg.com/uploads/bank/bank_PNG23.png");
+                this.imagen = new Image("https://cdn-icons-png.flaticon.com/32/2830/2830284.png");
 
     }
     @Override

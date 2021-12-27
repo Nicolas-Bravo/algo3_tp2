@@ -4,6 +4,8 @@ import edu.fiuba.algo3.controladores.Juego;
 import edu.fiuba.algo3.modelo.Mapa;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.Node;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
@@ -20,8 +22,8 @@ public class BotonEdificiosEventHandler implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        VentanaEdificios ventanaEdificios = new VentanaEdificios(mapa.destinoActual());
-        this.stage.getScene().setRoot(new StackPane(stage.getScene().getRoot(), ventanaEdificios));
-
+        VentanaEdificios ventanaEdificios = new VentanaEdificios(mapa.destinoActual(), stage, juego);
+        StackPane stack = new StackPane(stage.getScene().getRoot(), ventanaEdificios);
+        this.stage.getScene().setRoot(stack);
     }
 }

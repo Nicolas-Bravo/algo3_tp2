@@ -13,7 +13,7 @@ public class ContenedorInformacion extends StackPane {
         this.setWidth(500);
         this.setHeight(900);
 
-        Image image = new Image("https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Black_from_a_camera.jpg/1200px-Black_from_a_camera.jpg");
+        Image image = new Image("https://m.media-amazon.com/images/I/214zIZyXvVL._AC_SY450_.jpg");
         ImageView imgView = new ImageView(image);
         imgView.setFitHeight(500);
         imgView.setFitWidth(700);
