@@ -8,6 +8,8 @@ import javafx.scene.layout.VBox;
 
 public class ContenedorHorario extends StackPane {
 
+    private Juego juego;
+
     public ContenedorHorario() {
         this.setWidth(240);
         this.setHeight(100);
@@ -28,5 +30,11 @@ public class ContenedorHorario extends StackPane {
         this.setHeight(100);
         Label lugar = new Label(juego.nombreDestinoActual());
         Label hora = new Label(juego.obtenerFechaActual());
+        this.juego = juego;
+        VBox vbox = new VBox(lugar, hora);
+        vbox.setAlignment(Pos.CENTER);
+        this.getChildren().add(vbox);
+        this.setAlignment(Pos.TOP_LEFT);
+
     }
 }

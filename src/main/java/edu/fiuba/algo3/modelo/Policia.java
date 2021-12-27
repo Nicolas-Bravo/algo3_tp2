@@ -83,4 +83,8 @@ public class Policia {
 
         return mapa.enlaceCapitalActual();
     }
+
+    public Mapa mapaActual() {
+        return mapa;
+    }
 }

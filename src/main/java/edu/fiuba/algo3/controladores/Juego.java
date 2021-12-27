@@ -35,13 +35,16 @@ public class Juego {
         //ir a lector de archivo
     }
 
-    public void jugar() {
+    private void jugar() {
         generarCaso();
     }
 
     private void generarCaso() {
-        this.casoActual = new Caso("Fast Eddie B.", new RutaDeEscape(), new Tesoro("Buda de oro"));
+        Edificio edificioInicial = new Banco(new Pista("Una pista aux"));
+        Destino destinoInicial = new Destino("Montreal", 45.50884, 73.5878, edificioInicial);
 
+        this.casoActual = new Caso("Fast Eddie B.", new RutaDeEscape(destinoInicial), new Tesoro("Buda de oro"));
+        this.policia.asignarCaso(casoActual);
         //this.casoActual = new Caso(policia);
     }
 
@@ -119,6 +122,10 @@ public class Juego {
 
     public String imagenCapitalActual() {
         return policia.enlaceCapitalActual();
+    }
+
+    public Mapa mapaActual() {
+        return policia.mapaActual();
     }
 }
 
