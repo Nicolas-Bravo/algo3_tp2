@@ -39,6 +39,10 @@ public class Destino {
         return this.nombre;
     }
 
+    public ArrayList<Edificio> obtenerEdificios(){
+        return this.edificios;
+    }
+
     public String enlaceImagen() {
         return "https://www.mtl.org/sites/default/files/styles/playlist_banner_big/public/2020-03/31919H.jpg?itok=TQ_3b8Bj";
     }

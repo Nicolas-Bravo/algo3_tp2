@@ -6,12 +6,13 @@ import javafx.scene.Node;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 public class VistaCaso implements MisVistas {
     private Juego juego;
     //private Canvas canvas;
     private HBox hboxPrincipal;
-    public VistaCaso(Juego juego) {
+    public VistaCaso(Stage stage, Juego juego) {
         //33:31
         this.juego = juego;
         ContenedorHorario contenedorHorario = new ContenedorHorario(juego);
@@ -23,7 +24,7 @@ public class VistaCaso implements MisVistas {
 
         ContenedorInformacion contenedorInfo = new ContenedorInformacion(juego);
 
-        Botonera botonera = new Botonera(juego);
+        Botonera botonera = new Botonera(stage,juego);
         HBox hboxAux = new HBox(botonera);
         hboxAux.setAlignment(Pos.BOTTOM_RIGHT);
         VBox vboxLateralDerecha = new VBox(contenedorInfo, hboxAux);
