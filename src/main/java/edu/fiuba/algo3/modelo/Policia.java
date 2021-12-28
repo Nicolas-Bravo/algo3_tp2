@@ -23,9 +23,10 @@ public class Policia {
         this.heridas = 0;
     }
 
-    public void entrar(Edificio edificio) {
+    public Pista entrar(Edificio edificio) {
         this.pista = this.mapa.entrar(this.reloj, edificio);
         this.casoActual.controlArresto(destinoActual(), this.pista, this);
+        return this.pista;
     }
 
     public Pista mostrarPista() {

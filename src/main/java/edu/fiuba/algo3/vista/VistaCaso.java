@@ -17,7 +17,8 @@ public class VistaCaso implements MisVistas {
         this.juego = juego;
         ContenedorHorario contenedorHorario = new ContenedorHorario(juego);
 
-        ContenedorImagen contenedorImagen = new ContenedorImagen(juego);
+
+        ContenedorIzquierda contenedorImagen = ContenedorIzquierda.deTipoImagen(juego, stage);
 
         VBox vboxLateralIzquierda = new VBox(contenedorHorario, contenedorImagen);
         vboxLateralIzquierda.setAlignment(Pos.TOP_LEFT);

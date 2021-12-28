@@ -1,11 +1,15 @@
 package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.controladores.Juego;
+import edu.fiuba.algo3.modelo.Pista;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 
 public class ContenedorInformacion extends StackPane {
 
@@ -13,16 +17,26 @@ public class ContenedorInformacion extends StackPane {
         this.setWidth(500);
         this.setHeight(900);
 
-        Image image = new Image("https://m.media-amazon.com/images/I/214zIZyXvVL._AC_SY450_.jpg");
+        Image image = new Image("https://cdn.discordapp.com/attachments/912029542556790795/925532737782288394/contenedorInfoBack.png");
         ImageView imgView = new ImageView(image);
-        imgView.setFitHeight(500);
-        imgView.setFitWidth(700);
+        VBox vboxx = new VBox(imgView);
 
-        Label infoActual = new Label("Info de la capital");
-        VBox vbox = new VBox();
-        vbox.getChildren().addAll(imgView, infoActual);
-        this.getChildren().add(vbox);
-        this.setAlignment(Pos.TOP_RIGHT);
+
+
+
+
+        this.getChildren().add(vboxx);
+        this.setAlignment(Pos.CENTER);
+    }
+    public void mostrarPista(Pista pista){
+        Label etiqueta = new Label();
+        etiqueta.setFont(Font.font("Times New Roman", FontWeight.EXTRA_BOLD,18));
+        etiqueta.setTextFill(Color.web("FFFFFF"));
+        etiqueta.setText(pista.mostrarPista());
+        this.getChildren().add(etiqueta);
+
+
+
     }
 
 }

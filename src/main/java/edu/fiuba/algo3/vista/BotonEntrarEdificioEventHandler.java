@@ -19,6 +19,7 @@ public class BotonEntrarEdificioEventHandler implements EventHandler<ActionEvent
     }
     @Override
     public void handle(ActionEvent actionEvent) {
-        this.stage.getScene().setRoot(new ContenedorPrincipal(stage, juego, new VistaEdificio(stage, juego)));
+        this.stage.getScene().setRoot(new ContenedorPrincipal(stage, juego, new VistaEdificio(stage, juego, edificio)));
+
     }
 }

@@ -49,63 +49,6 @@ public class Juego {
         //this.casoActual = new Caso(policia);
     }
 
-    public void generarBienvenida() {
-        StackPane raiz = new StackPane();
-        Image img = new Image("https://tse1.mm.bing.net/th?id=OIP.eEbCv5U2iIMApDbQLPfOiAHaEK&pid=Api&P=0&w=327&h=185");
-        BackgroundImage backgimg = new BackgroundImage(img,  BackgroundRepeat.NO_REPEAT,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundPosition.DEFAULT,
-                BackgroundSize.DEFAULT);
-        Background back = new Background(backgimg);
-        TextField ingreseNombrePolicia = new TextField();
-        Button enviar = new Button("Enviar");
-
-
-        raiz.setBackground(back);
-        raiz.getChildren().add(ingreseNombrePolicia);
-        raiz.getChildren().add(enviar);
-
-        Scene escenaAMostrar = new Scene(raiz);
-    }
-
-
-    private void buscarPolicia() {
-
-    }
-
-
-    private Scene inicializarControlesVisuales(){
-        StackPane pane = new StackPane();
-        BackgroundFill color = new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY);
-        pane.setStyle("-fx-background-color: BLACK");
-
-        Button botonPrueba = new Button("Anda");
-        pane.getChildren().add(botonPrueba);
-        return new Scene(pane,400,400);
-    }
-
-    public Scene generarImagenDeInicio(){
-        VBox raiz = new VBox();
-        Image img = new Image("https://www.enter.co/wp-content/uploads/2019/01/Carmen-Sandiego-Still-001.jpg");
-        BackgroundImage backgimg = new BackgroundImage(img,  BackgroundRepeat.NO_REPEAT,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundPosition.DEFAULT,
-                BackgroundSize.DEFAULT);
-        Background back = new Background(backgimg);
-
-        Button BotonJugar = new Button("Jugar");
-
-
-
-        raiz.setBackground(back);
-        raiz.getChildren().add(BotonJugar);
-
-        Scene scene = new Scene(raiz, 600, 400);
-        BotonJugarEventHandler HandleBotonJugar = new BotonJugarEventHandler(this.stageActual,scene);
-        BotonJugar.setOnAction(HandleBotonJugar);
-        return scene;
-
-    }
 
 
     public void crearPolicia(String text) {
@@ -128,5 +71,7 @@ public class Juego {
     public Mapa mapaActual() {
         return policia.mapaActual();
     }
+
+    public Pista entrarA(Edificio edificio) { return policia.entrar(edificio); }
 }
 
