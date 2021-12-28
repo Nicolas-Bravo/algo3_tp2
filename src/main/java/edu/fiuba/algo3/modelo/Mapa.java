@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.pista.Pista;
 import edu.fiuba.algo3.modelo.reloj.Reloj;
 
 import java.util.ArrayList;
@@ -11,13 +12,12 @@ public class Mapa {
     private Destino destinoActual;
     private final CalculadorDistancias calculadorDistancias;
 
-    public Mapa(Destino inicio, Destino... destinos_p) {
+    public Mapa(Destino... destinos_p) {
         this.destinos = new ArrayList<>();
-        this.destinos.add(inicio);
 
         Collections.addAll(this.destinos, destinos_p);
 
-        this.destinoActual = inicio;
+        this.destinoActual = this.destinos.get(0);
         this.calculadorDistancias = new CalculadorDistancias();
     }
 

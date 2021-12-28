@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.pista.Pista;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -26,7 +28,10 @@ public class RutaDeEscape {
         }
     }
 
-    public Mapa obtenerMapa(Destino inicio) {
-        return new Mapa(inicio, this.destinos.toArray(new Destino[0]));
+    public Mapa obtenerMapa() {
+        return new Mapa(this.destinos.toArray(new Destino[0]));
+    }
+
+    public int largo() { return this.destinos.size();
     }
 }

@@ -1,20 +1,20 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.pista.Pista;
+
 import java.util.ArrayList;
 
 public class Caso {
 
     private final RutaDeEscape rutaDeEscape;
     private int entradasfinales;
-    private ArrayList<Sospechoso> sospechososTotales;
     private final Sospechoso ladronReal;
     private boolean orden;
     private final Tesoro tesoro;
 
 
     public Caso(String nombre, Tesoro tesoro_p, RutaDeEscape ruta){
-        this.sospechososTotales = BuscadorDeSospechosos.obtenerTodosLosSospechosos();
-        this.ladronReal = BuscadorDeSospechosos.obtenerSospechosoPorNombre(nombre, this.sospechososTotales);
+        this.ladronReal = BuscadorDeSospechosos.obtenerSospechosoPorNombre(nombre);
         this.rutaDeEscape = ruta;
         this.orden = false;
         this.entradasfinales = 0;
@@ -34,7 +34,7 @@ public class Caso {
     }
 
     public ArrayList<Sospechoso> buscarSospechosos(Pista[] datos) {
-        return BuscadorDeSospechosos.buscarSospechosos(sospechososTotales, datos);
+        return BuscadorDeSospechosos.buscarSospechosos( datos);
     }
 
     public void controlArresto(Destino destinoActual, Pista pista, Policia policia) {
@@ -42,7 +42,7 @@ public class Caso {
     }
 
     public Mapa obtenerMapa() {
-        return this.rutaDeEscape.obtenerMapa(this.tesoro.obtenerInicio());
+        return this.rutaDeEscape.obtenerMapa();
     }
 
     //

@@ -1,4 +1,6 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.pista;
+
+import edu.fiuba.algo3.modelo.Edificio;
 
 public class Pista {
 
@@ -19,4 +21,7 @@ public class Pista {
         return this.pista.equals(((Pista)o).mostrarPista());
     }
 
+    public Edificio obtenerEdificio(){
+        return new Edificio(this);
+    }
 }
