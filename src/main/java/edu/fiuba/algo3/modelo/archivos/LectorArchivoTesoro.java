@@ -22,15 +22,25 @@ public class LectorArchivoTesoro {
 
     }
 
-    public static ArrayList<TesoroCandidato> generarListaTesoroCandidato() {
-        ArrayList<TesoroCandidato> listaTesoros= new ArrayList<>();
+    public static ArrayList<ArrayList> generarListaTesoroCandidato() {
+        ArrayList<ArrayList> matriz = new ArrayList<>();
+        ArrayList<TesoroCandidato> listaTesorosComun= new ArrayList<>();
+        ArrayList<TesoroCandidato> listaTesorosValioso= new ArrayList<>();
+        ArrayList<TesoroCandidato> listaTesorosMuyValioso= new ArrayList<>();
         try {
             File myObj = new File("Archivos/tesoro.csv");
             Scanner myReader = new Scanner(myObj);
             myReader.nextLine();
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
-                listaTesoros.add(new TesoroCandidato(generarDescripcion(data)));
+                Pista[] array = generarDescripcion(data);
+                if(array[0].equals(new Pista("Comun"))){
+                    listaTesorosComun.add(new TesoroCandidato(array));
+                } else if (array[0].equals(new Pista("Valioso"))){
+                    listaTesorosValioso.add(new TesoroCandidato(array));
+                } else {
+                    listaTesorosMuyValioso.add(new TesoroCandidato(array));
+                }
             }
             myReader.close();
         }
@@ -38,7 +48,12 @@ public class LectorArchivoTesoro {
             System.out.println("An error with files occurred.");
             e.printStackTrace();
         }
-        return listaTesoros;
+
+        matriz.add(listaTesorosComun);
+        matriz.add(listaTesorosValioso);
+        matriz.add(listaTesorosMuyValioso);
+
+        return matriz;
     }
 
 }

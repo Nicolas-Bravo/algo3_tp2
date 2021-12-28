@@ -1,6 +1,9 @@
 package edu.fiuba.algo3.modelo.rango;
 
+import edu.fiuba.algo3.modelo.Tesoro;
 import edu.fiuba.algo3.modelo.reloj.Reloj;
+
+import java.util.ArrayList;
 
 public interface Rango {
 
@@ -9,4 +12,6 @@ public interface Rango {
     void demoraPorDistancia(double distancia, Reloj reloj);
 
     Rango sumarArresto();
+
+    Tesoro obtenerTesoroAleatorio(ArrayList<ArrayList> matriz);
 }

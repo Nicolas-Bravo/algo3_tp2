@@ -15,12 +15,12 @@ public class BuscadorDeDestinos {
         destinoArray = new Destino[4];
         
         Destino actual;
-        DestinoCandidato sig = listaDestinos.get((int) Math.random() * listaDestinos.size());
+        DestinoCandidato sig = listaDestinos.get((int) (Math.random() * listaDestinos.size()));
         for(int i = 0; i < 4; i++){
             actual = generarSiguiente(inicio, sig);
             destinoArray[i] = actual;
             inicio = sig.obtenerNombre();
-            sig = listaDestinos.get((int) Math.random() * listaDestinos.size());
+            sig = listaDestinos.get((int) (Math.random() * listaDestinos.size()));
         }
         
         return new RutaDeEscape(destinoArray);

@@ -19,5 +19,7 @@ public class TesoroCandidato {
         return descripcion.get(2);
     }
 
-
+    public Pista obtenerNombre() {
+        return descripcion.get(1);
+    }
 }

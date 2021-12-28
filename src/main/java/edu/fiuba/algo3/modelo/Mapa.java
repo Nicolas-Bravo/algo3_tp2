@@ -11,13 +11,12 @@ public class Mapa {
     private Destino destinoActual;
     private final CalculadorDistancias calculadorDistancias;
 
-    public Mapa(Destino inicio, Destino... destinos_p) {
+    public Mapa(Destino... destinos_p) {
         this.destinos = new ArrayList<>();
-        this.destinos.add(inicio);
 
         Collections.addAll(this.destinos, destinos_p);
 
-        this.destinoActual = inicio;
+        this.destinoActual = this.destinos.get(0);
         this.calculadorDistancias = new CalculadorDistancias();
     }
 

@@ -11,12 +11,12 @@ public class IntegracionTest {
     @Test
     public void tesoroValorComunRobado(){
 
+        Tesoro tesoro = new Tesoro(new Pista("teosro"), new Pista("montreal"), new Comun());
+
         Edificio montrealUno = new Banco(new Pista("Una pista aux"));
         Edificio montrealDos = new Aeropuerto(new Pista("Una pista aux"));
         Edificio montrealTres = new Biblioteca(new Pista("Una pista aux"));
         Destino montreal = new Destino("Montreal", 45.50884, 73.5878, montrealUno, montrealDos, montrealTres);
-
-        Tesoro tesoro = new Tesoro(montreal, new Comun());
 
         Edificio limaUno = new Aeropuerto(new Pista("Otra pista aux"));
         Edificio limaDos = new Banco(new Pista("Otra pista aux"));
@@ -33,7 +33,7 @@ public class IntegracionTest {
         Edificio mexicoTres = new Biblioteca(new Pista("Otra pista aux"));
         Destino mexico = new Destino("Mexico", 19.42847, 99.12766 , mexicoUno, mexicoDos, mexicoTres);
 
-        RutaDeEscape ruta = new RutaDeEscape(lima, londres, mexico);
+        RutaDeEscape ruta = new RutaDeEscape(montreal, lima, londres, mexico);
 
         Caso caso = new Caso("Fast Eddie B.", tesoro, ruta);
 
@@ -64,12 +64,12 @@ public class IntegracionTest {
     @Test
     public void tesoroValorValiosoRobado(){
 
+        Tesoro tesoro = new Tesoro(new Pista("teosro"), new Pista("montreal"), new Valioso());
+
         Edificio montrealUno = new Banco(new Pista("Una pista aux"));
         Edificio montrealDos = new Aeropuerto(new Pista("Una pista aux"));
         Edificio montrealTres = new Biblioteca(new Pista("Una pista aux"));
         Destino montreal = new Destino("Montreal", 45.50884, 73.5878, montrealUno, montrealDos, montrealTres);
-
-        Tesoro tesoro = new Tesoro(montreal, new Valioso());
 
         Edificio limaUno = new Aeropuerto(new Pista("Otra pista aux"));
         Edificio limaDos = new Banco(new Pista("Otra pista aux"));
@@ -91,7 +91,7 @@ public class IntegracionTest {
         Edificio atenasTres = new Biblioteca(new Pista("Otra pista aux"));
         Destino atenas = new Destino("Atenas", 37.98376, 23.72784 , atenasUno, atenasDos, atenasTres);
 
-        RutaDeEscape ruta = new RutaDeEscape(lima, londres, mexico, atenas);
+        RutaDeEscape ruta = new RutaDeEscape(montreal, lima, londres, mexico, atenas);
 
         Caso caso = new Caso("Fast Eddie B.", tesoro, ruta);
 
@@ -125,12 +125,12 @@ public class IntegracionTest {
     @Test
     public void tesoroValorMuyValiosoRobado(){
 
+        Tesoro tesoro = new Tesoro(new Pista("teosro"), new Pista("montreal"), new MuyValioso());
+
         Edificio montrealUno = new Banco(new Pista("Una pista aux"));
         Edificio montrealDos = new Aeropuerto(new Pista("Una pista aux"));
         Edificio montrealTres = new Biblioteca(new Pista("Una pista aux"));
         Destino montreal = new Destino("Montreal", 45.50884, 73.5878, montrealUno, montrealDos, montrealTres);
-
-        Tesoro tesoro = new Tesoro(montreal, new MuyValioso());
 
         Edificio limaUno = new Aeropuerto(new Pista("Otra pista aux"));
         Edificio limaDos = new Banco(new Pista("Otra pista aux"));
@@ -162,7 +162,7 @@ public class IntegracionTest {
         Edificio budapestTres = new Biblioteca(new Pista("Otra pista aux"));
         Destino budapest = new Destino("Budapest", 47.49835, 19.04045 , budapestUno, budapestDos, budapestTres);
 
-        RutaDeEscape ruta = new RutaDeEscape(lima, londres, mexico, atenas, bangkok, budapest);
+        RutaDeEscape ruta = new RutaDeEscape(montreal, lima, londres, mexico, atenas, bangkok, budapest);
 
         Caso caso = new Caso("Fast Eddie B.", tesoro, ruta);
 

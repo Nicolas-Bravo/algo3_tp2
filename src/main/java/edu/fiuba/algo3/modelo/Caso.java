@@ -40,7 +40,7 @@ public class Caso {
     }
 
     public Mapa obtenerMapa() {
-        return this.rutaDeEscape.obtenerMapa(this.tesoro.obtenerInicio());
+        return this.rutaDeEscape.obtenerMapa();
     }
 
     //
