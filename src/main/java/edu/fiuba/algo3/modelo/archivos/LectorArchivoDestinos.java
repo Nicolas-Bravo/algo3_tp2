@@ -16,7 +16,7 @@ public class LectorArchivoDestinos {
         String[] campos = pistas.split(";");
         String[] aux;
 
-        for(int i=1; i<3; i++) {
+        for(int i=0; i<2; i++) {
             aux = campos[i].split(",");
             for(String p:aux){
                 if(!p.equals("-")) {
@@ -25,7 +25,7 @@ public class LectorArchivoDestinos {
             }
         }
 
-        for(int i=3; i<5; i++) {
+        for(int i=2; i<4; i++) {
             aux = campos[i].split(",");
             for(String p:aux){
                 if(!p.equals("-")) {
@@ -34,7 +34,7 @@ public class LectorArchivoDestinos {
             }
         }
 
-        for(int i=5; i<campos.length; i++) {
+        for(int i=4; i<campos.length; i++) {
             aux = campos[i].split(",");
             for(String p:aux){
                 if(!p.equals("-")) {
@@ -47,12 +47,11 @@ public class LectorArchivoDestinos {
     }
 
 
-    private static ArrayList<ArrayList> generarDescripcion(String pistas){
+    private static ArrayList<ArrayList> generarDescripcion(String linea){
 
         ArrayList<ArrayList> matriz = new ArrayList<>();
 
-        String[] campos = pistas.split("|");
-
+        String[] campos = linea.split("/");
 
         ArrayList<Pista> nombre = new ArrayList<>();
 
