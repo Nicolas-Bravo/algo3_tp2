@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.archivos.LectorArchivoSospechosos;
 import edu.fiuba.algo3.modelo.exceptions.DescripcionIngresadaErroneaError;
+import edu.fiuba.algo3.modelo.pista.Pista;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

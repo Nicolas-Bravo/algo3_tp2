@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.pista.Pista;
 import edu.fiuba.algo3.modelo.valor.Valor;
 
 public class Tesoro {
@@ -15,6 +16,13 @@ public class Tesoro {
     }
 
     public Pista obtenerInicio() {
-        return inicio;
+        return this.inicio;
+    }
+
+    public Valor obtenerValor() { return this.valor;
+    }
+
+    public int obtenerLargoRuta() {
+        return this.valor.obtenerLargoRuta();
     }
 }

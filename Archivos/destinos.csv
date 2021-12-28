@@ -1,31 +1,31 @@
-Nombre;Bandera;Moneda;Geografia;Hitos;Industrias;Animales;Gente;Idioma;Arte;Religion;Lider;Miscelanea
-Atenas;Azul y blanco;Dracma;-;Mar Egeo,Cordillera Pindo;Higos,Olivos;-;Platon,Espartanos;Griego;-;-;Primer Ministro;República Helénica,Vecinos de Yugoslavia
-Bagdad;Rojo, Blanco y Negro;Dinar;Desierto;Desierto Sirio,Rio Eufrates,Rio Tigris;Petroleo;Gazella Arabica;Sumeria;-;-;-;-;Mesopotamia
-Bamako;Verde, Amarillo y Rojo;Fanco;-;Río Níger,Desierto del Sahara;Mijo,Arroz;-;Tuaregs;-;-;-;Presidente;Tombuctu
-Bangkok;Rojo, Blanco y Azul;Baht;-;-;-;-;-;-;-;Budismo;-;Ciudad Vieja
-Budapest;Rojo, Blanco y Verde;Forinto;-;Alpold Plains,Rio Danubio;Uvas;-;Croatas,Gitanos;-;Arte Hungaro;-;-;Vecinos de Austria
-Buenos Aires;Bandera del Sol;Australes;-;Rio Parana,Tierra del Fuego;Vacas;-;Gauchos;-;-;-;Presindente;Antigua Colonia Española
-Cairo;-;Libras;-;Tumba del Faraon,Desierto de Sinai;Cal;-;Nubia;-;-;-;-;Alejandria Antigua
-Colombo;Leon de Oro;Rupias;-;Golfo de Mannar;Citronela;-;-;-;Artefactos de Veddah;-;-;Taprobana Antigua
-Estambul;Media Luna y Estrella;Lira;-;Mar Negro,Monte Arafat;-;-;Hititas;-;-;-;Presidente;Imperio Bizantino, Constantinopla
-Katmandu;Triangulo Doble;Rupias;Montañas;Baruntse,Himalayas;-;-;Gurkhas;-;-;Hindu;-;-
-Kigali;Rojo, Amarillo y Verde;Francos;Volcanes;-;Estaño;Mamba Negro,Gorilla;Pigmeas,Tutsi;-;-;-;-;-
-Lima;Rojo y Blanco;Soles;-;Montaña Huascaran;-;-;-;-;Arte Aimara;-;-;-
-Londres;Rjo, Blanco y Azul;Libras;-;Big Ben,Lago Ness,Rio Tamesis;-;-;Celtas,Druidas,Sajones;-;-;-;Primer Ministro;-
-Montreal;Hoja de Arce;-;-;Península Gaspesiana,Lago Mistassini,Cascadas de Montmorency,Isla del Príncipe Eduardo,Yucon;Alce;-;Frances;-;-;-;Antigua Colonia Francesa
-Mexico;Verde, Blanco y Rojo;-;-;Montaña Popocatepetl,Sierra Madre;-;Monstruo de Gila;Aztecas,Mayas,Toltecas;-;Joyas de Yucatan;-;-;-
-Moroni;Verde y Blanco;Francos;Islas,Volcanes;Montaña Karthala;Perfume;Autillo de Anjouan;-;-;-;-;-;-
-Moscu;Rojo;Rublos;-;Lago Ladoga,Montes Urales;-;-;Ivan el Terrible;Ruso,Uraliano;-;-;-;Moldavia,Pais Mas Grande del Mundo
-Nueva Delhi;Rojo, Blanco y Verde;Rupias;-;-;-;Víbora de Escamas de Sierra;-;-;-;Sij;Primer Ministro;-
-Nueva York;Rojo, Blanco y Azul;Dolares;-;Tumba de Grant,Río Hudson,Naciones Unidas,Centro de Comercio Mundial;Moda,Bolsa;-;Henry Hudson;-;-;-;-;Subterraneos
-Oslo;Cruz Roja y Azul;-;-;Mar de Barents;Hidroelectricidad;-;Vikingos;-;-;-;Rey;Esquí Nordico
-Paris;Rojo, Blanco y Azul;Francos;-;Sienne;Moda;-;-;-;-;-;-;-
-Peking;Rojo;Yuans;-;Ciudad Prohibida,Mar Amarillo;-;Panda Gigante;-;-;-;-;-;Dinastía Shang,Levantamiento de Wuchang
-Puerto Moresby;Amarillo, Rojo y Negro;Kinas;Volcanes;Montaña Karkar,Montaña Manam;Oro;-;Taipans;-;-;-;Primer Ministro;Nueva Irlanda
-Reikiavik;Rojo y Azul;Corona islandesa;Aguas termales,Volcanes;-;Pescado;-;-;-;-;-;-;Nación Insular
-Rio de Janeiro;Verde, Azul y Amarillo;Cruzeiros;-;Rio Amazonas;Cafe,Diamantes,Titanio;Bushmaster,Periquito Dorado,Guacamayo Indigo,Puercoespín de Espinas Finas;-;Portugues;-;-;Presidente;-
-Roma;Verde, Blanco y Rojo;Lira;-;Coliseo,Foro Romano,Monte Etna,Mar Tirreno;Texil;-;Etruscos;Italiano;Renacimiento;-;Presidente;-
-San Marino;Azul y Blanco;-;-;Monte Titano;Ceramica,Sellos;-;-;Italiano;-;-;-;República Serena,Estado Más Antiguo de Europa,Vecinos de Italia
-Singapur;Rojo y Blanco;-;-;Hotel Raffles,Mar de la China Meridional,Estrecho de Malaca;Caucho;Pez Piedra;-;-;Malayo;-;-;Antigua Colonia Britanica
-Sidney;Rojo, Blanco y Azul;-;-;Gran Desierto Arenoso,Teatro de Opera,Outback;Lana;Oso Koala,Sarpiente Tigre,Wallaby,Wombat;Aborigenes,Capitan Cook;-;-;-;-;-
-Tokyo,Rojo y Blanco;Yen;-;Monte Fuji;Automobiles;-;Shoguns;-;-;Sintoismo;-;-
+Nombre;Bandera;Idioma;Moneda;Industrias;Geografia;Hitos;Animales;Gente;Arte;Religion;Lider;Miscelanea
+Atenas;Azul y blanco;Griego;Dracma;Higos,Olivos;-;Mar Egeo,Cordillera Pindo;-;Platon,Espartanos;-;-;Primer Ministro;República Helénica,Vecinos de Yugoslavia
+Bagdad;Rojo, Blanco y Negro;-;Dinar;Petroleo;Desierto;Desierto Sirio,Rio Eufrates,Rio Tigris;Gazella Arabica;Sumeria;-;-;-;Mesopotamia
+Bamako;Verde, Amarillo y Rojo;-;Fancos;Mijo,Arroz;-;Río Níger,Desierto del Sahara;-;Tuaregs;-;-;Presidente;Tombuctu
+Bangkok;Rojo, Blanco y Azul;-;Baht;-;-;-;-;-;-;Budismo;-;Ciudad Vieja
+Budapest;Rojo, Blanco y Verde;-;Forintos;Uvas;-;Alpold Plains,Rio Danubio;-;Croatas,Gitanos;Arte Hungaro;-;-;Vecinos de Austria
+Buenos Aires;Bandera del Sol;-;Australes;Vacas;-;Rio Parana,Tierra del Fuego;-;Gauchos;-;-;Presindente;Antigua Colonia Española
+Cairo;-;-;Libras;Cal;-;Tumba del Faraon,Desierto de Sinai;-;Nubia;-;-;-;Alejandria Antigua
+Colombo;Leon de Oro;-;Rupias;Citronela;-;Golfo de Mannar;-;-;Artefactos de Veddah;-;-;Taprobana Antigua
+Estambul;Media Luna y Estrella;-;Liras;-;-;Mar Negro,Monte Arafat;-;Hititas;-;-;Presidente;Imperio Bizantino, Constantinopla
+Katmandu;Triangulo Doble;-;Rupias;-;Montañas;Baruntse,Himalayas;-;Gurkhas;-;Hindu;-;-
+Kigali;Rojo, Amarillo y Verde;-;Francos;Estaño;Volcanes;-;Mamba Negro,Gorilla;Pigmeas,Tutsi;-;-;-;-
+Lima;Rojo y Blanco;-;Soles;-;-;Montaña Huascaran;-;-;Arte Aimara;-;-;-
+Londres;Rojo, Blanco y Azul;-;Libras;-;-;Big Ben,Lago Ness,Rio Tamesis;-;Celtas,Druidas,Sajones;-;-;Primer Ministro;-
+Montreal;Hoja de Arce;Frances;-;-;-;Península Gaspesiana,Lago Mistassini,Cascadas de Montmorency,Isla del Príncipe Eduardo,Yucon;Alce;-;-;-;-;Antigua Colonia Francesa
+Mexico;Verde, Blanco y Rojo;-;-;-;-;Montaña Popocatepetl,Sierra Madre;Monstruo de Gila;Aztecas,Mayas,Toltecas;Joyas de Yucatan;-;-;-
+Moroni;Verde y Blanco;-;Francos;Perfume;Islas,Volcanes;Montaña Karthala;Autillo de Anjouan;-;-;-;-;-
+Moscu;Rojo;Ruso,Uraliano;Rublos;-;-;Lago Ladoga,Montes Urales;-;Ivan el Terrible;-;-;-;Moldavia,Pais Mas Grande del Mundo
+Nueva Delhi;Rojo, Blanco y Verde;-;Rupias;-;-;-;Víbora de Escamas de Sierra;-;-;Sij;Primer Ministro;-
+Nueva York;Rojo, Blanco y Azul;-;Dolares;Moda,Bolsa;-;Tumba de Grant,Río Hudson,Naciones Unidas,Centro de Comercio Mundial;-;Henry Hudson;-;-;-;Subterraneos
+Oslo;Cruz Roja y Azul;-;-;Hidroelectricidad;-;Mar de Barents;-;Vikingos;-;-;Rey;Esquí Nordico
+Paris;Rojo, Blanco y Azul;-;Francos;Moda;-;Sienne;-;-;-;-;-;-
+Peking;Rojo;-;Yuans;-;-;Ciudad Prohibida,Mar Amarillo;Panda Gigante;-;-;-;-;Dinastía Shang,Levantamiento de Wuchang
+Puerto Moresby;Amarillo, Rojo y Negro;-;Kinas;Oro;Volcanes;Montaña Karkar,Montaña Manam;-;Taipans;-;-;Primer Ministro;Nueva Irlanda
+Reikiavik;Rojo y Azul;-;Corona islandesa;Pescado;Aguas termales,Volcanes;-;-;-;-;-;-;Nación Insular
+Rio de Janeiro;Verde, Azul y Amarillo;Portugues;Cruzeiros;Cafe,Diamantes,Titanio;-;Rio Amazonas;Bushmaster,Periquito Dorado,Guacamayo Indigo,Puercoespín de Espinas Finas;-;-;-;Presidente;-
+Roma;Verde, Blanco y Rojo;Italiano;Lira;Texil;-;Coliseo,Foro Romano,Monte Etna,Mar Tirreno;-;Etruscos;Renacimiento;-;Presidente;-
+San Marino;Azul y Blanco;Italiano;-;Ceramica,Sellos;-;Monte Titano;-;-;-;-;-;República Serena,Estado Más Antiguo de Europa,Vecinos de Italia
+Singapur;Rojo y Blanco;-;-;Caucho;-;Hotel Raffles,Mar de la China Meridional,Estrecho de Malaca;Pez Piedra;-;Malayo;-;-;Antigua Colonia Britanica
+Sidney;Rojo, Blanco y Azul;-;-;Lana;-;Gran Desierto Arenoso,Teatro de Opera,Outback;Oso Koala,Sarpiente Tigre,Wallaby,Wombat;Aborigenes,Capitan Cook;-;-;-;-
+Tokyo;Rojo y Blanco;-;Yen;Automobiles;-;Monte Fuji;-;Shoguns;-;Sintoismo;-;-

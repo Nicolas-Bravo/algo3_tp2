@@ -2,6 +2,7 @@ package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.archivos.LectorArchivoSospechosos;
 import edu.fiuba.algo3.modelo.exceptions.DescripcionIngresadaErroneaError;
+import edu.fiuba.algo3.modelo.pista.Pista;
 
 import java.util.ArrayList;
 import java.util.stream.Stream;

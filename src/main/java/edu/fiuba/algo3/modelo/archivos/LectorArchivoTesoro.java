@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo.archivos;
 
-import edu.fiuba.algo3.modelo.Pista;
+import edu.fiuba.algo3.modelo.pista.Pista;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -28,7 +28,7 @@ public class LectorArchivoTesoro {
         ArrayList<TesoroCandidato> listaTesorosValioso= new ArrayList<>();
         ArrayList<TesoroCandidato> listaTesorosMuyValioso= new ArrayList<>();
         try {
-            File myObj = new File("Archivos/tesoro.csv");
+            File myObj = new File("Archivos/tesoros.csv");
             Scanner myReader = new Scanner(myObj);
             myReader.nextLine();
             while (myReader.hasNextLine()) {
