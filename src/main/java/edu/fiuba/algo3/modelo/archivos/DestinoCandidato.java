@@ -2,32 +2,25 @@ package edu.fiuba.algo3.modelo.archivos;
 
 import edu.fiuba.algo3.modelo.Edificio;
 import edu.fiuba.algo3.modelo.pista.Pista;
+import edu.fiuba.algo3.modelo.valor.Valor;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class DestinoCandidato {
 
-    private ArrayList<Pista> descripcion;
-    private CreadorEdificios creador;
+    private ArrayList<ArrayList> descripcion;
+    private Pista nombre;
 
-    public DestinoCandidato(Pista... descripcion_p) {
-        this.descripcion = new ArrayList<>();
-        Collections.addAll(this.descripcion, descripcion_p);
-        this.creador = new CreadorEdificios();
+    public DestinoCandidato(ArrayList<ArrayList> matriz) {
+        this.descripcion = matriz;
+        this.nombre = (Pista) matriz.get(0).get(0);
     }
 
     public Pista obtenerNombre() {
-        return descripcion.get(0);
+        return this.nombre;
     }
 
-    public Edificio[] obtenerEdificios() {
-        Edificio[] edificiosArray;
-        edificiosArray = new Edificio[3];
-
-        for(int i = 0; i < 3; i++){
-            edificiosArray[i] = this.creador.obtenerEdificio(descripcion.get((int) (Math.random() * descripcion.size())));
-        }
-        return edificiosArray;
+    public Edificio[] obtenerEdificios(Valor valor_p) {
+       return valor_p.obtenerEdificios(this.descripcion);
     }
 }
