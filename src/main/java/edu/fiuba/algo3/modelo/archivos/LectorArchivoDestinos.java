@@ -9,13 +9,12 @@ import java.util.Scanner;
 
 public class LectorArchivoDestinos {
 
-    private static Pista[] generarDescripcion(String pistas){
+    private static ArrayList<Pista> generarPistas(String pistas){
+
         ArrayList<Pista> descripcion = new ArrayList<>();
 
         String[] campos = pistas.split(";");
         String[] aux;
-
-        descripcion.add(new Pista(campos[0]));
 
         for(int i=1; i<3; i++) {
             aux = campos[i].split(",");
@@ -44,7 +43,31 @@ public class LectorArchivoDestinos {
             }
         }
 
-        return descripcion.toArray(new Pista[0]);
+        return descripcion;
+    }
+
+
+    private static ArrayList<ArrayList> generarDescripcion(String pistas){
+
+        ArrayList<ArrayList> matriz = new ArrayList<>();
+
+        String[] campos = pistas.split("|");
+
+
+        ArrayList<Pista> nombre = new ArrayList<>();
+
+        nombre.add(new Pista(campos[0]));
+        matriz.add(nombre);
+
+        ArrayList<Pista> descripcionFacil = generarPistas(campos[1]);
+        ArrayList<Pista> descripcionMedia = generarPistas(campos[2]);
+        ArrayList<Pista> descripcionDificil = generarPistas(campos[3]);
+
+        matriz.add(descripcionFacil);
+        matriz.add(descripcionMedia);
+        matriz.add(descripcionDificil);
+
+        return matriz;
 
     }
 

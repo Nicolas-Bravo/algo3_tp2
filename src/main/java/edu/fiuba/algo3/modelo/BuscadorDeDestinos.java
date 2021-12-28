@@ -10,9 +10,9 @@ public class BuscadorDeDestinos {
 
     private static ArrayList<DestinoCandidato> listaDestinos = LectorArchivoDestinos.generarListaDestinosCandidatos();
     
-    private static Destino generarSiguiente(Pista actual, DestinoCandidato siguiente){
+    private static Destino generarSiguiente(Tesoro t, DestinoCandidato siguiente){
 
-        return new Destino(actual.mostrarPista(), 10.00, 10.00, siguiente.obtenerEdificios());
+        return new Destino(t.obtenerInicio().mostrarPista(), 10.00, 10.00, siguiente.obtenerEdificios(t.obtenerValor()));
     }
 
     public static RutaDeEscape obtenerRutaDeEscape(Tesoro tesoro) {
@@ -27,7 +27,7 @@ public class BuscadorDeDestinos {
         DestinoCandidato sig = listaDestinos.get((int) (Math.random() * listaDestinos.size()));
 
         for(int i = 0; i < tope; i++){
-            actual = generarSiguiente(nombre_actual, sig);
+            actual = generarSiguiente(tesoro, sig);
             destinoArray[i] = actual;
             nombre_actual = sig.obtenerNombre();
             sig = listaDestinos.get((int) (Math.random() * listaDestinos.size()));
