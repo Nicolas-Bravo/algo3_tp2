@@ -29,4 +29,5 @@ public class BuscadorDeSospechosos {
     public static Sospechoso buscarSospechosoAleatorio() {
         return listaSospechosos.get((int) (Math.random() * listaSospechosos.size()));
     }
+    public static ArrayList<Sospechoso> obtenerSospechososTotales(){ return listaSospechosos; }
 }

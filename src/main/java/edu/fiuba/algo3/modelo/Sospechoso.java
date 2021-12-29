@@ -31,6 +31,8 @@ public class Sospechoso {
     public boolean coincideCon(Sospechoso sospechoso) {
         return this.descripcion.containsAll(sospechoso.descripcion);
     }
+    public ArrayList<Pista> datosSospechoso() {return this.descripcion;}
+    public String nombreDelSospechoso(){return this.nombre;}
 
     @Override
     public boolean equals(Object sospechoso) {

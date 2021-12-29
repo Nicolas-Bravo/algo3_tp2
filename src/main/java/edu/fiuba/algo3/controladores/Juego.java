@@ -15,6 +15,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Juego {
@@ -32,7 +33,7 @@ public class Juego {
     }
 
     private void generarListasDeDatos() {
-        //ir a lector de archivo
+        listaSospechosos = BuscadorDeSospechosos.obtenerSospechososTotales();
     }
 
     private void jugar() {
@@ -73,5 +74,7 @@ public class Juego {
     }
 
     public Pista entrarA(Edificio edificio) { return policia.entrar(edificio); }
+
+    public List<Sospechoso> obtenerListaSospechosos() { return listaSospechosos; }
 }
 

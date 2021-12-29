@@ -14,8 +14,10 @@ public class ContenedorPrincipal extends BorderPane {
     MisVistas vistaActual;
     Canvas canvasCentral;
     VBox contenedorCentral;
+    Juego juego;
 
     public ContenedorPrincipal(Stage stage, Juego juego, MisVistas vistaActual){
+        this.juego = juego;
         this.setMenu(stage);
         this.vistaActual = vistaActual;
         this.setCentro();
@@ -23,6 +25,7 @@ public class ContenedorPrincipal extends BorderPane {
     }
 
     public ContenedorPrincipal(Stage stage, Juego juego) {
+        this.juego = juego;
         this.setMenu(stage);
         this.vistaActual = new VistaJuego(juego, stage);
         this.setCentro();
@@ -33,7 +36,7 @@ public class ContenedorPrincipal extends BorderPane {
     }
 
     private void setMenu(Stage stage) {
-        this.menuBar = new BarraDeMenu(stage);
+        this.menuBar = new BarraDeMenu(stage, juego);
         this.setTop(menuBar);
     }
 }
