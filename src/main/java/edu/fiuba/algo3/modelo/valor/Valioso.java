@@ -9,7 +9,7 @@ import java.util.Random;
 public class Valioso implements Valor {
     @Override
     public int obtenerLargoRuta() {
-        return 5;
+        return 6;
     }
 
     @Override

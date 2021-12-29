@@ -9,7 +9,7 @@ import java.util.Random;
 public class Comun implements Valor {
     @Override
     public int obtenerLargoRuta() {
-        return 4;
+        return 5;
     }
 
     @Override

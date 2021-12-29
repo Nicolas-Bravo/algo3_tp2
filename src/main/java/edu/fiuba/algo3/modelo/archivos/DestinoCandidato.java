@@ -1,7 +1,6 @@
 package edu.fiuba.algo3.modelo.archivos;
 
-import edu.fiuba.algo3.modelo.Coordenadas;
-import edu.fiuba.algo3.modelo.Edificio;
+import edu.fiuba.algo3.modelo.*;
 import edu.fiuba.algo3.modelo.pista.Pista;
 import edu.fiuba.algo3.modelo.valor.Valor;
 
@@ -35,5 +34,15 @@ public class DestinoCandidato {
 
     public boolean coincideCon(Pista nombre_p) {
         return nombre_p.equals(this.nombre);
+    }
+
+    public Destino generarDestinoErroneo() {
+
+
+
+        return new Destino(this.nombre.mostrarPista(), this.coordenadas,
+                new Biblioteca(new Pista("No hemos visto a nadie por aqui")),
+                new Banco(new Pista("No hemos visto a nadie por aqui\"")),
+                new Aeropuerto(new Pista("No hemos visto a nadie por aqui")));
     }
 }
