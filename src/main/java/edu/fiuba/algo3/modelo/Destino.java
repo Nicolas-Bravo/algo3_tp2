@@ -10,6 +10,7 @@ public class Destino {
     private String nombre;
     private ArrayList<Edificio> edificios;
     private Coordenadas cordenadas;
+    private ArrayList<Destino> posibles;
 
     public Destino(String nombre_p, Coordenadas coordenadas_p, Edificio... edificios_p){
         this.nombre = nombre_p;
@@ -18,6 +19,8 @@ public class Destino {
         this.edificios = new ArrayList<>();
 
         Collections.addAll(this.edificios, edificios_p);
+
+        this.posibles = new ArrayList<>();
     }
 
     public Pista entrar(Reloj reloj, Edificio edificio) {
@@ -31,5 +34,13 @@ public class Destino {
 
     public double distanciaCon(Coordenadas cordenadas_p, String unit) {
         return this.cordenadas.distanciaCon(cordenadas_p,unit);
+    }
+
+    public void agregarDestinoPosible(Destino destino) {
+        this.posibles.add(destino);
+    }
+
+    public ArrayList<Destino> destinosPosibles() {
+        return this.posibles;
     }
 }

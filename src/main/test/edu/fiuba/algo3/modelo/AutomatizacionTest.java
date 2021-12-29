@@ -51,7 +51,7 @@ public class AutomatizacionTest {
 
         RutaDeEscape ruta = BuscadorDeDestinos.obtenerRutaDeEscape(tesoro);
 
-        assertEquals(4, ruta.largo());
+        assertEquals(5, ruta.largo());
     }
 
 
@@ -61,7 +61,7 @@ public class AutomatizacionTest {
 
         RutaDeEscape ruta = BuscadorDeDestinos.obtenerRutaDeEscape(tesoro);
 
-        assertEquals(5, ruta.largo());
+        assertEquals(6, ruta.largo());
     }
 
 
@@ -71,6 +71,6 @@ public class AutomatizacionTest {
 
         RutaDeEscape ruta = BuscadorDeDestinos.obtenerRutaDeEscape(tesoro);
 
-        assertEquals(7, ruta.largo());
+        assertEquals(8, ruta.largo());
     }
 }

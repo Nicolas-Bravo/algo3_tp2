@@ -48,4 +48,39 @@ public class BuscadorDeDestinos {
 
         return listaDestinos.get(index);
     }
+
+    public static ArrayList<Destino> completarMapa(ArrayList<Destino> destinos) {
+        //saco los repetidos
+
+        int tope = destinos.size()+2;
+
+        Destino[] destinoErroneoArray;
+        destinoErroneoArray = new Destino[tope];
+
+        Destino destinoErroneo;
+        DestinoCandidato sig = listaDestinos.get((int) (Math.random() * listaDestinos.size()));
+
+        for(int i = 0; i < tope; i++){
+            destinoErroneo = sig.generarDestinoErroneo();
+            destinoErroneoArray[i] = destinoErroneo;
+            sig = listaDestinos.get((int) (Math.random() * listaDestinos.size()));
+        }
+
+        int i = 0;
+        for (Destino d : destinos){
+            d.agregarDestinoPosible(destinoErroneoArray[i]);
+            destinoErroneoArray[i].agregarDestinoPosible(d);
+            destinoErroneoArray[i].agregarDestinoPosible(destinoErroneoArray[i+1]);
+            destinoErroneoArray[i].agregarDestinoPosible(destinoErroneoArray[i+2]);
+            i++;
+        }
+
+        for(Destino d : destinoErroneoArray){
+            destinos.add(d);
+        }
+
+        return destinos;
+
+
+    }
 }
