@@ -6,14 +6,15 @@ import edu.fiuba.algo3.modelo.pista.Pista;
 import edu.fiuba.algo3.modelo.valor.Valor;
 
 import java.util.ArrayList;
+import java.util.stream.Stream;
 
 public class BuscadorDeDestinos {
 
     private static ArrayList<DestinoCandidato> listaDestinos = LectorArchivoDestinos.generarListaDestinosCandidatos();
     
-    private static Destino generarSiguiente(Pista inicio, DestinoCandidato siguiente, Valor valor){
+    private static Destino generarSiguiente(DestinoCandidato actual, DestinoCandidato siguiente, Valor valor){
 
-        return new Destino(inicio.mostrarPista(), 10.00, 10.00, siguiente.obtenerEdificios(valor));
+        return new Destino(actual.obtenerNombre().mostrarPista(), actual.obtenerCoordenadas(), siguiente.obtenerEdificios(valor));
     }
 
     public static RutaDeEscape obtenerRutaDeEscape(Tesoro tesoro) {
@@ -23,18 +24,23 @@ public class BuscadorDeDestinos {
         Destino[] destinoArray;
         destinoArray = new Destino[tope];
 
-        Destino actual;
-        Pista nombre_actual = tesoro.obtenerInicio();
+        Destino destino;
+        DestinoCandidato actual = obtenerCandidatoPorNombre(tesoro.obtenerInicio());
         DestinoCandidato sig = listaDestinos.get((int) (Math.random() * listaDestinos.size()));
 
         for(int i = 0; i < tope; i++){
-            actual = generarSiguiente(nombre_actual, sig, tesoro.obtenerValor());
-            destinoArray[i] = actual;
-            nombre_actual = sig.obtenerNombre();
+            destino = generarSiguiente(actual, sig, tesoro.obtenerValor());
+            destinoArray[i] = destino;
+            actual = sig;
             sig = listaDestinos.get((int) (Math.random() * listaDestinos.size()));
         }
 
         return new RutaDeEscape(destinoArray);
 
+    }
+
+    private static DestinoCandidato obtenerCandidatoPorNombre(Pista nombre) {
+        Stream<DestinoCandidato> streamDestinoCandidato =  listaDestinos.stream().filter(destinoCandidato -> destinoCandidato.coincideCon(nombre));
+        return streamDestinoCandidato.findFirst().get();
     }
 }

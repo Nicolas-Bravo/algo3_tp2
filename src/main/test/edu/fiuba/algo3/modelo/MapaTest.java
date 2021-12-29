@@ -11,7 +11,7 @@ public class MapaTest {
     @Test
     public void mapaConstuidoConUnDestinoLoTieneComoDestinoActual(){
         Edificio edificioUno = new Edificio(new Pista("una pista aux"));
-        Destino destinoUno = new Destino("nombreUNo",10.000,10.000,edificioUno);
+        Destino destinoUno = new Destino("nombreUNo",new Coordenadas(10.00,10.00),edificioUno);
 
         Mapa mapa = new Mapa(destinoUno);
 
@@ -21,7 +21,7 @@ public class MapaTest {
     @Test
     public void mapaEntraAUnEdificioDeSuCiudadActualYDemoraUnaHora(){
         Edificio edificioUno = new Edificio(new Pista("una pista aux"));
-        Destino destinoUno = new Destino("nombreUNo",10.000,10.000,edificioUno);
+        Destino destinoUno = new Destino("nombreUNo",new Coordenadas(10.00,10.00),edificioUno);
 
         Mapa mapa = new Mapa(destinoUno);
         Reloj r = new Reloj();
@@ -35,7 +35,7 @@ public class MapaTest {
     @Test
     public void mapaEntraAUnEdificioDeSuCiudadActualPorSegundaVezYDemoraDosHoras(){
         Edificio edificioUno = new Edificio(new Pista("una pista aux"));
-        Destino destinoUno = new Destino("nombreUNo",10.000,10.000,edificioUno);
+        Destino destinoUno = new Destino("nombreUNo",new Coordenadas(10.00,10.00),edificioUno);
 
         Mapa mapa = new Mapa(destinoUno);
         Reloj r = new Reloj();
@@ -49,7 +49,7 @@ public class MapaTest {
     @Test
     public void mapaEntraAUnEdificioDeSuCiudadActualPorTerceraVezYDemoraTresHoras(){
         Edificio edificioUno = new Edificio(new Pista("una pista aux"));
-        Destino destinoUno = new Destino("nombreUNo",10.000,10.000,edificioUno);
+        Destino destinoUno = new Destino("nombreUNo",new Coordenadas(10.00,10.00),edificioUno);
 
         Mapa mapa = new Mapa(destinoUno);
         Reloj r = new Reloj();
@@ -65,7 +65,7 @@ public class MapaTest {
     public void mapaEntraAUnEdificioDeSuCiudadActualYObtieneSuPista(){
         Pista p = new Pista("pista de prueba");
         Edificio edificioUno = new Edificio(p);
-        Destino destinoUno = new Destino("nombreUNo",10.000,10.000,edificioUno);
+        Destino destinoUno = new Destino("nombreUNo",new Coordenadas(10.00,10.00),edificioUno);
 
         Mapa mapa = new Mapa(destinoUno);
         Reloj r = new Reloj();
@@ -78,10 +78,10 @@ public class MapaTest {
     @Test
     public void mapaViajaAOtroDestinoYCambiaSuDestinoActual(){
         Edificio edificioUno = new Edificio(new Pista("una pista aux"));
-        Destino destinoUno = new Destino("nombreUNo",10.000,10.000,edificioUno);
+        Destino destinoUno = new Destino("nombreUNo",new Coordenadas(10.00,10.00),edificioUno);
 
         Edificio edificioDos = new Edificio(new Pista("otra pista aux"));
-        Destino destinoDos = new Destino("nombreDos",20.000,20.000,edificioDos);
+        Destino destinoDos = new Destino("nombreDos",new Coordenadas(20.00,20.00),edificioDos);
 
         Mapa mapa = new Mapa(destinoUno, destinoDos);
 
@@ -93,10 +93,10 @@ public class MapaTest {
     @Test
     public void mapaViajaAOtroDestinoEntraAUnEdificioYDemoraUnaHora(){
         Edificio edificioUno = new Edificio(new Pista("una pista aux"));
-        Destino destinoUno = new Destino("nombreUNo",10.000,10.000,edificioUno);
+        Destino destinoUno = new Destino("nombreUNo",new Coordenadas(10.00,10.00),edificioUno);
 
         Edificio edificioDos = new Edificio(new Pista("otra pista aux"));
-        Destino destinoDos = new Destino("nombreDos",20.000,20.000,edificioDos);
+        Destino destinoDos = new Destino("nombreDos",new Coordenadas(20.00,20.00),edificioDos);
 
         Mapa mapa = new Mapa(destinoUno, destinoDos);
         Reloj r = new Reloj();
@@ -110,10 +110,10 @@ public class MapaTest {
     @Test
     public void mapaViajaDesdeMontralAMexicoYDevuelDistancia3725km(){
         Edificio edificioUno = new Edificio(new Pista("una pista aux"));
-        Destino montreal = new Destino("Montreal", 45.50884, -73.5878, edificioUno);
+        Destino montreal = new Destino("Montreal", new Coordenadas(45.50884, -73.5878), edificioUno);
 
         Edificio edificioDos = new Edificio(new Pista("otra pista aux"));
-        Destino mexico = new Destino("Mexico", 19.42847, -99.12766 , edificioDos);
+        Destino mexico = new Destino("Mexico", new Coordenadas(19.42847, -99.12766), edificioDos);
 
         Mapa mapa = new Mapa(montreal, mexico);
 
@@ -124,10 +124,10 @@ public class MapaTest {
     @Test
     public void mapaViajaDesdeMontralALimaYDevuelDistancia6400km(){
         Edificio edificioUno = new Edificio(new Pista("una pista aux"));
-        Destino montreal = new Destino("Montreal", 45.50884, -73.5878, edificioUno);
+        Destino montreal = new Destino("Montreal", new Coordenadas(45.50884, -73.5878), edificioUno);
 
         Edificio edificioDos = new Edificio(new Pista("otra pista aux"));
-        Destino lima = new Destino("Lima", -12.04318  , -77.02824 , edificioDos);
+        Destino lima = new Destino("Lima", new Coordenadas(-12.04318  , -77.02824), edificioDos);
 
         Mapa mapa = new Mapa(montreal, lima);
 

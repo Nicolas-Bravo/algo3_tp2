@@ -11,7 +11,7 @@ public class DestinoTest {
     @Test
     public void detinoEntraAUnEdicioQueLoComponePorPrimeraVezYDemoraUnaHora(){
         Edificio edificio = new Edificio(new Pista("Una pista aux"));
-        Destino destino = new Destino("destino", 10.00,10.00,edificio);
+        Destino destino = new Destino("destino", new Coordenadas(10.00,10.00),edificio);
         Reloj reloj = new Reloj();
 
         destino.entrar(reloj,edificio);
@@ -22,7 +22,7 @@ public class DestinoTest {
     @Test
     public void detinoEntraAUnEdicioQueLoComponePorSegundaVezYDemoraDosHoras(){
         Edificio edificio = new Edificio(new Pista("Una pista aux"));
-        Destino destino = new Destino("destino", 10.00,10.00,edificio);
+        Destino destino = new Destino("destino", new Coordenadas(10.00,10.00),edificio);
         Reloj reloj = new Reloj();
 
         destino.entrar(reloj,edificio);
@@ -34,7 +34,7 @@ public class DestinoTest {
     @Test
     public void detinoEntraAUnEdicioQueLoComponePorTerceraVezYDemoraTresHoras(){
         Edificio edificio = new Edificio(new Pista("Una pista aux"));
-        Destino destino = new Destino("destino", 10.00,10.00,edificio);
+        Destino destino = new Destino("destino", new Coordenadas(10.00,10.00),edificio);
         Reloj reloj = new Reloj();
 
         destino.entrar(reloj,edificio);
@@ -48,7 +48,7 @@ public class DestinoTest {
     public void detinoEntraAUnEdicioQueLoComponeYObtieneSuPista(){
         Pista p = new Pista("pista de prueba");
         Edificio edificio = new Edificio(p);
-        Destino destino = new Destino("destino", 10.00,10.00,edificio);
+        Destino destino = new Destino("destino", new Coordenadas(10.00,10.00),edificio);
         Reloj reloj = new Reloj();
 
 

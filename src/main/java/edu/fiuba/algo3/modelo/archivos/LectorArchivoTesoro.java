@@ -28,7 +28,7 @@ public class LectorArchivoTesoro {
         ArrayList<TesoroCandidato> listaTesorosValioso= new ArrayList<>();
         ArrayList<TesoroCandidato> listaTesorosMuyValioso= new ArrayList<>();
         try {
-            File myObj = new File("Archivos/tesoros.csv");
+            File myObj = new File("Archivos/tesorosHabilitados.csv");
             Scanner myReader = new Scanner(myObj);
             myReader.nextLine();
             while (myReader.hasNextLine()) {

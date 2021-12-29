@@ -23,7 +23,7 @@ public class Mapa {
 
     public double viajar(Destino destino) {
         int index = this.destinos.indexOf(destino);
-        double distancia = this.calculadorDistancias.distancia(this.destinoActual.latitud(), this.destinoActual.longitud(), destino.latitud(), destino.longitud(), "K");
+        double distancia = this.calculadorDistancias.distancia(this.destinoActual.obtenerCordenadas(), destino.obtenerCordenadas(), "K");
         this.destinoActual = destinos.get(index);
         return distancia;
     }

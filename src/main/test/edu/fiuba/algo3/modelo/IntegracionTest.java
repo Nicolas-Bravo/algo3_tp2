@@ -17,22 +17,22 @@ public class IntegracionTest {
         Edificio montrealUno = new Banco(new Pista("Una pista aux"));
         Edificio montrealDos = new Aeropuerto(new Pista("Una pista aux"));
         Edificio montrealTres = new Biblioteca(new Pista("Una pista aux"));
-        Destino montreal = new Destino("Montreal", 45.50884, 73.5878, montrealUno, montrealDos, montrealTres);
+        Destino montreal = new Destino("Montreal", new Coordenadas(45.50884, -73.5878), montrealUno, montrealDos, montrealTres);
 
         Edificio limaUno = new Aeropuerto(new Pista("Otra pista aux"));
         Edificio limaDos = new Banco(new Pista("Otra pista aux"));
         Edificio limaTres = new Biblioteca(new Pista("Otra pista aux"));
-        Destino lima = new Destino("Lima", 12.04318, 77.02824 , limaUno, limaDos, limaTres);
+        Destino lima = new Destino("Lima", new Coordenadas(12.04318, 77.02824) , limaUno, limaDos, limaTres);
 
         Edificio londresUno = new Aeropuerto(new Pista("Otra pista aux"));
         Edificio londresDos = new Banco(new Pista("Otra pista aux"));
         Edificio londresTres = new Biblioteca(new Pista("Otra pista aux"));
-        Destino londres = new Destino("Londres", 51.50853, 0.12574 , londresUno, londresDos, londresTres);
+        Destino londres = new Destino("Londres", new Coordenadas(51.50853, 0.12574) , londresUno, londresDos, londresTres);
 
         Edificio mexicoUno = new Aeropuerto(new Pista("Otra pista aux"));
         Edificio mexicoDos = new Banco(new Pista("Otra pista aux"));
         Edificio mexicoTres = new Biblioteca(new Pista("Otra pista aux"));
-        Destino mexico = new Destino("Mexico", 19.42847, 99.12766 , mexicoUno, mexicoDos, mexicoTres);
+        Destino mexico = new Destino("Mexico",  new Coordenadas(19.42847, -99.12766) , mexicoUno, mexicoDos, mexicoTres);
 
         RutaDeEscape ruta = new RutaDeEscape(montreal, lima, londres, mexico);
 
@@ -70,27 +70,27 @@ public class IntegracionTest {
         Edificio montrealUno = new Banco(new Pista("Una pista aux"));
         Edificio montrealDos = new Aeropuerto(new Pista("Una pista aux"));
         Edificio montrealTres = new Biblioteca(new Pista("Una pista aux"));
-        Destino montreal = new Destino("Montreal", 45.50884, 73.5878, montrealUno, montrealDos, montrealTres);
+        Destino montreal = new Destino("Montreal", new Coordenadas(45.50884, -73.5878), montrealUno, montrealDos, montrealTres);
 
         Edificio limaUno = new Aeropuerto(new Pista("Otra pista aux"));
         Edificio limaDos = new Banco(new Pista("Otra pista aux"));
         Edificio limaTres = new Biblioteca(new Pista("Otra pista aux"));
-        Destino lima = new Destino("Lima", 12.04318, 77.02824 , limaUno, limaDos, limaTres);
+        Destino lima = new Destino("Lima", new Coordenadas(12.04318, 77.02824) , limaUno, limaDos, limaTres);
 
         Edificio londresUno = new Aeropuerto(new Pista("Otra pista aux"));
         Edificio londresDos = new Banco(new Pista("Otra pista aux"));
         Edificio londresTres = new Biblioteca(new Pista("Otra pista aux"));
-        Destino londres = new Destino("Londres", 51.50853, 0.12574 , londresUno, londresDos, londresTres);
+        Destino londres = new Destino("Londres", new Coordenadas(51.50853, 0.12574) , londresUno, londresDos, londresTres);
 
         Edificio mexicoUno = new Aeropuerto(new Pista("Otra pista aux"));
         Edificio mexicoDos = new Banco(new Pista("Otra pista aux"));
         Edificio mexicoTres = new Biblioteca(new Pista("Otra pista aux"));
-        Destino mexico = new Destino("Mexico", 19.42847, 99.12766 , mexicoUno, mexicoDos, mexicoTres);
+        Destino mexico = new Destino("Mexico",  new Coordenadas(19.42847, -99.12766) , mexicoUno, mexicoDos, mexicoTres);
 
         Edificio atenasUno = new Aeropuerto(new Pista("Otra pista aux"));
         Edificio atenasDos = new Banco(new Pista("Otra pista aux"));
         Edificio atenasTres = new Biblioteca(new Pista("Otra pista aux"));
-        Destino atenas = new Destino("Atenas", 37.98376, 23.72784 , atenasUno, atenasDos, atenasTres);
+        Destino atenas = new Destino("Atenas", new Coordenadas(37.98376, 23.72784) , atenasUno, atenasDos, atenasTres);
 
         RutaDeEscape ruta = new RutaDeEscape(montreal, lima, londres, mexico, atenas);
 
@@ -131,37 +131,37 @@ public class IntegracionTest {
         Edificio montrealUno = new Banco(new Pista("Una pista aux"));
         Edificio montrealDos = new Aeropuerto(new Pista("Una pista aux"));
         Edificio montrealTres = new Biblioteca(new Pista("Una pista aux"));
-        Destino montreal = new Destino("Montreal", 45.50884, 73.5878, montrealUno, montrealDos, montrealTres);
+        Destino montreal = new Destino("Montreal", new Coordenadas(45.50884, -73.5878), montrealUno, montrealDos, montrealTres);
 
         Edificio limaUno = new Aeropuerto(new Pista("Otra pista aux"));
         Edificio limaDos = new Banco(new Pista("Otra pista aux"));
         Edificio limaTres = new Biblioteca(new Pista("Otra pista aux"));
-        Destino lima = new Destino("Lima", 12.04318, 77.02824 , limaUno, limaDos, limaTres);
+        Destino lima = new Destino("Lima", new Coordenadas(12.04318, 77.02824) , limaUno, limaDos, limaTres);
 
         Edificio londresUno = new Aeropuerto(new Pista("Otra pista aux"));
         Edificio londresDos = new Banco(new Pista("Otra pista aux"));
         Edificio londresTres = new Biblioteca(new Pista("Otra pista aux"));
-        Destino londres = new Destino("Londres", 51.50853, 0.12574 , londresUno, londresDos, londresTres);
+        Destino londres = new Destino("Londres", new Coordenadas(51.50853, 0.12574) , londresUno, londresDos, londresTres);
 
         Edificio mexicoUno = new Aeropuerto(new Pista("Otra pista aux"));
         Edificio mexicoDos = new Banco(new Pista("Otra pista aux"));
         Edificio mexicoTres = new Biblioteca(new Pista("Otra pista aux"));
-        Destino mexico = new Destino("Mexico", 19.42847, 99.12766 , mexicoUno, mexicoDos, mexicoTres);
+        Destino mexico = new Destino("Mexico",  new Coordenadas(19.42847, -99.12766) , mexicoUno, mexicoDos, mexicoTres);
 
         Edificio atenasUno = new Aeropuerto(new Pista("Otra pista aux"));
         Edificio atenasDos = new Banco(new Pista("Otra pista aux"));
         Edificio atenasTres = new Biblioteca(new Pista("Otra pista aux"));
-        Destino atenas = new Destino("Atenas", 37.98376, 23.72784 , atenasUno, atenasDos, atenasTres);
+        Destino atenas = new Destino("Atenas", new Coordenadas(37.98376, 23.72784) , atenasUno, atenasDos, atenasTres);
 
         Edificio bangkokUno = new Aeropuerto(new Pista("Otra pista aux"));
         Edificio bangkokDos = new Banco(new Pista("Otra pista aux"));
         Edificio bangkokTres = new Biblioteca(new Pista("Otra pista aux"));
-        Destino bangkok = new Destino("Bangkok", 100.5014400, 13.7539800 , bangkokUno, bangkokDos, bangkokTres);
+        Destino bangkok = new Destino("Bangkok", new Coordenadas(100.5014400, 13.7539800) , bangkokUno, bangkokDos, bangkokTres);
 
         Edificio budapestUno = new Aeropuerto(new Pista("Otra pista aux"));
         Edificio budapestDos = new Banco(new Pista("Otra pista aux"));
         Edificio budapestTres = new Biblioteca(new Pista("Otra pista aux"));
-        Destino budapest = new Destino("Budapest", 47.49835, 19.04045 , budapestUno, budapestDos, budapestTres);
+        Destino budapest = new Destino("Budapest", new Coordenadas(47.49835, 19.04045) , budapestUno, budapestDos, budapestTres);
 
         RutaDeEscape ruta = new RutaDeEscape(montreal, lima, londres, mexico, atenas, bangkok, budapest);
 
