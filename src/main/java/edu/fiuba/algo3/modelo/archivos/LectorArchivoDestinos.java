@@ -46,6 +46,18 @@ public class LectorArchivoDestinos {
         return descripcion;
     }
 
+    private static ArrayList<Pista> generarDatos(String datos) {
+        ArrayList<Pista> descripcion = new ArrayList<>();
+
+        String[] campos = datos.split(";");
+
+        for(String p:campos){
+            descripcion.add(new Pista(p));
+        }
+
+        return descripcion;
+    }
+
 
     private static ArrayList<ArrayList> generarDescripcion(String linea){
 
@@ -53,10 +65,9 @@ public class LectorArchivoDestinos {
 
         String[] campos = linea.split("/");
 
-        ArrayList<Pista> nombre = new ArrayList<>();
+        ArrayList<Pista> datos = generarDatos(campos[0]);
 
-        nombre.add(new Pista(campos[0]));
-        matriz.add(nombre);
+        matriz.add(datos);
 
         ArrayList<Pista> descripcionFacil = generarPistas(campos[1]);
         ArrayList<Pista> descripcionMedia = generarPistas(campos[2]);

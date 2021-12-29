@@ -19,7 +19,7 @@ public class PoliciaTest {
 
         Banco banco = new Banco(pista);
 
-        Destino Montreal = new Destino("Montreal", 45.50884, 73.58781, banco);
+        Destino Montreal = new Destino("Montreal",new Coordenadas(45.50884, -73.5878), banco);
 
         RutaDeEscape ruta = new RutaDeEscape(Montreal);
 
@@ -45,7 +45,7 @@ public class PoliciaTest {
         Pista pista_biblioteca = new Pista("Son descendientes de los aztecas");
         Biblioteca biblioteca = new Biblioteca(pista_biblioteca);
 
-        Destino Montreal = new Destino("Montreal", 45.50884, 73.58781, banco, biblioteca);
+        Destino Montreal = new Destino("Montreal",new Coordenadas(45.50884, -73.5878), banco, biblioteca);
 
         RutaDeEscape ruta = new RutaDeEscape(Montreal);
 
@@ -70,10 +70,10 @@ public class PoliciaTest {
         Pista pista = new Pista("Una pista auxiliar");
 
         Banco edif_montreal = new Banco(pista);
-        Destino Montreal = new Destino("Montreal", 45.50884, 73.58781, edif_montreal);
+        Destino Montreal = new Destino("Montreal",new Coordenadas(45.50884, -73.5878), edif_montreal);
 
         Banco edif_mexico = new Banco(pista);
-        Destino Mexico = new Destino("Mexico", 19.42847, 99.12766 , edif_mexico);
+        Destino Mexico = new Destino("Mexico",  new Coordenadas(19.42847, -99.12766) , edif_mexico);
 
         RutaDeEscape ruta = new RutaDeEscape(Montreal, Mexico);
 
@@ -94,10 +94,10 @@ public class PoliciaTest {
         Pista pista = new Pista("Una pista auxiliar");
 
         Banco edif_montreal = new Banco(pista);
-        Destino Montreal = new Destino("Montreal", 45.50884, 73.58781, edif_montreal);
+        Destino Montreal = new Destino("Montreal",new Coordenadas(45.50884, -73.5878), edif_montreal);
 
         Banco edif_mexico = new Banco(pista);
-        Destino Mexico = new Destino("Mexico", 19.42847, 99.12766 , edif_mexico);
+        Destino Mexico = new Destino("Mexico",  new Coordenadas(19.42847, -99.12766) , edif_mexico);
 
         RutaDeEscape ruta = new RutaDeEscape(Montreal, Mexico);
 
@@ -120,10 +120,10 @@ public class PoliciaTest {
         Pista pista = new Pista("Una pista auxiliar");
 
         Banco edif_montreal = new Banco(pista);
-        Destino Montreal = new Destino("Montreal", 45.50884, 73.58781, edif_montreal);
+        Destino Montreal = new Destino("Montreal",new Coordenadas(45.50884, -73.5878), edif_montreal);
 
         Banco edif_mexico = new Banco(pista);
-        Destino Mexico = new Destino("Mexico", 19.42847, 99.12766 , edif_mexico);
+        Destino Mexico = new Destino("Mexico",  new Coordenadas(19.42847, -99.12766) , edif_mexico);
 
         RutaDeEscape ruta = new RutaDeEscape(Montreal, Mexico);
 
@@ -146,10 +146,10 @@ public class PoliciaTest {
         Pista pista = new Pista("Una pista auxiliar");
 
         Banco edif_montreal = new Banco(pista);
-        Destino Montreal = new Destino("Montreal", 45.50884, 73.58781, edif_montreal);
+        Destino Montreal = new Destino("Montreal",new Coordenadas(45.50884, -73.5878), edif_montreal);
 
         Banco edif_mexico = new Banco(pista);
-        Destino Mexico = new Destino("Mexico", 19.42847, 99.12766 , edif_mexico);
+        Destino Mexico = new Destino("Mexico",  new Coordenadas(19.42847, -99.12766) , edif_mexico);
 
         RutaDeEscape ruta = new RutaDeEscape(Montreal, Mexico);
 
@@ -171,10 +171,10 @@ public class PoliciaTest {
         Pista pista = new Pista("Una pista auxiliar");
 
         Banco edif_montreal = new Banco(pista);
-        Destino Montreal = new Destino("Montreal", 45.50884, 73.58781, edif_montreal);
+        Destino Montreal = new Destino("Montreal",new Coordenadas(45.50884, -73.5878), edif_montreal);
 
         Banco edif_mexico = new Banco(pista);
-        Destino Mexico = new Destino("Mexico", 19.42847, 99.12766 , edif_mexico);
+        Destino Mexico = new Destino("Mexico",  new Coordenadas(19.42847, -99.12766) , edif_mexico);
 
         RutaDeEscape ruta = new RutaDeEscape(Montreal, Mexico);
 
@@ -201,7 +201,7 @@ public class PoliciaTest {
         Pista pista_puerto = new Pista("Verde blanco y rojo");
         Puerto puerto = new Puerto(pista_puerto);
 
-        Destino Montreal = new Destino("Montreal", 45.50884, 73.5878, puerto, aeropuerto);
+        Destino Montreal = new Destino("Montreal",new Coordenadas(45.50884, -73.5878), puerto, aeropuerto);
 
         RutaDeEscape ruta = new RutaDeEscape(Montreal);
 
@@ -261,10 +261,10 @@ public class PoliciaTest {
         Tesoro tesoro = new Tesoro(new Pista("tesoro"),new Pista("Montreal"), new Comun());
 
         Edificio edificioInicial = new Banco(new Pista("Una pista aux"));
-        Destino destinoInicial = new Destino("Montreal", 45.50884, 73.5878, edificioInicial);
+        Destino destinoInicial = new Destino("Montreal",new Coordenadas(45.50884, -73.5878), edificioInicial);
 
         Edificio edificioFinal = new Aeropuerto(new Pista("Otra pista aux"));
-        Destino destinoFinal = new Destino("Mexico", 19.42847, 99.12766 , edificioFinal);
+        Destino destinoFinal = new Destino("Mexico",  new Coordenadas(19.42847, -99.12766) , edificioFinal);
 
         RutaDeEscape ruta = new RutaDeEscape(destinoInicial, destinoFinal);
 
@@ -285,10 +285,10 @@ public class PoliciaTest {
         Tesoro tesoro = new Tesoro(new Pista("tesoro"),new Pista("Montreal"), new Comun());
 
         Edificio edificioInicial = new Banco(new Pista("Una pista aux"));
-        Destino destinoInicial = new Destino("Montreal", 45.50884, 73.5878, edificioInicial);
+        Destino destinoInicial = new Destino("Montreal",new Coordenadas(45.50884, -73.5878), edificioInicial);
 
         Edificio edificioFinal = new Aeropuerto(new Pista("Otra pista aux"));
-        Destino destinoFinal = new Destino("Mexico", 19.42847, 99.12766 , edificioFinal);
+        Destino destinoFinal = new Destino("Mexico",  new Coordenadas(19.42847, -99.12766) , edificioFinal);
 
         RutaDeEscape ruta = new RutaDeEscape(destinoInicial, destinoFinal);
 
@@ -313,10 +313,10 @@ public class PoliciaTest {
         Tesoro tesoro = new Tesoro(new Pista("tesoro"),new Pista("Montreal"), new Comun());
 
         Edificio edificioInicial = new Banco(new Pista("Una pista aux"));
-        Destino destinoInicial = new Destino("Montreal", 45.50884, 73.5878, edificioInicial);
+        Destino destinoInicial = new Destino("Montreal",new Coordenadas(45.50884, -73.5878), edificioInicial);
 
         Edificio edificioFinal = new Aeropuerto(new Pista("Otra pista aux"));
-        Destino destinoFinal = new Destino("Mexico", 19.42847, 99.12766 , edificioFinal);
+        Destino destinoFinal = new Destino("Mexico",  new Coordenadas(19.42847, -99.12766) , edificioFinal);
 
         RutaDeEscape ruta = new RutaDeEscape(destinoInicial, destinoFinal);
 
@@ -349,10 +349,10 @@ public class PoliciaTest {
         Tesoro tesoro = new Tesoro(new Pista("tesoro"),new Pista("Montreal"), new Comun());
 
         Edificio edificioInicial = new Banco(new Pista("Una pista aux"));
-        Destino destinoInicial = new Destino("Montreal", 45.50884, 73.5878, edificioInicial);
+        Destino destinoInicial = new Destino("Montreal",new Coordenadas(45.50884, -73.5878), edificioInicial);
 
         Edificio edificioFinal = new Aeropuerto(new Pista("Otra pista aux"));
-        Destino destinoFinal = new Destino("Mexico", 19.42847, 99.12766 , edificioFinal);
+        Destino destinoFinal = new Destino("Mexico",  new Coordenadas(19.42847, -99.12766) , edificioFinal);
 
         Policia policia = new Policia("Esteban", new Novato());
 

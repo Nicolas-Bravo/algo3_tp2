@@ -9,13 +9,11 @@ import java.util.Collections;
 public class Destino {
     private String nombre;
     private ArrayList<Edificio> edificios;
-    private double latitud;
-    private double longitud;
+    private Coordenadas cordenadas;
 
-    public Destino(String nombre_p, double lat, double lng, Edificio... edificios_p){
+    public Destino(String nombre_p, Coordenadas coordenadas_p, Edificio... edificios_p){
         this.nombre = nombre_p;
-        this.latitud = lat;
-        this.longitud = lng;
+        this.cordenadas = coordenadas_p;
 
         this.edificios = new ArrayList<>();
 
@@ -27,11 +25,11 @@ public class Destino {
         return this.edificios.get(index).entrar(reloj);
     }
 
-    public double latitud() {
-        return latitud;
+    public Coordenadas obtenerCordenadas() {
+        return this.cordenadas;
     }
 
-    public double longitud() {
-        return longitud;
+    public double distanciaCon(Coordenadas cordenadas_p, String unit) {
+        return this.cordenadas.distanciaCon(cordenadas_p,unit);
     }
 }
