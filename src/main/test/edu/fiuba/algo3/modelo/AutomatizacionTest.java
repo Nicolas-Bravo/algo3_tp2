@@ -46,7 +46,7 @@ public class AutomatizacionTest {
     }
 
     @Test
-    public void buscadorDeDestinosRecibeUnTesoroComunYDaUnaRutaDeEscapeDeCuatroDestinos(){
+    public void buscadorDeDestinosRecibeUnTesoroComunYDaUnaRutaDeEscapeDeCincoDestinos(){
         Tesoro tesoro = BuscadorDeTesoros.obtenerTesoroAleatorioAleatorio(new Novato());
 
         RutaDeEscape ruta = BuscadorDeDestinos.obtenerRutaDeEscape(tesoro);
@@ -56,7 +56,7 @@ public class AutomatizacionTest {
 
 
     @Test
-    public void buscadorDeDestinosRecibeUnTesoroValiosoYDaUnaRutaDeEscapeDeCincoDestinos(){
+    public void buscadorDeDestinosRecibeUnTesoroValiosoYDaUnaRutaDeEscapeDeSeisDestinos(){
         Tesoro tesoro = BuscadorDeTesoros.obtenerTesoroAleatorioAleatorio(new Detective());
 
         RutaDeEscape ruta = BuscadorDeDestinos.obtenerRutaDeEscape(tesoro);
@@ -66,7 +66,7 @@ public class AutomatizacionTest {
 
 
     @Test
-    public void buscadorDeDestinosRecibeUnTesoroMuyValiosoYDaUnaRutaDeEscapeDeSieteDestinos(){
+    public void buscadorDeDestinosRecibeUnTesoroMuyValiosoYDaUnaRutaDeEscapeDeOchoDestinos(){
         Tesoro tesoro = BuscadorDeTesoros.obtenerTesoroAleatorioAleatorio(new Sargento());
 
         RutaDeEscape ruta = BuscadorDeDestinos.obtenerRutaDeEscape(tesoro);
