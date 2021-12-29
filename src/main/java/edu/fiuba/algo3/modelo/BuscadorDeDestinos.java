@@ -6,7 +6,6 @@ import edu.fiuba.algo3.modelo.pista.Pista;
 import edu.fiuba.algo3.modelo.valor.Valor;
 
 import java.util.ArrayList;
-import java.util.stream.Stream;
 
 public class BuscadorDeDestinos {
 
@@ -40,7 +39,13 @@ public class BuscadorDeDestinos {
     }
 
     private static DestinoCandidato obtenerCandidatoPorNombre(Pista nombre) {
-        Stream<DestinoCandidato> streamDestinoCandidato =  listaDestinos.stream().filter(destinoCandidato -> destinoCandidato.coincideCon(nombre));
-        return streamDestinoCandidato.findFirst().get();
+        int index = -1;
+        for(int i = 0; i < listaDestinos.size(); i++){
+            if(listaDestinos.get(i).obtenerNombre().equals(nombre)){
+                index = i;
+            }
+        }
+
+        return listaDestinos.get(index);
     }
 }

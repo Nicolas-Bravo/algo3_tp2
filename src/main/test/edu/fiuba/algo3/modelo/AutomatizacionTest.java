@@ -65,12 +65,12 @@ public class AutomatizacionTest {
     }
 
 
-    /*@Test
+    @Test
     public void buscadorDeDestinosRecibeUnTesoroMuyValiosoYDaUnaRutaDeEscapeDeSieteDestinos(){
         Tesoro tesoro = BuscadorDeTesoros.obtenerTesoroAleatorioAleatorio(new Sargento());
 
         RutaDeEscape ruta = BuscadorDeDestinos.obtenerRutaDeEscape(tesoro);
 
         assertEquals(7, ruta.largo());
-    }*/
+    }
 }

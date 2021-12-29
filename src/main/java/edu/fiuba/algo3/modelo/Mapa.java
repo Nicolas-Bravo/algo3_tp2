@@ -10,7 +10,6 @@ public class Mapa {
 
     private ArrayList<Destino> destinos;
     private Destino destinoActual;
-    private final CalculadorDistancias calculadorDistancias;
 
     public Mapa(Destino... destinos_p) {
         this.destinos = new ArrayList<>();
@@ -18,12 +17,11 @@ public class Mapa {
         Collections.addAll(this.destinos, destinos_p);
 
         this.destinoActual = this.destinos.get(0);
-        this.calculadorDistancias = new CalculadorDistancias();
     }
 
     public double viajar(Destino destino) {
         int index = this.destinos.indexOf(destino);
-        double distancia = this.calculadorDistancias.distancia(this.destinoActual.obtenerCordenadas(), destino.obtenerCordenadas(), "K");
+        double distancia = this.destinoActual.distanciaCon(destino.obtenerCordenadas(), "K");
         this.destinoActual = destinos.get(index);
         return distancia;
     }

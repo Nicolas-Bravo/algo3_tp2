@@ -29,4 +29,7 @@ public class Destino {
         return this.cordenadas;
     }
 
+    public double distanciaCon(Coordenadas cordenadas_p, String unit) {
+        return this.cordenadas.distanciaCon(cordenadas_p,unit);
+    }
 }
