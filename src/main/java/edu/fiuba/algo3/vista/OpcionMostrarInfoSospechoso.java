@@ -15,10 +15,11 @@ public class OpcionMostrarInfoSospechoso implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent event){
         Alert informacion = new Alert(Alert.AlertType.CONFIRMATION);
-        informacion.setTitle(sospechoso.nombreDelSospechoso());
+        informacion.setTitle("Información de Sospechosos");
+        informacion.setHeaderText(sospechoso.nombreDelSospechoso());
         informacion.setContentText("Nombre: " +sospechoso.datosSospechoso().get(0).mostrarPista()+ "\n" +
                "Sexo: " + sospechoso.datosSospechoso().get(1).mostrarPista() + "\n" +
-               "Hobbie" + sospechoso.datosSospechoso().get(2).mostrarPista() + "\n" +
+               "Hobbie: " + sospechoso.datosSospechoso().get(2).mostrarPista() + "\n" +
                 "Color de pelo: " + sospechoso.datosSospechoso().get(3).mostrarPista() + "\n" +
                 "Seña: " + sospechoso.datosSospechoso().get(4).mostrarPista() + "\n" +
                 "Rodado: " + sospechoso.datosSospechoso().get(5).mostrarPista());

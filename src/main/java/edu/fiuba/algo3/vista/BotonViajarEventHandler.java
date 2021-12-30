@@ -7,11 +7,12 @@ import javafx.event.EventHandler;
 
 public class BotonViajarEventHandler implements EventHandler<ActionEvent> {
     private final Mapa mapa;
-    public BotonViajarEventHandler(Mapa mapa) {
+    public BotonViajarEventHandler() {
         this.mapa = mapa;
     }
     @Override
     public void handle(ActionEvent actionEvent) {
+        VentanaDestinos ventanaDestinos = new VentanaDestinos(destino, juego);
 
     }
 }

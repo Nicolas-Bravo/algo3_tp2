@@ -35,7 +35,7 @@ public class ContenedorBienvenidos extends VBox {
         Label etiqueta = new Label();
         etiqueta.setFont(Font.font("Times New Roman", FontWeight.EXTRA_BOLD,18));
         etiqueta.setText("Bienvenidos a Carmen Sandiego");
-        etiqueta.setTextFill(Color.web("00FFFF"));
+        etiqueta.setTextFill(Color.web("FFFFF0"));
 
         BotonJugarEventHandler botonJugarHandler = new BotonJugarEventHandler(stage, proximaEscena);
         botonJugar.setOnAction(botonJugarHandler);

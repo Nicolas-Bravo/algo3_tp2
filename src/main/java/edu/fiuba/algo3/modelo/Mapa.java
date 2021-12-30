@@ -38,4 +38,5 @@ public class Mapa {
     public String enlaceCapitalActual() {
         return destinoActual.enlaceImagen();
     }
+    public ArrayList<Destino> obtenerDestinos() {return destinos; }
 }
