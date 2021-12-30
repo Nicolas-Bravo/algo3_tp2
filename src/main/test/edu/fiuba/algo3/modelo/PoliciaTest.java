@@ -1,11 +1,12 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.rango.Detective;
-import edu.fiuba.algo3.modelo.rango.Investigador;
-import edu.fiuba.algo3.modelo.rango.Novato;
-import edu.fiuba.algo3.modelo.rango.Sargento;
+import edu.fiuba.algo3.modelo.edificios.*;
+import edu.fiuba.algo3.modelo.pistas.*;
+import edu.fiuba.algo3.modelo.rangos.*;
+import edu.fiuba.algo3.modelo.valor.*;
 import org.junit.jupiter.api.Test;
 import edu.fiuba.algo3.modelo.exceptions.TiempoAgotadoException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class PoliciaTest {
@@ -13,17 +14,20 @@ public class PoliciaTest {
     @Test
     public void novatoEntraAlBancoYMuestraPista(){
 
-        Pista pista = new Pista("La moneda es el peso mexicano");
+        Tesoro tesoro = new Tesoro(new PistaGeneral("tesoro"),new PistaGeneral("Montreal"), new Comun());
+
+        PistaEconomica pista = new PistaEconomica("La moneda es el peso mexicano");
 
         Banco banco = new Banco(pista);
 
-        Destino Montreal = new Destino("Montreal", 45.50884, 73.58781, banco);
+        Destino Montreal = new Destino("Montreal",new Coordenadas(45.50884, -73.5878), banco);
 
         RutaDeEscape ruta = new RutaDeEscape(Montreal);
 
+        Caso caso = new Caso("Fast Eddie B.", tesoro, ruta);
+
         Policia policia = new Policia("Alberto", new Novato());
 
-        Caso caso = new Caso("Fast Eddie B.", ruta);
         policia.asignarCaso(caso);
 
         policia.entrar(banco);
@@ -34,19 +38,22 @@ public class PoliciaTest {
     @Test
     public void novatoEntraAlBancoYMuestraPistaYEntraBiblioYMuestraPista(){
 
-        Pista pista_banco = new Pista("La moneda es el peso mexicano"); //Por archivos
-        Pista pista_biblioteca = new Pista("Son descendientes de los aztecas");
+        Tesoro tesoro = new Tesoro(new PistaGeneral("tesoro"),new PistaGeneral("Montreal"), new Comun());
 
+        PistaEconomica pista_banco = new PistaEconomica("La moneda es el peso mexicano");
         Banco banco = new Banco(pista_banco);
+
+        PistaBiblioteca pista_biblioteca = new PistaBiblioteca("Son descendientes de los aztecas");
         Biblioteca biblioteca = new Biblioteca(pista_biblioteca);
 
-        Destino Montreal = new Destino("Montreal", 45.50884, 73.58781, banco, biblioteca);
+        Destino Montreal = new Destino("Montreal",new Coordenadas(45.50884, -73.5878), banco, biblioteca);
 
         RutaDeEscape ruta = new RutaDeEscape(Montreal);
 
+        Caso caso = new Caso("Fast Eddie B.", tesoro, ruta);
+
         Policia policia = new Policia("Alberto", new Novato());
 
-        Caso caso = new Caso("Fast Eddie B.", ruta);
         policia.asignarCaso(caso);
 
         policia.entrar(banco);
@@ -54,28 +61,26 @@ public class PoliciaTest {
 
         policia.entrar(biblioteca);
         assertEquals(pista_biblioteca , policia.mostrarPista());
-
     }
-
-
 
     @Test
     public void novatoViajaDeMontrealAMexicoYSuDestinoActualEsMexico(){
 
-        Pista pista = new Pista("Una pista auxiliar");
+        Tesoro tesoro = new Tesoro(new PistaGeneral("tesoro"),new PistaGeneral("Montreal"), new Comun());
+
+        PistaEconomica pista = new PistaEconomica("Una pista auxiliar");
 
         Banco edif_montreal = new Banco(pista);
+        Destino Montreal = new Destino("Montreal",new Coordenadas(45.50884, -73.5878), edif_montreal);
+
         Banco edif_mexico = new Banco(pista);
+        Destino Mexico = new Destino("Mexico",  new Coordenadas(19.42847, -99.12766) , edif_mexico);
 
-        Destino Montreal = new Destino("Montreal", 45.50884, 73.58781, edif_montreal);
-        Destino Mexico = new Destino("Mexico", 19.42847, 99.12766 , edif_mexico);
+        RutaDeEscape ruta = new RutaDeEscape(Montreal, Mexico);
 
-
-        RutaDeEscape ruta = new RutaDeEscape(Montreal,Mexico);
+        Caso caso = new Caso("Fast Eddie B.", tesoro, ruta);
 
         Policia policia = new Policia("Alberto", new Novato());
-
-        Caso caso = new Caso("Fast Eddie B.", ruta);
         policia.asignarCaso(caso);
 
         policia.viajar(Mexico);
@@ -85,21 +90,21 @@ public class PoliciaTest {
 
     @Test
     public void novatoViajaDeMontrealAMexicoYDemoraCuatroHoras(){
+        Tesoro tesoro = new Tesoro(new PistaGeneral("tesoro"),new PistaGeneral("Montreal"), new Comun());
 
-        Pista pista = new Pista("Una pista auxiliar");
+        PistaEconomica pista = new PistaEconomica("Una pista auxiliar");
 
         Banco edif_montreal = new Banco(pista);
+        Destino Montreal = new Destino("Montreal",new Coordenadas(45.50884, -73.5878), edif_montreal);
+
         Banco edif_mexico = new Banco(pista);
+        Destino Mexico = new Destino("Mexico",  new Coordenadas(19.42847, -99.12766) , edif_mexico);
 
-        Destino Montreal = new Destino("Montreal", 45.50884, 73.58781, edif_montreal);
-        Destino Mexico = new Destino("Mexico", 19.42847, 99.12766 , edif_mexico);
+        RutaDeEscape ruta = new RutaDeEscape(Montreal, Mexico);
 
-
-        RutaDeEscape ruta = new RutaDeEscape(Montreal,Mexico);
+        Caso caso = new Caso("Fast Eddie B.", tesoro, ruta);
 
         Policia policia = new Policia("Alberto", new Novato());
-
-        Caso caso = new Caso("Fast Eddie B.", ruta);
         policia.asignarCaso(caso);
 
         policia.viajar(Mexico);
@@ -111,20 +116,22 @@ public class PoliciaTest {
     @Test
     public void detectiveViajaDeMontrealAMexicoYDemoraTresHoras(){
 
-        Pista pista = new Pista("Una pista auxiliar");
+        Tesoro tesoro = new Tesoro(new PistaGeneral("tesoro"),new PistaGeneral("Montreal"), new Valioso());
+
+        PistaEconomica pista = new PistaEconomica("Una pista auxiliar");
 
         Banco edif_montreal = new Banco(pista);
+        Destino Montreal = new Destino("Montreal",new Coordenadas(45.50884, -73.5878), edif_montreal);
+
         Banco edif_mexico = new Banco(pista);
+        Destino Mexico = new Destino("Mexico",  new Coordenadas(19.42847, -99.12766) , edif_mexico);
 
-        Destino Montreal = new Destino("Montreal", 45.50884, 73.58781, edif_montreal);
-        Destino Mexico = new Destino("Mexico", 19.42847, 99.12766 , edif_mexico);
+        RutaDeEscape ruta = new RutaDeEscape(Montreal, Mexico);
 
-
-        RutaDeEscape ruta = new RutaDeEscape(Montreal,Mexico);
+        Caso caso = new Caso("Fast Eddie B.", tesoro, ruta);
 
         Policia policia = new Policia("Alberto", new Detective());
 
-        Caso caso = new Caso("Fast Eddie B.", ruta);
         policia.asignarCaso(caso);
 
         policia.viajar(Mexico);
@@ -135,20 +142,22 @@ public class PoliciaTest {
     @Test
     public void investigadorViajaDeMontrealAMexicoYDemoraTresHoras(){
 
-        Pista pista = new Pista("Una pista auxiliar");
+        Tesoro tesoro = new Tesoro(new PistaGeneral("tesoro"),new PistaGeneral("Montreal"), new Valioso());
+
+        PistaEconomica pista = new PistaEconomica("Una pista auxiliar");
 
         Banco edif_montreal = new Banco(pista);
+        Destino Montreal = new Destino("Montreal",new Coordenadas(45.50884, -73.5878), edif_montreal);
+
         Banco edif_mexico = new Banco(pista);
+        Destino Mexico = new Destino("Mexico",  new Coordenadas(19.42847, -99.12766) , edif_mexico);
 
-        Destino Montreal = new Destino("Montreal", 45.50884, 73.58781, edif_montreal);
-        Destino Mexico = new Destino("Mexico", 19.42847, 99.12766 , edif_mexico);
+        RutaDeEscape ruta = new RutaDeEscape(Montreal, Mexico);
 
-
-        RutaDeEscape ruta = new RutaDeEscape(Montreal,Mexico);
+        Caso caso = new Caso("Fast Eddie B.", tesoro, ruta);
 
         Policia policia = new Policia("Alberto", new Investigador());
 
-        Caso caso = new Caso("Fast Eddie B.", ruta);
         policia.asignarCaso(caso);
         policia.viajar(Mexico);
 
@@ -158,19 +167,22 @@ public class PoliciaTest {
     @Test
     public void sargentoViajaDeMontrealAMexicoYDemoraDosHoras(){
 
-        Pista pista = new Pista("Una pista auxiliar");
+        Tesoro tesoro = new Tesoro(new PistaGeneral("tesoro"),new PistaGeneral("Montreal"), new MuyValioso());
+
+        PistaEconomica pista = new PistaEconomica("Una pista auxiliar");
 
         Banco edif_montreal = new Banco(pista);
+        Destino Montreal = new Destino("Montreal",new Coordenadas(45.50884, -73.5878), edif_montreal);
+
         Banco edif_mexico = new Banco(pista);
+        Destino Mexico = new Destino("Mexico",  new Coordenadas(19.42847, -99.12766) , edif_mexico);
 
-        Destino Montreal = new Destino("Montreal", 45.50884, 73.58781, edif_montreal);
-        Destino Mexico = new Destino("Mexico", 19.42847, 99.12766 , edif_mexico);
+        RutaDeEscape ruta = new RutaDeEscape(Montreal, Mexico);
 
-        RutaDeEscape ruta = new RutaDeEscape(Montreal,Mexico);
+        Caso caso = new Caso("Fast Eddie B.", tesoro, ruta);
 
         Policia policia = new Policia("Alberto", new Sargento());
 
-        Caso caso = new Caso("Fast Eddie B.", ruta);
         policia.asignarCaso(caso);
 
         policia.viajar(Mexico);
@@ -182,22 +194,22 @@ public class PoliciaTest {
     @Test
     public void novatoVisita3VecesPuertoYMuestraPistaYVisita55VecesAeropuerto(){
 
+        Tesoro tesoro = new Tesoro(new PistaGeneral("tesoro"),new PistaGeneral("Montreal"), new Comun());
 
-        Pista pista_aeropuerto = new Pista("Esta a una distancia de 250 km");
-        Pista pista_puerto = new Pista("Verde blanco y rojo");
-
-        Puerto puerto = new Puerto(pista_puerto);
+        PistaPuerto pista_aeropuerto = new PistaPuerto("Esta a una distancia de 250 km");
         Aeropuerto aeropuerto = new Aeropuerto(pista_aeropuerto);
 
-        Destino Montreal = new Destino("Montreal", 45.50884, 73.5878, puerto, aeropuerto);
+        PistaPuerto pista_puerto = new PistaPuerto("Verde blanco y rojo");
+        Puerto puerto = new Puerto(pista_puerto);
+
+        Destino Montreal = new Destino("Montreal",new Coordenadas(45.50884, -73.5878), puerto, aeropuerto);
 
         RutaDeEscape ruta = new RutaDeEscape(Montreal);
 
         Policia policia = new Policia("Alberto", new Novato());
 
-        Caso caso = new Caso("Fast Eddie B.", ruta);
+        Caso caso = new Caso("Fast Eddie B.", tesoro, ruta);
         policia.asignarCaso(caso);
-
 
         policia.entrar(aeropuerto);
         assertEquals(pista_aeropuerto , policia.mostrarPista());
@@ -247,39 +259,43 @@ public class PoliciaTest {
     @Test
     public void NovatoEntraAUnEdificioDeLaCiudadFinalYObtienePistaSospechosoVistoRecientemente(){
 
-        Edificio edificioInicial = new Banco(new Pista("Una pista aux"));
-        Destino destinoInicial = new Destino("Montreal", 45.50884, 73.5878, edificioInicial);
+        Tesoro tesoro = new Tesoro(new PistaGeneral("tesoro"),new PistaGeneral("Montreal"), new Comun());
 
-        Edificio edificioFinal = new Aeropuerto(new Pista("Otra pista aux"));
-        Destino destinoFinal = new Destino("Mexico", 19.42847, 99.12766 , edificioFinal);
+        Edificio edificioInicial = new Banco(new PistaEconomica("Una pista aux"));
+        Destino destinoInicial = new Destino("Montreal",new Coordenadas(45.50884, -73.5878), edificioInicial);
 
+        Edificio edificioFinal = new Aeropuerto(new PistaPuerto("Otra pista aux"));
+        Destino destinoFinal = new Destino("Mexico",  new Coordenadas(19.42847, -99.12766) , edificioFinal);
 
         RutaDeEscape ruta = new RutaDeEscape(destinoInicial, destinoFinal);
 
+        Caso caso = new Caso("Fast Eddie B.", tesoro, ruta);
+
         Policia novato = new Policia("Esteban", new Novato());
-        Caso caso = new Caso("Fast Eddie B.", ruta);
         novato.asignarCaso(caso);
 
         novato.viajar(destinoFinal);
         novato.entrar(edificioFinal);
 
-        assertEquals(new Pista("Sospechoso visto recientemente"),novato.mostrarPista());
+        assertEquals(new PistaGeneral("Sospechoso visto recientemente"),novato.mostrarPista());
 }
 
     @Test
     public void intentoDeArrestoDeSospechosoSinOrdenNoSumaArresto(){
 
-        Edificio edificioInicial = new Banco(new Pista("Una pista aux"));
-        Destino destinoInicial = new Destino("Montreal", 45.50884, 73.5878, edificioInicial);
+        Tesoro tesoro = new Tesoro(new PistaGeneral("tesoro"),new PistaGeneral("Montreal"), new Comun());
 
-        Edificio edificioFinal = new Aeropuerto(new Pista("Otra pista aux"));
-        Destino destinoFinal = new Destino("Mexico", 19.42847, 99.12766 , edificioFinal);
+        Edificio edificioInicial = new Banco(new PistaEconomica("Una pista aux"));
+        Destino destinoInicial = new Destino("Montreal",new Coordenadas(45.50884, -73.5878), edificioInicial);
 
+        Edificio edificioFinal = new Aeropuerto(new PistaPuerto("Otra pista aux"));
+        Destino destinoFinal = new Destino("Mexico",  new Coordenadas(19.42847, -99.12766) , edificioFinal);
 
         RutaDeEscape ruta = new RutaDeEscape(destinoInicial, destinoFinal);
 
+        Caso caso = new Caso("Fast Eddie B.", tesoro, ruta);
+
         Policia novato = new Policia("Esteban", new Novato());
-        Caso caso = new Caso("Fast Eddie B.", ruta);
         novato.asignarCaso(caso);
 
         novato.viajar(destinoFinal);
@@ -293,26 +309,29 @@ public class PoliciaTest {
 
 
     @Test
-    public void intentoDeArrestoDeSospechosoConOrdenNoSumaArresto(){
+    public void intentoDeArrestoDeSospechosoConOrdenSumaArresto(){
 
-        Edificio edificioInicial = new Banco(new Pista("Una pista aux"));
-        Destino destinoInicial = new Destino("Montreal", 45.50884, 73.5878, edificioInicial);
+        Tesoro tesoro = new Tesoro(new PistaGeneral("tesoro"),new PistaGeneral("Montreal"), new Comun());
 
-        Edificio edificioFinal = new Aeropuerto(new Pista("Otra pista aux"));
-        Destino destinoFinal = new Destino("Mexico", 19.42847, 99.12766 , edificioFinal);
+        Edificio edificioInicial = new Banco(new PistaEconomica("Una pista aux"));
+        Destino destinoInicial = new Destino("Montreal",new Coordenadas(45.50884, -73.5878), edificioInicial);
 
+        Edificio edificioFinal = new Aeropuerto(new PistaPuerto("Otra pista aux"));
+        Destino destinoFinal = new Destino("Mexico",  new Coordenadas(19.42847, -99.12766) , edificioFinal);
 
         RutaDeEscape ruta = new RutaDeEscape(destinoInicial, destinoFinal);
 
+        Caso caso = new Caso("Fast Eddie B.", tesoro, ruta);
+
         Policia novato = new Policia("Esteban", new Novato());
-        Caso caso = new Caso("Fast Eddie B.", ruta);
+
         novato.asignarCaso(caso);
         novato.emitirOrdenDeArresto(
-                new Pista("Masculino"),
-                new Pista("Croquet"),
-                new Pista("Convertible"),
-                new Pista("Negro"),
-                new Pista("Joyeria") );
+                new PistaGeneral("Masculino"),
+                new PistaGeneral("Croquet"),
+                new PistaGeneral("Convertible"),
+                new PistaGeneral("Negro"),
+                new PistaGeneral("Joyeria") );
 
         novato.viajar(destinoFinal);
         novato.entrar(edificioFinal);
@@ -328,27 +347,29 @@ public class PoliciaTest {
     @Test
     public void PoliciaHace6ArrestosTomaUnCasoRealizaInvestigacionEmiteOrdenYArresta(){
 
-        Edificio edificioInicial = new Banco(new Pista("Una pista aux"));
-        Destino destinoInicial = new Destino("Montreal", 45.50884, 73.5878, edificioInicial);
+        Tesoro tesoro = new Tesoro(new PistaGeneral("tesoro"),new PistaGeneral("Montreal"), new Comun());
 
-        Edificio edificioFinal = new Aeropuerto(new Pista("Otra pista aux"));
-        Destino destinoFinal = new Destino("Mexico", 19.42847, 99.12766 , edificioFinal);
+        Edificio edificioInicial = new Banco(new PistaEconomica("Una pista aux"));
+        Destino destinoInicial = new Destino("Montreal",new Coordenadas(45.50884, -73.5878), edificioInicial);
 
-        Policia novato = new Policia("Esteban", new Novato());
+        Edificio edificioFinal = new Aeropuerto(new PistaPuerto("Otra pista aux"));
+        Destino destinoFinal = new Destino("Mexico",  new Coordenadas(19.42847, -99.12766) , edificioFinal);
+
+        Policia policia = new Policia("Esteban", new Novato());
 
         for(int i =0; i<6; i++){
-            novato.asignarCaso(new Caso("Fast Eddie B.", new RutaDeEscape(destinoInicial, destinoFinal)));
-            novato.viajar(destinoFinal);
-            novato.emitirOrdenDeArresto(
-                    new Pista("Masculino"),
-                    new Pista("Croquet"),
-                    new Pista("Convertible"),
-                    new Pista("Negro"),
-                    new Pista("Joyeria") );
-            novato.entrar(edificioFinal);
-            novato.entrar(edificioFinal);
+            policia.asignarCaso(new Caso("Fast Eddie B.", tesoro, new RutaDeEscape(destinoInicial, destinoFinal)));
+            policia.viajar(destinoFinal);
+            policia.emitirOrdenDeArresto(
+                    new PistaGeneral("Masculino"),
+                    new PistaGeneral("Croquet"),
+                    new PistaGeneral("Convertible"),
+                    new PistaGeneral("Negro"),
+                    new PistaGeneral("Joyeria") );
+            policia.entrar(edificioFinal);
+            policia.entrar(edificioFinal);
         }
-        assertEquals(6, novato.cantidadDeArrestos());
+        assertEquals(6, policia.cantidadDeArrestos());
     }
 
 }

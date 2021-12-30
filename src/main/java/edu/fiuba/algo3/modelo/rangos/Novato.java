@@ -1,6 +1,11 @@
-package edu.fiuba.algo3.modelo.rango;
+package edu.fiuba.algo3.modelo.rangos;
 
+import edu.fiuba.algo3.modelo.Tesoro;
+import edu.fiuba.algo3.modelo.archivos.TesoroCandidato;
 import edu.fiuba.algo3.modelo.reloj.Reloj;
+import edu.fiuba.algo3.modelo.valor.Comun;
+
+import java.util.ArrayList;
 
 public class Novato implements Rango {
     private int arrestos;
@@ -15,8 +20,10 @@ public class Novato implements Rango {
     public void demoraPorDistancia(double distancia, Reloj reloj) {
         reloj.aumentarHoras( (int)Math.round(distancia/900.00) );
     }
+
     @Override
     public int cantidadDeArrestos(){return arrestos;}
+
     @Override
     public Rango sumarArresto() {
         arrestos++;
@@ -24,5 +31,12 @@ public class Novato implements Rango {
             return new Detective();
         }
         return this;
+    }
+
+    @Override
+    public Tesoro obtenerTesoroAleatorio(ArrayList<ArrayList> matriz) {
+        ArrayList<TesoroCandidato> candidatos = matriz.get(0);
+        TesoroCandidato elejido = candidatos.get( (int) (Math.random()*candidatos.size()) );
+        return new Tesoro(elejido.obtenerNombre(), elejido.obtenerInicio(), new Comun() );
     }
 }

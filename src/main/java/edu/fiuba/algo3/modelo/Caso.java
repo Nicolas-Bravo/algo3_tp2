@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.pistas.Pista;
+
 import edu.fiuba.algo3.modelo.rango.Rango;
 
 import java.util.ArrayList;
@@ -10,13 +12,13 @@ public class Caso {
     private int entradasFinales;
     private final Sospechoso ladronReal;
     private boolean orden;
-    private Tesoro tesoro;
+    private final Tesoro tesoro;
 
-    public Caso(String nombre, RutaDeEscape ruta){
+    public Caso(String nombre, Tesoro tesoro_p, RutaDeEscape ruta){
         this.ladronReal = BuscadorDeSospechosos.obtenerSospechosoPorNombre(nombre);
         this.rutaDeEscape = ruta;
         this.orden = false;
-        this.entradasFinales = 0;
+        this.tesoro = tesoro_p;
     }
 
     public Caso(String nombre, RutaDeEscape ruta, Tesoro tesoro){
@@ -40,7 +42,7 @@ public class Caso {
     }
 
     public ArrayList<Sospechoso> buscarSospechosos(Pista[] datos) {
-        return BuscadorDeSospechosos.buscarSospechosos(datos);
+        return BuscadorDeSospechosos.buscarSospechosos( datos);
     }
 
     public void controlArresto(Destino destinoActual, Pista pista, Policia policia) {
@@ -50,6 +52,4 @@ public class Caso {
     public Mapa obtenerMapa() {
         return this.rutaDeEscape.obtenerMapa();
     }
-
-
 }

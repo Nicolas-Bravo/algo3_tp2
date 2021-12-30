@@ -1,6 +1,8 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.pistas;
 
-public class Pista {
+import edu.fiuba.algo3.modelo.edificios.Edificio;
+
+public abstract class Pista {
 
     private String pista;
 
@@ -16,7 +18,12 @@ public class Pista {
 
     @Override
     public boolean equals(Object o){
-        return this.pista.equals(((Pista)o).mostrarPista());
+        if(o instanceof Pista){
+            return this.pista.equals(((Pista)o).mostrarPista());
+        }
+        return false;
     }
+
+    public abstract Edificio obtenerEdificio();
 
 }

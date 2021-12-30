@@ -1,13 +1,14 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.archivos.LectorArchivo;
+import edu.fiuba.algo3.modelo.archivos.LectorArchivoSospechosos;
 import edu.fiuba.algo3.modelo.exceptions.DescripcionIngresadaErroneaError;
+import edu.fiuba.algo3.modelo.pistas.Pista;
 
 import java.util.ArrayList;
 import java.util.stream.Stream;
 
 public class BuscadorDeSospechosos {
-    private static ArrayList<Sospechoso> listaSospechosos = LectorArchivo.generarListaSospechososTotales();
+    private static final ArrayList<Sospechoso> listaSospechosos = LectorArchivoSospechosos.generarListaSospechososTotales();
 
     public static ArrayList<Sospechoso> buscarSospechosos(Pista... pistas) throws DescripcionIngresadaErroneaError {
         ArrayList<Sospechoso> sospechososPosibles = new ArrayList<>();

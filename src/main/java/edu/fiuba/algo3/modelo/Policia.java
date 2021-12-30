@@ -1,6 +1,8 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.rango.Rango;
+import edu.fiuba.algo3.modelo.edificios.Edificio;
+import edu.fiuba.algo3.modelo.pistas.Pista;
+import edu.fiuba.algo3.modelo.rangos.Rango;
 import edu.fiuba.algo3.modelo.reloj.Reloj;
 
 import java.util.ArrayList;
@@ -9,7 +11,7 @@ import java.util.ArrayList;
 public class Policia {
     private final String nombre;
     private Pista pista;
-    private final Reloj reloj;
+    private Reloj reloj;
     private Mapa mapa;
     private Rango rango;
     private int heridas;
@@ -18,9 +20,9 @@ public class Policia {
 
     public Policia(String nombre_p, Rango rango_p){
         this.nombre = nombre_p;
-        this.reloj = new Reloj();
         this.rango = rango_p;
         this.heridas = 0;
+        this.reloj = new Reloj();
     }
 
     public Pista entrar(Edificio edificio) {
@@ -65,11 +67,13 @@ public class Policia {
         if(sospechososPosibles.size()==1){
             this.casoActual.emitirOrden(sospechososPosibles.get(0));
         }
+        this.reloj.aumentarHoras(3);
     }
 
     public void asignarCaso(Caso caso){
         this.casoActual = caso;
         this.mapa = casoActual.obtenerMapa();
+        this.reloj = new Reloj();
     }
 
     public int cantidadDeArrestos() {
@@ -78,6 +82,10 @@ public class Policia {
 
     public void sumarArresto() {
         this.rango = this.rango.sumarArresto();
+    }
+
+    public Rango obtenerRango() {
+        return this.rango;
     }
 
     public String enlaceCapitalActual() {
