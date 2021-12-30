@@ -1,25 +1,24 @@
-package edu.fiuba.algo3.modelo.rango;
+package edu.fiuba.algo3.modelo.rangos;
 
 import edu.fiuba.algo3.modelo.Tesoro;
 import edu.fiuba.algo3.modelo.archivos.TesoroCandidato;
 import edu.fiuba.algo3.modelo.reloj.Reloj;
-import edu.fiuba.algo3.modelo.valor.Valioso;
+import edu.fiuba.algo3.modelo.valor.Comun;
 
 import java.util.ArrayList;
 
-public class Investigador implements Rango {
-
+public class Novato implements Rango {
     private int arrestos;
     private final int arrestosMaximos;
 
-    public Investigador(){
-        this.arrestos = 10;
-        this.arrestosMaximos = 19;
+    public Novato(){
+        this.arrestos = 0;
+        this.arrestosMaximos = 4;
     }
 
     @Override
     public void demoraPorDistancia(double distancia, Reloj reloj) {
-        reloj.aumentarHoras( (int)Math.round(distancia/1300.00) );
+        reloj.aumentarHoras( (int)Math.round(distancia/900.00) );
     }
 
     @Override
@@ -29,15 +28,15 @@ public class Investigador implements Rango {
     public Rango sumarArresto() {
         arrestos++;
         if (arrestos > arrestosMaximos) {
-            return new Sargento();
+            return new Detective();
         }
         return this;
     }
 
     @Override
     public Tesoro obtenerTesoroAleatorio(ArrayList<ArrayList> matriz) {
-        ArrayList<TesoroCandidato> candidatos = matriz.get(1);
+        ArrayList<TesoroCandidato> candidatos = matriz.get(0);
         TesoroCandidato elejido = candidatos.get( (int) (Math.random()*candidatos.size()) );
-        return new Tesoro(elejido.obtenerNombre(), elejido.obtenerInicio(), new Valioso() );
+        return new Tesoro(elejido.obtenerNombre(), elejido.obtenerInicio(), new Comun() );
     }
 }

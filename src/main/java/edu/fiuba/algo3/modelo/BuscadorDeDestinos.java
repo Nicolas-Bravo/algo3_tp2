@@ -2,14 +2,15 @@ package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.archivos.DestinoCandidato;
 import edu.fiuba.algo3.modelo.archivos.LectorArchivoDestinos;
-import edu.fiuba.algo3.modelo.pista.Pista;
+import edu.fiuba.algo3.modelo.pistas.Pista;
 import edu.fiuba.algo3.modelo.valor.Valor;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class BuscadorDeDestinos {
 
-    private static ArrayList<DestinoCandidato> listaDestinos = LectorArchivoDestinos.generarListaDestinosCandidatos();
+    private static final ArrayList<DestinoCandidato> listaDestinos = LectorArchivoDestinos.generarListaDestinosCandidatos();
     
     private static Destino generarSiguiente(DestinoCandidato actual, DestinoCandidato siguiente, Valor valor){
 
@@ -75,9 +76,7 @@ public class BuscadorDeDestinos {
             i++;
         }
 
-        for(Destino d : destinoErroneoArray){
-            destinos.add(d);
-        }
+        Collections.addAll(destinos, destinoErroneoArray);
 
         return destinos;
 

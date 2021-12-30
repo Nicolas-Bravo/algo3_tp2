@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modelo.rango;
+package edu.fiuba.algo3.modelo.rangos;
 
 import edu.fiuba.algo3.modelo.Tesoro;
 import edu.fiuba.algo3.modelo.archivos.TesoroCandidato;

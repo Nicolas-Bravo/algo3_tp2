@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.pista.Pista;
+import edu.fiuba.algo3.modelo.edificios.Banco;
+import edu.fiuba.algo3.modelo.pistas.PistaEconomica;
 import edu.fiuba.algo3.modelo.reloj.Reloj;
 import org.junit.jupiter.api.Test;
 
@@ -10,7 +11,7 @@ public class DestinoTest {
 
     @Test
     public void detinoEntraAUnEdicioQueLoComponePorPrimeraVezYDemoraUnaHora(){
-        Edificio edificio = new Edificio(new Pista("Una pista aux"));
+        Banco edificio = new Banco(new PistaEconomica("Una pista aux"));
         Destino destino = new Destino("destino", new Coordenadas(10.00,10.00),edificio);
         Reloj reloj = new Reloj();
 
@@ -21,7 +22,7 @@ public class DestinoTest {
 
     @Test
     public void detinoEntraAUnEdicioQueLoComponePorSegundaVezYDemoraDosHoras(){
-        Edificio edificio = new Edificio(new Pista("Una pista aux"));
+        Banco edificio = new Banco(new PistaEconomica("Una pista aux"));
         Destino destino = new Destino("destino", new Coordenadas(10.00,10.00),edificio);
         Reloj reloj = new Reloj();
 
@@ -33,7 +34,7 @@ public class DestinoTest {
 
     @Test
     public void detinoEntraAUnEdicioQueLoComponePorTerceraVezYDemoraTresHoras(){
-        Edificio edificio = new Edificio(new Pista("Una pista aux"));
+        Banco edificio = new Banco(new PistaEconomica("Una pista aux"));
         Destino destino = new Destino("destino", new Coordenadas(10.00,10.00),edificio);
         Reloj reloj = new Reloj();
 
@@ -46,8 +47,8 @@ public class DestinoTest {
 
     @Test
     public void detinoEntraAUnEdicioQueLoComponeYObtieneSuPista(){
-        Pista p = new Pista("pista de prueba");
-        Edificio edificio = new Edificio(p);
+        PistaEconomica p = new PistaEconomica("pista de prueba");
+        Banco edificio = new Banco(p);
         Destino destino = new Destino("destino", new Coordenadas(10.00,10.00),edificio);
         Reloj reloj = new Reloj();
 

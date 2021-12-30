@@ -1,7 +1,8 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.pista.Pista;
-import edu.fiuba.algo3.modelo.rango.*;
+import edu.fiuba.algo3.modelo.edificios.*;
+import edu.fiuba.algo3.modelo.pistas.*;
+import edu.fiuba.algo3.modelo.rangos.*;
 import edu.fiuba.algo3.modelo.valor.*;
 import org.junit.jupiter.api.Test;
 
@@ -12,29 +13,34 @@ public class IntegracionTest {
     @Test
     public void tesoroValorComunRobado(){
 
-        Tesoro tesoro = new Tesoro(new Pista("teosro"), new Pista("montreal"), new Comun());
+        Tesoro tesoro = new Tesoro(new PistaGeneral("teosro"), new PistaGeneral("montreal"), new Comun());
 
-        Edificio montrealUno = new Banco(new Pista("Una pista aux"));
-        Edificio montrealDos = new Aeropuerto(new Pista("Una pista aux"));
-        Edificio montrealTres = new Biblioteca(new Pista("Una pista aux"));
+        Edificio montrealUno = new Banco(new PistaEconomica("Una pista aux"));
+        Edificio montrealDos = new Aeropuerto(new PistaPuerto("Una pista aux"));
+        Edificio montrealTres = new Biblioteca(new PistaBiblioteca("Una pista aux"));
         Destino montreal = new Destino("Montreal", new Coordenadas(45.50884, -73.5878), montrealUno, montrealDos, montrealTres);
 
-        Edificio limaUno = new Aeropuerto(new Pista("Otra pista aux"));
-        Edificio limaDos = new Banco(new Pista("Otra pista aux"));
-        Edificio limaTres = new Biblioteca(new Pista("Otra pista aux"));
+        Edificio limaUno = new Aeropuerto(new PistaPuerto("Otra pista aux"));
+        Edificio limaDos = new Banco(new PistaEconomica("Otra pista aux"));
+        Edificio limaTres = new Biblioteca(new PistaBiblioteca("Otra pista aux"));
         Destino lima = new Destino("Lima", new Coordenadas(12.04318, 77.02824) , limaUno, limaDos, limaTres);
 
-        Edificio londresUno = new Aeropuerto(new Pista("Otra pista aux"));
-        Edificio londresDos = new Banco(new Pista("Otra pista aux"));
-        Edificio londresTres = new Biblioteca(new Pista("Otra pista aux"));
+        Edificio londresUno = new Aeropuerto(new PistaPuerto("Otra pista aux"));
+        Edificio londresDos = new Banco(new PistaEconomica("Otra pista aux"));
+        Edificio londresTres = new Biblioteca(new PistaBiblioteca("Otra pista aux"));
         Destino londres = new Destino("Londres", new Coordenadas(51.50853, 0.12574) , londresUno, londresDos, londresTres);
 
-        Edificio mexicoUno = new Aeropuerto(new Pista("Otra pista aux"));
-        Edificio mexicoDos = new Banco(new Pista("Otra pista aux"));
-        Edificio mexicoTres = new Biblioteca(new Pista("Otra pista aux"));
+        Edificio mexicoUno = new Aeropuerto(new PistaPuerto("Otra pista aux"));
+        Edificio mexicoDos = new Banco(new PistaEconomica("Otra pista aux"));
+        Edificio mexicoTres = new Biblioteca(new PistaBiblioteca("Otra pista aux"));
         Destino mexico = new Destino("Mexico",  new Coordenadas(19.42847, -99.12766) , mexicoUno, mexicoDos, mexicoTres);
 
-        RutaDeEscape ruta = new RutaDeEscape(montreal, lima, londres, mexico);
+        Edificio atenasUno = new Aeropuerto(new PistaPuerto("Otra pista aux"));
+        Edificio atenasDos = new Banco(new PistaEconomica("Otra pista aux"));
+        Edificio atenasTres = new Biblioteca(new PistaBiblioteca("Otra pista aux"));
+        Destino atenas = new Destino("Atenas", new Coordenadas(37.98376, 23.72784) , atenasUno, atenasDos, atenasTres);
+
+        RutaDeEscape ruta = new RutaDeEscape(montreal, lima, londres, mexico, atenas);
 
         Caso caso = new Caso("Fast Eddie B.", tesoro, ruta);
 
@@ -42,11 +48,11 @@ public class IntegracionTest {
 
         novato.asignarCaso(caso);
         novato.emitirOrdenDeArresto(
-                new Pista("Masculino"),
-                new Pista("Croquet"),
-                new Pista("Convertible"),
-                new Pista("Negro"),
-                new Pista("Joyeria") );
+                new PistaGeneral("Masculino"),
+                new PistaGeneral("Croquet"),
+                new PistaGeneral("Convertible"),
+                new PistaGeneral("Negro"),
+                new PistaGeneral("Joyeria") );
 
         novato.viajar(lima);
 
@@ -54,45 +60,52 @@ public class IntegracionTest {
 
         novato.viajar(mexico);
 
-        novato.entrar(mexicoUno);
+        novato.viajar((atenas));
+
+        novato.entrar(atenasUno);
 
         assertEquals(0,novato.cantidadDeArrestos());
 
-        novato.entrar(mexicoDos);
+        novato.entrar(atenasDos);
         assertEquals(1, novato.cantidadDeArrestos());
     }
 
     @Test
     public void tesoroValorValiosoRobado(){
 
-        Tesoro tesoro = new Tesoro(new Pista("teosro"), new Pista("montreal"), new Valioso());
+        Tesoro tesoro = new Tesoro(new PistaGeneral("teosro"), new PistaGeneral("montreal"), new Valioso());
 
-        Edificio montrealUno = new Banco(new Pista("Una pista aux"));
-        Edificio montrealDos = new Aeropuerto(new Pista("Una pista aux"));
-        Edificio montrealTres = new Biblioteca(new Pista("Una pista aux"));
+        Edificio montrealUno = new Banco(new PistaEconomica("Una pista aux"));
+        Edificio montrealDos = new Aeropuerto(new PistaPuerto("Una pista aux"));
+        Edificio montrealTres = new Biblioteca(new PistaBiblioteca("Una pista aux"));
         Destino montreal = new Destino("Montreal", new Coordenadas(45.50884, -73.5878), montrealUno, montrealDos, montrealTres);
 
-        Edificio limaUno = new Aeropuerto(new Pista("Otra pista aux"));
-        Edificio limaDos = new Banco(new Pista("Otra pista aux"));
-        Edificio limaTres = new Biblioteca(new Pista("Otra pista aux"));
+        Edificio limaUno = new Aeropuerto(new PistaPuerto("Otra pista aux"));
+        Edificio limaDos = new Banco(new PistaEconomica("Otra pista aux"));
+        Edificio limaTres = new Biblioteca(new PistaBiblioteca("Otra pista aux"));
         Destino lima = new Destino("Lima", new Coordenadas(12.04318, 77.02824) , limaUno, limaDos, limaTres);
 
-        Edificio londresUno = new Aeropuerto(new Pista("Otra pista aux"));
-        Edificio londresDos = new Banco(new Pista("Otra pista aux"));
-        Edificio londresTres = new Biblioteca(new Pista("Otra pista aux"));
+        Edificio londresUno = new Aeropuerto(new PistaPuerto("Otra pista aux"));
+        Edificio londresDos = new Banco(new PistaEconomica("Otra pista aux"));
+        Edificio londresTres = new Biblioteca(new PistaBiblioteca("Otra pista aux"));
         Destino londres = new Destino("Londres", new Coordenadas(51.50853, 0.12574) , londresUno, londresDos, londresTres);
 
-        Edificio mexicoUno = new Aeropuerto(new Pista("Otra pista aux"));
-        Edificio mexicoDos = new Banco(new Pista("Otra pista aux"));
-        Edificio mexicoTres = new Biblioteca(new Pista("Otra pista aux"));
+        Edificio mexicoUno = new Aeropuerto(new PistaPuerto("Otra pista aux"));
+        Edificio mexicoDos = new Banco(new PistaEconomica("Otra pista aux"));
+        Edificio mexicoTres = new Biblioteca(new PistaBiblioteca("Otra pista aux"));
         Destino mexico = new Destino("Mexico",  new Coordenadas(19.42847, -99.12766) , mexicoUno, mexicoDos, mexicoTres);
 
-        Edificio atenasUno = new Aeropuerto(new Pista("Otra pista aux"));
-        Edificio atenasDos = new Banco(new Pista("Otra pista aux"));
-        Edificio atenasTres = new Biblioteca(new Pista("Otra pista aux"));
+        Edificio atenasUno = new Aeropuerto(new PistaPuerto("Otra pista aux"));
+        Edificio atenasDos = new Banco(new PistaEconomica("Otra pista aux"));
+        Edificio atenasTres = new Biblioteca(new PistaBiblioteca("Otra pista aux"));
         Destino atenas = new Destino("Atenas", new Coordenadas(37.98376, 23.72784) , atenasUno, atenasDos, atenasTres);
 
-        RutaDeEscape ruta = new RutaDeEscape(montreal, lima, londres, mexico, atenas);
+        Edificio bangkokUno = new Aeropuerto(new PistaPuerto("Otra pista aux"));
+        Edificio bangkokDos = new Banco(new PistaEconomica("Otra pista aux"));
+        Edificio bangkokTres = new Biblioteca(new PistaBiblioteca("Otra pista aux"));
+        Destino bangkok = new Destino("Bangkok", new Coordenadas(100.5014400, 13.7539800) , bangkokUno, bangkokDos, bangkokTres);
+
+        RutaDeEscape ruta = new RutaDeEscape(montreal, lima, londres, mexico, atenas, bangkok);
 
         Caso caso = new Caso("Fast Eddie B.", tesoro, ruta);
 
@@ -100,11 +113,11 @@ public class IntegracionTest {
 
         detective.asignarCaso(caso);
         detective.emitirOrdenDeArresto(
-                new Pista("Masculino"),
-                new Pista("Croquet"),
-                new Pista("Convertible"),
-                new Pista("Negro"),
-                new Pista("Joyeria") );
+                new PistaGeneral("Masculino"),
+                new PistaGeneral("Croquet"),
+                new PistaGeneral("Convertible"),
+                new PistaGeneral("Negro"),
+                new PistaGeneral("Joyeria") );
 
         detective.viajar(lima);
 
@@ -114,11 +127,13 @@ public class IntegracionTest {
 
         detective.viajar(atenas);
 
-        detective.entrar(atenasUno);
+        detective.viajar(bangkok);
+
+        detective.entrar(bangkokUno);
 
         assertEquals(5,detective.cantidadDeArrestos());
 
-        detective.entrar(atenasDos);
+        detective.entrar(bangkokDos);
         assertEquals(6, detective.cantidadDeArrestos());
     }
 
@@ -126,44 +141,49 @@ public class IntegracionTest {
     @Test
     public void tesoroValorMuyValiosoRobado(){
 
-        Tesoro tesoro = new Tesoro(new Pista("teosro"), new Pista("montreal"), new MuyValioso());
+        Tesoro tesoro = new Tesoro(new PistaGeneral("teosro"), new PistaGeneral("montreal"), new MuyValioso());
 
-        Edificio montrealUno = new Banco(new Pista("Una pista aux"));
-        Edificio montrealDos = new Aeropuerto(new Pista("Una pista aux"));
-        Edificio montrealTres = new Biblioteca(new Pista("Una pista aux"));
+        Edificio montrealUno = new Banco(new PistaEconomica("Una pista aux"));
+        Edificio montrealDos = new Aeropuerto(new PistaPuerto("Una pista aux"));
+        Edificio montrealTres = new Biblioteca(new PistaBiblioteca("Una pista aux"));
         Destino montreal = new Destino("Montreal", new Coordenadas(45.50884, -73.5878), montrealUno, montrealDos, montrealTres);
 
-        Edificio limaUno = new Aeropuerto(new Pista("Otra pista aux"));
-        Edificio limaDos = new Banco(new Pista("Otra pista aux"));
-        Edificio limaTres = new Biblioteca(new Pista("Otra pista aux"));
+        Edificio limaUno = new Aeropuerto(new PistaPuerto("Otra pista aux"));
+        Edificio limaDos = new Banco(new PistaEconomica("Otra pista aux"));
+        Edificio limaTres = new Biblioteca(new PistaBiblioteca("Otra pista aux"));
         Destino lima = new Destino("Lima", new Coordenadas(12.04318, 77.02824) , limaUno, limaDos, limaTres);
 
-        Edificio londresUno = new Aeropuerto(new Pista("Otra pista aux"));
-        Edificio londresDos = new Banco(new Pista("Otra pista aux"));
-        Edificio londresTres = new Biblioteca(new Pista("Otra pista aux"));
+        Edificio londresUno = new Aeropuerto(new PistaPuerto("Otra pista aux"));
+        Edificio londresDos = new Banco(new PistaEconomica("Otra pista aux"));
+        Edificio londresTres = new Biblioteca(new PistaBiblioteca("Otra pista aux"));
         Destino londres = new Destino("Londres", new Coordenadas(51.50853, 0.12574) , londresUno, londresDos, londresTres);
 
-        Edificio mexicoUno = new Aeropuerto(new Pista("Otra pista aux"));
-        Edificio mexicoDos = new Banco(new Pista("Otra pista aux"));
-        Edificio mexicoTres = new Biblioteca(new Pista("Otra pista aux"));
+        Edificio mexicoUno = new Aeropuerto(new PistaPuerto("Otra pista aux"));
+        Edificio mexicoDos = new Banco(new PistaEconomica("Otra pista aux"));
+        Edificio mexicoTres = new Biblioteca(new PistaBiblioteca("Otra pista aux"));
         Destino mexico = new Destino("Mexico",  new Coordenadas(19.42847, -99.12766) , mexicoUno, mexicoDos, mexicoTres);
 
-        Edificio atenasUno = new Aeropuerto(new Pista("Otra pista aux"));
-        Edificio atenasDos = new Banco(new Pista("Otra pista aux"));
-        Edificio atenasTres = new Biblioteca(new Pista("Otra pista aux"));
+        Edificio atenasUno = new Aeropuerto(new PistaPuerto("Otra pista aux"));
+        Edificio atenasDos = new Banco(new PistaEconomica("Otra pista aux"));
+        Edificio atenasTres = new Biblioteca(new PistaBiblioteca("Otra pista aux"));
         Destino atenas = new Destino("Atenas", new Coordenadas(37.98376, 23.72784) , atenasUno, atenasDos, atenasTres);
 
-        Edificio bangkokUno = new Aeropuerto(new Pista("Otra pista aux"));
-        Edificio bangkokDos = new Banco(new Pista("Otra pista aux"));
-        Edificio bangkokTres = new Biblioteca(new Pista("Otra pista aux"));
+        Edificio bangkokUno = new Aeropuerto(new PistaPuerto("Otra pista aux"));
+        Edificio bangkokDos = new Banco(new PistaEconomica("Otra pista aux"));
+        Edificio bangkokTres = new Biblioteca(new PistaBiblioteca("Otra pista aux"));
         Destino bangkok = new Destino("Bangkok", new Coordenadas(100.5014400, 13.7539800) , bangkokUno, bangkokDos, bangkokTres);
 
-        Edificio budapestUno = new Aeropuerto(new Pista("Otra pista aux"));
-        Edificio budapestDos = new Banco(new Pista("Otra pista aux"));
-        Edificio budapestTres = new Biblioteca(new Pista("Otra pista aux"));
+        Edificio budapestUno = new Aeropuerto(new PistaPuerto("Otra pista aux"));
+        Edificio budapestDos = new Banco(new PistaEconomica("Otra pista aux"));
+        Edificio budapestTres = new Biblioteca(new PistaBiblioteca("Otra pista aux"));
         Destino budapest = new Destino("Budapest", new Coordenadas(47.49835, 19.04045) , budapestUno, budapestDos, budapestTres);
 
-        RutaDeEscape ruta = new RutaDeEscape(montreal, lima, londres, mexico, atenas, bangkok, budapest);
+        Edificio tokyoUno = new Aeropuerto(new PistaPuerto("Otra pista aux"));
+        Edificio tokyoDos = new Banco(new PistaEconomica("Otra pista aux"));
+        Edificio tokyoTres = new Biblioteca(new PistaBiblioteca("Otra pista aux"));
+        Destino tokyo = new Destino("Budapest", new Coordenadas(139.69171, 35.68950) , tokyoUno, tokyoDos, tokyoTres);
+
+        RutaDeEscape ruta = new RutaDeEscape(montreal, lima, londres, mexico, atenas, bangkok, budapest, tokyo);
 
         Caso caso = new Caso("Fast Eddie B.", tesoro, ruta);
 
@@ -171,11 +191,11 @@ public class IntegracionTest {
 
         sargento.asignarCaso(caso);
         sargento.emitirOrdenDeArresto(
-                new Pista("Masculino"),
-                new Pista("Croquet"),
-                new Pista("Convertible"),
-                new Pista("Negro"),
-                new Pista("Joyeria") );
+                new PistaGeneral("Masculino"),
+                new PistaGeneral("Croquet"),
+                new PistaGeneral("Convertible"),
+                new PistaGeneral("Negro"),
+                new PistaGeneral("Joyeria") );
 
         sargento.viajar(lima);
 
@@ -189,11 +209,13 @@ public class IntegracionTest {
 
         sargento.viajar(budapest);
 
-        sargento.entrar(budapestUno);
+        sargento.viajar(tokyo);
+
+        sargento.entrar(tokyoUno);
 
         assertEquals(20,sargento.cantidadDeArrestos());
 
-        sargento.entrar(budapestDos);
+        sargento.entrar(tokyoDos);
         assertEquals(21, sargento.cantidadDeArrestos());
     }
 }

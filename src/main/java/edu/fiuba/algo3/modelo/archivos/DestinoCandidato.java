@@ -1,16 +1,17 @@
 package edu.fiuba.algo3.modelo.archivos;
 
 import edu.fiuba.algo3.modelo.*;
-import edu.fiuba.algo3.modelo.pista.Pista;
+import edu.fiuba.algo3.modelo.edificios.*;
+import edu.fiuba.algo3.modelo.pistas.*;
 import edu.fiuba.algo3.modelo.valor.Valor;
 
 import java.util.ArrayList;
 
 public class DestinoCandidato {
 
-    private ArrayList<ArrayList> descripcion;
-    private Pista nombre;
-    private Coordenadas coordenadas;
+    private final ArrayList<ArrayList> descripcion;
+    private final Pista nombre;
+    private final Coordenadas coordenadas;
 
     public DestinoCandidato(ArrayList<ArrayList> matriz) {
         this.descripcion = matriz;
@@ -38,11 +39,9 @@ public class DestinoCandidato {
 
     public Destino generarDestinoErroneo() {
 
-
-
         return new Destino(this.nombre.mostrarPista(), this.coordenadas,
-                new Biblioteca(new Pista("No hemos visto a nadie por aqui")),
-                new Banco(new Pista("No hemos visto a nadie por aqui\"")),
-                new Aeropuerto(new Pista("No hemos visto a nadie por aqui")));
+                new Biblioteca(new PistaBiblioteca("No hemos visto a nadie por aqui")),
+                new Banco(new PistaEconomica("No hemos visto a nadie por aqui\"")),
+                new Aeropuerto(new PistaPuerto("No hemos visto a nadie por aqui")));
     }
 }

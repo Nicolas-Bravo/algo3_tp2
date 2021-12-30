@@ -1,7 +1,8 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.pista.Pista;
-import edu.fiuba.algo3.modelo.rango.Rango;
+import edu.fiuba.algo3.modelo.edificios.Edificio;
+import edu.fiuba.algo3.modelo.pistas.Pista;
+import edu.fiuba.algo3.modelo.rangos.Rango;
 import edu.fiuba.algo3.modelo.reloj.Reloj;
 
 import java.util.ArrayList;

@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.modelo.valor;
 
-import edu.fiuba.algo3.modelo.Edificio;
-import edu.fiuba.algo3.modelo.pista.Pista;
+import edu.fiuba.algo3.modelo.edificios.Edificio;
+import edu.fiuba.algo3.modelo.pistas.Pista;
 
 import java.util.ArrayList;
 import java.util.Random;

@@ -1,11 +1,11 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.edificios;
 
 import edu.fiuba.algo3.modelo.demorador.DemoradorPorEntradas;
 import edu.fiuba.algo3.modelo.demorador.PrimerEntrada;
-import edu.fiuba.algo3.modelo.pista.Pista;
+import edu.fiuba.algo3.modelo.pistas.Pista;
 import edu.fiuba.algo3.modelo.reloj.Reloj;
 
-public class Edificio {
+public abstract class Edificio {
 
     protected final Pista pista;
     private DemoradorPorEntradas demorador;
