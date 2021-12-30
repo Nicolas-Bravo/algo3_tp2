@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo.archivos;
 
-import edu.fiuba.algo3.modelo.pista.Pista;
+import edu.fiuba.algo3.modelo.pistas.PistaGeneral;
 import edu.fiuba.algo3.modelo.Sospechoso;
 
 import java.io.File;
@@ -10,16 +10,16 @@ import java.util.Scanner;
 
 public class LectorArchivoSospechosos {
 
-    private static Pista[] generarDescripcion(String data){
-        ArrayList<Pista> descripcion = new ArrayList<>();
+    private static PistaGeneral[] generarDescripcion(String data){
+        ArrayList<PistaGeneral> descripcion = new ArrayList<>();
 
         String[] datos = data.split(";");
 
         for(String dato:datos){
-            descripcion.add(new Pista(dato));
+            descripcion.add(new PistaGeneral(dato));
         }
 
-        return descripcion.toArray(new Pista[0]);
+        return descripcion.toArray(new PistaGeneral[0]);
 
 
     }

@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.pista.Pista;
+import edu.fiuba.algo3.modelo.edificios.*;
+import edu.fiuba.algo3.modelo.pistas.PistaEconomica;
 import edu.fiuba.algo3.modelo.reloj.Reloj;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -8,8 +9,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class EdificioTest {
 
     @Test
-    public void entrarAUnEdificioPorPrimeraVezDemoraUnaHora(){
-        Edificio e = new Edificio(new Pista("una pista aux"));
+    public void entrarAUnBancoPorPrimeraVezDemoraUnaHora(){
+        Banco e = new Banco(new PistaEconomica("una pista aux"));
         Reloj r = new Reloj();
 
         e.entrar(r);
@@ -18,8 +19,8 @@ public class EdificioTest {
     }
 
     @Test
-    public void entrarAUnEdificioPorSegundaVezDemoraDosHora(){
-        Edificio e = new Edificio(new Pista("una pista aux"));
+    public void entrarAUnBancoPorSegundaVezDemoraDosHora(){
+        Banco e = new Banco(new PistaEconomica("una pista aux"));
         Reloj r = new Reloj();
 
         e.entrar(r);
@@ -30,8 +31,8 @@ public class EdificioTest {
 
 
     @Test
-    public void entrarAUnEdificioPorTerceraVezDemoraTresHora(){
-        Edificio e = new Edificio(new Pista("una pista aux"));
+    public void entrarAUnBancoPorTerceraVezDemoraTresHora(){
+        Banco e = new Banco(new PistaEconomica("una pista aux"));
         Reloj r = new Reloj();
 
         e.entrar(r);
@@ -42,8 +43,8 @@ public class EdificioTest {
     }
 
     @Test
-    public void entrarAUnEdificioPorCuartaVezDemoraTresHora(){
-        Edificio e = new Edificio(new Pista("una pista aux"));
+    public void entrarAUnBancoPorCuartaVezDemoraTresHora(){
+        Banco e = new Banco(new PistaEconomica("una pista aux"));
         Reloj r = new Reloj();
 
         e.entrar(r);
@@ -55,9 +56,9 @@ public class EdificioTest {
     }
 
     @Test
-    public void entrarAUnEdificioDevuelveLaPistaConElQueFueConstruido(){
-        Pista p = new Pista("pista de prueba");
-        Edificio e = new Edificio(p);
+    public void entrarAUnBancoDevuelveLaPistaEconomicaConElQueFueConstruido(){
+        PistaEconomica p = new PistaEconomica("pista de prueba");
+        Banco e = new Banco(p);
         Reloj r = new Reloj();
 
         assertEquals(p, e.entrar(r));

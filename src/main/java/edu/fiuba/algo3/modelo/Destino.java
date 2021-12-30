@@ -1,15 +1,16 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.pista.Pista;
+import edu.fiuba.algo3.modelo.edificios.Edificio;
+import edu.fiuba.algo3.modelo.pistas.Pista;
 import edu.fiuba.algo3.modelo.reloj.Reloj;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
 public class Destino {
-    private String nombre;
+    private final String nombre;
     private ArrayList<Edificio> edificios;
-    private Coordenadas cordenadas;
+    private final Coordenadas cordenadas;
     private ArrayList<Destino> posibles;
 
     public Destino(String nombre_p, Coordenadas coordenadas_p, Edificio... edificios_p){

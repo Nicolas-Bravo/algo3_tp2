@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.exceptions.DescripcionIngresadaErroneaError;
-import edu.fiuba.algo3.modelo.pista.Pista;
+import edu.fiuba.algo3.modelo.pistas.PistaGeneral;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -16,11 +16,11 @@ public class BuscadorDeSospechososTest {
         ArrayList<Sospechoso> sospechosos;
 
         sospechosos = BuscadorDeSospechosos.buscarSospechosos(
-                new Pista("Masculino"),
-                new Pista("Escalar montañas"),
-                new Pista("Negro"),
-                new Pista("Aro"),
-                new Pista("Motocicleta") );
+                new PistaGeneral("Masculino"),
+                new PistaGeneral("Escalar montañas"),
+                new PistaGeneral("Negro"),
+                new PistaGeneral("Aro"),
+                new PistaGeneral("Motocicleta") );
 
         assertTrue(sospechosos.get(0).coincideCon("Nick Brunch"));
 
@@ -31,11 +31,11 @@ public class BuscadorDeSospechososTest {
         ArrayList<Sospechoso> sospechosos;
 
         sospechosos = BuscadorDeSospechosos.buscarSospechosos(
-                new Pista("Masculino"),
-                new Pista("Escalar montañas"),
-                new Pista("Rojo"),
-                new Pista("Tattoo"),
-                new Pista("Convertible") );
+                new PistaGeneral("Masculino"),
+                new PistaGeneral("Escalar montañas"),
+                new PistaGeneral("Rojo"),
+                new PistaGeneral("Tattoo"),
+                new PistaGeneral("Convertible") );
 
         assertTrue(sospechosos.get(0).coincideCon("Len Bulk"));
 
@@ -46,11 +46,11 @@ public class BuscadorDeSospechososTest {
         ArrayList<Sospechoso> sospechosos;
 
         sospechosos = BuscadorDeSospechosos.buscarSospechosos(
-                new Pista("Masculino"),
-                new Pista("Croquet"),
-                new Pista("Rubio"),
-                new Pista("Tattoo"),
-                new Pista("Limusina") );
+                new PistaGeneral("Masculino"),
+                new PistaGeneral("Croquet"),
+                new PistaGeneral("Rubio"),
+                new PistaGeneral("Tattoo"),
+                new PistaGeneral("Limusina") );
 
         assertTrue(sospechosos.get(0).coincideCon("Ihor Ihorovitch"));
     }
@@ -60,11 +60,11 @@ public class BuscadorDeSospechososTest {
         ArrayList<Sospechoso> sospechosos;
 
         sospechosos = BuscadorDeSospechosos.buscarSospechosos(
-                new Pista("Masculino"),
-                new Pista("Croquet"),
-                new Pista("Negro"),
-                new Pista("Joyeria"),
-                new Pista("Convertible") );
+                new PistaGeneral("Masculino"),
+                new PistaGeneral("Croquet"),
+                new PistaGeneral("Negro"),
+                new PistaGeneral("Joyeria"),
+                new PistaGeneral("Convertible") );
 
         assertTrue(sospechosos.get(0).coincideCon("Fast Eddie B."));
 
@@ -75,11 +75,11 @@ public class BuscadorDeSospechososTest {
         ArrayList<Sospechoso> sospechosos;
 
         sospechosos = BuscadorDeSospechosos.buscarSospechosos(
-                new Pista("Masculino"),
-                new Pista("Croquet"),
-                new Pista("Rojo") ,
-                new Pista("Aro"),
-                new Pista("Limusina") );
+                new PistaGeneral("Masculino"),
+                new PistaGeneral("Croquet"),
+                new PistaGeneral("Rojo") ,
+                new PistaGeneral("Aro"),
+                new PistaGeneral("Limusina") );
 
         assertTrue(sospechosos.get(0).coincideCon("Scar Graynolt"));
 
@@ -90,11 +90,11 @@ public class BuscadorDeSospechososTest {
         ArrayList<Sospechoso> sospechosos;
 
         sospechosos = BuscadorDeSospechosos.buscarSospechosos(
-                new Pista("Femenino"),
-                new Pista("Escalar montañas"),
-                new Pista("Castaño"),
-                new Pista("Joyeria"),
-                new Pista("Limusina") );
+                new PistaGeneral("Femenino"),
+                new PistaGeneral("Escalar montañas"),
+                new PistaGeneral("Castaño"),
+                new PistaGeneral("Joyeria"),
+                new PistaGeneral("Limusina") );
 
         assertTrue(sospechosos.get(0).coincideCon("Merey Laroc"));
 
@@ -105,11 +105,11 @@ public class BuscadorDeSospechososTest {
         ArrayList<Sospechoso> sospechosos;
 
         sospechosos = BuscadorDeSospechosos.buscarSospechosos(
-                new Pista("Femenino"),
-                new Pista("Tenis"),
-                new Pista("Rojo") ,
-                new Pista("Aro"),
-                new Pista("Convertible"));
+                new PistaGeneral("Femenino"),
+                new PistaGeneral("Tenis"),
+                new PistaGeneral("Rojo") ,
+                new PistaGeneral("Aro"),
+                new PistaGeneral("Convertible"));
 
         assertTrue(sospechosos.get(0).coincideCon("Lady Agatha"));
 
@@ -120,11 +120,11 @@ public class BuscadorDeSospechososTest {
         ArrayList<Sospechoso> sospechosos;
 
         sospechosos = BuscadorDeSospechosos.buscarSospechosos(
-                new Pista("Femenino"),
-                new Pista("Escalar montañas"),
-                new Pista("Castaño"),
-                new Pista("Tattoo"),
-                new Pista("Motocicleta") );
+                new PistaGeneral("Femenino"),
+                new PistaGeneral("Escalar montañas"),
+                new PistaGeneral("Castaño"),
+                new PistaGeneral("Tattoo"),
+                new PistaGeneral("Motocicleta") );
 
         assertTrue(sospechosos.get(0).coincideCon("Katherine Drib"));
 
@@ -135,11 +135,11 @@ public class BuscadorDeSospechososTest {
         ArrayList<Sospechoso> sospechosos;
 
         sospechosos = BuscadorDeSospechosos.buscarSospechosos(
-                new Pista("Femenino"),
-                new Pista("Tenis"),
-                new Pista("Rubio"),
-                new Pista("Tattoo"),
-                new Pista("Limusina") );
+                new PistaGeneral("Femenino"),
+                new PistaGeneral("Tenis"),
+                new PistaGeneral("Rubio"),
+                new PistaGeneral("Tattoo"),
+                new PistaGeneral("Limusina") );
 
         assertTrue(sospechosos.get(0).coincideCon("Dazzle Anie"));
 
@@ -150,11 +150,11 @@ public class BuscadorDeSospechososTest {
         ArrayList<Sospechoso> sospechosos;
 
         sospechosos = BuscadorDeSospechosos.buscarSospechosos(
-                new Pista("Femenino"),
-                new Pista("Tenis"),
-                new Pista("Castaño"),
-                new Pista("Joyeria"),
-                new Pista("Convertible"));
+                new PistaGeneral("Femenino"),
+                new PistaGeneral("Tenis"),
+                new PistaGeneral("Castaño"),
+                new PistaGeneral("Joyeria"),
+                new PistaGeneral("Convertible"));
 
         assertTrue(sospechosos.get(0).coincideCon("Carmen Sandiego"));
 
@@ -165,8 +165,8 @@ public class BuscadorDeSospechososTest {
         ArrayList<Sospechoso> sospechosos;
 
         sospechosos = BuscadorDeSospechosos.buscarSospechosos(
-                new Pista("Masculino"),
-                new Pista("Rojo") );
+                new PistaGeneral("Masculino"),
+                new PistaGeneral("Rojo") );
 
         ArrayList<Sospechoso> esperado = new ArrayList<>();
         esperado.add(BuscadorDeSospechosos.obtenerSospechosoPorNombre("Len Bulk"));
@@ -180,7 +180,7 @@ public class BuscadorDeSospechososTest {
     public void interpolRecibeUnaDescripcionMasculinoYEncuentraLosCincoMasculinos(){
         ArrayList<Sospechoso> sospechosos;
 
-        sospechosos = BuscadorDeSospechosos.buscarSospechosos( new Pista("Masculino"));
+        sospechosos = BuscadorDeSospechosos.buscarSospechosos( new PistaGeneral("Masculino"));
 
         ArrayList<Sospechoso> esperado = new ArrayList<>();
         esperado.add(BuscadorDeSospechosos.obtenerSospechosoPorNombre("Nick Brunch"));
@@ -197,7 +197,7 @@ public class BuscadorDeSospechososTest {
     @Test
     public void interpolRecibeUnaDescrpcionGrisYGeneraDescripcionINgresadaErroneaError(){
         assertThrows(DescripcionIngresadaErroneaError.class,() -> {
-            BuscadorDeSospechosos.buscarSospechosos( new Pista("Gris") );
+            BuscadorDeSospechosos.buscarSospechosos( new PistaGeneral("Gris") );
         });
 
     }

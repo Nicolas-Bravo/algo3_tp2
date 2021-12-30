@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.rango.*;
+import edu.fiuba.algo3.modelo.rangos.*;
 import org.junit.jupiter.api.Test;
 
 

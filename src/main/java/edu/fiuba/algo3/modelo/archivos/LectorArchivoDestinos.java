@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo.archivos;
 
-import edu.fiuba.algo3.modelo.pista.*;
+import edu.fiuba.algo3.modelo.pistas.*;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -52,7 +52,7 @@ public class LectorArchivoDestinos {
         String[] campos = datos.split(";");
 
         for(String p:campos){
-            descripcion.add(new Pista(p));
+            descripcion.add(new PistaGeneral(p));
         }
 
         return descripcion;
