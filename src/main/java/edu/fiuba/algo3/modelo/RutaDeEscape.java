@@ -20,7 +20,7 @@ public class RutaDeEscape {
 
     public void controlArresto(Destino destinoActual, Pista pista, Policia policia, Caso caso) {
         if( destinoActual.equals(destinos.get(destinos.size()-1)) ){
-            pista.sobreescribir("Sospechoso visto recientemente");
+            //pista.sobreescribir("Sospechoso visto recientemente");
             if (this.entradasfinales == 1) {
                 caso.arresteSospechoso(policia);
             }

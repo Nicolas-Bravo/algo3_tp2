@@ -27,7 +27,7 @@ public class App extends Application {
          */
         stage.setTitle("Carmen Sandiego");
 
-        Juego juego = crearModelo();
+        Juego juego = crearModelo(stage);
         ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(stage, juego);
         Scene escenaJuego = new Scene(contenedorPrincipal,640,480);
 
@@ -37,9 +37,9 @@ public class App extends Application {
         stage.show();
     }
 
-    private Juego crearModelo() {
+    private Juego crearModelo(Stage stage) {
 
-        return new Juego();
+        return new Juego(stage);
     }
 
     public static void main(String[] args) {

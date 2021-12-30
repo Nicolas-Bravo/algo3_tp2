@@ -9,11 +9,10 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class BuscadorDeSospechososTest {
-
+    ArrayList<Sospechoso> listaSospechosos = LectorArchivo.generarListaSospechososTotales();
 
     @Test
     public void interpoolRecibeDescripcionDeNickBrunchYLoEncuentra(){
-        ArrayList<Sospechoso> sospechosos;
 
         sospechosos = BuscadorDeSospechosos.buscarSospechosos(
                 new PistaGeneral("Masculino"),
@@ -119,6 +118,7 @@ public class BuscadorDeSospechososTest {
     public void interpoolRecibeDescripcionDeKatherineDribYLaEncuentra(){
         ArrayList<Sospechoso> sospechosos;
 
+
         sospechosos = BuscadorDeSospechosos.buscarSospechosos(
                 new PistaGeneral("Femenino"),
                 new PistaGeneral("Escalar montañas"),
@@ -133,6 +133,7 @@ public class BuscadorDeSospechososTest {
     @Test
     public void interpoolRecibeDescripcionDeDazzleAnieYLaEncuentra(){
         ArrayList<Sospechoso> sospechosos;
+
 
         sospechosos = BuscadorDeSospechosos.buscarSospechosos(
                 new PistaGeneral("Femenino"),

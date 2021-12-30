@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.controladores;
 
 import edu.fiuba.algo3.manejadorEventos.BotonJugarEventHandler;
+import edu.fiuba.algo3.vista.BotonRegistrarPoliciaEventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -13,7 +14,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
-public class ContenedorBienvenidos extends StackPane {
+public class ContenedorBienvenidos extends VBox {
     Stage stage;
 
     public ContenedorBienvenidos(Stage stage, Scene proximaEscena) {
@@ -34,10 +35,11 @@ public class ContenedorBienvenidos extends StackPane {
         Label etiqueta = new Label();
         etiqueta.setFont(Font.font("Times New Roman", FontWeight.EXTRA_BOLD,18));
         etiqueta.setText("Bienvenidos a Carmen Sandiego");
-        etiqueta.setTextFill(Color.web("00FFFF"));
+        etiqueta.setTextFill(Color.web("FFFFF0"));
 
         BotonJugarEventHandler botonJugarHandler = new BotonJugarEventHandler(stage, proximaEscena);
         botonJugar.setOnAction(botonJugarHandler);
+
 
         this.getChildren().addAll(etiqueta,botonJugar);
 

@@ -25,4 +25,11 @@ public class Tesoro {
     public int obtenerLargoRuta() {
         return this.valor.obtenerLargoRuta();
     }
+    public Tesoro(String nombre) {
+        this.nombre = nombre;
+        //this = BuscadorDeTesoros.obtenerTesoroPorNombre(nombre);
+    }
+    public boolean coincideCon(String nombre) {
+        return nombre.equals(this.nombre);
+    }
 }

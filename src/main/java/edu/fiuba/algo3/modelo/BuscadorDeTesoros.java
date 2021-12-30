@@ -13,3 +13,9 @@ public class BuscadorDeTesoros {
         return rango.obtenerTesoroAleatorio(Matriz);
     }
 }
+
+    public static Tesoro obtenerTesoroPorNombre(String nombre) {
+        Stream<Tesoro> streamSospechoso =  listaTesoros.stream().filter(tesoro -> tesoro.coincideCon(nombre));
+        return streamSospechoso.findFirst().get();
+    }
+}

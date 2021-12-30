@@ -25,9 +25,10 @@ public class Policia {
         this.reloj = new Reloj();
     }
 
-    public void entrar(Edificio edificio) {
+    public Pista entrar(Edificio edificio) {
         this.pista = this.mapa.entrar(this.reloj, edificio);
         this.casoActual.controlArresto(destinoActual(), this.pista, this);
+        return this.pista;
     }
 
     public Pista mostrarPista() {
@@ -85,5 +86,14 @@ public class Policia {
 
     public Rango obtenerRango() {
         return this.rango;
+    }
+
+    public String enlaceCapitalActual() {
+
+        return mapa.enlaceCapitalActual();
+    }
+
+    public Mapa mapaActual() {
+        return mapa;
     }
 }
