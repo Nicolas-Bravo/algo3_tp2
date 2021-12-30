@@ -3,8 +3,9 @@ package edu.fiuba.algo3.modelo;
 import edu.fiuba.algo3.modelo.demorador.DemoradorPorEntradas;
 import edu.fiuba.algo3.modelo.demorador.PrimerEntrada;
 import edu.fiuba.algo3.modelo.reloj.Reloj;
+import javafx.scene.image.Image;
 
-public class Edificio {
+public abstract class Edificio {
 
     protected final Pista pista;
     private DemoradorPorEntradas demorador;
@@ -19,5 +20,6 @@ public class Edificio {
         return this.pista;
     }
 
+    abstract public Image obtenerImagen();
 }
 
