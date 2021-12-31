@@ -19,7 +19,7 @@ public class VistaEdificio implements MisVistas {
     public VistaEdificio(Stage stage, Juego juego, Edificio edificio) {
         this.juego = juego;
         this.stage = stage;
-        ContenedorInformacion contenedorInfo = new ContenedorInformacion(juego);
+        ContenedorInformacion contenedorInfo = new ContenedorInformacion(juego, stage);
         contenedorInfo.mostrarPista(juego.entrarA(edificio));
         ContenedorHorario contenedorHorario = new ContenedorHorario(juego);
 

@@ -20,7 +20,7 @@ public class VistaArrestado implements MisVistas {
         VBox vboxLateralIzquierda = new VBox(contenedorHorario, contenedorImagen);
         vboxLateralIzquierda.setAlignment(Pos.TOP_LEFT);
 
-        ContenedorInformacion contenedorInfo = new ContenedorInformacion(juego);
+        ContenedorInformacion contenedorInfo = new ContenedorInformacion(juego, stage);
         contenedorInfo.infoFinal();
 
         VBox vboxLateralDerecha = new VBox(contenedorInfo);

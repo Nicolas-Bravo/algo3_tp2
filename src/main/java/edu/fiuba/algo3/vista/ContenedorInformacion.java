@@ -11,10 +11,13 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.stage.Stage;
 
 public class ContenedorInformacion extends StackPane {
+    private final Stage stage;
     Juego juego;
-    public ContenedorInformacion(Juego juego) {
+    public ContenedorInformacion(Juego juego, Stage stage) {
+        this.stage = stage;
         this.setWidth(500);
         this.setHeight(900);
         this.juego = juego;
@@ -38,7 +41,7 @@ public class ContenedorInformacion extends StackPane {
         labelVictoria.setPadding(new Insets(15));
         labelVictoria.setFont(Font.font("Times New Roman", FontWeight.EXTRA_BOLD,12));
         labelVictoria.setTextFill(Color.web("FFFFFF"));
-        BotonNuevoCaso botonNuevoCaso = new BotonNuevoCaso();
+        BotonNuevoCaso botonNuevoCaso = new BotonNuevoCaso(stage, juego);
         VBox vbox = new VBox(labelNombre, labelVictoria, botonNuevoCaso);
         vbox.setSpacing(10);
 
@@ -54,9 +57,6 @@ public class ContenedorInformacion extends StackPane {
         etiqueta.setText(pista.mostrarPista());
 
         this.getChildren().add(etiqueta);
-
-
-
     }
 
 }

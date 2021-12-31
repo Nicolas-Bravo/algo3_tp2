@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.vista;
 
+import edu.fiuba.algo3.controladores.ContenedorPrincipal;
 import edu.fiuba.algo3.controladores.Juego;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -12,19 +13,16 @@ public class BuscarSospechososEventHandler implements EventHandler<ActionEvent> 
     public BuscarSospechososEventHandler(Stage stage, Juego juego){
         this.juego = juego;
         this.stage = stage;
-
-
-
-
-
-
-
     }
 
 
 
     @Override
-    public void handle(ActionEvent event){}
+    public void handle(ActionEvent event){
+        this.stage.getScene().setRoot(new ContenedorPrincipal(stage, juego, new VistaBusquedaSospechosos(stage, juego)));
+
+
+    }
 
 
 
