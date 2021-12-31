@@ -40,4 +40,11 @@ public class Detective implements Rango {
         TesoroCandidato elejido = candidatos.get( (int) (Math.random()*candidatos.size()) );
         return new Tesoro(elejido.obtenerNombre(), elejido.obtenerInicio(), new Valioso() );
     }
+
+    @Override
+    public String obtenerTitulo() {
+        String clase = this.getClass().toString();
+        String[] rangoDividido = clase.split("\\.");
+        return rangoDividido[rangoDividido.length - 1];
+    }
 }

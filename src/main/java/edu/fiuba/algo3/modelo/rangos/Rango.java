@@ -14,4 +14,6 @@ public interface Rango {
     Rango sumarArresto();
 
     Tesoro obtenerTesoroAleatorio(ArrayList<ArrayList> matriz);
+
+    String obtenerTitulo();
 }

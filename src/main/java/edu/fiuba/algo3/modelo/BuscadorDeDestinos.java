@@ -82,7 +82,4 @@ public class BuscadorDeDestinos {
 
 
     }
-	public static RutaDeEscape generarRutaPorCantidad(int tamañoDeRuta) {
-	        return new RutaDeEscape();
-	    }
 }

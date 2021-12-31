@@ -12,7 +12,7 @@ public class Botonera extends HBox {
     public Botonera(Stage stage, Juego juego) {
         Mapa mapaActual = juego.mapaActual();
         //Button botonViajar = new Button("Viajar");
-        BotonViajar botonViajar = new BotonViajar(mapaActual);
+        BotonViajar botonViajar = new BotonViajar(mapaActual, juego, stage);
         //lupita
         //Button botonEdificios = new Button("Edificios");
         BotonEdificios botonEdificios = new BotonEdificios(stage,juego,mapaActual);

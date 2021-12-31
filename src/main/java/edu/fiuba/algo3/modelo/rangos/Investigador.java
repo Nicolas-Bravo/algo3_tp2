@@ -35,6 +35,12 @@ public class Investigador implements Rango {
     }
 
     @Override
+    public String obtenerTitulo() {
+        String clase = this.getClass().toString();
+        String[] rangoDividido = clase.split("\\.");
+        return rangoDividido[rangoDividido.length - 1];
+    }
+    @Override
     public Tesoro obtenerTesoroAleatorio(ArrayList<ArrayList> matriz) {
         ArrayList<TesoroCandidato> candidatos = matriz.get(1);
         TesoroCandidato elejido = candidatos.get( (int) (Math.random()*candidatos.size()) );

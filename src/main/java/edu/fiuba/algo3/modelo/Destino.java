@@ -3,6 +3,7 @@ package edu.fiuba.algo3.modelo;
 import edu.fiuba.algo3.modelo.edificios.Edificio;
 import edu.fiuba.algo3.modelo.pistas.Pista;
 import edu.fiuba.algo3.modelo.reloj.Reloj;
+import javafx.scene.image.Image;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -56,5 +57,13 @@ public class Destino {
 
     public String enlaceImagen() {
         return "https://www.mtl.org/sites/default/files/styles/playlist_banner_big/public/2020-03/31919H.jpg?itok=TQ_3b8Bj";
+    }
+
+    public String obtenerImagen() {
+        return "https://static.wixstatic.com/media/46f38a_a8a099a756894d23adb6e71153a3bbe0~mv2.jpg/v1/crop/x_0,y_22,w_400,h_248/fill/w_560,h_347,al_c,lg_1,q_80/46f38a_a8a099a756894d23adb6e71153a3bbe0~mv2.webp";
+    }
+
+    public String obtenerNombre() {
+        return this.nombre;
     }
 }

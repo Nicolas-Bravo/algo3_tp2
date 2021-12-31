@@ -96,4 +96,8 @@ public class Policia {
     public Mapa mapaActual() {
         return mapa;
     }
+
+    public String titulo() {
+        return rango.obtenerTitulo() + " " + this.nombre;
+    }
 }

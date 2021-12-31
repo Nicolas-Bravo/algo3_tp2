@@ -1,21 +1,15 @@
 package edu.fiuba.algo3.controladores;
 
-import edu.fiuba.algo3.manejadorEventos.BotonJugarEventHandler;
 import edu.fiuba.algo3.modelo.*;
-import edu.fiuba.algo3.modelo.rango.Novato;
-import javafx.geometry.Insets;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.layout.*;
-import javafx.scene.layout.BackgroundImage;
-import javafx.scene.layout.BackgroundRepeat;
-import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
+import edu.fiuba.algo3.modelo.edificios.*;
+import edu.fiuba.algo3.modelo.edificios.Banco;
+import edu.fiuba.algo3.modelo.pistas.Pista;
+import edu.fiuba.algo3.modelo.pistas.PistaEconomica;
+import edu.fiuba.algo3.modelo.pistas.PistaPuerto;
+import edu.fiuba.algo3.modelo.rangos.Novato;
+
 import javafx.stage.Stage;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Juego {
@@ -41,11 +35,13 @@ public class Juego {
     }
 
     private void generarCaso() {
-        Edificio edificioInicial = new Banco(new Pista("Una pista aux"));
-        Edificio puertoInicial = new Puerto(new Pista("Pista aux"));
-        Destino destinoInicial = new Destino("Montreal", 45.50884, 73.5878, edificioInicial, puertoInicial);
+        Tesoro tesoro = BuscadorDeTesoros.obtenerTesoroAleatorioAleatorio(policia.obtenerRango());
+        RutaDeEscape ruta = BuscadorDeDestinos.obtenerRutaDeEscape(tesoro);
+        for (Destino d: ruta.destinos) {
+            System.out.println(d);
+        }
+        this.casoActual = new Caso(BuscadorDeSospechosos.buscarSospechosoAleatorio().nombreDelSospechoso(), tesoro, ruta);
 
-        this.casoActual = new Caso("Fast Eddie B.", new RutaDeEscape(destinoInicial), new Tesoro("Buda de oro"));
         this.policia.asignarCaso(casoActual);
         //this.casoActual = new Caso(policia);
     }
@@ -76,5 +72,21 @@ public class Juego {
     public Pista entrarA(Edificio edificio) { return policia.entrar(edificio); }
 
     public List<Sospechoso> obtenerListaSospechosos() { return listaSospechosos; }
+
+    public void policiaViajaA(Destino destino) {
+        policia.viajar(destino);
+    }
+
+    public boolean casoTerminado() {
+        return casoActual.estaTerminado();
+    }
+
+    public String tituloPolicia() {
+        return policia.titulo();
+    }
+
+    public String textoJugadorGano() {
+        return casoActual.obtenerTextoFinal() + "\nTienes un total de " + policia.cantidadDeArrestos() + " arrestos";
+    }
 }
 

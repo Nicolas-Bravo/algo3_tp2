@@ -27,7 +27,7 @@ public class VistaCaso implements MisVistas {
 
         Botonera botonera = new Botonera(stage,juego);
         HBox hboxAux = new HBox(botonera);
-        hboxAux.setAlignment(Pos.BOTTOM_RIGHT);
+        hboxAux.setAlignment(Pos.BOTTOM_CENTER);
         VBox vboxLateralDerecha = new VBox(contenedorInfo, hboxAux);
         vboxLateralDerecha.setAlignment(Pos.TOP_RIGHT);
 
