@@ -16,7 +16,7 @@ public class Botonera extends HBox {
         //lupita
         //Button botonEdificios = new Button("Edificios");
         BotonEdificios botonEdificios = new BotonEdificios(stage,juego,mapaActual);
-        BotonBuscarSospechoso botonBuscarSospechosos = new BotonBuscarSospechoso(stage, juego, mapaActual);
+        BotonBuscarSospechoso botonBuscarSospechosos = new BotonBuscarSospechoso(stage, juego);
         this.getChildren().addAll(botonEdificios, botonViajar, botonBuscarSospechosos);
         this.setAlignment(Pos.BOTTOM_RIGHT);
     }

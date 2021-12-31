@@ -4,15 +4,15 @@ import edu.fiuba.algo3.modelo.pistas.Pista;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class BotonFiltro extends Button {
 
     private Pista pistaActual;
 
-    public BotonFiltro(Pista[] listaPistas) {
-        this.setMaxHeight(70);
-        this.setMinHeight(70);
+    public BotonFiltro(ArrayList<Pista> listaPistas) {
+        this.setMaxHeight(30);
+        this.setMinHeight(30);
         this.setMaxWidth(150);
         this.setMinWidth(150);
 

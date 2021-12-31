@@ -20,8 +20,6 @@ public class BuscarSospechososEventHandler implements EventHandler<ActionEvent> 
     @Override
     public void handle(ActionEvent event){
         this.stage.getScene().setRoot(new ContenedorPrincipal(stage, juego, new VistaBusquedaSospechosos(stage, juego)));
-
-
     }
 
 

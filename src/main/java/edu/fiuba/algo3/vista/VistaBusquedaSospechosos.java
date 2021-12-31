@@ -4,6 +4,7 @@ import edu.fiuba.algo3.controladores.Juego;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -22,19 +23,16 @@ public class VistaBusquedaSospechosos implements MisVistas {
 
         ContenedorIzquierda contenedorImagen = ContenedorIzquierda.deTipoImagen(juego, stage);
 
-
-
         VBox vboxLateralIzquierda = new VBox(contenedorHorario, contenedorImagen);
         vboxLateralIzquierda.setAlignment(Pos.TOP_LEFT);
 
-        ContenedorInformacion contenedorInfo = new ContenedorInformacion(juego, stage);
 
         ContenedorBusquedaSospechosos contenedorBusqueda = new ContenedorBusquedaSospechosos(stage, juego);
 
         Botonera botonera = new Botonera(stage,juego);
         HBox hboxAux = new HBox(botonera);
         hboxAux.setAlignment(Pos.BOTTOM_CENTER);
-        VBox vboxLateralDerecha = new VBox(contenedorInfo, hboxAux);
+        VBox vboxLateralDerecha = new VBox(contenedorBusqueda, hboxAux);
         vboxLateralDerecha.setAlignment(Pos.TOP_RIGHT);
 
         this.hboxPrincipal = new HBox(vboxLateralIzquierda, vboxLateralDerecha);
@@ -46,6 +44,6 @@ public class VistaBusquedaSospechosos implements MisVistas {
 
     @Override
     public Node componentePrincipal() {
-        return null;
+        return new StackPane(hboxPrincipal);
     }
 }

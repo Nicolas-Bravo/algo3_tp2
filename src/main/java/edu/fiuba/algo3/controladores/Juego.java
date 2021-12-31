@@ -41,7 +41,7 @@ public class Juego {
             System.out.println(d);
         }
         this.casoActual = new Caso(BuscadorDeSospechosos.buscarSospechosoAleatorio().nombreDelSospechoso(), tesoro, ruta);
-
+        System.out.println(casoActual.sospechosoReal());
         this.policia.asignarCaso(casoActual);
         //this.casoActual = new Caso(policia);
     }
@@ -87,6 +87,10 @@ public class Juego {
 
     public String textoJugadorGano() {
         return casoActual.obtenerTextoFinal() + "\nTienes un total de " + policia.cantidadDeArrestos() + " arrestos";
+    }
+
+    public void emitirOrden(Pista... pistas) {
+        this.policia.emitirOrdenDeArresto(pistas);
     }
 }
 

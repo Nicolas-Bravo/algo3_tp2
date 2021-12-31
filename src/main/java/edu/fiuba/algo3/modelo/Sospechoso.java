@@ -36,10 +36,10 @@ public class Sospechoso {
     public ArrayList<Pista> datosSospechoso() {return this.descripcion;}
     public String nombreDelSospechoso(){return this.nombre;}
 
-    @Override
-    public boolean equals(Object sospechoso) {
-        return this.coincideCon((Sospechoso)sospechoso);
-    }
+    //@Override
+    //public boolean equals(Object sospechoso) {
+    //    return this.coincideCon((Sospechoso)sospechoso);
+    //}
 
 }
 

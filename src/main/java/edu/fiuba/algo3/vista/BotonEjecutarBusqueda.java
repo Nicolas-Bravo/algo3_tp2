@@ -10,10 +10,11 @@ import java.util.ArrayList;
 public class BotonEjecutarBusqueda extends Button {
 
     public BotonEjecutarBusqueda(Stage stage, Juego juego, ArrayList<Filtro> listaFiltros) {
-        this.setMaxHeight(70);
-        this.setMinHeight(70);
+        this.setMaxHeight(50);
+        this.setMinHeight(50);
         this.setMaxWidth(100);
         this.setMinWidth(100);
+        this.setText("Buscar");
 
         this.setAlignment(Pos.CENTER);
 

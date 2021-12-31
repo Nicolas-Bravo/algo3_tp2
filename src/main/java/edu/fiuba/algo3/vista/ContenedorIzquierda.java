@@ -26,6 +26,12 @@ public class ContenedorIzquierda extends StackPane {
         this.setAlignment(Pos.CENTER_LEFT);
     }
 
+    public static ContenedorIzquierda deTipoImagen(Juego juego, Stage stage){
+        ContenedorIzquierda contenedorIzquierda = new ContenedorIzquierda(juego, stage);
+        contenedorIzquierda.mostrarImagen();
+        return contenedorIzquierda;
+    }
+
     public void mostrarImagen(){
 
         Image image = new Image(juego.imagenCapitalActual());
@@ -37,11 +43,7 @@ public class ContenedorIzquierda extends StackPane {
         this.getChildren().remove(0);
         this.getChildren().add(imgView);
     }
-    public static ContenedorIzquierda deTipoImagen(Juego juego, Stage stage){
-        ContenedorIzquierda contenedorIzquierda = new ContenedorIzquierda(juego, stage);
-        contenedorIzquierda.mostrarImagen();
-        return contenedorIzquierda;
-    }
+
     public static ContenedorIzquierda deTipoImagen(Juego juego, Stage stage, String imagenMostrar){
         ContenedorIzquierda contenedorIzquierda = new ContenedorIzquierda(juego, stage);
         contenedorIzquierda.mostrarImagen(imagenMostrar);

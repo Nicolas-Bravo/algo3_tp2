@@ -32,7 +32,6 @@ public class VentanaEdificios extends StackPane {
         for(Edificio edificio : edificios){
            VBox vboxAgregar = new VBox(new BotonAgregarEdificio(edificio, stage, juego));
            hbox.getChildren().add(vboxAgregar);
-           System.out.println(edificio.getClass().toString());
         }
         this.setAlignment(Pos.CENTER);
         VBox vboxPrincipal = new VBox(hbox);

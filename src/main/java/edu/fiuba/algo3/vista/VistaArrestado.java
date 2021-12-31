@@ -15,7 +15,7 @@ public class VistaArrestado implements MisVistas {
         this.juego = juego;
         ContenedorHorario contenedorHorario = new ContenedorHorario();
 
-        ContenedorIzquierda contenedorImagen = ContenedorIzquierda.deTipoImagen(juego, stage, "https://cdn.discordapp.com/attachments/912029542556790795/926323851678339072/yoqsxe.jpg");
+        ContenedorIzquierda contenedorImagen = ContenedorIzquierda.deTipoImagen(juego, stage, "https://cdn3.vectorstock.com/i/1000x1000/27/87/cartoon-criminal-in-jail-vector-21352787.jpg");
 
         VBox vboxLateralIzquierda = new VBox(contenedorHorario, contenedorImagen);
         vboxLateralIzquierda.setAlignment(Pos.TOP_LEFT);

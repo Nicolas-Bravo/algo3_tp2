@@ -68,4 +68,8 @@ public class Caso {
         }
         return texto;
     }
+
+    public String sospechosoReal() {
+        return ladronReal.nombreDelSospechoso();
+    }
 }
