@@ -35,6 +35,9 @@ public class VistaJuego implements MisVistas {
         StackPane stackPane = new StackPane();
         Image image = new Image("https://steamuserimages-a.akamaihd.net/ugc/964222570049007380/6AF5BAF971AF3A5FB8912D797D5CBD4BC73A2EB0/");
         ImageView imgView = new ImageView(image);
+
+        imgView.setFitHeight(768);
+        imgView.setFitWidth(1024);
         stackPane.getChildren().addAll(imgView,hboxPrincipal);
         return stackPane;
     }

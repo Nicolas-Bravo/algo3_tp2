@@ -17,6 +17,12 @@ public class Novato implements Rango {
     }
 
     @Override
+    public String obtenerTitulo() {
+        String clase = this.getClass().toString();
+        String[] rangoDividido = clase.split("\\.");
+        return rangoDividido[rangoDividido.length - 1];
+    }
+    @Override
     public void demoraPorDistancia(double distancia, Reloj reloj) {
         reloj.aumentarHoras( (int)Math.round(distancia/900.00) );
     }

@@ -26,6 +26,10 @@ public class App extends Application {
 
          */
         stage.setTitle("Carmen Sandiego");
+        stage.setMinHeight(768);
+        stage.setMaxHeight(768);
+        stage.setMinWidth(1024);
+        stage.setMaxWidth(1024);
 
         Juego juego = crearModelo(stage);
         ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(stage, juego);

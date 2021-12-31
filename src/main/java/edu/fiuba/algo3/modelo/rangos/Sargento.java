@@ -19,6 +19,12 @@ public class Sargento implements Rango {
     }
 
     @Override
+    public String obtenerTitulo() {
+        String clase = this.getClass().toString();
+        String[] rangoDividido = clase.split("\\.");
+        return rangoDividido[rangoDividido.length - 1];
+    }
+    @Override
     public int cantidadDeArrestos(){return arrestos;}
 
     @Override

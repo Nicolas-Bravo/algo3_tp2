@@ -4,6 +4,7 @@ import edu.fiuba.algo3.modelo.archivos.LectorArchivoTesoro;
 import edu.fiuba.algo3.modelo.rangos.Rango;
 
 import java.util.ArrayList;
+import java.util.stream.Stream;
 
 public class BuscadorDeTesoros {
 
@@ -14,8 +15,3 @@ public class BuscadorDeTesoros {
     }
 }
 
-    public static Tesoro obtenerTesoroPorNombre(String nombre) {
-        Stream<Tesoro> streamSospechoso =  listaTesoros.stream().filter(tesoro -> tesoro.coincideCon(nombre));
-        return streamSospechoso.findFirst().get();
-    }
-}

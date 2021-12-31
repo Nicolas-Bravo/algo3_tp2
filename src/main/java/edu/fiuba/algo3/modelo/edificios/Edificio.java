@@ -21,6 +21,6 @@ public abstract class Edificio {
         return this.pista;
     }
 
-    abstract public Image obtenerImagen();
+    abstract public String obtenerImagen();
 }
 

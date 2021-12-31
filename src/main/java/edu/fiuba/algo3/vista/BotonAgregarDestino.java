@@ -12,12 +12,10 @@ import javafx.stage.Stage;
 
 public class BotonAgregarDestino extends Button {
     public BotonAgregarDestino(Destino destino, Stage stage, Juego juego) {
-        Image image = destino.obtenerImagen();
-        ImageView imgView = new ImageView(image);
-        this.setGraphic(imgView);
-        this.setOnAction(new BotonViajarEventHandler(destino, stage, juego));
+        this.setText(destino.obtenerNombre());
+        this.setOnAction(new BotonViajarACapitalEventHandler(destino, juego, stage));
         this.setAlignment(Pos.CENTER);
-
-
+        this.setMaxHeight(30);
+        this.setMinHeight(30);
     }
 }

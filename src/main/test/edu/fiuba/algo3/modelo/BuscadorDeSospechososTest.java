@@ -3,13 +3,14 @@ package edu.fiuba.algo3.modelo;
 import edu.fiuba.algo3.modelo.exceptions.DescripcionIngresadaErroneaError;
 import edu.fiuba.algo3.modelo.pistas.PistaGeneral;
 import org.junit.jupiter.api.Test;
+import edu.fiuba.algo3.modelo.archivos.LectorArchivoSospechosos;
 
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class BuscadorDeSospechososTest {
-    ArrayList<Sospechoso> listaSospechosos = LectorArchivo.generarListaSospechososTotales();
+    ArrayList<Sospechoso> sospechosos = LectorArchivoSospechosos.generarListaSospechososTotales();
 
     @Test
     public void interpoolRecibeDescripcionDeNickBrunchYLoEncuentra(){
