@@ -25,6 +25,6 @@ public class VistaInicioCaso implements MisVistas {
 
     @Override
     public Node componentePrincipal() {
-        return
+        return null;
     }
 }
