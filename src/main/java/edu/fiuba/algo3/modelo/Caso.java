@@ -9,7 +9,6 @@ import java.util.ArrayList;
 public class Caso {
 
     private final RutaDeEscape rutaDeEscape;
-    private int entradasFinales;
     private final Sospechoso ladronReal;
     private boolean orden;
     private final Tesoro tesoro;
@@ -20,15 +19,6 @@ public class Caso {
         this.rutaDeEscape = ruta;
         this.orden = false;
         this.tesoro = tesoro_p;
-        this.terminado = false;
-    }
-
-    public Caso(String nombre, RutaDeEscape ruta, Tesoro tesoro){
-        this.ladronReal = BuscadorDeSospechosos.obtenerSospechosoPorNombre(nombre);
-        this.rutaDeEscape = ruta;
-        this.orden = false;
-        this.entradasFinales = 0;
-        this.tesoro = tesoro;
         this.terminado = false;
     }
 

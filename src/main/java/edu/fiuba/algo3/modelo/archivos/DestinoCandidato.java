@@ -30,10 +30,13 @@ public class DestinoCandidato {
     public Coordenadas obtenerCoordenadas() {return this.coordenadas;
     }
 
-    public Edificio[] obtenerEdificios(Valor valor_p) {
-       return valor_p.obtenerEdificios(this.descripcion);
+    public Edificio[] obtenerEdificios(Valor valor_p, Pista pista) {
+       return valor_p.obtenerEdificiosConSospechoso(this.descripcion, pista);
     }
 
+    public Edificio[] obtenerEdificios(Valor valor_p) {
+        return valor_p.obtenerEdificios(this.descripcion);
+    }
 
     public boolean coincideCon(Pista nombre_p) {
         return nombre_p.equals(this.nombre);

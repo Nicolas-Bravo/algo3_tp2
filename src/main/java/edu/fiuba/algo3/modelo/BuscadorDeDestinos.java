@@ -13,14 +13,21 @@ public class BuscadorDeDestinos {
 
     private static final ArrayList<DestinoCandidato> listaDestinos = LectorArchivoDestinos.generarListaDestinosCandidatos();
 
+    private static Destino generarSiguienteConSospechoso(DestinoCandidato actual, DestinoCandidato siguiente, Valor valor, Pista pista_sospe){
+
+        return new Destino(actual.obtenerNombre().mostrarPista(), actual.obtenerCoordenadas(), actual.obtenerImagen(), siguiente.obtenerEdificios(valor, pista_sospe));
+    }
+
     private static Destino generarSiguiente(DestinoCandidato actual, DestinoCandidato siguiente, Valor valor){
 
         return new Destino(actual.obtenerNombre().mostrarPista(), actual.obtenerCoordenadas(), actual.obtenerImagen(), siguiente.obtenerEdificios(valor));
     }
 
-    public static RutaDeEscape obtenerRutaDeEscape(Tesoro tesoro) {
+    public static RutaDeEscape obtenerRutaDeEscape(Tesoro tesoro, Sospechoso sospechoso) {
 
         int tope = tesoro.obtenerLargoRuta();
+
+        ArrayList<Pista> descripcion_sospe = sospechoso.descripcionSospechoso();
 
         Destino[] destinoArray;
         destinoArray = new Destino[tope];
@@ -34,7 +41,18 @@ public class BuscadorDeDestinos {
 
         DestinoCandidato sig = listaDestinos.get(index);
 
-        for(int i = 0; i < tope; i++){
+        for(int i = 0; i < 4; i++){
+            destino = generarSiguienteConSospechoso(actual, sig, tesoro.obtenerValor(), descripcion_sospe.get(i+2));
+            destinoArray[i] = destino;
+            actual = sig;
+            usados.add(index);
+            while (usados.contains(index)){
+                index = random_method.nextInt(listaDestinos.size());
+            }
+            sig = listaDestinos.get(index);
+        }
+
+        for(int i = 4; i < tope; i++){
             destino = generarSiguiente(actual, sig, tesoro.obtenerValor());
             destinoArray[i] = destino;
             actual = sig;

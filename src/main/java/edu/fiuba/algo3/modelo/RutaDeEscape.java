@@ -34,4 +34,5 @@ public class RutaDeEscape {
 
     public int largo() { return this.destinos.size();
     }
+
 }

@@ -4,7 +4,6 @@ import edu.fiuba.algo3.modelo.archivos.LectorArchivoTesoro;
 import edu.fiuba.algo3.modelo.rangos.Rango;
 
 import java.util.ArrayList;
-import java.util.stream.Stream;
 
 public class BuscadorDeTesoros {
 

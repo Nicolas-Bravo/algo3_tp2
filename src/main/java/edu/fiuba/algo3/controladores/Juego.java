@@ -2,10 +2,7 @@ package edu.fiuba.algo3.controladores;
 
 import edu.fiuba.algo3.modelo.*;
 import edu.fiuba.algo3.modelo.edificios.*;
-import edu.fiuba.algo3.modelo.edificios.Banco;
 import edu.fiuba.algo3.modelo.pistas.Pista;
-import edu.fiuba.algo3.modelo.pistas.PistaEconomica;
-import edu.fiuba.algo3.modelo.pistas.PistaPuerto;
 import edu.fiuba.algo3.modelo.rangos.Novato;
 
 import javafx.stage.Stage;
@@ -36,11 +33,12 @@ public class Juego {
 
     private void generarCaso() {
         Tesoro tesoro = BuscadorDeTesoros.obtenerTesoroAleatorioAleatorio(policia.obtenerRango());
-        RutaDeEscape ruta = BuscadorDeDestinos.obtenerRutaDeEscape(tesoro);
+        Sospechoso sospe = BuscadorDeSospechosos.buscarSospechosoAleatorio();
+        RutaDeEscape ruta = BuscadorDeDestinos.obtenerRutaDeEscape(tesoro, sospe);
         for (Destino d: ruta.destinos) {
             System.out.println(d);
         }
-        this.casoActual = new Caso(BuscadorDeSospechosos.buscarSospechosoAleatorio().nombreDelSospechoso(), tesoro, ruta);
+        this.casoActual = new Caso(sospe.nombreDelSospechoso(), tesoro, ruta);
         System.out.println(casoActual.sospechosoReal());
         this.policia.asignarCaso(casoActual);
         //this.casoActual = new Caso(policia);
