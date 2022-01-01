@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.modelo.pistas.Pista;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 
@@ -16,7 +17,8 @@ public class BotonFiltro extends Button {
         this.setMaxWidth(150);
         this.setMinWidth(150);
 
-        this.setAlignment(Pos.CENTER_RIGHT);
+        this.setAlignment(Pos.CENTER);
+        //this.setPadding(new Insets(20));
         this.setOnAction(new BotonFiltroEventHandler(listaPistas, this));
     }
 

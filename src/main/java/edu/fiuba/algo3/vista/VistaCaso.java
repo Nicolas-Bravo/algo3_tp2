@@ -35,6 +35,6 @@ public class VistaCaso implements MisVistas {
     }
 
     public Node componentePrincipal() {
-        return new StackPane(this.hboxPrincipal);
+        return new StackPaneFondoNegro(this.hboxPrincipal);
     }
 }

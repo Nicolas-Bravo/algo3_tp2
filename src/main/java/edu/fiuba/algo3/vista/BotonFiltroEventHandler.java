@@ -16,13 +16,13 @@ public class BotonFiltroEventHandler implements EventHandler<ActionEvent> {
         this.botonPadre = botonFiltro;
         indexActual = 0;
         this.listaPistas = listaPistas;
-
+        this.pistaActual = listaPistas.get(indexActual);
     }
 
     @Override
     public void handle(ActionEvent actionEvent) {
         indexActual++;
-        if (indexActual == listaPistas.size()-1) {
+        if (indexActual == listaPistas.size()) {
             indexActual = 0;
         }
         this.pistaActual = listaPistas.get(indexActual);

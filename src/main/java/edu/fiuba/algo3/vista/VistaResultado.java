@@ -35,6 +35,6 @@ public class VistaResultado implements MisVistas {
 
     @Override
     public Node componentePrincipal() {
-        return new StackPane(hboxPrincipal);
+        return new StackPaneFondoNegro(hboxPrincipal);
     }
 }

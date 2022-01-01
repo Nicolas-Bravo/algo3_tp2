@@ -72,6 +72,7 @@ public class Destino {
     }
 
     public String enlaceImagen() {
+
         return this.imagen;
     }
 

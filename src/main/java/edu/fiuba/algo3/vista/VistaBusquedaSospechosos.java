@@ -44,6 +44,6 @@ public class VistaBusquedaSospechosos implements MisVistas {
 
     @Override
     public Node componentePrincipal() {
-        return new StackPane(hboxPrincipal);
+        return new StackPaneFondoNegro(hboxPrincipal);
     }
 }

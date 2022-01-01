@@ -24,6 +24,10 @@ public class VBoxContenedorSospechosos extends VBox {
         this.getChildren().add(labelInicio);
         for (Sospechoso sospechoso: sospechosos) {
             Label labelActual = new Label(sospechoso.nombreDelSospechoso());
+            labelActual.setFont(Font.font("Times New Roman", FontWeight.EXTRA_BOLD,12));
+            labelActual.setTextFill(Color.web("FFFFFF"));
+            labelActual.setAlignment(Pos.CENTER_LEFT);
+            labelActual.setPadding(new Insets(25));
             this.getChildren().add(labelActual);
         }
         if (sospechosos.size() == 0){

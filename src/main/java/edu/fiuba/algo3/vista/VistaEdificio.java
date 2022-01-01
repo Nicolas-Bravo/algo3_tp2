@@ -40,7 +40,7 @@ public class VistaEdificio implements MisVistas {
 
 
     public Node componentePrincipal() {
-        return new StackPane(this.hboxPrincipal);
+        return new StackPaneFondoNegro(this.hboxPrincipal);
     }
 
     public void checkeoFinDelCaso() {
