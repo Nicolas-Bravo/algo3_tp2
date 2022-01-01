@@ -43,7 +43,7 @@ public class DestinoCandidato {
 
         return new Destino(this.nombre.mostrarPista(), this.coordenadas, this.imagen,
                 new Biblioteca(new PistaBiblioteca("No hemos visto a nadie por aqui")),
-                new Banco(new PistaEconomica("No hemos visto a nadie por aqui\"")),
+                new Banco(new PistaEconomica("No hemos visto a nadie por aqui")),
                 new Aeropuerto(new PistaPuerto("No hemos visto a nadie por aqui")));
     }
 

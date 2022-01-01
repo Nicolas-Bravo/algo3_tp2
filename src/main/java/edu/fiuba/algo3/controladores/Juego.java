@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.controladores;
 
 import edu.fiuba.algo3.modelo.*;
+import edu.fiuba.algo3.modelo.archivos.LectorArchivoPolicia;
 import edu.fiuba.algo3.modelo.edificios.*;
 import edu.fiuba.algo3.modelo.edificios.Banco;
 import edu.fiuba.algo3.modelo.pistas.Pista;
@@ -43,14 +44,17 @@ public class Juego {
         this.casoActual = new Caso(BuscadorDeSospechosos.buscarSospechosoAleatorio().nombreDelSospechoso(), tesoro, ruta);
         System.out.println(casoActual.sospechosoReal());
         this.policia.asignarCaso(casoActual);
-        //this.casoActual = new Caso(policia);
     }
 
 
 
     public void crearPolicia(String text) {
-        this.policia = new Policia(text, new Novato());
+        buscarPoliciaEnRegistro(text);
         this.jugar();
+    }
+
+    private void buscarPoliciaEnRegistro(String text) {
+        this.policia = LectorArchivoPolicia.buscarPoliciaPorNombre(text);
     }
 
     public String nombreDestinoActual() {
@@ -91,6 +95,15 @@ public class Juego {
 
     public void emitirOrden(Pista... pistas) {
         this.policia.emitirOrdenDeArresto(pistas);
+    }
+
+    public String nombreTesoroActual() {
+        return this.casoActual.obtenerNombreTesoro();
+
+    }
+
+    public String generoLadron() {
+        return this.casoActual.generoLadron();
     }
 }
 

@@ -57,6 +57,10 @@ public class Sospechoso {
         return biblio;
     }
 
+    public String obtenerGenero() {
+        return descripcion.get(1).mostrarPista();
+    }
+
 
     //@Override
     //public boolean equals(Object sospechoso) {

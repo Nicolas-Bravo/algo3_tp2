@@ -29,4 +29,8 @@ public class Tesoro {
     public boolean coincideCon(String nombre) {
         return nombre.equals(this.nombre);
     }
+
+    public String obtenerNombre() {
+        return this.nombre.mostrarPista() + "\n de " + inicio.mostrarPista();
+    }
 }

@@ -17,7 +17,7 @@ public class BuscadorDeSospechososTest {
 
         sospechosos = BuscadorDeSospechosos.buscarSospechosos(
                 new PistaGeneral("Masculino"),
-                new PistaGeneral("Escalar montañas"),
+                new PistaGeneral("Escalar"),
                 new PistaGeneral("Negro"),
                 new PistaGeneral("Aro"),
                 new PistaGeneral("Motocicleta") );
@@ -32,7 +32,7 @@ public class BuscadorDeSospechososTest {
 
         sospechosos = BuscadorDeSospechosos.buscarSospechosos(
                 new PistaGeneral("Masculino"),
-                new PistaGeneral("Escalar montañas"),
+                new PistaGeneral("Escalar"),
                 new PistaGeneral("Rojo"),
                 new PistaGeneral("Tattoo"),
                 new PistaGeneral("Convertible") );
@@ -91,7 +91,7 @@ public class BuscadorDeSospechososTest {
 
         sospechosos = BuscadorDeSospechosos.buscarSospechosos(
                 new PistaGeneral("Femenino"),
-                new PistaGeneral("Escalar montañas"),
+                new PistaGeneral("Escalar"),
                 new PistaGeneral("Castaño"),
                 new PistaGeneral("Joyeria"),
                 new PistaGeneral("Limusina") );
@@ -122,7 +122,7 @@ public class BuscadorDeSospechososTest {
 
         sospechosos = BuscadorDeSospechosos.buscarSospechosos(
                 new PistaGeneral("Femenino"),
-                new PistaGeneral("Escalar montañas"),
+                new PistaGeneral("Escalar"),
                 new PistaGeneral("Castaño"),
                 new PistaGeneral("Tattoo"),
                 new PistaGeneral("Motocicleta") );

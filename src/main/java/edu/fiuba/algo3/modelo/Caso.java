@@ -1,8 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.archivos.LectorArchivoPolicia;
 import edu.fiuba.algo3.modelo.pistas.Pista;
-
-import edu.fiuba.algo3.modelo.rangos.Rango;
 
 import java.util.ArrayList;
 
@@ -41,6 +40,7 @@ public class Caso {
     public void arresteSospechoso(Policia policia) {
         if (orden) {
             policia.sumarArresto();
+            LectorArchivoPolicia.aumentarArresto(policia);
         }
         terminado = true;
     }
@@ -71,5 +71,13 @@ public class Caso {
 
     public String sospechosoReal() {
         return ladronReal.nombreDelSospechoso();
+    }
+
+    public String obtenerNombreTesoro() {
+        return this.tesoro.obtenerNombre();
+    }
+
+    public String generoLadron() {
+        return this.ladronReal.obtenerGenero();
     }
 }

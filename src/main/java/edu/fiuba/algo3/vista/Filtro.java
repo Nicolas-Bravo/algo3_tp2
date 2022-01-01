@@ -1,9 +1,9 @@
 package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.modelo.pistas.Pista;
+import edu.fiuba.algo3.vista.botones.BotonFiltro;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
