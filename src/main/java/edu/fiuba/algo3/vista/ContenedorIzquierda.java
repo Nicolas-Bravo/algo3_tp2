@@ -18,7 +18,8 @@ public class ContenedorIzquierda extends StackPane {
         this.juego = juego;
         this.stage = stage;
 
-        TextArea textArea = new TextArea("Ingrese su nombre");
+        TextArea textArea = new TextArea();
+        textArea.setPromptText("Ingrese su nombre");
         BotonRegistrarPolicia botonEnviar = new BotonRegistrarPolicia(textArea, juego, stage);
         VBox vbox = new VBox();
         vbox.getChildren().addAll(textArea, botonEnviar);
@@ -37,7 +38,7 @@ public class ContenedorIzquierda extends StackPane {
         Image image = new Image(juego.imagenCapitalActual());
         ImageView imgView = new ImageView(image);
         imgView.setFitHeight(550);
-        imgView.setFitWidth(550);
+        imgView.setFitWidth(460);
 
         this.setAlignment(Pos.BOTTOM_LEFT);
         this.getChildren().remove(0);
@@ -54,8 +55,8 @@ public class ContenedorIzquierda extends StackPane {
 
         Image image = new Image(imagenMostrar);
         ImageView imgView = new ImageView(image);
-        imgView.setFitHeight(550);
-        imgView.setFitWidth(550);
+        imgView.setFitHeight(900);
+        imgView.setFitWidth(460);
 
         this.setAlignment(Pos.BOTTOM_LEFT);
         this.getChildren().remove(0);

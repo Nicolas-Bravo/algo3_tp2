@@ -18,12 +18,12 @@ public class ContenedorInformacion extends StackPane {
     Juego juego;
     public ContenedorInformacion(Juego juego, Stage stage) {
         this.stage = stage;
-        this.setWidth(500);
+        this.setWidth(563);
         this.setHeight(900);
         this.juego = juego;
         Image image = new Image("https://cdn.discordapp.com/attachments/912029542556790795/926320707015704646/contInfo.png");
         ImageView imgView = new ImageView(image);
-        imgView.setFitHeight(500);
+        imgView.setFitHeight(563);
         imgView.setFitWidth(500);
         VBox vboxx = new VBox(imgView);
 

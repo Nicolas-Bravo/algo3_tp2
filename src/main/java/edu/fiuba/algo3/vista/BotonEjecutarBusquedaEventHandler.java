@@ -29,13 +29,12 @@ public class BotonEjecutarBusquedaEventHandler implements EventHandler<ActionEve
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        //Pista[] conjuntoPistas = new Pista[filtros.size()];
         ArrayList<Pista> conjuntoPistas = new ArrayList<>();
         ArrayList<Sospechoso> sospechososPosibles = new ArrayList<>();
 
         for(Filtro filtro: filtros) {
             Pista pistaActual = filtro.obtenerPista();
-            if (pistaActual != null) {
+            if (pistaActual != null && !pistaActual.mostrarPista().equals("")) {
                 conjuntoPistas.add(pistaActual);
             }
         }

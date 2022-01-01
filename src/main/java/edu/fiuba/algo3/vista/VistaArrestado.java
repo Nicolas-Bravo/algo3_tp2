@@ -4,6 +4,7 @@ import edu.fiuba.algo3.controladores.Juego;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -31,6 +32,6 @@ public class VistaArrestado implements MisVistas {
 
     @Override
     public Node componentePrincipal() {
-        return hboxPrincipal;
+        return new StackPaneFondoNegro(hboxPrincipal);
     }
 }
