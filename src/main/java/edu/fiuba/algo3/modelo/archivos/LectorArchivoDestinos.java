@@ -63,7 +63,7 @@ public class LectorArchivoDestinos {
 
         ArrayList<ArrayList> matriz = new ArrayList<>();
 
-        String[] campos = linea.split("/");
+        String[] campos = linea.split("#");
 
         ArrayList<Pista> datos = generarDatos(campos[0]);
 

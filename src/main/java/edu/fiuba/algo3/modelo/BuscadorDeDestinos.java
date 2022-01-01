@@ -7,14 +7,15 @@ import edu.fiuba.algo3.modelo.valor.Valor;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Random;
 
 public class BuscadorDeDestinos {
 
     private static final ArrayList<DestinoCandidato> listaDestinos = LectorArchivoDestinos.generarListaDestinosCandidatos();
-    
+
     private static Destino generarSiguiente(DestinoCandidato actual, DestinoCandidato siguiente, Valor valor){
 
-        return new Destino(actual.obtenerNombre().mostrarPista(), actual.obtenerCoordenadas(), siguiente.obtenerEdificios(valor));
+        return new Destino(actual.obtenerNombre().mostrarPista(), actual.obtenerCoordenadas(), actual.obtenerImagen(), siguiente.obtenerEdificios(valor));
     }
 
     public static RutaDeEscape obtenerRutaDeEscape(Tesoro tesoro) {
@@ -26,13 +27,22 @@ public class BuscadorDeDestinos {
 
         Destino destino;
         DestinoCandidato actual = obtenerCandidatoPorNombre(tesoro.obtenerInicio());
-        DestinoCandidato sig = listaDestinos.get((int) (Math.random() * listaDestinos.size()));
+
+        Random random_method = new Random();
+        int index = random_method.nextInt(listaDestinos.size());
+        ArrayList<Integer> usados = new ArrayList<>();
+
+        DestinoCandidato sig = listaDestinos.get(index);
 
         for(int i = 0; i < tope; i++){
             destino = generarSiguiente(actual, sig, tesoro.obtenerValor());
             destinoArray[i] = destino;
             actual = sig;
-            sig = listaDestinos.get((int) (Math.random() * listaDestinos.size()));
+            usados.add(index);
+            while (usados.contains(index)){
+                index = random_method.nextInt(listaDestinos.size());
+            }
+            sig = listaDestinos.get(index);
         }
 
         return new RutaDeEscape(destinoArray);
@@ -51,20 +61,32 @@ public class BuscadorDeDestinos {
     }
 
     public static ArrayList<Destino> completarMapa(ArrayList<Destino> destinos) {
-        //saco los repetidos
+
+        ArrayList<Integer> usados = obtenerIndices(destinos);
 
         int tope = destinos.size()+2;
 
         Destino[] destinoErroneoArray;
         destinoErroneoArray = new Destino[tope];
 
+        Random random_method = new Random();
+        int index = random_method.nextInt(listaDestinos.size());
+
+        while (usados.contains(index)){
+            index = random_method.nextInt(listaDestinos.size());
+        }
+
         Destino destinoErroneo;
-        DestinoCandidato sig = listaDestinos.get((int) (Math.random() * listaDestinos.size()));
+        DestinoCandidato sig = listaDestinos.get(index);
 
         for(int i = 0; i < tope; i++){
             destinoErroneo = sig.generarDestinoErroneo();
             destinoErroneoArray[i] = destinoErroneo;
-            sig = listaDestinos.get((int) (Math.random() * listaDestinos.size()));
+            usados.add(index);
+            while (usados.contains(index)){
+                index = random_method.nextInt(listaDestinos.size());
+            }
+            sig = listaDestinos.get(index);
         }
 
         int i = 0;
@@ -81,5 +103,20 @@ public class BuscadorDeDestinos {
         return destinos;
 
 
+    }
+
+    private static ArrayList<Integer> obtenerIndices(ArrayList<Destino> destinos) {
+
+        ArrayList<Integer> usados = new ArrayList<>();
+
+        for (Destino destino : destinos){
+            for(int i = 0; i < listaDestinos.size(); i++){
+                if(listaDestinos.get(i).obtenerNombre().equals(destino.obtenerNombre())){
+                    usados.add(i);
+                }
+            }
+        }
+
+        return usados;
     }
 }
