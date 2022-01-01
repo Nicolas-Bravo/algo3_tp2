@@ -12,6 +12,7 @@ public class DestinoCandidato {
     private final ArrayList<ArrayList> descripcion;
     private final Pista nombre;
     private final Coordenadas coordenadas;
+    private final String imagen;
 
     public DestinoCandidato(ArrayList<ArrayList> matriz) {
         this.descripcion = matriz;
@@ -19,6 +20,7 @@ public class DestinoCandidato {
         double lat = Double.parseDouble( ((Pista)(matriz.get(0).get(1))).mostrarPista() );
         double lon = Double.parseDouble( ((Pista)(matriz.get(0).get(2))).mostrarPista() );
         this.coordenadas = new Coordenadas(lat,lon);
+        this. imagen = ((Pista) matriz.get(0).get(3)).mostrarPista();
     }
 
     public Pista obtenerNombre() {
@@ -39,9 +41,13 @@ public class DestinoCandidato {
 
     public Destino generarDestinoErroneo() {
 
-        return new Destino(this.nombre.mostrarPista(), this.coordenadas,
+        return new Destino(this.nombre.mostrarPista(), this.coordenadas, this.imagen,
                 new Biblioteca(new PistaBiblioteca("No hemos visto a nadie por aqui")),
                 new Banco(new PistaEconomica("No hemos visto a nadie por aqui\"")),
                 new Aeropuerto(new PistaPuerto("No hemos visto a nadie por aqui")));
+    }
+
+    public String obtenerImagen() {
+        return this.imagen;
     }
 }

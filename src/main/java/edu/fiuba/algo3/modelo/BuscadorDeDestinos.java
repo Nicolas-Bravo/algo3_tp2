@@ -14,7 +14,7 @@ public class BuscadorDeDestinos {
     
     private static Destino generarSiguiente(DestinoCandidato actual, DestinoCandidato siguiente, Valor valor){
 
-        return new Destino(actual.obtenerNombre().mostrarPista(), actual.obtenerCoordenadas(), siguiente.obtenerEdificios(valor));
+        return new Destino(actual.obtenerNombre().mostrarPista(), actual.obtenerCoordenadas(), actual.obtenerImagen(), siguiente.obtenerEdificios(valor));
     }
 
     public static RutaDeEscape obtenerRutaDeEscape(Tesoro tesoro) {

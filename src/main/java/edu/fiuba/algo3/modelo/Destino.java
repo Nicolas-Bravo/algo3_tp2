@@ -13,6 +13,7 @@ public class Destino {
     private ArrayList<Edificio> edificios;
     private final Coordenadas cordenadas;
     private ArrayList<Destino> posibles;
+    private final String imagen;
 
     public Destino(String nombre_p, Coordenadas coordenadas_p, Edificio... edificios_p){
         this.nombre = nombre_p;
@@ -23,6 +24,21 @@ public class Destino {
         Collections.addAll(this.edificios, edificios_p);
 
         this.posibles = new ArrayList<>();
+
+        this.imagen = "https://www.mtl.org/sites/default/files/styles/playlist_banner_big/public/2020-03/31919H.jpg?itok=TQ_3b8Bj";
+    }
+
+    public Destino(String nombre_p, Coordenadas coordenadas_p, String imagen_p, Edificio... edificios_p){
+        this.nombre = nombre_p;
+        this.cordenadas = coordenadas_p;
+
+        this.edificios = new ArrayList<>();
+
+        Collections.addAll(this.edificios, edificios_p);
+
+        this.posibles = new ArrayList<>();
+
+        this.imagen = imagen_p;
     }
 
     public Pista entrar(Reloj reloj, Edificio edificio) {
@@ -56,11 +72,7 @@ public class Destino {
     }
 
     public String enlaceImagen() {
-        return "https://www.mtl.org/sites/default/files/styles/playlist_banner_big/public/2020-03/31919H.jpg?itok=TQ_3b8Bj";
-    }
-
-    public String obtenerImagen() {
-        return "https://static.wixstatic.com/media/46f38a_a8a099a756894d23adb6e71153a3bbe0~mv2.jpg/v1/crop/x_0,y_22,w_400,h_248/fill/w_560,h_347,al_c,lg_1,q_80/46f38a_a8a099a756894d23adb6e71153a3bbe0~mv2.webp";
+        return this.imagen;
     }
 
     public String obtenerNombre() {
