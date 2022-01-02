@@ -4,7 +4,6 @@ import edu.fiuba.algo3.modelo.edificios.Edificio;
 import edu.fiuba.algo3.modelo.pistas.Pista;
 import edu.fiuba.algo3.modelo.pistas.PistaGeneral;
 import edu.fiuba.algo3.modelo.reloj.Reloj;
-import javafx.scene.image.Image;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -51,8 +50,8 @@ public class Destino {
         return this.cordenadas;
     }
 
-    public double distanciaCon(Coordenadas cordenadas_p, String unit) {
-        return this.cordenadas.distanciaCon(cordenadas_p,unit);
+    public double distanciaCon(Destino destino_p, String unit) {
+        return this.cordenadas.distanciaCon(destino_p.obtenerCordenadas(),unit);
     }
 
     public void agregarDestinoPosible(Destino destino) {

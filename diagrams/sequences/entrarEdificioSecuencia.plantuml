@@ -1,5 +1,7 @@
 @startuml
 
+title edificioEntrarSecuencia
+
 Actor User
 
 User -> "p :Policia" : entrarEdificio(e :Edificio)
