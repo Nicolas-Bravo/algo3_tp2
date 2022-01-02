@@ -2,19 +2,31 @@
 
 Actor User
 
-User -> ":Policia" : viajar(d :Destino)
+User -> ":Policia" : viajar(final :Destino)
 Activate ":Policia"
 
-":Policia" -> ":Mapa" : viajar(d :Destino)
+":Policia" -> ":Mapa" : viajar(final :Destino)
 activate ":Mapa"
 
-":Mapa" -> ":CalculadorDistancias" : distancia(coordenadas)
-activate ":CalculadorDistancias"
+":Mapa" -> "actual :Destino" : distanciaCon(final :Destino)
+activate "actual :Destino"
 
-":CalculadorDistancias" --> ":Mapa" : distancia
-deactivate ":CalculadorDistancias"
+"actual :Destino" -> "final :Destino" : obtenerCoordenadas()
+activate "final :Destino"
 
-":Mapa" -> ":Mapa" : actualizarActual(d :Destino)
+"final :Destino" --> "actual :Destino" : coor_final :Coordenadas
+deactivate "final :Destino"
+
+"actual :Destino" -> "actual :Coordenadas" : distancia(coor_final :Coordenadas)
+activate "actual :Coordenadas"
+
+"actual :Coordenadas" --> "actual :Destino" : distancia
+deactivate "actual :Coordenadas"
+
+"actual :Destino" --> ":Mapa" : distancia
+deactivate "actual :Destino"
+
+":Mapa" -> ":Mapa" : actualizarActual(final :Destino)
 
 ":Mapa" --> ":Policia" : distancia
 deactivate ":Mapa"

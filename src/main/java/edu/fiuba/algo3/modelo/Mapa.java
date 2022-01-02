@@ -31,18 +31,14 @@ public class Mapa {
     }
 
     public double viajar(Destino destino) {
+        double distancia = this.destinoActual.distanciaCon(destino, "K");
         int index = this.destinoActual.destinosPosibles().indexOf(destino);
-        double distancia = this.destinoActual.distanciaCon(destino.obtenerCordenadas(), "K");
         this.destinoActual = this.destinoActual.destinosPosibles().get(index);
         return distancia;
     }
 
     public Destino destinoActual() {
         return this.destinoActual;
-    }
-
-    public ArrayList<Destino> destinosPosible(){
-        return this.destinoActual.destinosPosibles();
     }
 
     public Pista entrar(Reloj reloj, Edificio edificio) {
@@ -52,5 +48,4 @@ public class Mapa {
     public String enlaceCapitalActual() {
         return destinoActual.enlaceImagen();
     }
-    public ArrayList<Destino> obtenerDestinos() {return destinos; }
 }
