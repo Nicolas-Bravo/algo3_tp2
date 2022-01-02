@@ -1,0 +1,31 @@
+@startuml
+
+title casoObtenerSospechososSecuencia
+
+Actor "User"
+
+"User" -> "c Caso" : buscarSospechosos(p1,p2,p3,p4,p5 Pista)
+activate "c Caso"
+
+
+"c Caso" -> "BuscadorDeSospechosos" : buscarSospechosos(p1,p2,p3,p4,p5 Pista)
+
+loop Sospechoso sospe: listaSospechosos
+
+    "BuscadorDeSospechosos" -> sospe : coincideCon(p1,p2,p3,p4,p5 Pista)
+     group case [Successful case]
+         sospe --> "BuscadorDeSospechosos" : true
+         "BuscadorDeSospechosos" -> "BuscadorDeSospechosos" : sospechososDevolver.add(sospe)
+     end
+  
+end
+
+group case [sospechososDevolver.isEmpty()]
+      "BuscadorDeSospechosos" -> DescripcionIngresadaErronea : raise
+end
+
+"BuscadorDeSospechosos" --> "c Caso" : sospechososDevolver : ListSospechoso
+
+"c Caso" --> "User" : sospechososDevolver
+
+@enduml
