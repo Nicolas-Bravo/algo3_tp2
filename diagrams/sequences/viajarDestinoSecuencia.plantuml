@@ -1,5 +1,7 @@
 @startuml
 
+title viajarDestinoSecuencia
+
 Actor User
 
 User -> ":Policia" : viajar(final :Destino)
