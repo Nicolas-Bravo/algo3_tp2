@@ -37,7 +37,9 @@ public class BuscadorDeDestinos {
 
         Random random_method = new Random();
         int index = random_method.nextInt(listaDestinos.size());
-        ArrayList<Integer> usados = new ArrayList<>();
+
+        ArrayList<Integer> usados;
+        usados = obtenerIndices(actual);
 
         DestinoCandidato sig = listaDestinos.get(index);
 
@@ -129,9 +131,21 @@ public class BuscadorDeDestinos {
 
         for (Destino destino : destinos){
             for(int i = 0; i < listaDestinos.size(); i++){
-                if(listaDestinos.get(i).obtenerNombre().equals(destino.obtenerNombre())){
+                if(listaDestinos.get(i).obtenerNombre().mostrarPista().equals(destino.obtenerNombre())){
                     usados.add(i);
                 }
+            }
+        }
+
+        return usados;
+    }
+
+    private static ArrayList<Integer> obtenerIndices(DestinoCandidato actual) {
+        ArrayList<Integer> usados = new ArrayList<>();
+
+        for(int i = 0; i < listaDestinos.size(); i++){
+            if(listaDestinos.get(i).obtenerNombre().equals(actual.obtenerNombre())){
+                usados.add(i);
             }
         }
 
