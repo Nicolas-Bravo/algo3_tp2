@@ -23,7 +23,7 @@ public class Sospechoso {
     }
 
     public void coincideCon(Pista[] pistas, ArrayList<Sospechoso> sospechososPosibles) {
-        if(this.datos.containsAll(List.of(pistas))){
+        if(descripcion.containsAll(List.of(pistas))){
             sospechososPosibles.add(this);
         }
     }
@@ -34,28 +34,23 @@ public class Sospechoso {
     public boolean coincideCon(Sospechoso sospechoso) {
         return this.datos.containsAll(sospechoso.datosSospechoso());
     }
-
     public ArrayList<Pista> datosSospechoso() {return this.datos;}
-
-    public ArrayList<Pista> descripcionSospechoso() {
-        return this.descripcion;
-    }
-
     public String nombreDelSospechoso(){return this.nombre;}
+    public ArrayList<Pista> descripcionSospechoso() {return this.descripcion;}
+
 
     private ArrayList<Pista> depurarPistas(Pista[] pistas) {
-
         ArrayList<Pista> datos = new ArrayList<>();
         datos.add(pistas[0]);
-
         for (int i = 1; i < pistas.length; i++) {
             String[] pistaCortada = pistas[i].mostrarPista().split(" ");
             Pista pistaDepurada = new PistaGeneral(pistaCortada[pistaCortada.length - 1]);
             datos.add(pistaDepurada);
         }
 
-
         return datos;
     }
+    public String obtenerGenero() {
+        return this.datos.get(1).mostrarPista();
+    }
 }
-

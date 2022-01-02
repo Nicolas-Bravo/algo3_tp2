@@ -1,7 +1,6 @@
 package edu.fiuba.algo3.controladores;
 
 import edu.fiuba.algo3.manejadorEventos.BotonJugarEventHandler;
-import edu.fiuba.algo3.vista.BotonRegistrarPoliciaEventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;

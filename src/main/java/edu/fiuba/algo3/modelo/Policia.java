@@ -100,4 +100,10 @@ public class Policia {
     public String titulo() {
         return rango.obtenerTitulo() + " " + this.nombre;
     }
+
+    public void sumarArrestos(int cantidad) {
+        for(int i=0;i<=cantidad;i++){
+            rango.sumarArresto();
+        }
+    }
 }
