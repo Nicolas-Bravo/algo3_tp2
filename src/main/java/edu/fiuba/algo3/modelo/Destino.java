@@ -9,14 +9,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Destino {
-    private final String nombre;
+    private final Pista nombre;
     private ArrayList<Edificio> edificios;
     private final Coordenadas cordenadas;
     private ArrayList<Destino> posibles;
     private final String imagen;
 
     public Destino(PistaGeneral nombre_p, Coordenadas coordenadas_p, Edificio... edificios_p){
-        this.nombre = nombre_p.mostrarPista();
+        this.nombre = nombre_p;
         this.cordenadas = coordenadas_p;
 
         this.edificios = new ArrayList<>();
@@ -29,7 +29,7 @@ public class Destino {
     }
 
     public Destino(PistaGeneral nombre_p, Coordenadas coordenadas_p, String imagen_p, Edificio... edificios_p){
-        this.nombre = nombre_p.mostrarPista();
+        this.nombre = nombre_p;
         this.cordenadas = coordenadas_p;
 
         this.edificios = new ArrayList<>();
@@ -64,7 +64,7 @@ public class Destino {
 
     @Override
     public String toString() {
-        return this.nombre;
+        return this.nombre.mostrarPista();
     }
 
     public ArrayList<Edificio> obtenerEdificios(){
@@ -76,7 +76,7 @@ public class Destino {
         return this.imagen;
     }
 
-    public String obtenerNombre() {
+    public Pista obtenerNombre() {
         return this.nombre;
     }
 }

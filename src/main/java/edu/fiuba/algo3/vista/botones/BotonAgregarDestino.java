@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 
 public class BotonAgregarDestino extends Button {
     public BotonAgregarDestino(Destino destino, Stage stage, Juego juego) {
-        this.setText(destino.obtenerNombre());
+        this.setText(destino.obtenerNombre().mostrarPista());
         this.setOnAction(new BotonViajarACapitalEventHandler(destino, juego, stage));
         this.setAlignment(Pos.CENTER);
         this.setMaxHeight(30);
