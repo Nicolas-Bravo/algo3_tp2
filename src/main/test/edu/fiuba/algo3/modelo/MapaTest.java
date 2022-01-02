@@ -2,6 +2,7 @@ package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.edificios.Banco;
 import edu.fiuba.algo3.modelo.pistas.PistaEconomica;
+import edu.fiuba.algo3.modelo.pistas.PistaGeneral;
 import edu.fiuba.algo3.modelo.reloj.Reloj;
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +13,7 @@ public class MapaTest {
     @Test
     public void mapaConstuidoConUnDestinoLoTieneComoDestinoActual(){
         Banco edificioUno = new Banco(new PistaEconomica("una pista aux"));
-        Destino destinoUno = new Destino("nombreUNo",new Coordenadas(10.00,10.00),edificioUno);
+        Destino destinoUno = new Destino(new PistaGeneral("nombreUNo"),new Coordenadas(10.00,10.00),edificioUno);
 
         Mapa mapa = new Mapa(destinoUno);
 
@@ -22,7 +23,7 @@ public class MapaTest {
     @Test
     public void mapaEntraAUnBancoDeSuCiudadActualYDemoraUnaHora(){
         Banco edificioUno = new Banco(new PistaEconomica("una pista aux"));
-        Destino destinoUno = new Destino("nombreUNo",new Coordenadas(10.00,10.00),edificioUno);
+        Destino destinoUno = new Destino(new PistaGeneral("nombreUNo"),new Coordenadas(10.00,10.00),edificioUno);
 
         Mapa mapa = new Mapa(destinoUno);
         Reloj r = new Reloj();
@@ -36,7 +37,7 @@ public class MapaTest {
     @Test
     public void mapaEntraAUnBancoDeSuCiudadActualPorSegundaVezYDemoraDosHoras(){
         Banco edificioUno = new Banco(new PistaEconomica("una pista aux"));
-        Destino destinoUno = new Destino("nombreUNo",new Coordenadas(10.00,10.00),edificioUno);
+        Destino destinoUno = new Destino(new PistaGeneral("nombreUNo"),new Coordenadas(10.00,10.00),edificioUno);
 
         Mapa mapa = new Mapa(destinoUno);
         Reloj r = new Reloj();
@@ -50,7 +51,7 @@ public class MapaTest {
     @Test
     public void mapaEntraAUnBancoDeSuCiudadActualPorTerceraVezYDemoraTresHoras(){
         Banco edificioUno = new Banco(new PistaEconomica("una pista aux"));
-        Destino destinoUno = new Destino("nombreUNo",new Coordenadas(10.00,10.00),edificioUno);
+        Destino destinoUno = new Destino(new PistaGeneral("nombreUNo"),new Coordenadas(10.00,10.00),edificioUno);
 
         Mapa mapa = new Mapa(destinoUno);
         Reloj r = new Reloj();
@@ -66,7 +67,7 @@ public class MapaTest {
     public void mapaEntraAUnBancoDeSuCiudadActualYObtieneSuPistaEconomica(){
         PistaEconomica p = new PistaEconomica("pista de prueba");
         Banco edificioUno = new Banco(p);
-        Destino destinoUno = new Destino("nombreUNo",new Coordenadas(10.00,10.00),edificioUno);
+        Destino destinoUno = new Destino(new PistaGeneral("nombreUNo"),new Coordenadas(10.00,10.00),edificioUno);
 
         Mapa mapa = new Mapa(destinoUno);
         Reloj r = new Reloj();
@@ -79,10 +80,10 @@ public class MapaTest {
     @Test
     public void mapaViajaAOtroDestinoYCambiaSuDestinoActual(){
         Banco edificioUno = new Banco(new PistaEconomica("una pista aux"));
-        Destino destinoUno = new Destino("nombreUNo",new Coordenadas(10.00,10.00),edificioUno);
+        Destino destinoUno = new Destino(new PistaGeneral("nombreUNo"),new Coordenadas(10.00,10.00),edificioUno);
 
         Banco edificioDos = new Banco(new PistaEconomica("otra pista aux"));
-        Destino destinoDos = new Destino("nombreDos",new Coordenadas(20.00,20.00),edificioDos);
+        Destino destinoDos = new Destino(new PistaGeneral("nombreDos"),new Coordenadas(20.00,20.00),edificioDos);
 
         Mapa mapa = new Mapa(destinoUno, destinoDos);
 
@@ -94,10 +95,10 @@ public class MapaTest {
     @Test
     public void mapaViajaAOtroDestinoEntraAUnBancoYDemoraUnaHora(){
         Banco edificioUno = new Banco(new PistaEconomica("una pista aux"));
-        Destino destinoUno = new Destino("nombreUNo",new Coordenadas(10.00,10.00),edificioUno);
+        Destino destinoUno = new Destino(new PistaGeneral("nombreUNo"),new Coordenadas(10.00,10.00),edificioUno);
 
         Banco edificioDos = new Banco(new PistaEconomica("otra pista aux"));
-        Destino destinoDos = new Destino("nombreDos",new Coordenadas(20.00,20.00),edificioDos);
+        Destino destinoDos = new Destino(new PistaGeneral("nombreDos"),new Coordenadas(20.00,20.00),edificioDos);
 
         Mapa mapa = new Mapa(destinoUno, destinoDos);
         Reloj r = new Reloj();
@@ -111,10 +112,10 @@ public class MapaTest {
     @Test
     public void mapaViajaDesdeMontralAMexicoYDevuelDistancia3725km(){
         Banco edificioUno = new Banco(new PistaEconomica("una pista aux"));
-        Destino montreal = new Destino("Montreal", new Coordenadas(45.50884, -73.5878), edificioUno);
+        Destino montreal = new Destino(new PistaGeneral("Montreal"), new Coordenadas(45.50884, -73.5878), edificioUno);
 
         Banco edificioDos = new Banco(new PistaEconomica("otra pista aux"));
-        Destino mexico = new Destino("Mexico", new Coordenadas(19.42847, -99.12766), edificioDos);
+        Destino mexico = new Destino(new PistaGeneral("Mexico"), new Coordenadas(19.42847, -99.12766), edificioDos);
 
         Mapa mapa = new Mapa(montreal, mexico);
 
@@ -125,10 +126,10 @@ public class MapaTest {
     @Test
     public void mapaViajaDesdeMontralALimaYDevuelDistancia6400km(){
         Banco edificioUno = new Banco(new PistaEconomica("una pista aux"));
-        Destino montreal = new Destino("Montreal", new Coordenadas(45.50884, -73.5878), edificioUno);
+        Destino montreal = new Destino(new PistaGeneral("Montreal"), new Coordenadas(45.50884, -73.5878), edificioUno);
 
         Banco edificioDos = new Banco(new PistaEconomica("otra pista aux"));
-        Destino lima = new Destino("Lima", new Coordenadas(-12.04318  , -77.02824), edificioDos);
+        Destino lima = new Destino(new PistaGeneral("Lima"), new Coordenadas(-12.04318  , -77.02824), edificioDos);
 
         Mapa mapa = new Mapa(montreal, lima);
 

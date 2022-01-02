@@ -4,6 +4,7 @@ import edu.fiuba.algo3.modelo.*;
 import edu.fiuba.algo3.modelo.archivos.LectorArchivoPolicia;
 import edu.fiuba.algo3.modelo.edificios.*;
 import edu.fiuba.algo3.modelo.pistas.Pista;
+import edu.fiuba.algo3.modelo.pistas.PistaGeneral;
 import edu.fiuba.algo3.modelo.rangos.Novato;
 
 import javafx.stage.Stage;
@@ -39,7 +40,7 @@ public class Juego {
         for (Destino d: ruta.destinos) {
             System.out.println(d);
         }
-        this.casoActual = new Caso(sospe.nombreDelSospechoso(), tesoro, ruta);
+        this.casoActual = new Caso(new PistaGeneral(sospe.nombreDelSospechoso()), tesoro, ruta);
         System.out.println(casoActual.sospechosoReal());
         this.policia.asignarCaso(casoActual);
     }

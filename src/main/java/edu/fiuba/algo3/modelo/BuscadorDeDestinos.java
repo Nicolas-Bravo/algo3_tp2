@@ -3,6 +3,7 @@ package edu.fiuba.algo3.modelo;
 import edu.fiuba.algo3.modelo.archivos.DestinoCandidato;
 import edu.fiuba.algo3.modelo.archivos.LectorArchivoDestinos;
 import edu.fiuba.algo3.modelo.pistas.Pista;
+import edu.fiuba.algo3.modelo.pistas.PistaGeneral;
 import edu.fiuba.algo3.modelo.valor.Valor;
 
 import java.util.ArrayList;
@@ -15,12 +16,12 @@ public class BuscadorDeDestinos {
 
     private static Destino generarSiguienteConSospechoso(DestinoCandidato actual, DestinoCandidato siguiente, Valor valor, Pista pista_sospe){
 
-        return new Destino(actual.obtenerNombre().mostrarPista(), actual.obtenerCoordenadas(), actual.obtenerImagen(), siguiente.obtenerEdificios(valor, pista_sospe));
+        return new Destino(new PistaGeneral(actual.obtenerNombre()), actual.obtenerCoordenadas(), actual.obtenerImagen(), siguiente.obtenerEdificios(valor, pista_sospe));
     }
 
     private static Destino generarSiguiente(DestinoCandidato actual, DestinoCandidato siguiente, Valor valor){
 
-        return new Destino(actual.obtenerNombre().mostrarPista(), actual.obtenerCoordenadas(), actual.obtenerImagen(), siguiente.obtenerEdificios(valor));
+        return new Destino(new PistaGeneral(actual.obtenerNombre()), actual.obtenerCoordenadas(), actual.obtenerImagen(), siguiente.obtenerEdificios(valor));
     }
 
     public static RutaDeEscape obtenerRutaDeEscape(Tesoro tesoro, Sospechoso sospechoso) {

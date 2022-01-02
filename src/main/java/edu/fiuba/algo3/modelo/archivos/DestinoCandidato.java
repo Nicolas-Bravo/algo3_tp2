@@ -44,7 +44,7 @@ public class DestinoCandidato {
 
     public Destino generarDestinoErroneo() {
 
-        return new Destino(this.nombre.mostrarPista(), this.coordenadas, this.imagen,
+        return new Destino(new PistaGeneral(this.nombre), this.coordenadas, this.imagen,
                 new Biblioteca(new PistaBiblioteca("No hemos visto a nadie por aqui")),
                 new Banco(new PistaEconomica("No hemos visto a nadie por aqui")),
                 new Aeropuerto(new PistaPuerto("No hemos visto a nadie por aqui")));

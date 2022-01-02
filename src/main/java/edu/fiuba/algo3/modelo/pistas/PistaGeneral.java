@@ -8,6 +8,10 @@ public class PistaGeneral extends Pista {
         super(pista);
     }
 
+    public PistaGeneral(Pista obtenerNombre) {
+        super(obtenerNombre);
+    }
+
     @Override
     public Edificio obtenerEdificio() {
         return new Biblioteca(this);

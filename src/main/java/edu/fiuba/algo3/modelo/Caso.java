@@ -2,6 +2,7 @@ package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.archivos.LectorArchivoPolicia;
 import edu.fiuba.algo3.modelo.pistas.Pista;
+import edu.fiuba.algo3.modelo.pistas.PistaGeneral;
 
 import java.util.ArrayList;
 
@@ -13,8 +14,8 @@ public class Caso {
     private final Tesoro tesoro;
     private boolean terminado;
 
-    public Caso(String nombre, Tesoro tesoro_p, RutaDeEscape ruta){
-        this.ladronReal = BuscadorDeSospechosos.obtenerSospechosoPorNombre(nombre);
+    public Caso(PistaGeneral nombre, Tesoro tesoro_p, RutaDeEscape ruta){
+        this.ladronReal = BuscadorDeSospechosos.obtenerSospechosoPorNombre(nombre.mostrarPista());
         this.rutaDeEscape = ruta;
         this.orden = false;
         this.tesoro = tesoro_p;

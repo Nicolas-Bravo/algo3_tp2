@@ -10,6 +10,10 @@ public abstract class Pista {
         this.pista = entrada;
     }
 
+    public Pista(Pista pista) {
+        this.pista = pista.mostrarPista();
+    }
+
     public void sobreescribir(String entrada) {this.pista = entrada;}
 
     public String mostrarPista(){

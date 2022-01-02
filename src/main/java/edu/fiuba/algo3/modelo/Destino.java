@@ -2,6 +2,7 @@ package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.edificios.Edificio;
 import edu.fiuba.algo3.modelo.pistas.Pista;
+import edu.fiuba.algo3.modelo.pistas.PistaGeneral;
 import edu.fiuba.algo3.modelo.reloj.Reloj;
 import javafx.scene.image.Image;
 
@@ -15,8 +16,8 @@ public class Destino {
     private ArrayList<Destino> posibles;
     private final String imagen;
 
-    public Destino(String nombre_p, Coordenadas coordenadas_p, Edificio... edificios_p){
-        this.nombre = nombre_p;
+    public Destino(PistaGeneral nombre_p, Coordenadas coordenadas_p, Edificio... edificios_p){
+        this.nombre = nombre_p.mostrarPista();
         this.cordenadas = coordenadas_p;
 
         this.edificios = new ArrayList<>();
@@ -28,8 +29,8 @@ public class Destino {
         this.imagen = "https://www.mtl.org/sites/default/files/styles/playlist_banner_big/public/2020-03/31919H.jpg?itok=TQ_3b8Bj";
     }
 
-    public Destino(String nombre_p, Coordenadas coordenadas_p, String imagen_p, Edificio... edificios_p){
-        this.nombre = nombre_p;
+    public Destino(PistaGeneral nombre_p, Coordenadas coordenadas_p, String imagen_p, Edificio... edificios_p){
+        this.nombre = nombre_p.mostrarPista();
         this.cordenadas = coordenadas_p;
 
         this.edificios = new ArrayList<>();
