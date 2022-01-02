@@ -1,5 +1,7 @@
 @startuml
 
+title emitirOrdenDeArrestoFallaSecuencia
+
 Actor User
 
 User -> ":Policia" : emitirOrdenDeArresto(p1 :Pista, p2 :Pista, p3 :Pista, p4 :Pista, p5 :Pista)
@@ -26,6 +28,12 @@ group case [cantidadSospechosos = 1]
     deactivate ":Caso"
 
 end
+
+":Policia" -> ":Reloj" : aumentarHoras(3)
+activate ":Reloj"
+
+":Reloj" --> ":Policia"
+deactivate ":Reloj"
 
 ":Policia" --> User
 deactivate ":Policia"
