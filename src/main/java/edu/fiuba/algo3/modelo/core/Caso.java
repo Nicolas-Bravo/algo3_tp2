@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.core;
 
 import edu.fiuba.algo3.modelo.archivos.LectorArchivoPolicia;
 import edu.fiuba.algo3.modelo.buscadores.BuscadorDeSospechosos;

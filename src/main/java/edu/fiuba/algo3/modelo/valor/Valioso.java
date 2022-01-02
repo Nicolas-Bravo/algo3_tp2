@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.modelo.valor;
 
-import edu.fiuba.algo3.modelo.Sospechoso;
 import edu.fiuba.algo3.modelo.edificios.Edificio;
 import edu.fiuba.algo3.modelo.pistas.Pista;
 

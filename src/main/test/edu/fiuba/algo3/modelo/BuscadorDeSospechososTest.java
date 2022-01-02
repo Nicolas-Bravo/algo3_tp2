@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.buscadores.BuscadorDeSospechosos;
+import edu.fiuba.algo3.modelo.core.Sospechoso;
 import edu.fiuba.algo3.modelo.exceptions.DescripcionIngresadaErroneaError;
 import edu.fiuba.algo3.modelo.pistas.PistaGeneral;
 import org.junit.jupiter.api.Test;

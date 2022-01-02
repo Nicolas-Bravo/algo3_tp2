@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.vista.contenedores;
 
 import edu.fiuba.algo3.controladores.Juego;
-import edu.fiuba.algo3.modelo.Sospechoso;
+import edu.fiuba.algo3.modelo.core.Sospechoso;
 import edu.fiuba.algo3.vista.parents.VBoxContenedorSospechosos;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;

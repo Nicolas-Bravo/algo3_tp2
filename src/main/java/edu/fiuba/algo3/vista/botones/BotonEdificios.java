@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.vista.botones;
 
 import edu.fiuba.algo3.controladores.Juego;
-import edu.fiuba.algo3.modelo.Mapa;
+import edu.fiuba.algo3.modelo.core.Mapa;
 import edu.fiuba.algo3.vista.handlers.BotonEdificiosEventHandler;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;

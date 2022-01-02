@@ -1,8 +1,8 @@
 package edu.fiuba.algo3.vista.ventanas;
 
 import edu.fiuba.algo3.controladores.Juego;
-import edu.fiuba.algo3.modelo.Destino;
-import edu.fiuba.algo3.modelo.Mapa;
+import edu.fiuba.algo3.modelo.core.Destino;
+import edu.fiuba.algo3.modelo.core.Mapa;
 import edu.fiuba.algo3.vista.botones.BotonAgregarDestino;
 import javafx.geometry.Pos;
 import javafx.scene.image.Image;

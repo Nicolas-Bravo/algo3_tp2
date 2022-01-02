@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.vista.ventanas;
 
 import edu.fiuba.algo3.controladores.Juego;
-import edu.fiuba.algo3.modelo.Mapa;
+import edu.fiuba.algo3.modelo.core.Mapa;
 import javafx.geometry.Pos;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;

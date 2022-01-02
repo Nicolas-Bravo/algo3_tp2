@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.vista.handlers;
 
 import edu.fiuba.algo3.controladores.Juego;
-import edu.fiuba.algo3.modelo.Mapa;
+import edu.fiuba.algo3.modelo.core.Mapa;
 import edu.fiuba.algo3.vista.ventanas.VentanaEdificios;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

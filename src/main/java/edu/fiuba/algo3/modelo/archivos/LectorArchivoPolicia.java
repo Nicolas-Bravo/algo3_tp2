@@ -1,10 +1,9 @@
 package edu.fiuba.algo3.modelo.archivos;
 
-import edu.fiuba.algo3.modelo.Policia;
+import edu.fiuba.algo3.modelo.core.Policia;
 import edu.fiuba.algo3.modelo.rangos.Novato;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class LectorArchivoPolicia {

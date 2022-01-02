@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.vista.parents;
 
-import edu.fiuba.algo3.modelo.Sospechoso;
+import edu.fiuba.algo3.modelo.core.Sospechoso;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;

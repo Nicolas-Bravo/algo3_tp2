@@ -1,8 +1,7 @@
 package edu.fiuba.algo3.modelo.archivos;
 
 import edu.fiuba.algo3.modelo.pistas.PistaGeneral;
-import edu.fiuba.algo3.modelo.Sospechoso;
-import edu.fiuba.algo3.modelo.Tesoro;
+import edu.fiuba.algo3.modelo.core.Sospechoso;
 
 import java.io.File;
 import java.io.FileNotFoundException;

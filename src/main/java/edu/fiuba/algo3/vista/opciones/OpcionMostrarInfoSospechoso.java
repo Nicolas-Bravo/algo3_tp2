@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.vista.opciones;
 
-import edu.fiuba.algo3.modelo.Sospechoso;
+import edu.fiuba.algo3.modelo.core.Sospechoso;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;

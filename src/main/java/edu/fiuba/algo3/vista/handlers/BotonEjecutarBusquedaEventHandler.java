@@ -3,7 +3,7 @@ package edu.fiuba.algo3.vista.handlers;
 import edu.fiuba.algo3.vista.contenedores.ContenedorPrincipal;
 import edu.fiuba.algo3.controladores.Juego;
 import edu.fiuba.algo3.modelo.buscadores.BuscadorDeSospechosos;
-import edu.fiuba.algo3.modelo.Sospechoso;
+import edu.fiuba.algo3.modelo.core.Sospechoso;
 import edu.fiuba.algo3.modelo.exceptions.DescripcionIngresadaErroneaError;
 import edu.fiuba.algo3.modelo.pistas.Pista;
 import edu.fiuba.algo3.vista.controles.polilla.Filtro;

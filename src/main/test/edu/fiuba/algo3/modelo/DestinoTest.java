@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.core.Coordenadas;
+import edu.fiuba.algo3.modelo.core.Destino;
 import edu.fiuba.algo3.modelo.edificios.Banco;
 import edu.fiuba.algo3.modelo.pistas.PistaEconomica;
 import edu.fiuba.algo3.modelo.pistas.PistaGeneral;

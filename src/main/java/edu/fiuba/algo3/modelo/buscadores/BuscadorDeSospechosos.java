@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo.buscadores;
 
-import edu.fiuba.algo3.modelo.Sospechoso;
+import edu.fiuba.algo3.modelo.core.Sospechoso;
 import edu.fiuba.algo3.modelo.archivos.LectorArchivoSospechosos;
 import edu.fiuba.algo3.modelo.exceptions.DescripcionIngresadaErroneaError;
 import edu.fiuba.algo3.modelo.pistas.Pista;

@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.vista.controles.polilla;
 
-import edu.fiuba.algo3.modelo.Sospechoso;
+import edu.fiuba.algo3.modelo.core.Sospechoso;
 import edu.fiuba.algo3.vista.opciones.OpcionMostrarInfoSospechoso;
 import javafx.scene.control.MenuItem;
 

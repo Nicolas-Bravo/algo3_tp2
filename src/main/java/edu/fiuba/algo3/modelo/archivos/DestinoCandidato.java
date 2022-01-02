@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.modelo.archivos;
 
-import edu.fiuba.algo3.modelo.*;
+import edu.fiuba.algo3.modelo.core.Coordenadas;
+import edu.fiuba.algo3.modelo.core.Destino;
 import edu.fiuba.algo3.modelo.edificios.*;
 import edu.fiuba.algo3.modelo.pistas.*;
 import edu.fiuba.algo3.modelo.valor.Valor;

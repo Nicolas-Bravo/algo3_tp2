@@ -3,6 +3,10 @@ package edu.fiuba.algo3.modelo;
 import edu.fiuba.algo3.modelo.buscadores.BuscadorDeDestinos;
 import edu.fiuba.algo3.modelo.buscadores.BuscadorDeSospechosos;
 import edu.fiuba.algo3.modelo.buscadores.BuscadorDeTesoros;
+import edu.fiuba.algo3.modelo.core.Policia;
+import edu.fiuba.algo3.modelo.core.RutaDeEscape;
+import edu.fiuba.algo3.modelo.core.Sospechoso;
+import edu.fiuba.algo3.modelo.core.Tesoro;
 import edu.fiuba.algo3.modelo.rangos.*;
 import org.junit.jupiter.api.Test;
 
