@@ -8,7 +8,7 @@ import javafx.scene.image.Image;
 
 public abstract class Edificio {
 
-    protected final Pista pista;
+    private final Pista pista;
     private DemoradorPorEntradas demorador;
 
     public Edificio(Pista entrada){
