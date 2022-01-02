@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.vista.botones;
 
 import edu.fiuba.algo3.modelo.pistas.Pista;
+import edu.fiuba.algo3.vista.handlers.BotonFiltroEventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 

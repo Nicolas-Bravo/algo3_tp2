@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.buscadores.BuscadorDeDestinos;
 import edu.fiuba.algo3.modelo.edificios.Edificio;
 import edu.fiuba.algo3.modelo.pistas.Pista;
 import edu.fiuba.algo3.modelo.reloj.Reloj;

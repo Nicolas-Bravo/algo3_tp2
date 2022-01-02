@@ -2,6 +2,7 @@ package edu.fiuba.algo3.vista.botones;
 
 import edu.fiuba.algo3.controladores.Juego;
 import edu.fiuba.algo3.modelo.Destino;
+import edu.fiuba.algo3.vista.handlers.BotonViajarACapitalEventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;

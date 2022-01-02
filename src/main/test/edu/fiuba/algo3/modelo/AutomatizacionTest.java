@@ -1,5 +1,8 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.buscadores.BuscadorDeDestinos;
+import edu.fiuba.algo3.modelo.buscadores.BuscadorDeSospechosos;
+import edu.fiuba.algo3.modelo.buscadores.BuscadorDeTesoros;
 import edu.fiuba.algo3.modelo.rangos.*;
 import org.junit.jupiter.api.Test;
 

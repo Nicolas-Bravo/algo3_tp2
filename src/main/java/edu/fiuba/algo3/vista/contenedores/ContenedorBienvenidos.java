@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.controladores;
+package edu.fiuba.algo3.vista.contenedores;
 
 import edu.fiuba.algo3.manejadorEventos.BotonJugarEventHandler;
 import javafx.geometry.Insets;

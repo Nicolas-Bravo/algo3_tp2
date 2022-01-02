@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.archivos.LectorArchivoPolicia;
+import edu.fiuba.algo3.modelo.buscadores.BuscadorDeSospechosos;
 import edu.fiuba.algo3.modelo.pistas.Pista;
 import edu.fiuba.algo3.modelo.pistas.PistaGeneral;
 

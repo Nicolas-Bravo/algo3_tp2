@@ -2,6 +2,7 @@ package edu.fiuba.algo3.vista.botones;
 
 import edu.fiuba.algo3.controladores.Juego;
 import edu.fiuba.algo3.modelo.edificios.Edificio;
+import edu.fiuba.algo3.vista.handlers.BotonEntrarEdificioEventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;

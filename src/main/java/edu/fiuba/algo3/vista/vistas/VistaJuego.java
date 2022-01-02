@@ -3,7 +3,6 @@ package edu.fiuba.algo3.vista.vistas;
 import edu.fiuba.algo3.controladores.Juego;
 import edu.fiuba.algo3.vista.contenedores.ContenedorHorario;
 import edu.fiuba.algo3.vista.contenedores.ContenedorIzquierda;
-import edu.fiuba.algo3.vista.MisVistas;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.image.Image;

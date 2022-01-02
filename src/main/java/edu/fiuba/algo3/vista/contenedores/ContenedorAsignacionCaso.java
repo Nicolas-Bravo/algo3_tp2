@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.vista.contenedores;
 
 import edu.fiuba.algo3.controladores.Juego;
-import edu.fiuba.algo3.vista.LabelBlanca;
+import edu.fiuba.algo3.vista.controles.polilla.LabelBlanca;
 import edu.fiuba.algo3.vista.botones.BotonIniciarCaso;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;

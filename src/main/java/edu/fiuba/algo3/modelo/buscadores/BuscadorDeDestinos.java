@@ -1,5 +1,9 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.buscadores;
 
+import edu.fiuba.algo3.modelo.Destino;
+import edu.fiuba.algo3.modelo.RutaDeEscape;
+import edu.fiuba.algo3.modelo.Sospechoso;
+import edu.fiuba.algo3.modelo.Tesoro;
 import edu.fiuba.algo3.modelo.archivos.DestinoCandidato;
 import edu.fiuba.algo3.modelo.archivos.LectorArchivoDestinos;
 import edu.fiuba.algo3.modelo.pistas.Pista;

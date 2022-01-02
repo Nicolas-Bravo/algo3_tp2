@@ -1,7 +1,6 @@
 package edu.fiuba.algo3.vista.vistas;
 
 import edu.fiuba.algo3.controladores.Juego;
-import edu.fiuba.algo3.vista.*;
 import edu.fiuba.algo3.vista.botones.Botonera;
 import edu.fiuba.algo3.vista.contenedores.ContenedorBusquedaSospechosos;
 import edu.fiuba.algo3.vista.contenedores.ContenedorHorario;

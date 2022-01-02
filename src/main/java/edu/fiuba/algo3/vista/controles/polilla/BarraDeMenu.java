@@ -1,14 +1,15 @@
-package edu.fiuba.algo3.vista;
+package edu.fiuba.algo3.vista.controles.polilla;
 
 import edu.fiuba.algo3.controladores.Juego;
 import edu.fiuba.algo3.modelo.Sospechoso;
+import edu.fiuba.algo3.vista.opciones.OpcionIntegrantesEventHandler;
+import edu.fiuba.algo3.vista.opciones.OpcionSalirEventHandler;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.SeparatorMenuItem;
 import javafx.stage.Stage;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class BarraDeMenu extends MenuBar {

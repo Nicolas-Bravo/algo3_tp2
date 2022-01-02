@@ -1,7 +1,7 @@
 package edu.fiuba.algo3;
 
-import edu.fiuba.algo3.controladores.ContenedorBienvenidos;
-import edu.fiuba.algo3.controladores.ContenedorPrincipal;
+import edu.fiuba.algo3.vista.contenedores.ContenedorBienvenidos;
+import edu.fiuba.algo3.vista.contenedores.ContenedorPrincipal;
 import edu.fiuba.algo3.controladores.Juego;
 import javafx.application.Application;
 import javafx.scene.Scene;

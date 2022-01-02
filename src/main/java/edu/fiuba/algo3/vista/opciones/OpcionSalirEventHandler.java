@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.vista;
+package edu.fiuba.algo3.vista.opciones;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

@@ -3,7 +3,7 @@ package edu.fiuba.algo3.vista.parents;
 import edu.fiuba.algo3.controladores.Juego;
 import edu.fiuba.algo3.modelo.pistas.Pista;
 import edu.fiuba.algo3.modelo.pistas.PistaGeneral;
-import edu.fiuba.algo3.vista.Filtro;
+import edu.fiuba.algo3.vista.controles.polilla.Filtro;
 import edu.fiuba.algo3.vista.botones.BotonEjecutarBusqueda;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;

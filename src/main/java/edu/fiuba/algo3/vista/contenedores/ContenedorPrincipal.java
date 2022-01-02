@@ -1,7 +1,8 @@
-package edu.fiuba.algo3.controladores;
+package edu.fiuba.algo3.vista.contenedores;
 
-import edu.fiuba.algo3.vista.BarraDeMenu;
-import edu.fiuba.algo3.vista.MisVistas;
+import edu.fiuba.algo3.controladores.Juego;
+import edu.fiuba.algo3.vista.controles.polilla.BarraDeMenu;
+import edu.fiuba.algo3.vista.vistas.MisVistas;
 import edu.fiuba.algo3.vista.vistas.VistaJuego;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.image.Image;

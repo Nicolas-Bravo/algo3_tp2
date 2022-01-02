@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.vista.botones;
+package edu.fiuba.algo3.vista.handlers;
 
 import edu.fiuba.algo3.controladores.Juego;
 import edu.fiuba.algo3.modelo.Mapa;

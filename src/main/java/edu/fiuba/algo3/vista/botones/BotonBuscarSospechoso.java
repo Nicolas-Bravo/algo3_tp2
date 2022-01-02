@@ -1,8 +1,7 @@
 package edu.fiuba.algo3.vista.botones;
 
 import edu.fiuba.algo3.controladores.Juego;
-import edu.fiuba.algo3.modelo.Mapa;
-import edu.fiuba.algo3.vista.BuscarSospechososEventHandler;
+import edu.fiuba.algo3.vista.handlers.BuscarSospechososEventHandler;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 

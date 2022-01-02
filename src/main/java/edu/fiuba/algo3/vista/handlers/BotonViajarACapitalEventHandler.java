@@ -1,6 +1,6 @@
-package edu.fiuba.algo3.vista.botones;
+package edu.fiuba.algo3.vista.handlers;
 
-import edu.fiuba.algo3.controladores.ContenedorPrincipal;
+import edu.fiuba.algo3.vista.contenedores.ContenedorPrincipal;
 import edu.fiuba.algo3.controladores.Juego;
 import edu.fiuba.algo3.modelo.Destino;
 import edu.fiuba.algo3.vista.vistas.VistaCaso;

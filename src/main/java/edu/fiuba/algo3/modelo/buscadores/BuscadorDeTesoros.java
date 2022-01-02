@@ -1,5 +1,6 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.buscadores;
 
+import edu.fiuba.algo3.modelo.Tesoro;
 import edu.fiuba.algo3.modelo.archivos.LectorArchivoTesoro;
 import edu.fiuba.algo3.modelo.rangos.Rango;
 

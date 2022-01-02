@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.vista.botones;
 
 import edu.fiuba.algo3.controladores.Juego;
+import edu.fiuba.algo3.vista.handlers.BotonRegistrarPoliciaEventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;

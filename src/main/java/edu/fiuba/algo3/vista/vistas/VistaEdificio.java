@@ -1,9 +1,8 @@
 package edu.fiuba.algo3.vista.vistas;
 
-import edu.fiuba.algo3.controladores.ContenedorPrincipal;
+import edu.fiuba.algo3.vista.contenedores.ContenedorPrincipal;
 import edu.fiuba.algo3.controladores.Juego;
 import edu.fiuba.algo3.modelo.edificios.Edificio;
-import edu.fiuba.algo3.vista.*;
 import edu.fiuba.algo3.vista.botones.Botonera;
 import edu.fiuba.algo3.vista.contenedores.ContenedorHorario;
 import edu.fiuba.algo3.vista.contenedores.ContenedorInformacion;

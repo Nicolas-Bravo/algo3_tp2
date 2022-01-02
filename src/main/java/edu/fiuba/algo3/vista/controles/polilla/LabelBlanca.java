@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.vista;
+package edu.fiuba.algo3.vista.controles.polilla;
 
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
