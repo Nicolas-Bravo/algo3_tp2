@@ -23,7 +23,7 @@ public class Sospechoso {
     }
 
     public void coincideCon(Pista[] pistas, ArrayList<Sospechoso> sospechososPosibles) {
-        if(descripcion.containsAll(List.of(pistas))){
+        if(datos.containsAll(List.of(pistas))){
             sospechososPosibles.add(this);
         }
     }

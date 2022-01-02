@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class LectorArchivoPolicia {
     public static Policia buscarPoliciaPorNombre(String nombre){
-        File archivo = new File("Archivos/registroPolicias.csv");
+        File archivo = new File("Archivos/registroPolicias.txt");
         Policia policiaDevolver = new Policia(nombre, new Novato());
         try {
             Scanner scanner = new Scanner(archivo);

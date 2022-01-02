@@ -24,6 +24,6 @@ public class BotonRegistrarPoliciaEventHandler implements EventHandler<ActionEve
         juego.crearPolicia(textArea.getText());
         textArea.setText("Policia " + textArea.getText() + " registrado");
 
-        this.stage.getScene().setRoot(new ContenedorPrincipal(stage,juego,new VistaCaso(stage,juego)));
+        this.stage.getScene().setRoot(new ContenedorPrincipal(stage,juego,new VistaInicioCaso(stage,juego)));
     }
 }
