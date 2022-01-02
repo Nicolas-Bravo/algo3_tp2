@@ -3,6 +3,7 @@ package edu.fiuba.algo3.vista.botones;
 import edu.fiuba.algo3.controladores.ContenedorPrincipal;
 import edu.fiuba.algo3.controladores.Juego;
 import edu.fiuba.algo3.vista.vistas.VistaCaso;
+import edu.fiuba.algo3.vista.vistas.VistaInicioCaso;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
@@ -19,6 +20,6 @@ public class BotonNuevoCasoEventHandler implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent actionEvent) {
         this.juego.jugar();
-        stage.getScene().setRoot(new ContenedorPrincipal(stage, juego, new VistaCaso(stage, juego)));
+        stage.getScene().setRoot(new ContenedorPrincipal(stage, juego, new VistaInicioCaso(stage, juego)));
     }
 }
