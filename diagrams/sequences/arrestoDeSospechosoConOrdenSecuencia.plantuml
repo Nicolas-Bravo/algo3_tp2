@@ -1,5 +1,7 @@
 @startuml
 
+title arrestoDeSospechosoConOrdenSecuencia
+
 Actor User
 User -> ":Policia" : entrarEdificio(e :Edificio)
 Activate ":Policia"
